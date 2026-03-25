@@ -3,8 +3,10 @@
 margin: 0;
 padding: 0;
 box-sizing: border-box; 
-font-family: poppings, sans-serif; 
-background: url(planodefundo-login.png);
+font-family: poppins, sans-serif; 
+background: url(Digital\ ark.png);
+border-radius: 40px;
+
 }
 
 body{
@@ -15,6 +17,7 @@ body{
     min-height: 100vh;
     background-size: cover;
     background-position: center;
+  
 }
 
 .container{
@@ -24,7 +27,8 @@ body{
   border-radius: 10px;  
   color: #191919;
   padding: 30px,40px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, .2);                                                                                                                                                                                                                                                                                                                                                                                                                
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);     
+                                                                                                                                                                                                                                                                                                                                                                                                             
 }
 .container h1{
 
@@ -36,6 +40,7 @@ position: relative;
 width: 100%;
 height: 50px;
 margin:40px 0;
+
  }
 
  .input-box input{
@@ -47,7 +52,7 @@ border-radius: 40px;
 outline: none;
 font-size: 16px;
 color: 
-#fff;
+#100f0f;
 padding: 20px, 45px, 20px, 20px;
 
 }
