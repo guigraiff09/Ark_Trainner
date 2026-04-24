@@ -13,6 +13,8 @@ body{
     display: flex;
     background: black;
     justify-content: center;
+    flex-direction: column;
+    
    
 
 
@@ -21,13 +23,6 @@ body{
    text-align: right;
    padding: 10px;
 }
-
-
-.header h1{
-    color: rgb(255,255,0); 
-    margin: 0 1rem; 
-    font-size: 4rem; 
-   }
 
 .header nav-bar{
   display: flex;
@@ -72,6 +67,10 @@ body{
     text-align: left;
  }
 
+ .deslizar-foto{
+   text-align: center;
+ }
+
  .footer{
     margin: 0;
     padding: 0;
@@ -79,16 +78,17 @@ body{
     border: none;
     outline: none;
     text-decoration: none;
-
+ }
+ .container-box {
+   display: flex;
+   flex-direction: column;
+   text-align:center;
  }
 
- .conteiner-footer{
+.container-box .logo-ark{
+   text-align: center;
+}
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
- }
-
- .footer h1{
-    color: #fff;
- }
+.container-box h1{
+   color: #fff;
+}
