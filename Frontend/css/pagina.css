@@ -31,8 +31,6 @@ body{
   padding-top: 1.5rem;
   padding-bottom: 1.5rem, ;
   bottom: none;
-  
-
 }
 
 .nav a{
@@ -40,8 +38,6 @@ body{
     font-size: 1.4rem;
     color: #fff;
     bottom: none;
-    
-
 }
 
 .nav a:hover{
@@ -52,23 +48,31 @@ body{
 
 .nav button{
     background-color:#ffc300;
-    border: 2px #0000;
+    border: 2px solid #000;
     border-radius: 10px;
     color:#000;
     font-size: 1.4rem;
-    padding: 0 0.5rem;
+    padding:  0.2rem;
 }
- nav button:hover{
-    padding-bottom:0.5rem ;
-   font-size: 2rem;
- }
 
+ nav button:hover{
+    padding-bottom: 0.5rem ;
+   font-size: 1.8rem;
+ }
+.nav img{
+   
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+   color:#fff;
+}
  .logo{
     text-align: left;
  }
 
  .deslizar-foto{
    text-align: center;
+   padding: 1.5rem;
  }
 
  .footer{
@@ -85,10 +89,32 @@ body{
    text-align:center;
  }
 
-.container-box .logo-ark{
+.logo-ark img{
    text-align: center;
+   width: 600px;
 }
-
+hr{
+   border: 0;
+   border-top: 1px solid #ffffffb6;
+   opacity: 1;
+}
 .container-box h1{
    color: #fff;
+   font-size: 30px;
+   padding: 40px;
+}
+
+.container-box a{
+    font-size: 25px;
+    color: #fff;
+}
+
+.container-box a{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+   color:#fff;
+   text-decoration: none;
+   outline: none;
 }
