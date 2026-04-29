@@ -16,8 +16,9 @@
     max-width: 7500px;
     padding: 80px;
 }
-.ul{
-    color: #fff;
+.li{
+   list-style-position: inside;
+   padding-left: 40px;
 }
 
 body{
