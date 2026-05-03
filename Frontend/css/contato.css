@@ -67,53 +67,148 @@ body{
  }
  
 .nav img{
-  width: auto;
+  width: 400px;
   height: 50px;
 }
 
- .deslizar-foto{
-   text-align: center;
-   padding: 1.5rem;
-  display: flex;
-  justify-content: center;
+.img-cont{
+    position: absolute;
+    margin-top: 9%;
+    left: 50%;
+    top: 5%;
+}
 
- }
+
+.frase {
+    margin-top:8% ;
+    position: absolute;
+    left: 13%;
+    top: 14%;
+    text-transform: uppercase;
+    flex-direction: column;
+}
+
+.frase h2{
+    color: #ffc300;
+    font-size: 40px;
+    padding: 0 0 40px ;
+}
+
+.frase h1{
+    color: #fff;
+    font-size: 50px;
+    width:430px;
+}
+
+.frase .destaque{
+    color: #ffc300;
+    font-size: 50px;
+}
+
+.frase p{
+    color: #fff;
+    width:480px;
+    margin-top: 10px;
+}
+
+.container-input{
+    border:2px solid #fff;
+    background-color:#000;
+    padding: 40px;
+    border-radius: 15px;
+    width: 700px;
+    margin: 20px ;
+    position: absolute;
+    left: 5%;
+    top: 67.8%;
+}
+.container-input h3{
+    color: #fff;
+    margin-bottom:20px;
+    font-size: 38px;
+}
+.input-box{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-box input{
+    width: 80%;
+    background-color: transparent;
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-box input:hover{
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+}
+
+.contato-box{
+    border: 2px solid #fff;
+    background-color: #000;
+    padding: 21.6px;
+    border-radius: 15px;
+    width: 350px;
+    position: absolute;
+    left: 61%;
+    top: 70.5%;
+}
+
+.box-cont{
+    color: #fff;
+}
+
+.box-contato, .formas-contato{
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+}
 
  .footer{
     background-color: #000;
     color: #fff;
-    padding: 40px 10% 20px;
-    font-family: popping , sans-serif;  
+    padding: 40px 0;
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 60%;
  }
+ 
  .container-box {
    display: flex;
    justify-content: center;
-   text-align: right;
-   gap: 30px;
-   color: #000;
+   align-items: center;
+   gap: 20px;
    text-decoration: none;
-   font-size: 25px;
+   width: 100%;
    flex-direction: column;
+   text-align: center;
  }
 
 .logo-ark img{
    width: 250px;
    padding: 10px;
 }
+
 hr{
    border: 0;
    border-top: 1px solid #333;
-    width: 100vw;
-    left: 50%;
-    right: 50%;
-    position: relative;
-    margin-left: -50vw;
+    width: 100%;
 }
 
 .container-box a{
-   display: flex;
-   align-items: center;
-   justify-content: center;
+   text-align: center;
    gap: 10px;
    color:#fff;
    text-decoration: none;
@@ -122,14 +217,15 @@ hr{
 
 .contato{
    color: #fff;
-   text-align: center;
    padding: 10px;
    font-size: 30px;
 }
 .contato a{
+    display: flex;
+    justify-content: center;
    display: inline-block;
    padding: 10px;
-   margin-top: 15px;
+   gap: 15px;
    
 }
 .políticas a{
