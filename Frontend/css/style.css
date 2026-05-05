@@ -16,7 +16,7 @@ body{
     flex-direction: column;
     margin: 0;
     flex-direction: column;
-    min-height: 220vh;
+    min-height: 100vh;
 }
 
 .header{
@@ -28,37 +28,27 @@ body{
   background-color: #000;
 }
 
-.logo{
-   display: flex;
-   justify-content:left;
-}
-
-.header nav{
-   text-align: right;
-   padding: 10px;
-}
-
-.header nav-bar{
+.header .nav-bar{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0.5rem 5%;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   bottom: none;
 }
 
 .nav a{
-    margin: 0 1rem;
+    margin: 0 1.5rem;
     font-size: 1.4rem; 
     color: #fff;
     bottom: none;
-   
+    text-decoration: none;
 }
 
 .nav a:hover{
    color: #ffc300;
-   padding-bottom:0.5rem ;
-   font-size: 1.8rem;
+   font-size: 1.6rem;
 }
 
 .nav button{
@@ -67,67 +57,57 @@ body{
     border-radius: 10px;
     color:#000;
     font-size: 1.4rem;
-    padding:  0.2rem;
+    padding:  0.5rem 0.1rem;
+    cursor: pointer;
 }
 
  nav button:hover{
     padding-bottom: 0.5rem ;
    font-size: 1.6rem;
  }
+ 
 .nav img{
-   align-items: center;
-   justify-content: center;
-   gap: 10px;
-   color:#fff;
+  width: auto;
+  height: 50px;
 }
 
- .logo{
-    text-align: left;
- }
-
  .deslizar-foto{
-
    text-align: center;
    padding: 1.5rem;
   display: flex;
   justify-content: center;
-  
+
  }
 
  .footer{
-    margin: 0;
-    padding: 0;
-    font-family: poppins sans-serif;   
-    border: none;
-    outline: none;
-    text-decoration: none;
-    
+    background-color: #000;
+    color: #fff;
+    padding: 40px 10% 20px;
+    font-family: popping , sans-serif;  
  }
  .container-box {
    display: flex;
+   justify-content: center;
+   text-align: right;
+   gap: 30px;
+   color: #000;
+   text-decoration: none;
+   font-size: 25px;
    flex-direction: column;
-   text-align:center;
  }
 
 .logo-ark img{
-   text-align: center;
-   width: 350px;
-   padding: 35px;
+   width: 250px;
+   padding: 10px;
 }
 hr{
    border: 0;
-   border-top: 1px solid #ffffffb6;
-   opacity: 1;
-}
-.container-box h1{
-   color: #fff;
-   font-size: 30px;
-   padding: 40px;
-}
-
-.container-box a{
-    font-size: 25px;
-    color: #fff;
+   border-top: 1px solid #333;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    position: relative;
+    margin-left: -50vw;
 }
 
 .container-box a{
@@ -143,13 +123,14 @@ hr{
 .contato{
    color: #fff;
    text-align: center;
-   padding-top: 20px;
+   padding: 10px;
+   font-size: 30px;
 }
-
-.contato p{
-   padding: 30px;
-   font-size: 18px;
-   text-align: center;
+.contato a{
+   display: inline-block;
+   padding: 10px;
+   margin-top: 15px;
+   
 }
 .políticas a{
    display: flex;
@@ -159,7 +140,7 @@ hr{
    text-decoration: none;
    outline: none;
    padding: 40px;
-   font-size: 18px;
+   font-size: 30px;
 }
 
 .final{

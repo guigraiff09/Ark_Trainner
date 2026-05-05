@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: poppins sans-serif;   
+    border: none;
+    outline: none;
+    text-decoration: none;
+    transition: 0.2s linear ;
+}
+
+body{
+    display: flex;
+    background: black;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header{
+    position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  background-color: #000;
+}
+
+.header .nav-bar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 5%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  bottom: none;
+}
+
+.nav a{
+    margin: 0 1.5rem;
+    font-size: 1.4rem; 
+    color: #fff;
+    bottom: none;
+    text-decoration: none;
+}
+
+.nav a:hover{
+   color: #ffc300;
+   font-size: 1.6rem;
+}
+
+.nav button{
+    background-color:#ffc300;
+    border: 2px solid #000;
+    border-radius: 10px;
+    color:#000;
+    font-size: 1.4rem;
+    padding:  0.5rem 0.1rem;
+    cursor: pointer;
+}
+
+ nav button:hover{
+    padding-bottom: 0.5rem ;
+   font-size: 1.6rem;
+ }
+ 
+.nav img{
+  width: 400px;
+  height: 50px;
+}
+
+.img-cont{
+    position: absolute;
+    margin-top: 9%;
+    left: 50%;
+    top: 5%;
+}
+
+
+.frase {
+    margin-top:8% ;
+    position: absolute;
+    left: 13%;
+    top: 14%;
+    text-transform: uppercase;
+    flex-direction: column;
+}
+
+.frase h2{
+    color: #ffc300;
+    font-size: 40px;
+    padding: 0 0 40px ;
+}
+
+.frase h1{
+    color: #fff;
+    font-size: 50px;
+    width:430px;
+}
+
+.frase .destaque{
+    color: #ffc300;
+    font-size: 50px;
+}
+
+.frase p{
+    color: #fff;
+    width:480px;
+    margin-top: 10px;
+}
+
+.container-input{
+    border:2px solid #fff;
+    background-color:#000;
+    padding: 40px;
+    border-radius: 15px;
+    width: 700px;
+    margin: 20px ;
+    position: absolute;
+    left: 5%;
+    top: 67.8%;
+}
+.container-input h3{
+    color: #fff;
+    margin-bottom:20px;
+    font-size: 38px;
+}
+.input-box{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-box input{
+    width: 80%;
+    background-color: transparent;
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-box input:hover{
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+}
+
+.contato-box{
+    border: 2px solid #fff;
+    background-color: #000;
+    padding: 21.6px;
+    border-radius: 15px;
+    width: 350px;
+    position: absolute;
+    left: 61%;
+    top: 70.5%;
+}
+
+.box-cont{
+    color: #fff;
+}
+
+.box-contato, .formas-contato{
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+ .footer{
+    background-color: #000;
+    color: #fff;
+    padding: 40px 0;
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 60%;
+ }
+ 
+ .container-box {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 20px;
+   text-decoration: none;
+   width: 100%;
+   flex-direction: column;
+   text-align: center;
+ }
+
+.logo-ark img{
+   width: 250px;
+   padding: 10px;
+}
+
+hr{
+   border: 0;
+   border-top: 1px solid #333;
+    width: 100%;
+}
+
+.container-box a{
+   text-align: center;
+   gap: 10px;
+   color:#fff;
+   text-decoration: none;
+   outline: none;
+}
+
+.contato{
+   color: #fff;
+   padding: 10px;
+   font-size: 30px;
+}
+.contato a{
+    display: flex;
+    justify-content: center;
+   display: inline-block;
+   padding: 10px;
+   gap: 15px;
+   
+}
+.políticas a{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: #fff;
+   text-decoration: none;
+   outline: none;
+   padding: 40px;
+   font-size: 30px;
+}
+
+.final{
+   color: #fff;
+   text-align: center;
+   font-size: 18px;
+   padding: 30px;
+}
