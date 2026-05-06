@@ -5,7 +5,7 @@
     border: none;
     outline: none;
     text-decoration: none;
-    transition: 0.2s linear ;
+    transition: 0.2s linear;
 }
 
 body{
@@ -15,7 +15,7 @@ body{
     flex-direction: column;
     margin: 0;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 80vh;
 }
 
 .header{
@@ -31,7 +31,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 5%;
+  padding: 0.5rem 4%;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   bottom: none;
@@ -69,16 +69,10 @@ body{
   width: auto;
   height: 50px;
 }
-  .container-img, .img-treino{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-.img-treino, .img{
-   margin-top: 70px;
-   width: 90%;
-   height: 50vh;
-   margin-top: 100px;
-   padding: 2px 6%;
-}
 
+   .container-img, .img-treino{
+      display: flex;
+      justify-content: center;
+      margin: 80px;
+      width: 100%;
+   }

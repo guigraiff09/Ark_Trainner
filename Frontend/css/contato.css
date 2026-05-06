@@ -141,6 +141,7 @@ body{
     background-color: #ffc300;
     text-decoration: none;
     outline: none;
+    border: none;
 }
     .input-box button a:hover{
         color: #000;
@@ -191,6 +192,7 @@ body{
     padding: 10px;
     font-size: 16px;
     outline: none;
+    color: #fff;
 }
 
  .footer{
@@ -222,10 +224,12 @@ body{
    padding: 10px;
 }
 
-hr{
+ hr{
    border: 0;
    border-top: 1px solid #333;
-    width: 100%;
+    width: auto;
+    margin-left: -11.2%;
+    margin-right: -11.2%;
 }
 
 .container-box a{
@@ -234,6 +238,7 @@ hr{
    color:#fff;
    text-decoration: none;
    outline: none;
+   transition: 0.3s;
 }
 
 .contato{
@@ -247,7 +252,7 @@ hr{
    display: inline-block;
    padding: 10px;
    gap: 15px;
-   
+
 }
 .políticas a{
    display: flex;
