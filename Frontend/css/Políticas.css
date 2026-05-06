@@ -108,14 +108,12 @@ body{
    width: 250px;
    padding: 10px;
 }
-hr{
+ hr{
    border: 0;
    border-top: 1px solid #333;
-    width: 100vw;
-    left: 50%;
-    right: 50%;
-    position: relative;
-    margin-left: -50vw;
+    width: auto;
+    margin-left: -11.2%;
+    margin-right: -11.2%;
 }
 
 .container-box a{
