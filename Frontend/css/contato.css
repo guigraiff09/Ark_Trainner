@@ -141,6 +141,7 @@ body{
     background-color: #ffc300;
     text-decoration: none;
     outline: none;
+    border: none;
 }
     .input-box button a:hover{
         color: #000;
@@ -191,6 +192,7 @@ body{
     padding: 10px;
     font-size: 16px;
     outline: none;
+    color: #fff;
 }
 
  .footer{
@@ -234,6 +236,7 @@ hr{
    color:#fff;
    text-decoration: none;
    outline: none;
+   transition: 0.3s;
 }
 
 .contato{
@@ -247,7 +250,7 @@ hr{
    display: inline-block;
    padding: 10px;
    gap: 15px;
-   
+
 }
 .políticas a{
    display: flex;

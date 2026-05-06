@@ -15,8 +15,9 @@ body{
     justify-content: center;
     flex-direction: column;
     margin: 0;
-    flex-direction: column;
     min-height: 100vh;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 .header{
@@ -33,7 +34,6 @@ body{
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 5%;
-  padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   bottom: none;
 }
@@ -103,11 +103,10 @@ body{
 hr{
    border: 0;
    border-top: 1px solid #333;
-    width: 100vw;
-    left: 50%;
-    right: 50%;
-    position: relative;
-    margin-left: -50vw;
+    width: 100%;
+    margin: 20px 0;
+    border-top:1px solid #333 ;
+    position: static;
 }
 
 .container-box a{
