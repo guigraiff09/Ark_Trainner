@@ -69,11 +69,16 @@ body{
   width: auto;
   height: 50px;
 }
+  .container-img, .img-treino{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+.img-treino, .img{
+   margin-top: 70px;
+   width: 90%;
+   height: 50vh;
+   margin-top: 100px;
+   padding: 2px 6%;
+}
 
-   .container-img, .img-treino{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 80px;
-      width: 100%;
-   }
