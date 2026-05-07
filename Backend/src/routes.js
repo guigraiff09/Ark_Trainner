@@ -44,4 +44,4 @@ router.delete('/contato/:id', (req, res) => {
   });
 });
 
-module.exports = router; // Exporta todas as rotas
+module.exports = router; // Exporta todas as rotas 

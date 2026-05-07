@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// 🚀 ESSA É A CHAVE: Diz ao Express para servir os arquivos da pasta Frontend
+//  ESSA É A CHAVE: Diz ao Express para servir os arquivos da pasta Frontend
 // O path.join garante que o caminho funcione em qualquer computador
 app.use(express.static(path.join(__dirname, '../../Frontend')));
 

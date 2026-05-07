@@ -3,28 +3,89 @@
 <head>
   <meta charset="utf-8">
   <title>Painel de Mensagens - Admin</title>
+
+  
   <style>
-    body { font-family: sans-serif; background: #f4f4f4; padding: 20px; }
-    .header { display: flex; justify-content: space-between; align-items: center; background: white; padding: 15px 30px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    .container { max-width: 900px; margin: 30px auto; }
-    .card { background: white; padding: 20px; border-radius: 8px; margin-bottom: 15px; position: relative; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-    .btn-sair { background: #333; color: white; padding: 8px 15px; border: none; cursor: pointer; border-radius: 4px; }
-    .btn-del { background: #ff4444; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 4px; position: absolute; right: 20px; top: 20px; }
-    .info { color: #666; font-size: 14px; }
-    strong { color: #333; }
+
+
+    body{ 
+      font-family: sans-serif; 
+      background: #f4f4f4; 
+      padding: 20px; 
+    }
+  .header { 
+    display: flex;
+     justify-content: space-between; 
+     align-items: center; 
+     background: white;
+      padding: 15px 30px; 
+      border-radius: 8px; 
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+    }
+    .container {
+       max-width:900px; 
+       margin: 30px auto; 
+      }
+
+
+
+    .card {
+       background: white;
+        padding: 20px; 
+        border-radius: 8px; 
+        margin-bottom: 15px; 
+        position: relative; 
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+
+
+
+    .btn-sair { 
+      background: #333;
+       color: white;
+        padding: 8px 15px;
+         border: none; 
+         cursor: pointer; 
+         border-radius: 4px;
+        }
+
+
+
+
+    .btn-del { 
+      background: #ff4444;
+       color: white; border: none;
+        padding: 5px 10px;
+         cursor: pointer;
+          border-radius: 4px; 
+          position: absolute; 
+          right: 20px; top: 20px; 
+        }
+
+
+
+
+    .info { 
+      color: #666; 
+      font-size: 14px; 
+    }
+    strong { 
+      color: #333; 
+    }
+
+
   </style>
 </head>
 <body>
 
 <script>
-  // 🔐 SEGURANÇA: Se não estiver logado, volta pro login
+  //  SEGURANÇA: Se não estiver logado, volta pro login
   if (localStorage.getItem('logado') !== 'true') {
     window.location.href = 'login.html';
   }
 </script>
 
 <div class="header">
-  <h2>📩 Mensagens Recebidas</h2>
+  <h2> Mensagens Recebidas</h2>
   <button class="btn-sair" onclick="sair()">Sair</button>
 </div>
 
@@ -32,7 +93,7 @@
   </div>
 
 <script>
-// 📂 Buscar mensagens do Backend
+//  Buscar mensagens do Backend
 function carregarMensagens() {
   fetch('http://localhost:3000/contatos')
     .then(res => res.json())
@@ -60,7 +121,7 @@ function carregarMensagens() {
     });
 }
 
-// ❌ Apagar mensagem
+//  Apagar mensagem
 function deletarMensagem(id) {
   if (confirm('Deseja realmente apagar esta mensagem?')) {
     fetch(`http://localhost:3000/contato/${id}`, { method: 'DELETE' })
@@ -68,7 +129,7 @@ function deletarMensagem(id) {
   }
 }
 
-// 🚪 Sair do sistema
+//  Sair do sistema
 function sair() {
   localStorage.removeItem('logado');
   window.location.href = 'login.html';
