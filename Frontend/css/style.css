@@ -66,9 +66,9 @@ body{
    font-size: 1.6rem;
  }
  
-.nav img{
-  width: auto;
-  height: 50px;
+.nav-bar img{
+  width: 200px;
+  height: 100px;
 }
 
 .carrossel{
@@ -104,15 +104,36 @@ margin: auto;
  }
 
 .logo-ark img{
-   width: 250px;
-   padding: 10px;
+   width: 180px;
+   
+}
+.container-card{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.card-img{
+margin: 50px;
+background-color: #ffc300;
+border-radius: 20px;
+text-align: center;
+}
+.card-img, img{
+   width: 100% ;
+   border-top-left-radius:10px ;
+   border-top-right-radius: 10px;
+}
+figcaption{
+   color: #000;
+   font-size: 20px;
+   text-transform: uppercase;
+   margin: 10px;
 }
 hr{
    border: 0;
    border-top: 1px solid #333;
-    width: auto;
-    margin-left: -11.2%;
-    margin-right: -11.2%;
+   width: 80%;
+   margin: 30px 0;
 }
 
 .container-box a{

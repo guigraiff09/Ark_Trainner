@@ -8,18 +8,6 @@
     text-decoration: none;
     transition: 0.2s linear ;
 }
-.politica{
-
-    color: #fff;
-    justify-content: center;
-    align-items: center;
-    max-width: 1000px;
-    padding: 80px;
-}
-.li{
-   list-style-position: inside;
-   padding-left: 40px;
-}
 
 body{
     display: flex;
@@ -30,6 +18,18 @@ body{
     flex-direction: column;
     min-height: 100vh;
     margin-top: 20px;
+}
+
+.politica{
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    padding: 80px;
+}
+.li{
+   list-style-position: inside;
+   padding-left: 40px;
 }
 
 .header{
@@ -96,7 +96,7 @@ body{
  .container-box {
    display: flex;
    justify-content: center;
-   text-align: right;
+   text-align: center;
    gap: 30px;
    color: #000;
    text-decoration: none;
@@ -109,11 +109,14 @@ body{
    padding: 10px;
 }
  hr{
-   border: 0;
-   border-top: 1px solid #333;
-    width: auto;
-    margin-left: -11.2%;
-    margin-right: -11.2%;
+    border: 0;
+    border-top: 1px solid #333;
+    width: 80%;
+    display: block;
+    margin: 30px 0;
+    align-self: center;
+    flex-basis: 100%;
+
 }
 
 .container-box a{
