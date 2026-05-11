@@ -117,8 +117,8 @@ margin: auto;
    display: flex;
    justify-content: center;
    align-items: center;
-background-color: #ffc300;
-border-radius: 20px;
+   background-color: #ffc300;
+   border-radius: 20px;
 }
 
 .card-img, img{

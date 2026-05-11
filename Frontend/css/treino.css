@@ -1,72 +1,74 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: poppins sans-serif;
-  border: none;
-  outline: none;
-  text-decoration: none;
-  transition: 0.2s linear;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: poppins sans-serif;  
+    border: none;
+    outline: none;
+    text-decoration: none;
+    transition: 0.2s linear ;
 }
 
-body {
-  display: flex;
-  background: black;
-  justify-content: center;
-  flex-direction: column;
-  margin: 0;
-  min-height: 80vh;
+body{
+    display: flex;
+    background: black;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    min-height: 100vh;
+    padding: 0;
+    overflow-x: hidden;
 }
 
-.header {
+.header{
   position: fixed;
   top: 0;
   left: 0;
-  width: 90%;
+  width: 100%;
   z-index: 99;
   background-color: #000;
 }
 
-.header .nav-bar {
+.header .nav-bar{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 4%;
-  padding-top: 0.5rem;
+  padding: 0.5rem 5%;
   padding-bottom: 0.5rem;
   bottom: none;
 }
 
-.nav a {
-  margin: 0 1.5rem;
-  font-size: 1.4rem;
-  color: #fff;
-  bottom: none;
-  text-decoration: none;
+.nav a{
+    margin: 0 1.5rem;
+    font-size: 1.4rem; 
+    color: #fff;
+    bottom: none;
+    text-decoration: none;
 }
 
-.nav a:hover {
-  color: #ffc300;
-  font-size: 1.6rem;
+.nav a:hover{
+   color: #ffc300;
+   font-size: 1.6rem;
 }
 
-.nav button {
-  background-color: #ffc300;
-  border: 2px solid #000;
-  border-radius: 10px;
-  color: #000;
-  font-size: 1.4rem;
-  padding: 0.5rem 0.1rem;
-  cursor: pointer;
+.nav button{
+    background-color:#ffc300;
+    border: 2px solid #000;
+    border-radius: 10px;
+    color:#000;
+    font-size: 1.4rem;
+    padding:  0.5rem 0.1rem;
+    cursor: pointer;
 }
 
-nav button:hover {
-  padding-bottom: 0.5rem;
-  font-size: 1.6rem;
-}
-
-.nav img {
-  width: auto;
-  height: 50px;
+ nav button:hover{
+    padding-bottom: 0.5rem ;
+   font-size: 1.6rem;
+ }
+ 
+.nav-bar img{
+  width: 200px;
+  height: 100px;
 }
 
 .container-img {
@@ -135,33 +137,40 @@ nav button:hover {
 
 .li, a{
   color: #000;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .nav-box a:hover{
   padding: 0.2;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 
 .container-card{
    display: flex;
    justify-content: center;
    align-items: center;
-   gap: 50px;
-   width: 100%;
-   
+   padding: 60px;
    overflow: hidden;
 }
 .card-treino{
    display: flex;
    justify-content: center;
    align-items: center;
+   background-color: #ffc300;
+   border-radius: 20px;
+   width: 400px;
 }
 
 .card-treino, .img{
    border-top-left-radius:10px ;
    border-top-right-radius: 10px;
-   background-color: #ffc300;
-   border-radius: 20px;
-   width: 300px;
+   width: 100%;
+}
+
+.figcaption{
+   color: #000;
+   font-size: 20px;
+   text-transform: uppercase;
+   margin: 10px;
+   
 }
