@@ -118,8 +118,8 @@ body{
     width: 500px;
     margin: 20px ;
     position: absolute;
-    left: 15%;
-    top: 67.5%;   
+    left: 100px;
+    top: 465px;   
 }
 .input-box button{
     box-sizing: border-box;
@@ -191,8 +191,8 @@ body{
     border-radius: 15px;
     width: 280px;
     position: absolute;
-    left: 59%;
-    top: 70.5%;
+    left: 750px;
+    top: 485px;
 }
 
 .box-contato, .formas-contato{
@@ -210,7 +210,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 65%;
+    margin-top: 1000px;
  }
  
  .container-box {

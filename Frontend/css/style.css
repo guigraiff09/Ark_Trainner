@@ -7,6 +7,7 @@
     outline: none;
     text-decoration: none;
     transition: 0.2s linear ;
+    box-sizing: border-box;
 }
 
 body{
@@ -18,6 +19,7 @@ body{
     min-height: 100vh;
     padding: 0;
     overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 .header{
@@ -108,37 +110,48 @@ margin: auto;
 }
 .container-card{
    display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
    justify-content: center;
-   align-items: center;
-   gap: 50px;
+   align-items: flex-start;
+   gap: 30px;
+   padding: 40px;
+   box-sizing: border-box;
+ }
+ 
+ .card{ 
+   background-color: #ffc300;
+   border: 2px solid #000;
+   border-radius: 20px;
+   width: 285px;
    overflow: hidden;
-}
-.card-img{
+   display: flex;
+   flex-direction: column;
+   transition: transforme 0.3s ease;
+ }
+ 
+ .card img{
+   width: 100%;
+   height: 200px;
+   object-fit: cover;
+   display: block;
+ }
+ 
+ .card figcaption{
    display: flex;
    justify-content: center;
    align-items: center;
-   background-color: #ffc300;
-   border-radius: 20px;
-}
-
-.card-img, img{
-   width: 100%;
-   border-top-left-radius:10px ;
-   border-top-right-radius: 10px;
-}
-
-figcaption{
-   color: #000;
-   font-size: 20px;
    text-transform: uppercase;
-   margin: 10px;
-}
-hr{
+   padding: 8px;
+ }
+
+ hr{
    border: 0;
    border-top: 1px solid #333;
-   width: 80%;
-   margin: 50px 0;
+   width: 100%;
+   margin: 20px 0;
 }
+
 
 .container-box a{
    display: flex;
