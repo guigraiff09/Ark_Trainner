@@ -1,142 +1,158 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8">
-  <title>Painel de Mensagens - Admin</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  
-  <style>
+  <title>Dashboard Admin</title>
 
-
-    body{ 
-      font-family: sans-serif; 
-      background: #f4f4f4; 
-      padding: 20px; 
-    }
-  .header { 
-    display: flex;
-     justify-content: space-between; 
-     align-items: center; 
-     background: white;
-      padding: 15px 30px; 
-      border-radius: 8px; 
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
-    }
-    .container {
-       max-width:900px; 
-       margin: 30px auto; 
-      }
-
-
-
-    .card {
-       background: white;
-        padding: 20px; 
-        border-radius: 8px; 
-        margin-bottom: 15px; 
-        position: relative; 
-        box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-
-
-
-    .btn-sair { 
-      background: #333;
-       color: white;
-        padding: 8px 15px;
-         border: none; 
-         cursor: pointer; 
-         border-radius: 4px;
-        }
-
-
-
-
-    .btn-del { 
-      background: #ff4444;
-       color: white; border: none;
-        padding: 5px 10px;
-         cursor: pointer;
-          border-radius: 4px; 
-          position: absolute; 
-          right: 20px; top: 20px; 
-        }
-
-
-
-
-    .info { 
-      color: #666; 
-      font-size: 14px; 
-    }
-    strong { 
-      color: #333; 
-    }
-
-
-  </style>
+  <link rel="stylesheet" href="../css/admin.css">
 </head>
+
 <body>
 
 <script>
-  //  SEGURANÇA: Se não estiver logado, volta pro login
-  if (localStorage.getItem('logado') !== 'true') {
+  // SEGURANÇA LOGIN
+  if(localStorage.getItem('logado') !== 'true'){
     window.location.href = 'login.html';
   }
 </script>
 
-<div class="header">
-  <h2> Mensagens Recebidas</h2>
-  <button class="btn-sair" onclick="sair()">Sair</button>
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+  <h2>ARK ADMIN</h2>
+
+  <ul>
+    <li>Mensagens</li>
+    <li> Usuários</li>
+    <li> Dashboard</li>
+    <li onclick="logout()"> Sair</li>
+  </ul>
+
 </div>
 
-<div class="container" id="lista-mensagens">
+<!-- CONTEÚDO -->
+<div class="main">
+
+  <!-- TOPO -->
+  <div class="topbar">
+    <h1>Painel Administrativo</h1>
   </div>
 
+  <!-- CARDS -->
+  <div class="cards">
+
+    <div class="card">
+      <h3 id="totalMensagens">0</h3>
+      <p>Total de Mensagens</p>
+    </div>
+
+    <div class="card">
+      <h3 id="totalEmails">0</h3>
+      <p>Emails Recebidos</p>
+    </div>
+
+    <div class="card">
+      <h3>Online</h3>
+      <p>Status do Sistema</p>
+    </div>
+
+  </div>
+
+  <!-- MENSAGENS -->
+  <div class="mensagens">
+
+    <h2>Mensagens Recebidas</h2>
+
+    <div id="lista-mensagens"></div>
+
+  </div>
+
+</div>
+
 <script>
-//  Buscar mensagens do Backend
-function carregarMensagens() {
+
+function carregarMensagens(){
+
   fetch('http://localhost:3000/contatos')
-    .then(res => res.json())
-    .then(dados => {
-      const lista = document.getElementById('lista-mensagens');
-      lista.innerHTML = ''; // Limpa a lista antes de carregar
 
-      if (dados.length === 0) {
-        lista.innerHTML = '<p>Nenhuma mensagem encontrada.</p>';
-        return;
-      }
+  .then(res => res.json())
 
-      dados.forEach(msg => {
-        lista.innerHTML += `
-          <div class="card">
-            <button class="btn-del" onclick="deletarMensagem(${msg.id})">Apagar</button>
-            <p><strong>Nome:</strong> ${msg.nome}</p>
-            <p><strong>Email:</strong> ${msg.email}</p>
-            <p><strong>Assunto:</strong> ${msg.assunto}</p>
-            <p><strong>Mensagem:</strong> ${msg.mensagem}</p>
-            <p class="info">Enviado em: ${new Date(msg.data_envio).toLocaleString('pt-BR')}</p>
-          </div>
-        `;
-      });
+  .then(dados => {
+
+    const lista = document.getElementById('lista-mensagens');
+
+    lista.innerHTML = '';
+
+    // TOTAL
+    document.getElementById('totalMensagens').innerText = dados.length;
+    document.getElementById('totalEmails').innerText = dados.length;
+
+    if(dados.length === 0){
+      lista.innerHTML = '<p>Nenhuma mensagem encontrada.</p>';
+      return;
+    }
+
+    dados.forEach(msg => {
+
+      lista.innerHTML += `
+
+        <div class="mensagem-card">
+
+          <button class="btn-delete"
+          onclick="deletarMensagem(${msg.id})">
+          X
+          </button>
+
+          <h3>${msg.nome}</h3>
+
+          <p><strong>Email:</strong> ${msg.email}</p>
+
+          <p><strong>Assunto:</strong> ${msg.assunto}</p>
+
+          <p><strong>Mensagem:</strong> ${msg.mensagem}</p>
+
+          <small>
+          ${new Date(msg.data_envio).toLocaleString('pt-BR')}
+          </small>
+
+        </div>
+
+      `;
+
     });
+
+  });
+
 }
 
-//  Apagar mensagem
-function deletarMensagem(id) {
-  if (confirm('Deseja realmente apagar esta mensagem?')) {
-    fetch(`http://localhost:3000/contato/${id}`, { method: 'DELETE' })
-      .then(() => carregarMensagens()); // Recarrega a lista
+function deletarMensagem(id){
+
+  if(confirm('Deseja apagar esta mensagem?')){
+
+    fetch(`http://localhost:3000/contato/${id}`, {
+      method:'DELETE'
+    })
+
+    .then(() => {
+      carregarMensagens();
+    });
+
   }
+
 }
 
-//  Sair do sistema
-function sair() {
+function logout(){
+
   localStorage.removeItem('logado');
+
   window.location.href = 'login.html';
+
 }
 
-// Inicia carregando as mensagens
 carregarMensagens();
+
 </script>
 
 </body>
