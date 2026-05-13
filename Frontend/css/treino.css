@@ -121,7 +121,6 @@ body{
 }
 
 .nav-box, .ul{
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,12 +131,12 @@ body{
 
 .ul, li{
   text-transform: uppercase;
-  padding: 10px 40px;
+  padding: 10px 45px;
 }
 
 .li, a{
   color: #000;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .nav-box a:hover{
@@ -154,6 +153,7 @@ body{
   gap: 30px;
   padding: 40px;
   box-sizing: border-box;
+  margin-top: 30px;
 }
 
 .card{ 

@@ -253,6 +253,7 @@ body{
 .contato a{
     display: flex;
     justify-content: center;
+    display: inline-block;
    padding: 10px;
    gap: 15px;
 

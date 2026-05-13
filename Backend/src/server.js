@@ -17,7 +17,7 @@ const frontendPath = path.resolve(__dirname, '..', '..', 'Frontend');
 
 app.use(express.static(frontendPath));
 
-// Opcional: Forçar o carregamento do index.html na rota raiz '/'
+//  Forçar o carregamento do index.html na rota raiz '/'
 app.get('/', (req, res) => {
   res.sendFile(path.join(frontendPath, 'index.html'));
 });
