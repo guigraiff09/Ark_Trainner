@@ -86,8 +86,8 @@ body{
 
 .text-motivation{
   position: absolute;
-  left: 18%;
-  top: 40%;
+  left: 24%;
+  top: 30%;
   transform: translate(-50%);
   color: #fff;
   z-index: 10;
@@ -98,7 +98,7 @@ body{
   font-size: 56px;
   font-family: Arial, Helvetica, sans-serif;
   text-transform: uppercase;
-  padding: 10px 0;
+  padding: 20px 0;
 }
 
 .text-motivation h2{
@@ -112,15 +112,16 @@ body{
   justify-content: center;
   align-items: center;
   width: 100%;
-   border: 2px solid #000;
+  border: 2px solid #000;
   background-color: #ffc300;
   border-radius: 20px;
-  transition: 0.2s linear ;
+  transition: 0.3s linear ;
   margin-top: 40px;
   overflow: hidden;
 }
 
 .nav-box, .ul{
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,7 +133,6 @@ body{
 .ul, li{
   text-transform: uppercase;
   padding: 10px 40px;
-
 }
 
 .li, a{
@@ -141,7 +141,7 @@ body{
 }
 
 .nav-box a:hover{
-  padding: 0.2;
+  padding: 0.3;
   font-size: 1.4rem;
 }
 
