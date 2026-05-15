@@ -1,1 +1,105 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: poppins sans-serif;  
+    border: none;
+    outline: none;
+    text-decoration: none;
+    transition: 0.2s linear ;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    background: black;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    min-height: 100vh;
+    padding: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  background-color: #000;
+}
+
+.header .nav-bar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 5%;
+  padding-bottom: 0.5rem;
+  bottom: none;
+}
+
+.nav a{
+    margin: 0 1.5rem;
+    font-size: 1.4rem; 
+    color: #fff;
+    bottom: none;
+    text-decoration: none;
+}
+
+.nav a:hover{
+   color: #ffc300;
+   font-size: 1.6rem;
+}
+
+.nav button{
+    background-color:#ffc300;
+    border: 2px solid #000;
+    border-radius: 10px;
+    color:#000;
+    font-size: 1.4rem;
+    padding:  0.5rem 0.1rem;
+    cursor: pointer;
+}
+
+ nav button:hover{
+    padding-bottom: 0.5rem ;
+   font-size: 1.6rem;
+ }
+ 
+.nav-bar img{
+  width: 200px;
+  height: 100px;
+}
+
+.foto-sobre{
+    position: relative;
+    left: 1100px;
+    top: 5px;
+    transform: translate(-50%);
+}
+
+.foto-sobre, img{
+    width: 600px;
+}
+
+.sobre{
+    color: #fff;
+    position: relative;
+    top: 300px;
+    left: 50px;
+}
+
+.sobre h1{
+    font-size: 80px;
+}
+
+.destaque{
+    color: #ffc300;
+}
+
+.sobre p{
+    font-size: 37px;
+    flex-wrap: wrap;
+}
