@@ -1,12 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght=0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
-    font-family: poppins sans-serif;  
+    font-family: 'Poppins', sans-serif; /* Corrigido: adicionadas aspas e vírgula */
     border: none;
     outline: none;
     text-decoration: none;
-    transition: 0.2s linear ;
+    transition: 0.2s linear;
     box-sizing: border-box;
 }
 
@@ -15,13 +16,11 @@ body{
     background: black;
     justify-content: center;
     flex-direction: column;
-    margin: 0;
     min-height: 100vh;
-    padding: 0;
     overflow-x: hidden;
-    box-sizing: border-box;
 }
 
+/* --- HEADER & NAV-BAR --- */
 .header{
   position: fixed;
   top: 0;
@@ -36,21 +35,28 @@ body{
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 5%;
-  padding-bottom: 0.5rem;
-  bottom: none;
+}
+
+.nav-bar img{
+  max-width: 200px;
+  width: 100%;
+  height: auto; /* Evita distorcer a logo */
+}
+
+.nav {
+  display: flex;
+  align-items: center;
 }
 
 .nav a{
     margin: 0 1.5rem;
-    font-size: 1.4rem; 
+    font-size: 1.2rem; /* Leve redução para evitar quebras prematuras */
     color: #fff;
-    bottom: none;
-    text-decoration: none;
 }
 
 .nav a:hover{
    color: #ffc300;
-   font-size: 1.6rem;
+   font-size: 1.3rem;
 }
 
 .nav button{
@@ -58,41 +64,42 @@ body{
     border: 2px solid #000;
     border-radius: 10px;
     color:#000;
-    font-size: 1.4rem;
-    padding:  0.5rem 0.1rem;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem; /* Ajustado padding horizontal */
     cursor: pointer;
 }
 
- nav button:hover{
-    padding-bottom: 0.5rem ;
-   font-size: 1.6rem;
- }
- 
-.nav-bar img{
-  width: 200px;
-  height: 100px;
+nav button:hover{
+   font-size: 1.3rem;
 }
 
-.foto-sobre{
-    position: relative;
-    left: 1100px;
-    top: 5px;
-    transform: translate(-50%);
-}
-
-.foto-sobre, img{
-    width: 600px;
+/* --- SEÇÃO SOBRE (CONTAINER PRINCIPAL) --- 
+   Substituí os 'tops' e 'lefts' fixos por um container Flexbox flexível
+*/
+.container-sobre {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 120px 5% 50px; /* 120px no topo para compensar o header fixo */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .sobre{
     color: #fff;
-    position: relative;
-    top: 300px;
-    left: 50px;
+    flex: 1; /* Ocupa o espaço proporcional disponível */
+    position: absolute;
+    left: 10%;
+    top: 180px;
+    
 }
 
 .sobre h1{
-    font-size: 80px;
+    font-size: 4.5rem; /* Usando rem para melhor escalabilidade de fontes */
+    line-height: 1.1;
+    margin-bottom: 20px;
 }
 
 .destaque{
@@ -100,6 +107,114 @@ body{
 }
 
 .sobre p{
-    font-size: 37px;
-    flex-wrap: wrap;
+    font-size: 1.8rem;
+    line-height: 1.4;
+    width: 700px;
+    padding: 10px;
 }
+
+/* --- FOTO SOBRE --- */
+.foto-sobre {
+    flex: 1;
+    position: absolute;
+    left: 43%;
+    top: 100px;
+    width: 50%;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Alvo correto apenas para a imagem dentro de .foto-sobre */
+.foto-sobre img{
+    width: 100%;
+    max-width: 550px; /* Limita o tamanho máximo em telas gigantes */
+    height: auto;
+    border-radius: 15px; /* Opcional: deixa as bordas arredondadas e modernas */
+}
+
+
+/* ==========================================
+   MEDIA QUERIES (RESPONSIVIDADE)
+   ========================================== */
+
+/* Para telas de Notebooks menores e Tablets deitados (Até 1024px) */
+@media (max-width: 1024px) {
+    .sobre h1 {
+        font-size: 3.5rem;
+    }
+    .sobre p {
+        font-size: 1.4rem;
+    }
+}
+
+/* Para Tablets em pé e Celulares grandes (Até 768px) */
+@media (max-width: 768px) {
+    .header .nav-bar {
+        flex-direction: column; /* Logo acima, menu abaixo */
+        gap: 15px;
+        padding: 1rem;
+    }
+
+    .nav {
+        gap: 10px;
+    }
+
+    .nav a {
+        margin: 0 0.8rem;
+        font-size: 1rem;
+    }
+
+    /* Modifica a seção sobre para empilhar verticalmente */
+    .container-sobre {
+        flex-direction: column-reverse; /* Foto fica em cima do texto no mobile */
+        text-align: center;
+        gap: 30px;
+        padding-top: 160px; /* Espaço extra por conta do menu mobile maior */
+    }
+
+    .sobre h1 {
+        font-size: 2.8rem;
+    }
+
+    .sobre p {
+        font-size: 1.2rem;
+    }
+    
+    .foto-sobre img {
+        max-width: 80%; /* Diminui a foto um pouco no tablet/celular */
+    }
+}
+
+/* Para Celulares pequenos (Até 480px) */
+@media (max-width: 480px) {
+    .nav {
+        flex-direction: column; /* Menu em lista vertical no celular */
+        gap: 12px;
+    }
+
+    .container-sobre {
+        padding-top: 240px; /* Ajuste para o menu vertical não cobrir o conteúdo */
+    }
+
+    .sobre h1 {
+        font-size: 2.2rem;
+    }
+
+    .foto-sobre img {
+        max-width: 100%;
+    }
+}
+
+/* Procure essa linha que já existe no final do seu CSS */
+@media (max-width: 1150px) {
+    
+    /* Adicione ou ajuste a classe .frase aqui dentro */
+    .frase {
+        width: 100%;       /* Desfaz os 450px do PC e deixa o texto livre */
+        max-width: 100%;   /* Garante que ele use todo o espaço do celular */
+        text-align: center;/* Opcional: centraliza o texto no celular para ficar mais bonito */
+    }
+
+}
+

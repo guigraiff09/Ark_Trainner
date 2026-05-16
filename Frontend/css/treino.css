@@ -1,12 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght=0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
-    font-family: poppins sans-serif;  
+    font-family: 'Poppins', sans-serif; /* Corrigido */ 
     border: none;
     outline: none;
     text-decoration: none;
-    transition: 0.2s linear ;
+    transition: 0.2s linear;
+    box-sizing: border-box; /* Adicionado globalmente para evitar quebras de layout */
 }
 
 body{
@@ -14,12 +16,11 @@ body{
     background: black;
     justify-content: center;
     flex-direction: column;
-    margin: 0;
     min-height: 100vh;
-    padding: 0;
     overflow-x: hidden;
 }
 
+/* --- HEADER & NAV-BAR --- */
 .header{
   position: fixed;
   top: 0;
@@ -34,21 +35,23 @@ body{
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 5%;
-  padding-bottom: 0.5rem;
-  bottom: none;
+}
+
+.nav-bar img{
+  max-width: 200px;
+  width: 100%;
+  height: auto; /* Evita distorcer a logo */
 }
 
 .nav a{
     margin: 0 1.5rem;
-    font-size: 1.4rem; 
+    font-size: 1.2rem; 
     color: #fff;
-    bottom: none;
-    text-decoration: none;
 }
 
 .nav a:hover{
    color: #ffc300;
-   font-size: 1.6rem;
+   font-size: 1.3rem;
 }
 
 .nav button{
@@ -56,94 +59,102 @@ body{
     border: 2px solid #000;
     border-radius: 10px;
     color:#000;
-    font-size: 1.4rem;
-    padding:  0.5rem 0.1rem;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem; 
     cursor: pointer;
 }
 
- nav button:hover{
-    padding-bottom: 0.5rem ;
-   font-size: 1.6rem;
- }
- 
-.nav-bar img{
-  width: 200px;
-  height: 100px;
+nav button:hover{
+   font-size: 1.3rem;
 }
 
+/* --- BANNER DE MOTIVAÇÃO (TEXTO SOBRE A IMAGEM) --- */
 .container-img {
   position: relative;
   text-align: center;
-  margin-top: 120px;
+  margin-top: 80px; /* Alinhado com o header fixo */
   width: 100%;
   overflow: hidden;
 }
 
-.img-treino, img09 {
-  height: 350px;
+/* Ajustado para cobrir bem o fundo sem achatar a imagem */
+.img-treino {
+  height: 450px;
   width: 100%;
+  object-fit: cover; 
 }
 
 .text-motivation{
   position: absolute;
-  left: 24%;
-  top: 30%;
-  transform: translate(-50%);
+  left: 5%; /* Alinhado à esquerda de forma fluida */
+  top: 50%;
+  transform: translateY(-50%); /* Centraliza apenas verticalmente */
   color: #fff;
   z-index: 10;
   text-align: left;
+  max-width: 550px; /* Impede o texto de esticar demais */
+  width: 90%; /* Garante respiro nas laterais no mobile */
 }
 
 .text-motivation h1{
-  font-size: 56px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3.5rem; /* Convertido para rem */
   text-transform: uppercase;
-  padding: 20px 0;
+  padding: 10px 0;
+  line-height: 1.1;
 }
 
 .text-motivation h2{
-  font-size: 35px;
-  width: 530px;
+  font-size: 1.8rem;
   text-transform: uppercase;
+  font-weight: 400;
 }
 
+/* --- FILTRO DE CATEGORIAS (HEADER-BOX) --- */
 .header-box{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 90%; /* Fluido */
+  max-width: 1200px;
+  margin: 40px auto 0; /* Centraliza horizontalmente */
   border: 2px solid #000;
   background-color: #ffc300;
   border-radius: 20px;
-  transition: 0.3s linear ;
-  margin-top: 40px;
   overflow: hidden;
 }
 
-.nav-box, .ul{
+.nav-box {
+  width: 100%;
+}
+
+.nav-box .ul{
   display: flex;
   justify-content: center;
   align-items: center;
   list-style: none;
-  outline: none;
-  text-decoration: none;
+  flex-wrap: wrap; /* Permite quebrar linha se faltar espaço */
+  width: 100%;
 }
 
-.ul, li{
+/* Corrigido: Seletor correto para os itens da lista */
+.nav-box .ul li{
   text-transform: uppercase;
-  padding: 10px 45px;
+  padding: 15px 30px;
 }
 
-.li, a{
+/* Corrigido: Seletor correto para os links da lista */
+.nav-box .ul li a{
   color: #000;
   font-size: 16px;
+  font-weight: 600;
+  display: inline-block;
 }
 
-.nav-box a:hover{
-  padding: 0.3;
-  font-size: 1.4rem;
+.nav-box .ul li a:hover{
+  font-size: 1.2rem;
 }
 
+/* --- CONTAINER DE CARDS --- */
 .container-card{
   display: flex;
   flex-direction: row;
@@ -151,20 +162,24 @@ body{
   justify-content: center;
   align-items: flex-start;
   gap: 30px;
-  padding: 40px;
-  box-sizing: border-box;
-  margin-top: 30px; 
+  padding: 40px 5%;
+  margin-top: 10px; 
 }
 
 .card{ 
   background-color: #ffc300;
   border: 2px solid #000;
   border-radius: 20px;
-  width: 320px;
+  width: 100%;
+  max-width: 320px; /* Responsivo em telas pequenas */
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transforme 0.3s ease;
+  transition: transform 0.3s ease; /* Corrigido de 'transforme' */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Efeito opcional clássico para cards */
 }
 
 .card img{
@@ -179,5 +194,99 @@ body{
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
-  padding: 10px;
+  padding: 15px;
+  color: #000;
+  font-weight: 600;
+}
+
+
+/* ==========================================
+   MEDIA QUERIES (RESPONSIVIDADE)
+   ========================================== */
+
+/* Para Notebooks e Tablets (Até 992px) */
+@media (max-width: 992px) {
+    .text-motivation h1 {
+        font-size: 2.8rem;
+    }
+    .text-motivation h2 {
+        font-size: 1.5rem;
+    }
+    .img-treino {
+        height: 380px; /* Diminui um pouco a altura do banner */
+    }
+}
+
+/* Para Tablets e Celulares Grandes (Até 768px) */
+@media (max-width: 768px) {
+    .header .nav-bar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 1rem;
+    }
+
+    .nav {
+        gap: 5px;
+    }
+
+    .nav a {
+        margin: 0 0.8rem;
+        font-size: 1rem;
+    }
+
+    .container-img {
+        margin-top: 130px; /* Ajuste pelo tamanho do menu maior */
+    }
+
+    .text-motivation {
+        left: 5%;
+        max-width: 90%;
+    }
+
+    .text-motivation h1 {
+        font-size: 2.2rem;
+    }
+
+    .text-motivation h2 {
+        font-size: 1.2rem;
+    }
+
+    .nav-box .ul li {
+        padding: 10px 15px; /* Diminui o espaçamento dos botões de categorias */
+    }
+}
+
+/* Para Celulares Pequenos (Até 480px) */
+@media (max-width: 480px) {
+    .nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .container-img {
+        margin-top: 220px; /* Ajuste para o menu vertical */
+    }
+
+    .img-treino {
+        height: 320px;
+    }
+
+    .text-motivation h1 {
+        font-size: 1.8rem;
+    }
+
+    .text-motivation h2 {
+        font-size: 1rem;
+    }
+
+    /* Transforma a barra de categorias em uma lista vertical em telas muito pequenas */
+    .nav-box .ul {
+        flex-direction: column;
+    }
+
+    .nav-box .ul li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
 }

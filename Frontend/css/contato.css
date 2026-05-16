@@ -1,25 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght=0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
-    font-family: poppins sans-serif;   
+    font-family: 'Poppins', sans-serif;
     border: none;
     outline: none;
     text-decoration: none;
-    transition: 0.2s linear ;
+    transition: 0.2s linear;
+    box-sizing: border-box; /* Impede que paddings empurrem os blocos para fora */
 }
 
 body{
     display: flex;
     background: black;
-    justify-content: center;
     flex-direction: column;
-    margin: 0;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
+/* --- HEADER & NAV-BAR --- */
 .header{
-    position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -32,17 +34,12 @@ body{
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 5%;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  bottom: none;
 }
 
 .nav a{
     margin: 0 1.5rem;
     font-size: 1.4rem; 
     color: #fff;
-    bottom: none;
-    text-decoration: none;
 }
 
 .nav a:hover{
@@ -56,47 +53,70 @@ body{
     border-radius: 10px;
     color:#000;
     font-size: 1.4rem;
-    padding:  0.5rem 0.1rem;
+    padding: 0.5rem 1rem; 
     cursor: pointer;
 }
 
- nav button:hover{
-    padding-bottom: 0.5rem ;
+nav button:hover{
    font-size: 1.6rem;
- }
+}
  
 .nav img{
-  width: 400px;
-  height: 50px;
+  max-width: 400px;
+  width: 100%;
+  height: auto;
 }
 
+/* ==========================================================================
+   CONTEÚDO PRINCIPAL (BLINDADO CONTRA SOBREPOSIÇÃO)
+   ========================================================================== */
+.main-container {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    /* IMPORTANTE: Essa altura garante que o footer fique lá embaixo e não suba */
+    min-height: 1050px; 
+}
+
+/* --- IMAGEM DA MOÇA (DIREITA) --- */
 .img-cont{
     position: absolute;
-    margin-top: 9%;
-    left: 50%;
-    top: 5%;
+    right: 0;
+    top: 100px;
+    width: 50%;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
 }
 
+.img-cont img {
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    display: block;
+}
 
+/* --- FRASES (ESQUERDA) --- */
 .frase {
-    margin-top:8% ;
     position: absolute;
-    left: 13%;
-    top: 14%;
+    left: 10%;
+    top: 180px;
     text-transform: uppercase;
-    flex-direction: column;
+    z-index: 2;
+    max-width: 500px;
 }
 
 .frase h2{
     color: #ffc300;
     font-size: 40px;
-    padding: 0 0 40px ;
+    margin-bottom: 20px;
 }
 
 .frase h1{
     color: #fff;
     font-size: 50px;
-    width:430px;
+    line-height: 1.2;
 }
 
 .frase .destaque{
@@ -106,103 +126,96 @@ body{
 
 .frase p{
     color: #fff;
-    width:480px;
-    margin-top: 10px;
+    margin-top: 20px;
+    text-transform: none;
+    font-size: 14px;
 }
 
+/* --- BLOCO ENVIE UMA MENSAGEM --- */
 .container-input{
-    border:2px solid #fff;
-    background-color:#000;
-    padding: 48.5px;
+    border: 2px solid #fff;
+    background-color: #000;
+    padding: 41px;
     border-radius: 15px;
     width: 500px;
-    margin: 20px ;
     position: absolute;
-    left: 100px;
-    top: 465px;   
-}
-.input-box button{
-    box-sizing: border-box;
-    border:2px solid #fff;
-    border-radius: 20px;
-    padding: 4px 5px;
-    transition: 0.3s ease;
-    background-color: #000;
-    width: 120px;
-    color: #fff;
-}
-
-.input-box button:hover{
-    transform: scale(1.2);
-    background-color: #ffc300;
-    border:2px solid #000;
-    color: #000;
+    left: 30%; /* Alinhado com a frase */
+    top: 470px; /* Distância perfeita para não cobrir o texto */
+    z-index: 3;
 }
 
 .container-input h3{
     color: #fff;
-    margin-bottom:20px;
+    margin-bottom: 20px;
     font-size: 38px;
 }
+
 .input-box{
     display: flex;
-    justify-content: center;
     margin-bottom: 20px;
-    position: relative;
     flex-direction: column;
 }
 
-.input-box input{
-    width: 80%;
+.input-box input, .input-box textarea{
+    width: 100%;
     background-color: transparent;
     border: 1px solid #444;
     border-radius: 5px;
     padding: 15px;
     font-size: 16px;
-    outline: none;
     color: #fff;
 }
-.input-box textarea{
-     width: 80%;
-    background-color: transparent;
-    border: 1px solid #444;
-    border-radius: 5px;
-    padding: 15px;
-    font-size: 16px;
-    outline: none;
-    color: #fff;
+
+.input-box textarea {
+    resize: none;
+    height: 100px;
 }
-.input-box textarea:hover{
+
+.input-box input:hover, .input-box textarea:hover{
     background-color: #fff;
     color: #000;
     cursor: pointer;
 }
 
-.input-box input:hover{
-    background-color: #fff;
-    color: #000;
+.input-box button{
+    border: 2px solid #fff;
+    border-radius: 20px;
+    padding: 6px 15px;
+    transition: 0.3s ease;
+    background-color: #000;
+    width: 120px;
+    color: #fff;
     cursor: pointer;
 }
 
+.input-box button:hover{
+    transform: scale(1.1);
+    background-color: #ffc300;
+    border: 2px solid #000;
+    color: #000;
+}
+
+/* --- BLOCO OUTRAS FORMAS DE CONTATO --- */
 .contato-box{
     border: 2px solid #fff;
     background-color: #000;
-    padding: 61px;
+    padding: 65.4px;
     border-radius: 15px;
-    width: 280px;
+    width: 380px;
     position: absolute;
-    left: 750px;
-    top: 485px;
+    left: 70%; /* Empurrado para o lado para ficar igual ao seu primeiro print */
+    top: 470px;
+    z-index: 3;
 }
 
 .box-contato, .formas-contato{
-    padding: 10px;
+    padding: 10px 0;
     font-size: 16px;
-    outline: none;
     color: #fff;
 }
 
- .footer{
+/* --- FOOTER (AGORA FIXADO NO FINAL DO FLUXO) --- */
+.footer{
     background-color: #000;
     color: #fff;
     width: 100%;
@@ -210,68 +223,103 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 1000px;
- }
+    padding: 40px 5% 20px;
+    margin-top: 900px; /* Distância limpa e controlada após o término do conteúdo */
+    z-index: 10;
+}
  
- .container-box {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   gap: 20px;
-   text-decoration: none;
-   width: 100%;
-   flex-direction: column;
-   text-align: center;
- }
-
-.logo-ark img{
-   width: 250px;
-   padding: 10px;
+.container-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
 }
 
- hr{
-   border: 0;
-   border-top: 1px solid #333;
-   width: 100%;
-   margin: 20px 0;
+.logo-ark img{
+    width: 250px;
+    padding: 10px;
+}
+
+hr{
+    border: 0;
+    border-top: 1px solid #333;
+    width: 100%;
+    margin: 20px 0;
 }
 
 .container-box a{
-   text-align: center;
-   gap: 10px;
-   color:#fff;
-   text-decoration: none;
-   outline: none;
-   transition: 0.3s;
+    color:#fff;
 }
 
 .contato{
-   color: #fff;
-   padding: 10px;
-   font-size: 30px;
+    color: #fff;
+    padding: 10px;
+    font-size: 30px;
 }
-.contato a{
-    display: flex;
-    justify-content: center;
-    display: inline-block;
-   padding: 10px;
-   gap: 15px;
 
+.contato a{
+    display: inline-block;
+    padding: 10px;
 }
+
 .políticas a{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   color: #fff;
-   text-decoration: none;
-   outline: none;
-   padding: 40px;
-   font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 20px;
+    font-size: 30px;
 }
 
 .final{
-   color: #fff;
-   text-align: center;
-   font-size: 18px;
-   padding: 30px;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    padding: 30px;
+}
+
+
+/* ==========================================
+   MEDIA QUERIES (Responsividade Protetora)
+   ========================================== */
+
+/* Telas médias (Tira o absoluto antes que as caixas batam uma na outra) */
+@media (max-width: 1150px) {
+    .main-container {
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 140px 20px 0;
+    }
+
+    .img-cont, .frase, .container-input, .contato-box {
+        position: static; /* Desativa o absoluto para empilhar no mobile */
+        width: 100% !important;
+        max-width: 500px;
+        margin-bottom: 30px;
+    }
+
+    .img-cont {
+        order: -1; /* Imagem vai para o topo no celular */
+        justify-content: center;
+    }
+    
+    .frase { text-align: center; }
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+    .header .nav-bar {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .nav a { margin: 0 0.8rem; font-size: 1rem; }
+    .nav button { font-size: 1rem; }
+    .frase h1, .frase .destaque { font-size: 35px; }
+    .frase h2, .container-input h3 { font-size: 28px; }
+    .contato, .políticas a { font-size: 22px; }
 }
