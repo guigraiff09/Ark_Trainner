@@ -117,7 +117,7 @@ nav button:hover{
 .foto-sobre {
     flex: 1;
     position: absolute;
-    left: 43%;
+    left: 50%;
     top: 100px;
     width: 50%;
     z-index: 1;
@@ -128,9 +128,8 @@ nav button:hover{
 /* Alvo correto apenas para a imagem dentro de .foto-sobre */
 .foto-sobre img{
     width: 100%;
-    max-width: 550px; /* Limita o tamanho máximo em telas gigantes */
+    max-width: 650px; /* Limita o tamanho máximo em telas gigantes */
     height: auto;
-    border-radius: 15px; /* Opcional: deixa as bordas arredondadas e modernas */
 }
 
 .container-nos{
