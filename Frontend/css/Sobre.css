@@ -133,18 +133,47 @@ nav button:hover{
     border-radius: 15px; /* Opcional: deixa as bordas arredondadas e modernas */
 }
 
+.container-nos{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+    z-index: 1;
+}
 
+.card-sobre{
+    display: flex;
+    align-items: center;
+    margin-top: 650px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    color: #fff;
+    justify-content: center;
+}
+
+.card-sobre img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    margin: 0 20px;
+}
+.item{
+    padding: 10px 40px;
+}
 /* ==========================================
    MEDIA QUERIES (RESPONSIVIDADE)
    ========================================== */
 
 /* Para telas de Notebooks menores e Tablets deitados (Até 1024px) */
-@media (max-width: 1024px) {
+@media (max-width: 1500px) {
     .sobre h1 {
-        font-size: 3.5rem;
+        font-size: 4.5rem;
     }
     .sobre p {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
     }
 }
 

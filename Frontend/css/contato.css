@@ -137,9 +137,9 @@ nav button:hover{
     background-color: #000;
     padding: 41px;
     border-radius: 15px;
-    width: 500px;
+    width: 800px;
     position: absolute;
-    left: 30%; /* Alinhado com a frase */
+    left: 10%; /* Alinhado com a frase */
     top: 470px; /* Distância perfeita para não cobrir o texto */
     z-index: 3;
 }
