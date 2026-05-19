@@ -1,77 +1,163 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="../Assets/IMG/favicon.ico" type="image/x-icon">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
   <title>Dashboard Admin</title>
 
-  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="shortcut icon"
+        href="../Assets/IMG/favicon.ico"
+        type="image/x-icon">
+
+  <link rel="stylesheet"
+        href="../css/admin.css">
+
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+        rel='stylesheet'>
+
 </head>
 
 <body>
 
+<!-- ========================= -->
+<!-- PROTEÇÃO LOGIN -->
+<!-- ========================= -->
+
 <script>
-  // SEGURANÇA LOGIN
+
   if(localStorage.getItem('logado') !== 'true'){
+
     window.location.href = 'login.html';
+
   }
+
 </script>
 
+<!-- ========================= -->
 <!-- SIDEBAR -->
+<!-- ========================= -->
+
 <div class="sidebar">
 
   <h2>ARK ADMIN</h2>
 
   <ul>
-    <li>Mensagens</li>
-    <li> Usuários</li>
-    <li> Dashboard</li>
-    <li onclick="logout()"> Sair</li>
+
+    <li>
+      <i class='bx bx-envelope'></i>
+      Mensagens
+    </li>
+
+    <li>
+      <i class='bx bx-user'></i>
+      Usuários
+    </li>
+
+    <li>
+      <i class='bx bx-grid-alt'></i>
+      Dashboard
+    </li>
+
+    <li onclick="logout()">
+
+      <i class='bx bx-log-out'></i>
+
+      Sair
+
+    </li>
+
   </ul>
 
 </div>
 
+<!-- ========================= -->
 <!-- CONTEÚDO -->
+<!-- ========================= -->
+
 <div class="main">
 
   <!-- TOPO -->
+
   <div class="topbar">
-    <h1>Painel Administrativo</h1>
+
+    <h1>
+      Painel Administrativo
+    </h1>
+
   </div>
 
   <!-- CARDS -->
+
   <div class="cards">
 
     <div class="card">
-      <h3 id="totalMensagens">0</h3>
-      <p>Total de Mensagens</p>
+
+      <h3 id="totalMensagens">
+        0
+      </h3>
+
+      <p>
+        Total de Mensagens
+      </p>
+
     </div>
 
     <div class="card">
-      <h3 id="totalEmails">0</h3>
-      <p>Emails Recebidos</p>
+
+      <h3 id="totalEmails">
+        0
+      </h3>
+
+      <p>
+        Emails Recebidos
+      </p>
+
     </div>
 
     <div class="card">
-      <h3>Online</h3>
-      <p>Status do Sistema</p>
+
+      <h3>
+        Online
+      </h3>
+
+      <p>
+        Status do Sistema
+      </p>
+
     </div>
 
   </div>
 
   <!-- MENSAGENS -->
+
   <div class="mensagens">
 
-    <h2>Mensagens Recebidas</h2>
+    <h2>
+      Mensagens Recebidas
+    </h2>
 
-    <div id="lista-mensagens"></div>
+    <div id="lista-mensagens">
+
+    </div>
 
   </div>
 
 </div>
 
+<!-- ========================= -->
+<!-- JAVASCRIPT -->
+<!-- ========================= -->
+
 <script>
+
+// =========================
+// CARREGAR MENSAGENS
+// =========================
 
 function carregarMensagens(){
 
@@ -81,43 +167,100 @@ function carregarMensagens(){
 
   .then(dados => {
 
-    const lista = document.getElementById('lista-mensagens');
+    const lista =
+    document.getElementById('lista-mensagens');
 
     lista.innerHTML = '';
 
-    // TOTAL
-    document.getElementById('totalMensagens').innerText = dados.length;
-    document.getElementById('totalEmails').innerText = dados.length;
+    // TOTAL DE MENSAGENS
+    document.getElementById('totalMensagens')
+    .innerText = dados.length;
 
+    // TOTAL EMAILS
+    document.getElementById('totalEmails')
+    .innerText = dados.length;
+
+    // PEGAR TIPO
+    const tipo =
+    localStorage.getItem('tipo');
+
+    // SEM MENSAGENS
     if(dados.length === 0){
-      lista.innerHTML = '<p>Nenhuma mensagem encontrada.</p>';
+
+      lista.innerHTML =
+      '<p>Nenhuma mensagem encontrada.</p>';
+
       return;
+
     }
 
+    // LOOP
     dados.forEach(msg => {
 
       lista.innerHTML += `
 
-        <div class="mensagem-card">
+      <div class="mensagem-card">
 
-          <button class="btn-delete"
-          onclick="deletarMensagem(${msg.id})">
-          X
+        <h3>
+          ${msg.nome}
+        </h3>
+
+        <p>
+
+          <strong>Email:</strong>
+
+          ${msg.email}
+
+        </p>
+
+        <p>
+
+          <strong>Assunto:</strong>
+
+          ${msg.assunto}
+
+        </p>
+
+        <p>
+
+          <strong>Mensagem:</strong>
+
+          ${msg.mensagem}
+
+        </p>
+
+        <small>
+
+          ${new Date(msg.data_envio)
+          .toLocaleString('pt-BR')}
+
+        </small>
+
+        ${
+
+          tipo === 'admin'
+
+          ?
+
+          `
+
+          <button
+            class="btn-delete"
+            onclick="deletarMensagem(${msg.id})">
+
+            X
+
           </button>
 
-          <h3>${msg.nome}</h3>
+          `
 
-          <p><strong>Email:</strong> ${msg.email}</p>
+          :
 
-          <p><strong>Assunto:</strong> ${msg.assunto}</p>
+          ''
 
-          <p><strong>Mensagem:</strong> ${msg.mensagem}</p>
+        }
 
-          <small>
-          ${new Date(msg.data_envio).toLocaleString('pt-BR')}
-          </small>
-
-        </div>
+      </div>
 
       `;
 
@@ -127,29 +270,48 @@ function carregarMensagens(){
 
 }
 
+
+// =========================
+// APAGAR MENSAGEM
+// =========================
+
 function deletarMensagem(id){
 
   if(confirm('Deseja apagar esta mensagem?')){
 
     fetch(`http://localhost:3000/contato/${id}`, {
+
       method:'DELETE'
+
     })
 
     .then(() => {
+
       carregarMensagens();
+
     });
 
   }
 
 }
 
+
+// =========================
+// LOGOUT
+// =========================
+
 function logout(){
 
-  localStorage.removeItem('logado');
+  localStorage.clear();
 
   window.location.href = 'login.html';
 
 }
+
+
+// =========================
+// INICIAR
+// =========================
 
 carregarMensagens();
 

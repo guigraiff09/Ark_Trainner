@@ -1,95 +1,160 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="../Assets/IMG/favicon.ico" type="image/x-icon">
-  <title>Login - Ark Trainner Admin</title>
-  <style>
-    body {
-       font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-       display: flex;
-        height: 100vh;
-         justify-content: center;
-          align-items: center;
-           background: #1a1a1a; color: white;
-            margin: 0;
-           }
-    .login-card {
-       background: #2a2a2a; 
-       padding: 40px; 
-       border-radius: 12px; 
-       box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
-       width: 100%;
-        max-width: 320px;
-         text-align: center;
-         }
-    input { 
-      width: 100%; 
-      padding: 12px; 
-      margin: 10px 0; 
-      border-radius: 6px; 
-      border: 1px solid #444;
-       background: #333;
-        color: white;
-         box-sizing: border-box; 
-        }
-    button { 
-      width: 100%;
-       padding: 12px;
-        background: #ffcc00;
-         color: black;
-          border: none;
-           border-radius: 6px;
-            font-weight: bold;
-             cursor: pointer;
-              transition: 0.3s; 
-            }
-    button:hover {
-       background: #e6b800; 
-      }
-    #erro   {color: #ff6666;
-       font-size: 14px;
-        margin-top: 10px; 
-      }
-  </style>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Login Admin</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet"
+        href="../css/login.css">
+
+  <!-- BOXICONS -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+        rel='stylesheet'>
+
 </head>
+
 <body>
 
-<div class="login-card">
-  <h2>Acesso Admin</h2>
-  <input id="usuario" placeholder="Usuário">
-  <input id="senha" type="password" placeholder="Senha">
-  <button onclick="fazerLogin()">Entrar</button>
-  <p id="erro"></p>
-</div>
+  <div class="container">
 
-<script>
-function fazerLogin() {
-  const usuario = document.getElementById('usuario').value;
-  const senha = document.getElementById('senha').value;
-  const erroMsg = document.getElementById('erro');
+    <div class="login-box">
 
-  fetch('http://localhost:3000/login', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ usuario, senha })
-  })
-  .then(res => res.json())
-  .then(dados => {
-    if (dados.sucesso) {
-      // 🔑 Salva que estamos logados
-      localStorage.setItem('logado', 'true');
-      window.location.href = '../pages/admin.html';
-    } else {
-      erroMsg.innerText = 'Usuário ou senha incorretos!';
+      <!-- LOGO -->
+      <div class="logo">
+
+        <h1>
+          ARK <span>TRAINNER</span>
+        </h1>
+
+        <p>
+          Painel Administrativo
+        </p>
+
+      </div>
+
+      <!-- EMAIL -->
+      <div class="input-box">
+
+        <i class='bx bx-envelope'></i>
+
+        <input
+          type="email"
+          id="email"
+          placeholder="Digite seu email"
+        >
+
+      </div>
+
+      <!-- SENHA -->
+      <div class="input-box">
+
+        <i class='bx bx-lock-alt'></i>
+
+        <input
+          type="password"
+          id="senha"
+          placeholder="Digite sua senha"
+        >
+
+      </div>
+
+      <!-- BOTÃO -->
+      <button onclick="login()">
+
+        Entrar
+
+      </button>
+
+      <!-- ERRO -->
+      <p id="erro"></p>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    function login() {
+
+      const email =
+      document.getElementById('email').value;
+
+      const senha =
+      document.getElementById('senha').value;
+
+      fetch('http://localhost:3000/login', {
+
+        method: 'POST',
+
+        headers: {
+          'Content-Type': 'application/json'
+        },
+
+        body: JSON.stringify({
+
+          email,
+          senha
+
+        })
+
+      })
+
+      .then(res => res.json())
+
+      .then(data => {
+
+        if (data.sucesso) {
+
+          // SALVAR LOGIN
+          localStorage.setItem(
+            'logado',
+            'true'
+          );
+
+          // SALVAR TIPO
+          localStorage.setItem(
+            'tipo',
+            data.tipo
+          );
+
+          // SALVAR NOME
+          localStorage.setItem(
+            'nome',
+            data.nome
+          );
+
+          // REDIRECIONAR
+          window.location.href =
+          'admin.html';
+
+        } else {
+
+          document.getElementById('erro')
+          .innerText =
+          'Email ou senha inválidos';
+
+        }
+
+      })
+
+      .catch(() => {
+
+        document.getElementById('erro')
+        .innerText =
+        'Erro ao conectar servidor';
+
+      });
+
     }
-  })
-  .catch(() => {
-    erroMsg.innerText = 'Erro ao conectar com o servidor. O Node está rodando?';
-  });
-}
-</script>
+
+  </script>
 
 </body>
 </html>
