@@ -86,8 +86,8 @@ nav button:hover{
 
 .text-motivation{
   position: absolute;
-  left: 5%; /* Alinhado à esquerda de forma fluida */
-  top: 50%;
+  left: 3%; /* Alinhado à esquerda de forma fluida */
+  top: 49%;
   transform: translateY(-50%); /* Centraliza apenas verticalmente */
   color: #fff;
   z-index: 10;
@@ -99,7 +99,7 @@ nav button:hover{
 .text-motivation h1{
   font-size: 3.5rem; /* Convertido para rem */
   text-transform: uppercase;
-  padding: 10px 0;
+  padding: 70px 0;
   line-height: 1.1;
 }
 
