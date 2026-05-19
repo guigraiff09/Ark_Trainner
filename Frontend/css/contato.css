@@ -299,8 +299,10 @@ hr{
     .img-cont, .frase, .container-input, .contato-box {
         position: static; /* Desativa o absoluto para empilhar no mobile */
         width: 100% !important;
-        max-width: 500px;
+        max-width: 1500px;
+        min-width: 320px;
         margin-bottom: 30px;
+        margin-top: 150px;
     }
 
     .img-cont {
