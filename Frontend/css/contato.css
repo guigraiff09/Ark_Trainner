@@ -138,8 +138,9 @@ nav button:hover{
     padding: 41px;
     border-radius: 15px;
     width: 800px;
+    max-width: 1000px;
     position: absolute;
-    left: 10%; /* Alinhado com a frase */
+    left: 28%; /* Alinhado com a frase */
     top: 470px; /* Distância perfeita para não cobrir o texto */
     z-index: 3;
 }
@@ -203,7 +204,7 @@ nav button:hover{
     border-radius: 15px;
     width: 380px;
     position: absolute;
-    left: 70%; /* Empurrado para o lado para ficar igual ao seu primeiro print */
+    left: 75%; /* Empurrado para o lado para ficar igual ao seu primeiro print */
     top: 470px;
     z-index: 3;
 }
@@ -287,7 +288,7 @@ hr{
    ========================================== */
 
 /* Telas médias (Tira o absoluto antes que as caixas batam uma na outra) */
-@media (max-width: 1150px) {
+@media (max-width: 1550px) {
     .main-container {
         min-height: auto;
         display: flex;
