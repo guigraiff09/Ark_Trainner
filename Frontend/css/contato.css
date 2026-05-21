@@ -191,6 +191,16 @@ FORMULÁRIO
     font-size: 1rem;
 }
 
+.input-box input:hover{
+    font-size: 1.4;
+    background-color: #ffc300;
+    color: #000;
+}
+.input-box  textarea:hover{
+    font-size: 1.4;
+    background-color: #ffc300;
+    color: #000;
+}
 .input-box textarea{
     resize: none;
     height: 140px;

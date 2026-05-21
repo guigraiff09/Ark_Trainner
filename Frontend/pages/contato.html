@@ -5,18 +5,13 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet"
-        href="../css/contato.css">
+    <link rel="stylesheet" href="../css/contato.css">
 
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
-        rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-    <link rel="shortcut icon"
-        href="../Assets/IMG/favicon.ico"
-        type="image/x-icon">
+    <link rel="shortcut icon" href="../Assets/IMG/favicon.ico" type="image/x-icon">
 
     <title>Contato</title>
 
@@ -30,9 +25,7 @@
 
         <div class="nav-bar">
 
-            <img src="../Assets/IMG/logo ARK.png"
-                alt="Logo Ark"
-                class="logo">
+            <img src="../Assets/IMG/logo ARK.png" alt="Logo Ark" class="logo">
 
             <nav class="nav">
 
@@ -52,8 +45,7 @@
                     CONTATO
                 </a>
 
-                <button type="button"
-                    class="button">
+                <button type="button" class="button">
 
                     MATRICULE-SE
 
@@ -104,8 +96,7 @@
 
             <div class="img-cont">
 
-                <img src="../Assets/IMG/img04.png"
-                    alt="Contato">
+                <img src="../Assets/IMG/img04.png" alt="Contato">
 
             </div>
 
@@ -125,10 +116,7 @@
 
                 <div class="input-box">
 
-                    <input type="text"
-                        id="nome"
-                        placeholder="Nome Completo"
-                        required>
+                    <input type="text" id="nome" placeholder="Nome Completo" required>
 
                 </div>
 
@@ -136,10 +124,7 @@
 
                 <div class="input-box">
 
-                    <input type="email"
-                        id="email"
-                        placeholder="E-mail"
-                        required>
+                    <input type="email" id="email" placeholder="E-mail" required>
 
                 </div>
 
@@ -147,9 +132,7 @@
 
                 <div class="input-box">
 
-                    <textarea id="mensagem"
-                        placeholder="Mensagem"
-                        required></textarea>
+                    <textarea id="mensagem" placeholder="Mensagem" required></textarea>
 
                 </div>
 
@@ -234,8 +217,7 @@
 
             <div class="logo-ark">
 
-                <img src="../Assets/IMG/logo ARK.png"
-                    alt="Logo Ark">
+                <img src="../Assets/IMG/logo ARK.png" alt="Logo Ark">
 
             </div>
 
@@ -249,27 +231,22 @@
                     Contato
                 </h3>
 
-                <a href="https://www.instagram.com/digital.ark_?igsh=MWpuMGlrZjVkeDd3eg=="
-                    target="_blank">
+                <a href="https://www.instagram.com/digital.ark_?igsh=MWpuMGlrZjVkeDd3eg==" target="_blank">
 
-                    <img src="https://img.icons8.com/ios-glyphs/30/ffffff/instagram-new.png"
-                        alt="Instagram">
+                    <img src="https://img.icons8.com/ios-glyphs/30/ffffff/instagram-new.png" alt="Instagram">
 
                 </a>
 
-                <a href="https://www.facebook.com/share/1GMEdyGDB4/?mibextid=wwXlfr"
-                    target="_blank">
+                <a href="https://www.facebook.com/share/1GMEdyGDB4/?mibextid=wwXlfr" target="_blank">
 
                     <img src="https://img.icons8.com/fluency-systems-regular/30/ffffff/facebook-new--v1.png"
                         alt="Facebook">
 
                 </a>
 
-                <a href="#"
-                    target="_blank">
+                <a href="#" target="_blank">
 
-                    <img src="https://img.icons8.com/ios/30/ffffff/tiktok--v1.png"
-                        alt="TikTok">
+                    <img src="https://img.icons8.com/ios/30/ffffff/tiktok--v1.png" alt="TikTok">
 
                 </a>
 
@@ -355,24 +332,24 @@
 
             })
 
-            .then(res => res.json())
+                .then(res => res.json())
 
-            .then(data => {
+                .then(data => {
 
-                alert(data.mensagem);
+                    alert(data.mensagem);
 
-                document.getElementById('nome').value = '';
-                document.getElementById('email').value = '';
-                document.getElementById('mensagem').value = '';
+                    document.getElementById('nome').value = '';
+                    document.getElementById('email').value = '';
+                    document.getElementById('mensagem').value = '';
 
-            })
+                })
 
-            .catch(err => {
+                .catch(err => {
 
-                console.log(err);
-                alert('Erro ao enviar mensagem');
+                    console.log(err);
+                    alert('Erro ao enviar mensagem');
 
-            });
+                });
 
         }
 
