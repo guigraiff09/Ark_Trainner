@@ -19,7 +19,11 @@
 
   <aside class="sidebar">
 
-    
+    <div class="logo">
+      <h2>Admin<span>Panel</span></h2>
+    </div>
+
+    <ul>
 
       <li class="active">
         <a href="#">
@@ -28,11 +32,25 @@
         </a>
       </li>
 
+      <li>
+        <a href="#">
+          <i class='bx bx-home'></i>
+          Dashboard
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <i class='Mensagens'></i>
+          Mensagens
+        </a>
+      </li>
+
     </ul>
 
     <div class="logout">
       <i class='bx bx-log-out'></i>
-    Voltar
+      Voltar
     </div>
 
   </aside>
@@ -61,7 +79,10 @@
 
     <div class="cards">
 
+      <!-- CARD 1 -->
+
       <div class="card">
+
         <div class="icone amarelo">
           <i class='bx bx-user'></i>
         </div>
@@ -70,9 +91,13 @@
           <h3>Total de Usuários</h3>
           <p>Todos os usuários</p>
         </div>
+
       </div>
 
+      <!-- CARD 2 -->
+
       <div class="card">
+
         <div class="icone verde">
           <i class='bx bx-check'></i>
         </div>
@@ -81,9 +106,13 @@
           <h3>Ativos</h3>
           <p>Usuários ativos</p>
         </div>
+
       </div>
 
+      <!-- CARD 3 -->
+
       <div class="card">
+
         <div class="icone vermelho">
           <i class='bx bx-user-x'></i>
         </div>
@@ -92,11 +121,23 @@
           <h3>Inativos</h3>
           <p>Usuários inativos</p>
         </div>
+
       </div>
 
+      <!-- CARD 4 -->
+
       <div class="card">
+
         <div class="icone azul">
           <i class='bx bx-calendar'></i>
+        </div>
+
+        <div>
+          <h3>Novos Cadastros</h3>
+          <p>Últimos usuários</p>
+        </div>
+
+      </div>
 
     </div>
 
@@ -106,10 +147,18 @@
 
       <div class="tabela-topo">
 
+        <!-- BUSCA -->
+
         <div class="busca">
           <i class='bx bx-search'></i>
-          <input type="text" placeholder="Buscar usuário por nome ou email...">
+
+          <input 
+            type="text" 
+            placeholder="Buscar usuário por nome ou email..."
+          >
         </div>
+
+        <!-- BOTÕES -->
 
         <div class="acoes-topo">
 
@@ -118,11 +167,16 @@
             Filtros
           </button>
 
-          
+          <button class="novo">
+            <i class='bx bx-plus'></i>
+            Novo Usuário
+          </button>
 
         </div>
 
       </div>
+
+      <!-- TABELA -->
 
       <table>
 
@@ -141,15 +195,25 @@
 
         <tbody>
 
-          <tr>
+          
 
             <td>
-              <span class="status inativo">
-                Inativo
+              <div class="usuario">
+
+               
+
+              
+
+              </div>
+            </td>
+
+        
+              <span class="status ativo">
+                Ativo
               </span>
             </td>
 
-            <td>12/05/2025</td>
+            
 
             <td class="acoes">
               <i class='bx bx-show'></i>
@@ -157,8 +221,7 @@
               <i class='bx bx-trash'></i>
             </td>
 
-          </tr>
-
+          
         </tbody>
 
       </table>

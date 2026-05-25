@@ -109,6 +109,10 @@ nav button:hover{
   font-weight: 400;
 }
 
+.destaque{
+  color: #ffc300;
+}
+
 /* --- FILTRO DE CATEGORIAS (HEADER-BOX) --- */
 .header-box{
   display: flex;
