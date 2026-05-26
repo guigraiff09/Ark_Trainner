@@ -90,6 +90,38 @@ body{
     transform: scale(1.05);
 }
 
+.dropdown{
+    position: relative;
+}
+.i{
+    font-size: 12px;
+    transition: 0.3s ease;
+}
+
+.dropdown-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    list-style: none;
+    padding: 10px 0;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 999;
+    display: none;
+    border-radius: 10px;
+}
+
+.dropdown-menu li a{
+    display: block;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #000;
+}
+
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
 /* ==========================================
 CARROSSEL
 ========================================== */
