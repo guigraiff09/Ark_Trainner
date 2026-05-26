@@ -111,6 +111,7 @@ nav button:hover{
     line-height: 1.4;
     width: 700px;
     padding: 10px;
+    flex-wrap: wrap;
 }
 
 /* --- FOTO SOBRE --- */
@@ -120,7 +121,6 @@ nav button:hover{
     left: 50%;
     top: 100px;
     width: 50%;
-    z-index: 1;
     display: flex;
     justify-content: flex-end;
 }

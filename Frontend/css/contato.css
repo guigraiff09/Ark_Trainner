@@ -288,13 +288,15 @@ hr{
    ========================================== */
 
 /* Telas médias (Tira o absoluto antes que as caixas batam uma na outra) */
-@media (max-width: 1550px) {
+@media (max-width: 1550px ) {
     .main-container {
+
         min-height: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 140px 20px 0;
+        min-width: 300px;
     }
 
     .img-cont, .frase, .container-input, .contato-box {
