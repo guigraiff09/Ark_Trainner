@@ -1,0 +1,61 @@
+
+.sidebar{
+    width: 250px; /* largura do menu lateral */
+  
+    background: linear-gradient(180deg, #050816, #0b132b); /* degradê */
+  
+    color: white; /* cor do texto */
+  
+    padding: 10px 0px; /* espaço interno */
+  
+    display: flex; /* ativa flexbox */
+  
+    
+    flex-direction: column; /* organiza em coluna */
+    
+  
+  }
+  .sidebar{
+    width: 250px; /* largura do menu lateral */
+  
+    background: linear-gradient(180deg, #050816, #0b132b); /* degradê */
+  
+    color: white; /* cor do texto */
+  
+    padding: 10px 0px; /* espaço interno */
+  
+    display: flex; /* ativa flexbox */
+  
+    
+    flex-direction: column; /* organiza em coluna */
+    
+  
+  }
+
+
+  .sidebar ul{
+    list-style: none; /* remove bolinhas */
+  }
+  
+  .sidebar ul li{
+    margin-bottom: 20px; /* espaço entre itens */
+  }
+  
+  .sidebar ul li a{
+    text-decoration: none; /* remove sublinhado */
+  
+    color: white; /* cor do texto */
+  
+    display: flex; /* ativa flexbox */
+  
+    align-items: center; /* centraliza vertical */
+  
+    gap: 10px; /* espaço entre ícone e texto */
+  
+    padding: 14px; /* espaço interno */
+  
+    border-radius: 10px; /* bordas arredondadas */
+  
+    transition: 0.3s; /* animação suave */
+  }
+
