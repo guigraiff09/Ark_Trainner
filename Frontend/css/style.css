@@ -58,18 +58,24 @@ body{
     gap: 2rem;
     flex-wrap: wrap;
 }
-
+.nav li{
+    list-style-type: none;
+}
 .nav a{
     color: #fff;
     font-size: 1.1rem;
     font-weight: 500;
+    text-align: center;
 }
 
 .nav a:hover{
     color: #ffc300;
     font-size: 1.3rem;
  }
-
+.nav a img{
+    color: #ffc300;
+    font-size: 1.8rem;
+}
 .nav button{
     background: #ffc300;
     color: #000;
@@ -84,6 +90,38 @@ body{
     transform: scale(1.05);
 }
 
+.dropdown{
+    position: relative;
+}
+.i{
+    font-size: 12px;
+    transition: 0.3s ease;
+}
+
+.dropdown-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    list-style: none;
+    padding: 10px 0;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 999;
+    display: none;
+    border-radius: 10px;
+}
+
+.dropdown-menu li a{
+    display: block;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #000;
+}
+
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
 /* ==========================================
 CARROSSEL
 ========================================== */
@@ -102,7 +140,11 @@ CARROSSEL
 
 .carrossel-inner img{
     width: 100%;
+<<<<<<< HEAD
     height: 450px;
+=======
+    height: 60vh;
+>>>>>>> ae39188fb3a2d91a14c662201425a99fea1507e7
     object-fit: cover;
     flex-shrink: 0;
 }
