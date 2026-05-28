@@ -38,55 +38,106 @@ body{
 
 /* --- HEADER & NAV-BAR --- */
 .header{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 99;
-  background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #000;
+    z-index: 999;
+    border-bottom: 1px solid #222;
 }
 
-.header .nav-bar{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 5%; /* Ajustado padding lateral fluído */
+.nav-bar{
+    width: 100%;
+    max-width: 1700px;
+    margin: auto;
+    padding: 1rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    list-style-type: none;
 }
 
+
+.logo{
+    width: 180px;
+    max-width: 100%;
+    height: auto;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.nav li{
+    list-style-type: none;
+}
 .nav a{
-    margin: 0 1.5rem;
-    font-size: 1.2rem; 
     color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
 }
 
 .nav a:hover{
-   color: #ffc300;
-   font-size: 1.3rem;
+    color: #ffc300;
+    font-size: 1.3rem;
+ }
+.nav a img{
+    color: #ffc300;
+    font-size: 1.8rem;
 }
-
-.nav button{
-    background-color:#ffc300;
-    border: 2px solid #000;
+.button a{
+    background: #ffc300;
+    color: #000;
+    padding: 0.8rem 1.5rem;
     border-radius: 10px;
-    color:#000;
-    font-size: 1.2rem;
-    padding: 0.5rem 1rem; /* Padding corrigido */
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
 }
 
-nav button:hover{
-   font-size: 1.3rem;
-}
- 
-.nav img{
-  width: auto;
-  height: 50px;
+.nav button a:hover{
+    transform: scale(1.05);
+    color: #000;
 }
 
-.logo{
-   text-align: left;
+.dropdown{
+    position: relative;
+}
+.i{
+    font-size: 12px;
+    transition: 0.3s ease;
 }
 
+.dropdown-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    list-style: none;
+    padding: 10px 0;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 999;
+    display: none;
+    border-radius: 10px;
+}
+
+.dropdown-menu li a{
+    display: block;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
 /* --- FOOTER --- */
 .footer{
     background-color: #000;

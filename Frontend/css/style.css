@@ -42,6 +42,7 @@ body{
     align-items: center;
     justify-content: space-between;
     gap: 20px;
+    list-style-type: none;
 }
 
 
@@ -76,7 +77,7 @@ body{
     color: #ffc300;
     font-size: 1.8rem;
 }
-.nav button{
+.button a{
     background: #ffc300;
     color: #000;
     padding: 0.8rem 1.5rem;
@@ -86,8 +87,9 @@ body{
     cursor: pointer;
 }
 
-.nav button:hover{
+.nav button a:hover{
     transform: scale(1.05);
+    color: #000;
 }
 
 .dropdown{
@@ -102,7 +104,7 @@ body{
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #fff;
+    background-color: #333;
     list-style: none;
     padding: 10px 0;
     min-width: 160px;
@@ -116,7 +118,7 @@ body{
     display: block;
     padding: 10px 15px;
     font-size: 14px;
-    color: #000;
+    color: #fff;
 }
 
 .dropdown:hover .dropdown-menu{
@@ -140,11 +142,8 @@ CARROSSEL
 
 .carrossel-inner img{
     width: 100%;
-<<<<<<< HEAD
     height: 450px;
-=======
     height: 60vh;
->>>>>>> ae39188fb3a2d91a14c662201425a99fea1507e7
     object-fit: cover;
     flex-shrink: 0;
 }
