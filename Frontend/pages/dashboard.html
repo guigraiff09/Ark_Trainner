@@ -7,69 +7,193 @@
 
     <title>Usuários</title>
 
-    <link rel="stylesheet" href="../css/usuariosadmin.css">
+    <link rel="stylesheet" href="..//css/dashboard.css">
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-
 <body>
 
     <div class="container">
 
-        <!-- SIDEBAR -->
-
+        
         <aside class="sidebar">
 
             <div class="logo">
-                <h2>Admin<span>Panel</span></h2>
+                <h2>ARK <span>ADMIN</span></h2>
             </div>
 
-            <ul>
+            <nav>
 
-                <li class="active">
-                    <a href="#">
-                        <i class='bx bx-user'></i>
-                        Usuários
-                    </a>
-                </li>
+                <a href="#" class="active">
+                    <i class='bx bx-home'></i>
+                    Dashboard
+                </a>
 
-                <li>
-                    <a href="#">
-                        <i class='bx bx-home'></i>
-                        Dashboard
-                    </a>
-                </li>
+                <a href="#">
+                    <i class='bx bx-envelope'></i>
+                    Mensagens
+                </a>
 
+                <a href="#">
+                    <i class='bx bx-user'></i>
+                    Usuários
+                </a>
 
-                <li>
-                    <a href="admin.html">
-                        <i class='bx bx-message-square-detail'></i>
-                        <span>Mensagens</span>
-                    </a>
-                </li>
+                <a href="#">
+                    <i class='bx bx-log-out'></i>
+                    Voltar
+                </a>
 
-
-
-            </ul>
-
-            <div class="logout">
-                <i class='bx bx-log-out'></i>
-                Voltar
-            </div>
+            </nav>
 
         </aside>
 
+        
+        <main class="main">
 
-        <div class="">
+            <div class="topo">
 
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Bem-vindo(a) de volta, Administrador!</p>
+                </div>
 
+                <div class="admin">
+                    <i class='bx bx-user-circle'></i>
+                    <span>Administrador</span>
+                </div>
 
+            </div>
 
+           
+            <div class="cards">
 
-        </div>
+                <div class="card">
+                    <div class="icone azul">
+                        <i class='bx bx-user-plus'></i>
+                    </div>
 
+                    <div>
+                        <h3>Usuários Novos</h3>
+                        <h2>0</h2>
+                        <p>Últimos 30 dias</p>
+                    </div>
+                </div>
 
+                <div class="card">
+                    <div class="icone verde">
+                        <i class='bx bx-group'></i>
+                    </div>
+
+                    <div>
+                        <h3>Usuários Cadastrados</h3>
+                        <h2>0</h2>
+                        <p>Total de usuários</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="icone amarelo">
+                        <i class='bx bx-envelope'></i>
+                    </div>
+
+                    <div>
+                        <h3>Mensagens</h3>
+                        <h2>0</h2>
+                        <p>Mensagens recebidas</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="icone vermelho">
+                        <i class='bx bx-user-x'></i>
+                    </div>
+
+                    <div>
+                        <h3>Usuários Inativos</h3>
+                        <h2>0</h2>
+                        <p>Usuários inativos</p>
+                    </div>
+                </div>
+
+            </div>
+
+           
+            <div class="graficos">
+
+                <div class="grafico-grande">
+
+                    <div class="titulo">
+                        <h2>Resumo Geral</h2>
+                        <select>
+                            <option>Últimos 30 dias</option>
+                        </select>
+                    </div>
+
+                    <div class="grafico-fake">
+                        <p>Gráfico aparecerá aqui futuramente</p>
+                    </div>
+
+                </div>
+
+                <div class="grafico-pequeno">
+
+                    <h2>Distribuição</h2>
+
+                    <div class="circulo"></div>
+
+                    <div class="status">
+
+                        <div>
+                            <span class="bolinha verde"></span>
+                            Ativos
+                        </div>
+
+                        <div>
+                            <span class="bolinha vermelho"></span>
+                            Inativos
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            
+            <div class="listas">
+
+              
+                <div class="lista">
+
+                    <div class="titulo-lista">
+                        <h2>Últimas Mensagens</h2>
+                    </div>
+
+                    <div class="vazio">
+                        Nenhuma mensagem recebida.
+                    </div>
+
+                </div>
+
+               
+                <div class="lista">
+
+                    <div class="titulo-lista">
+                        <h2>Usuários Inativos</h2>
+                    </div>
+
+                    <div class="vazio">
+                        Nenhum usuário inativo.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
 
 </body>
-
 </html>
