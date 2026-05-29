@@ -250,9 +250,7 @@ body{
 .container-slider{
     display: flex;
     align-items: center;
-
     gap: 30px;
-
     transition: transform .5s ease;
 }
 
@@ -261,19 +259,15 @@ body{
 ========================= */
 
 .card{
-    background-color: #ffc300;
-
+    background-color: #333;
     border: 2px solid #000;
     border-radius: 20px;
-
     min-width: 320px;
-
     overflow: hidden;
-
     display: flex;
     flex-direction: column;
-
     transition: transform .3s ease;
+    padding: 15px;
 }
 
 .card:hover{
@@ -283,25 +277,18 @@ body{
 .card a img{
     width: 100%;
     height: 180px;
-
     object-fit: cover;
-
-    padding: 15px;
-
     border-radius: 25px;
+    box-shadow: 10px 10px 10px rgb(31, 30, 31);
 }
 
 .card figcaption{
     display: flex;
     justify-content: center;
     align-items: center;
-
-    padding: 15px;
-
+    padding: 10px;
     text-transform: uppercase;
-
-    color: #000;
-
+    color: #fff;
     font-weight: 600;
 }
 

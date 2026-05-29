@@ -163,10 +163,11 @@ CARDS
 }
 
 .card{
-    background: #ffc300;
+    background: #333;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    box-shadow: 10px 10px 10px rgb(31, 30, 31);
+    padding: 15px;
 }
 
 .card:hover{
@@ -183,7 +184,7 @@ CARDS
 .card figcaption{
     text-align: center;
     padding: 18px;
-    color: #000;
+    color: #fff;
     font-size: 1.1rem;
     font-weight: 700;
     text-transform: uppercase;
