@@ -17,30 +17,65 @@
     height:100vh;
     background:#111;
     color:white;
-    padding:30px 20px;
+    padding: 20px 15px;
     position:fixed;
   }
   
   .sidebar h2{
     margin-bottom:40px;
-    color:gold;
+    color:#fff;
+    font-size: 28px;
+    
+  }
+
+  .destaque{
+    color: gold;
+    
   }
   
-  .sidebar ul{
+  .active{
+    background-color: gold;
+    color: #000;
+  }
+  .sidebar nav{
     list-style:none;
   }
   
-  .sidebar li{
-    padding:15px 10px;
+  .sidebar a{
+    padding:14px;
     cursor:pointer;
     transition:0.3s;
     border-radius:5px;
   }
   
-  .sidebar li:hover{
-    background:#222;
+  .sidebar a:hover{
+    background:gold;
+    color: #000;
   }
-  
+
+  nav{
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+  nav a{
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px;
+    border-radius: 10px;
+    transition: 0.3s;
+
+  }
+
+  nav a i{
+    font-size: 22px;
+  }
   /* MAIN */
   
   .main{
