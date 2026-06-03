@@ -188,6 +188,14 @@ CARDS
     font-size: 1.1rem;
     font-weight: 700;
     text-transform: uppercase;
+    
+}
+figcaption p{
+    padding: 1rem 0 0;
+    text-align: left;
+    width: 300px;
+    flex-wrap: wrap;
+    display: flex;
 }
 
 /* ==========================================

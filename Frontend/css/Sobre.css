@@ -194,6 +194,7 @@ CARDS
 }
 
 .card-sobre{
+    position: relative;
     border: 2px solid #fff;
     border-radius: 20px;
     padding: 25px;
@@ -225,11 +226,40 @@ CARDS
     font-size: 1rem;
 }
 
+/* TOOLTIP */
+
+.moti-item{
+    position: absolute;
+    top: 115%;
+    left: 20px;
+
+    width: 280px;
+    padding: 20px;
+
+    background: #333;
+    border-radius: 12px;
+
+    display: none;
+    z-index: 100;
+    box-shadow: 0 10px 20px rgba(0,0,0,.4);
+}
+
+.moti{
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.card-sobre:hover .moti-item{
+    display: block;
+}
+
 .footer{
     width: 100%;
     background: #000;
     color: #fff;
-    padding: 40px 5% 20px;
+    padding: 80px 5% 20px;
 }
 
 .container-box{
