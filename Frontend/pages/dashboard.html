@@ -4,22 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin</title>
 
-    <title>Usuários</title>
-
-    <link rel="stylesheet" href="..//css/dashboard.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+
 <body>
 
     <div class="container">
 
-        
+        <!-- MENU LATERAL -->
         <aside class="sidebar">
 
             <div class="logo">
-                <h2>ARK <span>ADMIN</span></h2>
+                <h2>Admin <span>Painel</span></h2>
             </div>
 
             <nav>
@@ -37,7 +37,6 @@
                 <a href="usuariosadmin.html">
                     <i class='bx bx-user'></i>
                     Usuários
-                    <link rel="" href="">
                 </a>
 
                 <a href="login.html">
@@ -49,9 +48,10 @@
 
         </aside>
 
-        
+        <!-- CONTEÚDO PRINCIPAL -->
         <main class="main">
 
+            <!-- TOPO -->
             <div class="topo">
 
                 <div>
@@ -66,73 +66,86 @@
 
             </div>
 
-           
+            <!-- CARDS -->
             <div class="cards">
 
+                <!-- Usuários Novos -->
                 <div class="card">
+
                     <div class="icone azul">
                         <i class='bx bx-user-plus'></i>
                     </div>
 
                     <div>
                         <h3>Usuários Novos</h3>
-                        <h2>0</h2>
+                        <h2 id="usuariosNovos">0</h2>
                         <p>Últimos 30 dias</p>
                     </div>
+
                 </div>
 
+                <!-- Usuários Cadastrados -->
                 <div class="card">
+
                     <div class="icone verde">
                         <i class='bx bx-group'></i>
                     </div>
 
                     <div>
                         <h3>Usuários Cadastrados</h3>
-                        <h2>0</h2>
+                        <h2 id="usuariosCadastrados">0</h2>
                         <p>Total de usuários</p>
                     </div>
+
                 </div>
 
+                <!-- Mensagens -->
                 <div class="card">
+
                     <div class="icone amarelo">
                         <i class='bx bx-envelope'></i>
                     </div>
 
                     <div>
                         <h3>Mensagens</h3>
-                        <h2>0</h2>
+                        <h2 id="totalMensagens">0</h2>
                         <p>Mensagens recebidas</p>
                     </div>
+
                 </div>
 
+                <!-- Usuários Inativos -->
                 <div class="card">
+
                     <div class="icone vermelho">
                         <i class='bx bx-user-x'></i>
                     </div>
 
                     <div>
                         <h3>Usuários Inativos</h3>
-                        <h2>0</h2>
+                        <h2 id="usuariosInativos">0</h2>
                         <p>Usuários inativos</p>
                     </div>
+
                 </div>
 
             </div>
 
-           
+            <!-- GRÁFICOS -->
             <div class="graficos">
 
                 <div class="grafico-grande">
 
                     <div class="titulo">
                         <h2>Resumo Geral</h2>
+
                         <select>
                             <option>Últimos 30 dias</option>
                         </select>
                     </div>
 
                     <div class="grafico-fake">
-                        <p>Gráfico aparecerá aqui futuramente</p>
+                        <canvas id="graficoUsuarios"></canvas>
                     </div>
 
                 </div>
@@ -161,10 +174,9 @@
 
             </div>
 
-            
+            <!-- LISTAS -->
             <div class="listas">
 
-              
                 <div class="lista">
 
                     <div class="titulo-lista">
@@ -176,8 +188,7 @@
                     </div>
 
                 </div>
-
-               
+                </div>
                 <div class="lista">
 
                     <div class="titulo-lista">
@@ -196,5 +207,9 @@
 
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/dashboard.js"></script>
+
 </body>
+
 </html>

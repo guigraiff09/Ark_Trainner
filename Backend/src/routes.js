@@ -26,23 +26,17 @@ router.post('/login', (req, res) => {
     }
 
     if(result.length === 0){
-
       return res.status(401).json({
         sucesso: false
       });
-
     }
 
     const usuario = result[0];
 
     res.json({
-
       sucesso: true,
-
       nome: usuario.nome,
-
       tipo: usuario.tipo
-
     });
 
   });
@@ -107,9 +101,9 @@ router.get('/contatos', (req, res) => {
 });
 
 
-// =========================
-// DELETAR CONTATO
-// =========================
+
+// DELETAR CONTATO//
+
 
 router.delete('/contato/:id', (req, res) => {
 
@@ -131,6 +125,29 @@ router.delete('/contato/:id', (req, res) => {
     res.json({
       mensagem: 'Mensagem apagada'
     });
+
+  });
+
+});
+
+// mensagens//
+
+router.get('/dashboard/mensagens', (req, res) => {
+
+  const sql = `
+    SELECT COUNT(*) AS total
+    FROM contato
+  `;
+
+  db.query(sql, (err, result) => {
+
+    if(err){
+      return res.status(500).json({
+        erro: 'Erro ao buscar mensagens'
+      });
+    }
+
+    res.json(result[0]);
 
   });
 
