@@ -119,6 +119,7 @@ body{
     padding: 10px 15px;
     font-size: 14px;
     color: #fff;
+    text-align: left;
 }
 
 .dropdown:hover .dropdown-menu{
