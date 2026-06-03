@@ -12,20 +12,26 @@ body{
 /* CONTAINER */
 
 .container{
-    display: flex;
+    display: flex; /* deixa sidebar e conteúdo lado a lado */
+    min-height: 100vh; /* altura mínima da tela inteira */
 }
 
 /* SIDEBAR */
 
 .sidebar{
-    width: 180px;
-    min-height: 100vh;
-    background: linear-gradient(180deg, #050816, #0b132b);
-    color: white;
-    padding: 20px 15px;
-    display: flex;
-    flex-direction: column;
-}
+    width: 250px; /* largura do menu lateral */
+
+    background: linear-gradient(180deg, #050816, #0b132b); /* degradê */
+  
+    color: white; /* cor do texto */
+  
+    padding: 10px 0px; /* espaço interno */
+  
+    display: flex; /* ativa flexbox */
+  
+    
+    flex-direction: column; /* organiza em coluna */
+    }
 
 /* LOGO */
 
@@ -33,7 +39,7 @@ body{
     margin-bottom: 40px;
 }
 
-.logo h2{
+.logo h3{
     font-size: 28px;
     
 }
