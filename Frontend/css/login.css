@@ -1,168 +1,256 @@
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family:Arial, Helvetica, sans-serif;
-  }
-  
-  body{
-  
+}
+
+body{
+
     height:100vh;
-  
+
     display:flex;
-  
+
     justify-content:center;
-  
+
     align-items:center;
-  
+
     background:
     linear-gradient(
-      135deg,
-      #050816,
-      #0b132b
+        135deg,
+        #050816,
+        #0b132b
     );
-  
-  }
-  
-  .container{
-  
+
+}
+
+.container{
+
     width:100%;
-  
+
     display:flex;
-  
+
     justify-content:center;
-  
+
     align-items:center;
-  
-  }
-  
-  .login-box{
-  
+
+}
+
+.login-box{
+
     width:400px;
-  
+
     background:white;
-  
+
     padding:40px;
-  
+
     border-radius:20px;
-  
+
     box-shadow:
     0 10px 30px rgba(0,0,0,0.3);
-  
-  }
-  
-  .logo{
-  
+
+}
+
+.logo{
+
     text-align:center;
-  
+
     margin-bottom:35px;
-  
-  }
-  
-  .logo h1{
-  
+
+}
+
+.logo h1{
+
     font-size:38px;
-  
+
     color:#111;
-  
-  }
-  
-  .logo span{
-  
+
+}
+
+.logo span{
+
     color:#f4c542;
-  
-  }
-  
-  .logo p{
-  
+
+}
+
+.logo p{
+
     margin-top:8px;
-  
+
     color:#666;
-  
-  }
-  
-  .input-box{
-  
+
+}
+
+.input-box{
+
     width:100%;
-  
+
     height:55px;
-  
+
     background:#f5f5f5;
-  
+
     border-radius:12px;
-  
+
     display:flex;
-  
+
     align-items:center;
-  
+
     padding:0 15px;
-  
+
     margin-bottom:20px;
-  
-  }
-  
-  .input-box i{
-  
+
+}
+
+.input-box i{
+
     font-size:22px;
-  
+
     color:#666;
-  
+
     margin-right:10px;
-  
-  }
-  
-  .input-box input{
-  
+
+}
+
+.input-box input{
+
     width:100%;
-  
+
     border:none;
-  
+
     background:none;
-  
+
     outline:none;
-  
+
     font-size:16px;
-  
-  }
-  
-  button{
-  
+
+}
+
+/* BOTÃO ENTRAR */
+
+button{
+
     width:100%;
-  
+
     height:55px;
-  
+
     border:none;
-  
+
     border-radius:12px;
-  
+
     background:#f4c542;
-  
+
     color:#111;
-  
+
     font-size:18px;
-  
+
     font-weight:bold;
-  
+
     cursor:pointer;
-  
+
     transition:0.3s;
-  
-  }
-  
-  button:hover{
-  
+
+}
+
+button:hover{
+
     transform:translateY(-2px);
-  
+
     background:#ffcf33;
-  
-  }
-  
-  #erro{
-  
+
+}
+
+/* DIVISOR */
+
+.divisor{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin:25px 0;
+
+}
+
+.divisor::before,
+.divisor::after{
+
+    content:"";
+
+    flex:1;
+
+    height:1px;
+
+    background:#ddd;
+
+}
+
+.divisor span{
+
+    color:#888;
+
+    font-size:14px;
+
+}
+
+/* GOOGLE */
+
+.google-btn{
+
+    width:100%;
+
+    height:55px;
+
+    background:white;
+
+    border:1px solid #ddd;
+
+    border-radius:12px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#444;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+.google-btn:hover{
+
+    background:#f7f7f7;
+
+    transform:translateY(-2px);
+
+}
+
+.google-btn img{
+
+    width:22px;
+
+    height:22px;
+
+}
+
+#erro{
+
     text-align:center;
-  
+
     color:red;
-  
+
     margin-top:20px;
-  
-  }
+
+}

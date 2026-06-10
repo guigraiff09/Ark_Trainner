@@ -3,160 +3,172 @@
 
 <head>
 
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Login Admin</title>
+    <title>Login Admin</title>
 
-  <!-- CSS -->
-  <link rel="stylesheet"
-        href="../css/login.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/login.css">
 
-  <!-- BOXICONS -->
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
-        rel='stylesheet'>
+    <!-- BOXICONS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+          rel='stylesheet'>
 
 </head>
 
 <body>
 
-  <div class="container">
+    <div class="container">
 
-    <div class="login-box">
+        <div class="login-box">
 
-      <!-- LOGO -->
-      <div class="logo">
+            <!-- LOGO -->
+            <div class="logo">
 
-        <h1>
-          ARK <span>TRAINNER</span>
-        </h1>
+                <h1>
+                    ARK <span>TRAINNER</span>
+                </h1>
 
-        <p>
-          Painel Administrativo
-        </p>
+                <p>
+                    Painel Administrativo
+                </p>
 
-      </div>
+            </div>
 
-      <!-- EMAIL -->
-      <div class="input-box">
+            <!-- EMAIL -->
+            <div class="input-box">
 
-        <i class='bx bx-envelope'></i>
+                <i class='bx bx-envelope'></i>
 
-        <input
-          type="email"
-          id="email"
-          placeholder="Digite seu email"
-        >
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Digite seu email"
+                >
 
-      </div>
+            </div>
 
-      <!-- SENHA -->
-      <div class="input-box">
+            <!-- SENHA -->
+            <div class="input-box">
 
-        <i class='bx bx-lock-alt'></i>
+                <i class='bx bx-lock-alt'></i>
 
-        <input
-          type="password"
-          id="senha"
-          placeholder="Digite sua senha"
-        >
+                <input
+                    type="password"
+                    id="senha"
+                    placeholder="Digite sua senha"
+                >
 
-      </div>
+            </div>
 
-      
+            <!-- BOTÃO ENTRAR -->
+            <button onclick="login()">
 
-      <!-- BOTÃO -->
-      <button onclick="login()">
+                Entrar
 
-        Entrar
+            </button>
 
-      </button>
+            <!-- DIVISOR -->
+            <div class="divisor">
 
-      <!-- ERRO -->
-      <p id="erro"></p>
+                <span>ou</span>
+
+            </div>
+
+            <!-- BOTÃO GOOGLE -->
+            <button class="google-btn">
+
+                <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
+                    alt="Google"
+                >
+
+                <span>Entrar com Google</span>
+
+            </button>
+
+            <!-- ERRO -->
+            <p id="erro"></p>
+
+        </div>
 
     </div>
 
-  </div>
+    <script>
 
-  <script>
+        function login() {
 
-    function login() {
+            const email =
+                document.getElementById('email').value;
 
-      const email =
-      document.getElementById('email').value;
+            const senha =
+                document.getElementById('senha').value;
 
-      const senha =
-      document.getElementById('senha').value;
+            fetch('http://localhost:3000/login', {
 
-      fetch('http://localhost:3000/login', {
+                method: 'POST',
 
-        method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
 
-        headers: {
-          'Content-Type': 'application/json'
-        },
+                body: JSON.stringify({
 
-        body: JSON.stringify({
+                    email,
+                    senha
 
-          email,
-          senha
+                })
 
-        })
+            })
 
-      })
+            .then(res => res.json())
 
-      .then(res => res.json())
+            .then(data => {
 
-      .then(data => {
+                if (data.sucesso) {
 
-        if (data.sucesso) {
+                    localStorage.setItem(
+                        'logado',
+                        'true'
+                    );
 
-          // SALVAR LOGIN
-          localStorage.setItem(
-            'logado',
-            'true'
-          );
+                    localStorage.setItem(
+                        'tipo',
+                        data.tipo
+                    );
 
-          // SALVAR TIPO
-          localStorage.setItem(
-            'tipo',
-            data.tipo
-          );
+                    localStorage.setItem(
+                        'nome',
+                        data.nome
+                    );
 
-          // SALVAR NOME
-          localStorage.setItem(
-            'nome',
-            data.nome
-          );
+                    window.location.href =
+                        'admin.html';
 
-          // REDIRECIONAR
-          window.location.href =
-          'admin.html';
+                } else {
 
-        } else {
+                    document.getElementById('erro')
+                        .innerText =
+                        'Email ou senha inválidos';
 
-          document.getElementById('erro')
-          .innerText =
-          'Email ou senha inválidos';
+                }
+
+            })
+
+            .catch(() => {
+
+                document.getElementById('erro')
+                    .innerText =
+                    'Erro ao conectar servidor';
+
+            });
 
         }
 
-      })
-
-      .catch(() => {
-
-        document.getElementById('erro')
-        .innerText =
-        'Erro ao conectar servidor';
-
-      });
-
-    }
-
-  </script>
+    </script>
 
 </body>
+
 </html>
