@@ -22,7 +22,7 @@ carousel.style.transform = `translateX(${offset}%)`;
 
 // Define o intervalo (3000ms = 3 segundos)
 
-setInterval(autoSlide, 2000);
+setInterval(autoSlide, 5000);
 
  function moveSlide (direction) {
      const slides = document.querySelectorAll('.carousel-inner img');
