@@ -233,11 +233,7 @@ figcaption{
         min-width: 320px;
     }
 
-    #prev-button img,
-    #next-button img{
-        width: 35px;
-        height: 35px;
-    }
+    
 }
 .footer {
   width: 100%;
