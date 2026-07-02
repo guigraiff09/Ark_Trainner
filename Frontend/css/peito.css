@@ -129,15 +129,11 @@ body{
 }
 
 .container{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    align-items: center;
-    padding:10rem 3% 0 3%;
-    overflow: hidden;
-    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
-    
+    padding: 10rem 3% 0;
+    justify-items: center;
 }
 .tipo-treino{
     position: absolute;
@@ -152,17 +148,18 @@ body{
     text-transform: uppercase;
 }
 .card{
-    display: grid;
-    background-color:  rgba(97, 96, 96, 0.2);
-    padding: 5px 5px 5px 5px;
-    border-radius:15px;
-    position: relative;
     width: 320px;
-    transition: 0.3s;
-    
+    background: rgba(97,96,96,.2);
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
 }
+
 .card:hover{
     transform: translateY(-5px);
+}
+.card a{
+    position: relative;
 }
 
 .card img {
@@ -199,7 +196,7 @@ figcaption{
 }
 
 .tipo{
-    font-size: 18px;
+    font-size: 16px;
     color: #fff;
 }
 

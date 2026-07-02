@@ -22,7 +22,9 @@ body{
     min-height: 100vh;
 }
 
-
+/* ==========================================
+   HEADER & NAV-BAR
+   ========================================== */
 .header{
     position: fixed;
     top: 0;
@@ -42,9 +44,7 @@ body{
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    list-style-type: none;
 }
-
 
 .logo{
     width: 180px;
@@ -52,16 +52,28 @@ body{
     height: auto;
 }
 
+/* Ícone Hambúrguer */
+#menu-icon {
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    z-index: 2000;
+}
+
 .nav{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    flex-wrap: wrap;
-}
-.nav li{
     list-style-type: none;
 }
+
+.nav li {
+    display: flex;
+    align-items: center;
+}
+
 .nav a{
     color: #fff;
     font-size: 1.1rem;
@@ -71,44 +83,50 @@ body{
 
 .nav a:hover{
     color: #ffc300;
-    font-size: 1.3rem;
- }
-.nav a img{
-    color: #ffc300;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
 }
+
+/* Container do botão de login (Corrigido o mistério do fundo branco) */
+.button {
+    background: transparent !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center;
+}
+
 .button a{
-    background: #ffc300;
-    color: #000;
+    background: #ffc300 !important;
+    color: #000 !important;
     padding: 0.8rem 1.5rem;
     border-radius: 10px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
+    display: inline-block;
 }
 
-.nav button a:hover{
-    transform: scale(1.05);
+.button a:hover{
+    font-size: 1.1rem;
     color: #000;
 }
 
+/* Dropdown Desktop */
 .dropdown{
     position: relative;
-}
-.i{
-    font-size: 12px;
-    transition: 0.3s ease;
 }
 
 .dropdown-menu{
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #333;
+    background-color: #111;
+    border: 1px solid #333;
     list-style: none;
     padding: 10px 0;
     min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
     z-index: 999;
     display: none;
     border-radius: 10px;
@@ -125,10 +143,10 @@ body{
 .dropdown:hover .dropdown-menu{
     display: block;
 }
-/* ==========================================
-CARROSSEL
-========================================== */
 
+/* ==========================================
+   CARROSSEL DESKTOP
+   ========================================== */
 .carrossel{
     width: 100%;
     overflow: hidden;
@@ -139,6 +157,7 @@ CARROSSEL
     display: flex;
     width: 100%;
     transition: transform 0.6s ease-in-out;
+    
 }
 
 .carrossel-inner img{
@@ -149,25 +168,31 @@ CARROSSEL
     flex-shrink: 0;
 }
 
-/* ==========================================
-CARDS
-========================================== */
+/* Força o texto por cima do banner a encolher responsivamente */
+.carrossel h1, .carrossel h2, .carrossel p {
+    font-size: clamp(1.1rem, 2.2vw, 2.5rem) !important;
+    line-height: 1.3 !important;
+}
 
+/* ==========================================
+   CARDS DESKTOP
+   ========================================== */
 .container-card{
     width: 100%;
     max-width: 1700px;
     margin: auto;
     padding: 60px 5%;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
 .card{
-    background: #333;
+    background: #111;
+    border: 1px solid #222;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 10px 10px 10px rgb(31, 30, 31);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
     padding: 15px;
 }
 
@@ -179,50 +204,46 @@ CARDS
     width: 100%;
     height: 260px;
     object-fit: cover;
+    border-radius: 10px;
     display: block;
 }
 
 .card figcaption{
     text-align: center;
-    padding: 18px;
+    padding: 18px 5px;
     color: #fff;
     font-size: 1.1rem;
-    font-weight: 300;
+    font-weight: 600;
     text-transform: uppercase;
-    
 }
+
 figcaption p{
     padding: 1rem 0 0;
     text-align: left;
-    width: 300px;
-    flex-wrap: wrap;
-    display: flex;
+    font-size: 0.95rem;
+    font-weight: 300;
+    text-transform: none;
+    color: #ccc;
 }
 
 /* ==========================================
-FOOTER
-========================================== */
-
+   FOOTER
+   ========================================== */
 .footer{
     width: 100%;
     background: #000;
     color: #fff;
     padding: 40px 5% 20px;
+    border-top: 1px solid #222;
 }
 
 .container-box{
     width: 100%;
     max-width: 1400px;
     margin: auto;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-}
-
-.logo-ark{
-    display: flex;
     justify-content: center;
 }
 
@@ -235,7 +256,7 @@ FOOTER
 hr{
     width: 100%;
     border: none;
-    border-top: 1px solid #333;
+    border-top: 1px solid #222;
     margin: 25px 0;
 }
 
@@ -276,163 +297,207 @@ hr{
     line-height: 1.7;
     max-width: 1200px;
     margin: auto;
+    color: #777;
+}
+/* ==========================================
+   UNIFICAÇÃO RESPONSIVA: ATÉ TABLETS / CELULARES (max-width: 992px)
+   ========================================== */
+@media (max-width: 992px) {
+    #menu-icon {
+        display: block !important; 
+        position: relative !important;
+        z-index: 2000 !important;
+    }
+
+    /* Estrutura da Sidebar Lateral */
+    .nav-container {
+        position: fixed !important;
+        top: 0 !important;
+        right: -180px !important;      
+        width: 180px !important;       
+        height: 100vh !important;      
+        background: #000000 !important; 
+        padding: 6rem 1rem 2rem 1rem !important; 
+        box-shadow: -10px 0 25px rgba(0, 0, 0, 0.7) !important;
+        transition: 0.4s ease-in-out !important;
+        z-index: 1999 !important;
+        overflow-y: auto !important; 
+    }
+
+    .nav-container.active {
+        right: 0 !important;          
+    }
+
+    .nav {
+        flex-direction: column !important;
+        gap: 1.5rem !important; 
+        align-items: center !important; 
+        justify-content: flex-start !important;
+        width: 100% !important;
+    }
+
+    .nav li {
+        width: 100% !important;
+        flex-direction: column !important; 
+        background: transparent !important;
+    }
+
+    .nav a {
+        font-size: 1.1rem !important;
+        text-align: center !important;
+        width: 100% !important;
+        display: block !important;
+    }
+/* MUDANÇA DE COR E APROXIMAÇÃO QUANDO PASSA O MOUSE/TOCA */
+    .nav li a:hover {
+        transform: scale(1.08) !important; /* Faz o texto crescer/aproximar 8% */
+    }
+    .dropdown {
+        width: 100% !important;
+        text-align: center !important;
+        transition: 0.5s;
+    }
+
+    /* Submenu oculto por padrão */
+    .dropdown-menu {
+        display: none !important; 
+        position: relative !important;   
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        background-color: #111111 !important; 
+        box-shadow: none !important;
+        border: none !important;
+        padding: 10px 0 !important;
+        margin-top: 10px !important;
+        border-radius: 8px !important;
+        overflow-x: hidden;
+    }
+    
+    .dropdown:hover .dropdown-menu {
+        display: block !important;
+    }
+    
+    .dropdown-menu li {
+        width: 100% !important;
+        padding: 0 !important;
+        align-items: center !important;
+    }
+    
+    .dropdown-menu li a {
+        text-align: center !important; 
+        font-size: 0.95rem !important;
+        padding: 8px 0 !important;
+        color: #ccc !important;
+    }
+
+    /* MUDANÇA DE COR E APROXIMAÇÃO QUANDO PASSA O MOUSE/TOCA */
+    .dropdown-menu li a:hover {
+        color: #ffc300 !important;       /* Força a cor a virar AMARELO */
+        background-color: #151515 !important; /* Cria um fundo cinza bem sutil no item selecionado */
+        transform: scale(1.08) !important; /* Faz o texto crescer/aproximar 8% */
+    }
+
+    /* Botão de login transparente sem fundos fantasmas */
+    .button {
+        width: 100% !important;
+        justify-content: center !important;
+        background: transparent !important;
+        background-color: transparent !important;
+        margin-top: 1rem !important;
+    }
+
+    .button a {
+        width: 130px !important;
+        text-align: center !important;
+        padding: 0.6rem 0 !important;
+        font-size: 0.95rem !important;
+        border-radius: 8px !important;
+    }
+
+    /* ==========================================
+       CORREÇÃO DO CARROSSEL: BANNER COMPACTO E FINO
+       ========================================== */
+    .carrossel {
+        margin-top: 60px !important; /* Cola o banner mais perto do menu do topo */
+        width: 100% !important;
+        height: 160px !important;    /* Controla a altura total do bloco */
+        overflow: hidden !important;
+    }
+
+    .carrossel-inner {
+        height: 100% !important;
+    }
+
+    .carrossel-inner img {
+        height: 100% !important;     /* Força a imagem a ter exatamente os 160px do container */
+        width: 100% !important;
+        object-fit: cover !important; /* Preenche todo o espaço cortando as sobras sem distorcer */
+    }
+
+    /* Ajuste do tamanho da frase do banner para caber perfeitamente no espaço fino */
+    .carrossel h1, .carrossel h2, .carrossel p, .carrossel-inner span {
+        font-size: 1rem !important;
+        line-height: 1.2 !important;
+        padding: 0 10px !important;
+    }
+
+    /* ==========================================
+       COMPACTAÇÃO DOS CARDS (2 POR LINHA)
+       ========================================== */
+    .container-card {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important; 
+        gap: 12px !important;
+        padding: 20px 10px !important;
+    }
+
+    .card {
+        padding: 8px !important;
+        border-radius: 12px !important;
+    }
+
+    .card img {
+        height: 120px !important; 
+    }
+
+    .card figcaption {
+        font-size: 0.85rem !important;
+        padding: 10px 0 0 0 !important;
+    }
+
+    figcaption p {
+        font-size: 0.75rem !important;
+        padding: 4px 0 0 !important;
+    }
+
+    /* Textos Gerais Menores */
+    .logo { width: 130px !important; }
+    .contato h3 { font-size: 1.5rem; }
+    .políticas a { font-size: 1rem; }
+    .final { font-size: 0.8rem; }
 }
 
 /* ==========================================
-NOTEBOOK
-========================================== */
-
-@media(max-width:1400px){
-
-    .carrossel-inner img{
-        height: 650px;
-    }
-
-    .nav{
-        gap: 1.5rem;
-    }
-}
-
-/* ==========================================
-TABLET
-========================================== */
-
-@media(max-width:1000px){
-
-    .nav-bar{
-        flex-direction: column;
-    }
-
-    .nav{
-        gap: 1rem;
-    }
-
-    .carrossel{
-        margin-top: 160px;
-    }
-
-    .carrossel-inner img{
-        height: 500px;
-    }
-
-    .container-card{
-        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    }
-}
-
-/* ==========================================
-CELULAR
-========================================== */
-
-@media(max-width:700px){
-
-    .nav{
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .nav a{
-        font-size: 1rem;
-    }
-
-    .nav button{
-        width: 100%;
-        max-width: 250px;
-    }
-
-    .carrossel{
-        margin-top: 320px;
-    }
-
-    .carrossel-inner img{
-        height: 300px;
-    }
-
-    .container-card{
-        padding: 40px 20px;
-        grid-template-columns: 1fr;
-    }
-
-    .card img{
-        height: 220px;
-    }
-
-    .card figcaption{
-        font-size: 1rem;
-    }
-
-    .contato h3{
-        font-size: 1.5rem;
-    }
-
-    .políticas a{
-        font-size: 1rem;
-    }
-
-    .final{
-        font-size: 0.8rem;
-    }
-}
-
-/* ==========================================
-TV / 4K
-========================================== */
-
-@media(min-width:2200px){
-
-    .nav-bar{
+   TV / MONITORES 4K (Acima de 2200px)
+   ========================================== */
+@media (min-width: 2200px) {
+    .nav-bar { max-width: 2400px; }
+    .logo { width: 260px; }
+    .nav a { font-size: 1.8rem; }
+    .button a { font-size: 1.6rem; padding: 1rem 2.5rem; }
+    .carrossel { margin-top: 120px; }
+    .carrossel-inner img { height: 55vh; }
+    .container-card {
         max-width: 2400px;
-    }
-
-    .logo{
-        width: 260px;
-    }
-
-    .nav a{
-        font-size: 2rem;
-    }
-
-    .nav button{
-        font-size: 1.8rem;
-        padding: 1rem 2rem;
-    }
-
-    .carrossel-inner img{
-        height: 1200px;
-    }
-
-    .container-card{
-        max-width: 2400px;
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
         gap: 50px;
     }
-
-    .card img{
-        height: 420px;
-    }
-
-    .card figcaption{
-        font-size: 2rem;
-        padding: 30px;
-    }
-
-    .logo-ark img{
-        width: 320px;
-    }
-
-    .contato h3{
-        font-size: 3rem;
-    }
-
-    .contato img{
-        width: 50px;
-    }
-
-    .políticas a{
-        font-size: 2rem;
-    }
-
-    .final{
-        font-size: 1.5rem;
-        max-width: 1800px;
-    }
+    .card img { height: 400px; }
+    .card figcaption { font-size: 1.8rem; }
+    figcaption p { font-size: 1.4rem; }
+    .logo-ark img { width: 320px; }
+    .contato h3 { font-size: 3rem; }
+    .políticas a { font-size: 1.8rem; }
+    .final { font-size: 1.4rem; max-width: 1800px; }
 }

@@ -129,20 +129,16 @@ body{
 }
 
 .container{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    align-items: center;
-    padding:10rem 3% 0 3%;
-    overflow: hidden;
-    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
-    
+    padding: 10rem 3% 0;
+    justify-items: center;
 }
 .tipo-treino{
     position: absolute;
     top: 20px;
-    left: 70%;
+    left: 65%;
     color: #ffc300;
     border: 2px solid #ffc300;
     background-color: rgba(0, 0, 0, 0.8);
@@ -152,22 +148,20 @@ body{
     text-transform: uppercase;
 }
 .card{
-    display: grid;
-    background-color:  rgba(97, 96, 96, 0.2);
-    padding: 5px 5px 5px 5px;
-    border-radius:15px;
-    position: relative;
     width: 320px;
-    transition: 0.3s;
+    background: rgba(97,96,96,.2);
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
 }
+
 .card:hover{
     transform: translateY(-5px);
 }
 .card a{
     position: relative;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
 }
+
 .card img{
     width: 100%;
     height: 180px;

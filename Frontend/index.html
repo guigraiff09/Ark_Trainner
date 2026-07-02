@@ -11,41 +11,40 @@
 </head>
 
 <body>
-
-    <!-- HEADER -->
-
+    <!--Header menu-->
     <header class="header">
-
         <div class="nav-bar">
-
             <img src="../Frontend/Assets/IMG/logo ARK.png" alt="Logo Ark" class="logo">
 
-            <nav class="nav">
+            <i class='bx bx-menu' id="menu-icon"></i>
 
-                <li><a href="../Frontend/index.html">INÍCIO</a></li>
+            <div class="nav-container" id="nav-container">
+                <ul class="nav">
+                    <li><a href="../Frontend/index.html">INÍCIO</a></li>
 
-                <li class="dropdown"> <a href="../Frontend/pages/treino.html" class="dropdown-toggle">TREINO <i
-                            class='bx bx-chevron-down'></i></a>
+                    <li class="dropdown"> 
+                        <a href="../Frontend/pages/treino.html" class="dropdown-toggle">TREINO <i class='bx bx-chevron-down'></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../Frontend/pages/peito.html">Peito</a></li>
+                            <li><a href="../Frontend/pages/costa.html">Costas</a></li>
+                            <li><a href="../Frontend/pages/ombro.html">Ombro</a></li>
+                            <li><a href="../Frontend/pages/perna.html">Perna</a></li>
+                            <li><a href="../Frontend/pages/abdomen.html">Abdômen</a></li>
+                            <li><a href="../Frontend/pages/gluteos.html">Glúteos</a></li>
+                            <li><a href="../Frontend/pages/cardio.html">Cárdios</a></li>
+                        </ul>
+                    </li>
 
-                    <ul class="dropdown-menu">
-                        <li> <a href="../Frontend/pages/peito.html">Peito</a></li>
-                        <li> <a href="../Frontend/pages/costa.html">Costas</a></li>
-                        <li> <a href="../Frontend/pages/ombro.html">Ombro</a></li>
-                        <li> <a href="../Frontend/pages/perna.html">Perna</a></li>
-                        <li> <a href="../Frontend/pages/abdomen.html">Abdômen</a></li>
-                        <li> <a href="../Frontend/pages/gluteos.html">Glúteos</a></li>
-                        <li> <a href="../Frontend/pages/cardio.html">Cárdios</a></li>
-                    </ul>
-                </li>
-
-                <li><a href="../Frontend/pages/sobre.html">SOBRE NÓS</a></li>
-                <li><a href="../Frontend/pages/contato.html">CONTATO</a></li>
-                <button type="button" class="button"><a href="../Frontend/pages/login.html">LOGIN</a></button>
-
-            </nav>
-
+                    <li><a href="../Frontend/pages/sobre.html">SOBRE NÓS</a></li>
+                    <li><a href="../Frontend/pages/contato.html">CONTATO</a></li>
+                    <li>
+                        <button type="button" class="button">
+                            <a href="../Frontend/pages/login.html">LOGIN</a>
+                        </button>
+                    </li>
+                </ul>
+            </div>
         </div>
-
     </header>
     <hr>
 
@@ -196,6 +195,21 @@
     </footer>
 
     <script src="../Frontend/js/carrossel.js"></script>
+
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const navContainer = document.getElementById('nav-container');
+
+        menuIcon.addEventListener('click', () => {
+            navContainer.classList.toggle('active');
+            // Muda o ícone de 'hambúrguer' para 'X' quando aberto
+            if (navContainer.classList.contains('active')) {
+                menuIcon.className = 'bx bx-x';
+            } else {
+                menuIcon.className = 'bx bx-menu';
+            }
+        });
+    </script>
 
 </body>
 
