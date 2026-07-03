@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght=0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif; /* Corrigido */
+    border: none;
+    outline: none;
+    text-decoration: none;
+    transition: 0.2s linear;
+    box-sizing: border-box; /* Adicionado globalmente */
+}
+
+body{
+    display: flex;
+    background: black;
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* --- TEXTO DA POLÍTICA --- */
+.politica{
+    color: #fff;
+    width: 100%;
+    max-width: 1000px; /* Não passa disso em telas grandes */
+    padding: 120px 40px 60px; /* 120px no topo compensa o header fixo */
+    line-height: 1.6;
+}
+
+/* Fallback caso usem listas comuns na página de termos */
+.li{
+   list-style-position: inside;
+   padding-left: 20px; /* Reduzido para não quebrar no mobile */
+   margin-bottom: 10px;
+}
+
+/* --- HEADER & NAV-BAR --- */
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #000;
+    z-index: 999;
+    border-bottom: 1px solid #222;
+}
+
+.nav-bar{
+    width: 100%;
+    max-width: 1700px;
+    margin: auto;
+    padding: 1rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    list-style-type: none;
+}
+
+
+.logo{
+    width: 180px;
+    max-width: 100%;
+    height: auto;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.nav li{
+    list-style-type: none;
+}
+.nav a{
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.nav a:hover{
+    color: #ffc300;
+    font-size: 1.3rem;
+ }
+.nav a img{
+    color: #ffc300;
+    font-size: 1.8rem;
+}
+.button a{
+    background: #ffc300;
+    color: #000;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.nav button a:hover{
+    transform: scale(1.05);
+    color: #000;
+}
+
+.dropdown{
+    position: relative;
+}
+.i{
+    font-size: 12px;
+    transition: 0.3s ease;
+}
+
+.dropdown-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    list-style: none;
+    padding: 10px 0;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 999;
+    display: none;
+    border-radius: 10px;
+}
+
+.dropdown-menu li a{
+    display: block;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #fff;
+    text-align: left;
+}
+
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
+/* --- FOOTER --- */
+.footer{
+    background-color: #000;
+    color: #fff;
+    padding: 40px 5% 20px; /* Padding lateral menor */
+    width: 100%;
+}
+
+.container-box {
+   display: flex;
+   justify-content: center;
+   text-align: center;
+   gap: 20px;
+   font-size: 20px; /* Reduzido ligeiramente para telas menores */
+   flex-direction: column;
+}
+
+.logo-ark img{
+   max-width: 250px;
+   width: 100%; /* Ajuste dinâmico */
+   height: auto;
+   padding: 10px;
+}
+
+hr{
+    border: 0;
+    border-top: 1px solid #333;
+    width: 80%;
+    margin: 30px auto; /* Centraliza a linha automaticamente */
+}
+
+.container-box a{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+   color:#fff;
+}
+
+.contato{
+   color: #fff;
+   text-align: center;
+   padding: 10px;
+   font-size: 24px;
+}
+
+.contato a{
+   display: inline-block;
+   padding: 10px;
+   margin-top: 15px;
+}
+
+.políticas a{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: #fff;
+   padding: 20px; /* Reduzido de 40px */
+   font-size: 24px;
+}
+
+.final{
+   color: #fff;
+   text-align: center;
+   font-size: 14px;
+   padding: 20px;
+}
+
+/* ==========================================
+   MEDIA QUERIES (RESPONSIVIDADE)
+   ========================================== */
+
+/* Para Tablets e Celulares Grandes (Até 768px) */
+@media (max-width: 768px) {
+    .header .nav-bar {
+        flex-direction: column; /* Empilha logo e itens do menu */
+        gap: 15px;
+        padding: 1rem;
+    }
+
+    .nav {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .nav a {
+        margin: 0 0.8rem;
+        font-size: 1rem;
+    }
+
+    .nav a:hover {
+        font-size: 1.1rem;
+    }
+
+    .nav button {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .politica {
+        padding: 160px 20px 40px; /* Dá mais espaço no topo devido ao menu maior */
+    }
+
+    .contato, .políticas a {
+        font-size: 20px;
+    }
+}
+
+/* Para Celulares Pequenos (Até 480px) */
+@media (max-width: 480px) {
+    .nav {
+        flex-direction: column; /* Transforma o menu superior em vertical */
+        gap: 12px;
+    }
+
+    .politica {
+        padding-top: 240px; /* Ajuste para evitar sobreposição do texto pelo menu */
+    }
+
+    .politica h1 {
+        font-size: 1.8rem; /* Trata títulos grandes dentro das políticas */
+    }
+
+    .li {
+        padding-left: 10px;
+    }
+
+    .políticas a {
+        padding: 10px;
+    }
+}

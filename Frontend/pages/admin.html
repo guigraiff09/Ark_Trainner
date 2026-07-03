@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Dashboard Admin</title>
+
+  <link rel="shortcut icon"
+        href="../Assets/IMG/favicon.ico"
+        type="image/x-icon">
+<link rel="stylesheet" href="/Frontend/css/admin.css">
+
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+        rel='stylesheet'>
+
+</head>
+
+<body>
+
+<!-- ========================= -->
+<!-- PROTEÇÃO LOGIN -->
+<!-- ========================= -->
+
+<script>
+
+  if(localStorage.getItem('logado') !== 'true'){
+
+    window.location.href = 'login.html';
+
+  }
+
+</script>
+
+<!-- ========================= -->
+<!-- SIDEBAR -->
+<!-- ========================= -->
+
+
+
+        
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>ARK <span class="destaque">ADMIN</span></h2>
+        </div>
+
+        <nav>
+
+            <a href="dashboard.html" class="active">
+                <i class='bx bx-home'></i>
+                Dashboard
+            </a>
+
+            <a href="admin.html">
+                <i class='bx bx-envelope'></i>
+                Mensagens
+            </a>
+
+            <a href="usuariosadmin.html">
+                <i class='bx bx-user'></i>
+                Usuários
+                <link rel="" href="">
+            </a>
+
+            <a href="login.html">
+                <i class='bx bx-log-out'></i>
+                Sair
+            </a>
+
+        </nav>
+
+    </aside>
+
+<!-- ========================= -->
+<!-- CONTEÚDO -->
+<!-- ========================= -->
+
+<div class="main">
+
+  <!-- TOPO -->
+
+  <div class="topbar">
+
+    <h1>
+      Painel Administrativo
+    </h1>
+
+  </div>
+
+  <!-- CARDS -->
+
+  <div class="cards">
+
+    <div class="card">
+
+      <h3 id="totalMensagens">
+        0
+      </h3>
+
+      <p>
+        Total de Mensagens
+      </p>
+
+    </div>
+
+    <div class="card">
+
+      <h3 id="totalEmails">
+        0
+      </h3>
+
+      <p>
+        Emails Recebidos
+      </p>
+
+    </div>
+
+    <div class="card">
+
+      <h3>
+        Online
+      </h3>
+
+      <p>
+        Status do Sistema
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- MENSAGENS -->
+
+  <div class="mensagens">
+
+    <h2>
+      Mensagens Recebidas
+    </h2>
+
+    <div id="lista-mensagens">
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ========================= -->
+<!-- JAVASCRIPT -->
+<!-- ========================= -->
+
+<script>
+
+// =========================
+// CARREGAR MENSAGENS
+// =========================
+
+function carregarMensagens(){
+
+  fetch('http://localhost:3000/contatos')
+
+  .then(res => res.json())
+
+  .then(dados => {
+
+    const lista =
+    document.getElementById('lista-mensagens');
+
+    lista.innerHTML = '';
+
+    // TOTAL DE MENSAGENS
+    document.getElementById('totalMensagens')
+    .innerText = dados.length;
+
+    // TOTAL EMAILS
+    document.getElementById('totalEmails')
+    .innerText = dados.length;
+
+    // PEGAR TIPO
+    const tipo =
+    localStorage.getItem('tipo');
+
+    // SEM MENSAGENS
+    if(dados.length === 0){
+
+      lista.innerHTML =
+      '<p>Nenhuma mensagem encontrada.</p>';
+
+      return;
+
+    }
+
+    // LOOP
+    dados.forEach(msg => {
+
+      lista.innerHTML += `
+
+      <div class="mensagem-card">
+
+        <h3>
+          ${msg.nome}
+        </h3>
+
+        <p>
+
+          <strong>Email:</strong>
+
+          ${msg.email}
+
+        </p>
+
+        <p>
+
+          <strong>Assunto:</strong>
+
+          ${msg.assunto}
+
+        </p>
+
+        <p>
+
+          <strong>Mensagem:</strong>
+
+          ${msg.mensagem}
+
+        </p>
+
+        <small>
+
+          ${new Date(msg.data_envio)
+          .toLocaleString('pt-BR')}
+
+        </small>
+
+        ${
+
+          tipo === 'admin'
+
+          ?
+
+          `
+
+          <button
+            class="btn-delete"
+            onclick="deletarMensagem(${msg.id})">
+
+            X
+
+          </button>
+
+          `
+
+          :
+
+          ''
+
+        }
+
+      </div>
+
+      `;
+
+    });
+
+  });
+
+}
+
+
+// =========================
+// APAGAR MENSAGEM
+// =========================
+
+function deletarMensagem(id){
+
+  if(confirm('Deseja apagar esta mensagem?')){
+
+    fetch(`http://localhost:3000/contato/${id}`, {
+
+      method:'DELETE'
+
+    })
+
+    .then(() => {
+
+      carregarMensagens();
+
+    });
+
+  }
+
+}
+
+
+// =========================
+// LOGOUT
+// =========================
+
+function logout(){
+
+  localStorage.clear();
+
+  window.location.href = 'login.html';
+
+}
+
+
+// =========================
+// INICIAR
+// =========================
+
+carregarMensagens();
+
+</script>
+
+</body>
+</html>

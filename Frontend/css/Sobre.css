@@ -1,0 +1,494 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: #000;
+    color: #fff;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* ==========================================
+HEADER
+========================================== */
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #000;
+    z-index: 999;
+    border-bottom: 1px solid #222;
+}
+
+.nav-bar{
+    width: 100%;
+    max-width: 1700px;
+    margin: auto;
+    padding: 1rem 5%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo{
+    width: 180px;
+    max-width: 100%;
+    height: auto;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.nav a{
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.nav a:hover{
+    color: #ffc300;
+    font-size: 1.3rem;
+ }
+
+.button a{
+    background: #ffc300;
+    color: #000;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.nav button a:hover{
+    transform: scale(1.05);
+    color: #000;
+}
+
+.dropdown{
+    position: relative;
+}
+.i{
+    font-size: 12px;
+    transition: 0.3s ease;
+}
+
+.dropdown-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    list-style: none;
+    padding: 10px 0;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 999;
+    display: none;
+    border-radius: 10px;
+}
+
+.dropdown-menu li a{
+    display: block;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #fff;
+    text-align: left;
+}
+
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
+/* ==========================================
+MAIN
+========================================== */
+
+.main-container{
+    width: 100%;
+    max-width: 1700px;
+    margin: auto;
+    padding: 180px 5% 80px;
+}
+
+/* ==========================================
+SEÇÃO SOBRE
+========================================== */
+
+.container-sobre{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.sobre{
+    flex: 1 1 500px;
+}
+
+.sobre h1{
+    font-size: clamp(3rem,6vw,6rem);
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.destaque{
+    color: #ffc300;
+}
+
+.sobre p{
+    font-size: clamp(1rem,2vw,1.6rem);
+    line-height: 1.7;
+    max-width: 700px;
+    margin-bottom: 15px;
+}
+
+/* ==========================================
+IMAGEM
+========================================== */
+
+.foto-sobre{
+    flex: 1 1 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.foto-sobre img{
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+/* ==========================================
+CARDS
+========================================== */
+
+.container-nos{
+    width: 100%;
+    margin-top: 100px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 30px;
+}
+
+.card-sobre{
+    position: relative;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    padding: 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    background: #111;
+}
+
+.card-sobre:hover{
+    transform: translateY(-8px);
+    border-color: #ffc300;
+}
+
+.card-sobre img{
+    width: 50px;
+    height: 50px;
+}
+
+.item h3{
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.item p{
+    color: #ccc;
+    font-size: 1rem;
+}
+
+/* TOOLTIP */
+
+.moti-item{
+    position: absolute;
+    top: 115%;
+    left: 20px;
+
+    width: 280px;
+    padding: 20px;
+
+    background: #333;
+    border-radius: 12px;
+
+    display: none;
+    z-index: 100;
+    box-shadow: 0 10px 20px rgba(0,0,0,.4);
+}
+
+.moti{
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.card-sobre:hover .moti-item{
+    display: block;
+}
+
+.footer{
+    width: 100%;
+    background: #000;
+    color: #fff;
+    padding: 80px 5% 20px;
+}
+
+.container-box{
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-ark{
+    display: flex;
+    justify-content: center;
+}
+
+.logo-ark img{
+    width: 220px;
+    max-width: 100%;
+    height: auto;
+}
+
+hr{
+    width: 100%;
+    border: none;
+    border-top: 1px solid #333;
+    margin: 25px 0;
+}
+
+.contato{
+    text-align: center;
+}
+
+.contato h3{
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.contato a{
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.contato img{
+    width: 32px;
+}
+
+.políticas{
+    text-align: center;
+}
+
+.políticas a{
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.políticas a:hover{
+    color: #ffc300;
+}
+
+.final{
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ==========================================
+NOTEBOOK
+========================================== */
+
+@media(max-width:1400px){
+
+    .sobre h1{
+        font-size: 4.5rem;
+    }
+
+    .foto-sobre img{
+        max-width: 600px;
+    }
+}
+
+/* ==========================================
+TABLET
+========================================== */
+
+@media(max-width:1000px){
+
+    .nav-bar{
+        flex-direction: column;
+    }
+
+    .container-sobre{
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .sobre{
+        width: 100%;
+    }
+
+    .sobre p{
+        margin: auto;
+        margin-bottom: 15px;
+    }
+
+    .foto-sobre{
+        width: 100%;
+    }
+
+    .foto-sobre img{
+        max-width: 500px;
+    }
+
+    .container-nos{
+        margin-top: 40px;
+    }
+}
+
+/* ==========================================
+CELULAR
+========================================== */
+
+@media(max-width:700px){
+
+    .main-container{
+        padding-top: 300px;
+    }
+
+    .nav{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav a{
+        font-size: 1rem;
+    }
+
+    .nav button{
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .sobre h1{
+        font-size: 2.7rem;
+    }
+
+    .sobre p{
+        font-size: 1rem;
+    }
+
+    .foto-sobre img{
+        max-width: 100%;
+    }
+
+    .container-nos{
+        grid-template-columns: 1fr;
+    }
+
+    .card-sobre{
+        padding: 20px;
+    }
+
+    .item h3{
+        font-size: 1.1rem;
+    }
+
+    .item p{
+        font-size: 0.95rem;
+    }
+}
+
+/* ==========================================
+TV / 4K
+========================================== */
+
+@media(min-width:2200px){
+
+    .main-container{
+        max-width: 2400px;
+    }
+
+    .logo{
+        width: 260px;
+    }
+
+    .nav a{
+        font-size: 2rem;
+    }
+
+    .nav button{
+        font-size: 1.8rem;
+        padding: 1rem 2rem;
+    }
+
+    .sobre h1{
+        font-size: 8rem;
+    }
+
+    .sobre p{
+        font-size: 2.2rem;
+        max-width: 1000px;
+    }
+
+    .foto-sobre img{
+        max-width: 1000px;
+    }
+
+    .container-nos{
+        gap: 50px;
+    }
+
+    .card-sobre{
+        padding: 40px;
+    }
+
+    .card-sobre img{
+        width: 80px;
+        height: 80px;
+    }
+
+    .item h3{
+        font-size: 2rem;
+    }
+
+    .item p{
+        font-size: 1.5rem;
+    }
+}

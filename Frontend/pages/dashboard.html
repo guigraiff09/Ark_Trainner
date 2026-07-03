@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin</title>
+
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- MENU LATERAL -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <h2>Admin <span>Painel</span></h2>
+            </div>
+
+            <nav>
+
+                <a href="dashboard.html" class="active">
+                    <i class='bx bx-home'></i>
+                    Dashboard
+                </a>
+
+                <a href="admin.html">
+                    <i class='bx bx-envelope'></i>
+                    Mensagens
+                </a>
+
+                <a href="usuariosadmin.html">
+                    <i class='bx bx-user'></i>
+                    Usuários
+                </a>
+
+                <a href="login.html">
+                    <i class='bx bx-log-out'></i>
+                    Sair
+                </a>
+
+            </nav>
+
+        </aside>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="main">
+
+            <!-- TOPO -->
+            <div class="topo">
+
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Bem-vindo(a) de volta, Administrador!</p>
+                </div>
+
+                <div class="admin">
+                    <i class='bx bx-user-circle'></i>
+                    <span>Administrador</span>
+                </div>
+
+            </div>
+
+            <!-- CARDS -->
+            <div class="cards">
+
+                <!-- Usuários Novos -->
+                <div class="card">
+
+                    <div class="icone azul">
+                        <i class='bx bx-user-plus'></i>
+                    </div>
+
+                    <div>
+                        <h3>Usuários Novos</h3>
+                        <h2 id="usuariosNovos">0</h2>
+                        <p>Últimos 30 dias</p>
+                    </div>
+
+                </div>
+
+                <!-- Usuários Cadastrados -->
+                <div class="card">
+
+                    <div class="icone verde">
+                        <i class='bx bx-group'></i>
+                    </div>
+
+                    <div>
+                        <h3>Usuários Cadastrados</h3>
+                        <h2 id="usuariosCadastrados">0</h2>
+                        <p>Total de usuários</p>
+                    </div>
+
+                </div>
+
+                <!-- Mensagens -->
+                <div class="card">
+
+                    <div class="icone amarelo">
+                        <i class='bx bx-envelope'></i>
+                    </div>
+
+                    <div>
+                        <h3>Mensagens</h3>
+                        <h2 id="totalMensagens">0</h2>
+                        <p>Mensagens recebidas</p>
+                    </div>
+
+                </div>
+
+                <!-- Usuários Inativos -->
+                <div class="card">
+
+                    <div class="icone vermelho">
+                        <i class='bx bx-user-x'></i>
+                    </div>
+
+                    <div>
+                        <h3>Usuários Inativos</h3>
+                        <h2 id="usuariosInativos">0</h2>
+                        <p>Usuários inativos</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- GRÁFICOS -->
+            <div class="graficos">
+
+                <div class="grafico-grande">
+
+                    <div class="titulo">
+                        <h2>Resumo Geral</h2>
+
+                        <select>
+                            <option>Últimos 30 dias</option>
+                        </select>
+                    </div>
+
+                    <div class="grafico-fake">
+                        <canvas id="graficoUsuarios"></canvas>
+                    </div>
+
+                </div>
+
+                <div class="grafico-pequeno">
+
+                    <h2>Distribuição</h2>
+
+                    <div class="circulo"></div>
+
+                    <div class="status">
+
+                        <div>
+                            <span class="bolinha verde"></span>
+                            Ativos
+                        </div>
+
+                        <div>
+                            <span class="bolinha vermelho"></span>
+                            Inativos
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- LISTAS -->
+            <div class="listas">
+
+                <div class="lista">
+
+                    <div class="titulo-lista">
+                        <h2>Últimas Mensagens</h2>
+                    </div>
+
+                    <div class="vazio">
+                        Nenhuma mensagem recebida.
+                    </div>
+
+                </div>
+                </div>
+                <div class="lista">
+
+                    <div class="titulo-lista">
+                        <h2>Usuários Inativos</h2>
+                    </div>
+
+                    <div class="vazio">
+                        Nenhum usuário inativo.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/dashboard.js"></script>
+
+</body>
+
+</html>

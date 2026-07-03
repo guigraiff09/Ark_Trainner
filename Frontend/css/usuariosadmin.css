@@ -1,0 +1,453 @@
+
+*{
+  margin: 0; /* remove margens padrão */
+  padding: 0; /* remove paddings padrão */
+  box-sizing: border-box; /* inclui padding e border no tamanho*/
+  font-family: Arial, Helvetica, sans-serif; /*fonte padrão* /
+}
+
+body{
+  background: #f5f5f5; /* fundo da página */
+}
+
+/* CONTAINER PRINCIPAL */
+
+.container{
+  display: flex; /* deixa sidebar e conteúdo lado a lado */
+  min-height: 100vh; /* altura mínima da tela inteira */
+}
+
+/* SIDEBAR */
+
+.sidebar{
+  width: 250px; /* largura do menu lateral */
+
+  background: linear-gradient(180deg, #050816, #0b132b); /* degradê */
+
+  color: white; /* cor do texto */
+
+  padding: 10px 0px; /* espaço interno */
+
+  display: flex; /* ativa flexbox */
+
+  
+  flex-direction: column; /* organiza em coluna */
+  
+
+}
+
+/* LOGO */
+
+.logo h2{
+  font-size: 28px; /* tamanho do texto */
+  margin-bottom: 50px; /* espaço abaixo */
+}
+
+.logo span{
+  color: #f4c542; /* cor amarela */
+}
+
+/* MENU */
+
+.sidebar ul{
+  list-style: none; /* remove bolinhas */
+}
+
+.sidebar ul li{
+  margin-bottom: 20px; /* espaço entre itens */
+}
+
+.sidebar ul li a{
+  text-decoration: none; /* remove sublinhado */
+
+  color: white; /* cor do texto */
+
+  display: flex; /* ativa flexbox */
+
+  align-items: center; /* centraliza vertical */
+
+  gap: 10px; /* espaço entre ícone e texto */
+
+  padding: 14px; /* espaço interno */
+
+  border-radius: 10px; /* bordas arredondadas */
+
+  transition: 0.3s; /* animação suave */
+}
+
+/* HOVER DO MENU */
+
+.sidebar ul li a:hover{
+  background: #f4c542; /* fundo amarelo */
+  color: black; /* texto preto */
+}
+
+/* ITEM ATIVO */
+
+.sidebar ul li.active a{
+  background: #f4c542; /* fundo amarelo */
+  color: black; /* texto preto */
+}
+
+/* BOTÃO SAIR */
+
+.logout{
+  display: flex; /* flexbox */
+
+  align-items: center; /* centraliza vertical */
+
+  gap: 10px; /* espaço entre ícone e texto */
+
+  cursor: pointer; /* mãozinha */
+
+  padding: 12px; /* espaço interno */
+
+  border-radius: 10px; /* borda arredondada */
+
+  transition: 0.3s; /* animação */
+}
+
+.logout:hover{
+  background: rgba(255,255,255,0.1); /* fundo transparente */
+}
+
+/* CONTEÚDO PRINCIPAL */
+
+.content{
+  flex: 1; /* ocupa espaço restante */
+
+  padding: 40px; /* espaçamento interno */
+}
+
+/* TOPO */
+
+.topo{
+  display: flex; /* flexbox */
+
+  justify-content: space-between; /* separa elementos */
+
+  align-items: center; /* centraliza vertical */
+
+  margin-bottom: 40px; /* espaço abaixo */
+}
+
+.topo h1{
+  font-size: 42px; /* tamanho do título */
+
+  color: #111; /* cor do texto */
+}
+
+.topo p{
+  color: #666; /* cor cinza */
+
+  margin-top: 8px; /* espaço acima */
+}
+
+/* ÁREA ADMIN */
+
+.admin{
+  display: flex; /* flexbox */
+
+  align-items: center; /* centraliza vertical */
+
+  gap: 10px; /* espaço entre itens */
+
+  font-size: 18px; /* tamanho texto */
+
+  color: #444; /* cor */
+}
+
+.admin i{
+  font-size: 40px; /* tamanho do ícone */
+}
+
+/* CARDS */
+
+.cards{
+  display: grid; /* grid layout */
+
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); /* responsivo */
+
+  gap: 20px; /* espaço entre cards */
+
+  margin-bottom: 35px; /* espaço abaixo */
+}
+
+/* CARD */
+
+.card{
+  background: white; /* fundo branco */
+
+  padding: 25px; /* espaço interno */
+
+  border-radius: 15px; /* borda arredondada */
+
+  display: flex; /* flexbox */
+
+  align-items: center; /* centraliza vertical */
+
+  gap: 20px; /* espaço entre elementos */
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* sombra */
+}
+
+.card h3{
+  color: #444; /* cor título */
+
+  margin-bottom: 5px; /* espaço abaixo */
+}
+
+.card p{
+  color: #777; /* cor texto */
+
+  font-size: 14px; /* tamanho texto */
+}
+
+/* ÍCONES */
+
+.icone{
+  width: 70px; /* largura */
+
+  height: 70px; /* altura */
+
+  border-radius: 50%; /* círculo */
+
+  display: flex; /* flexbox */
+
+  justify-content: center; /* centraliza horizontal */
+
+  align-items: center; /* centraliza vertical */
+
+  font-size: 35px; /* tamanho ícone */
+}
+
+.amarelo{
+  background: #fff1c9; /* fundo */
+  color: #d4a000; /* cor ícone */
+  
+}
+
+.verde{
+  background: #dff5e4;
+  color: #1d9c47;
+}
+
+.vermelho{
+  background: #ffdede;
+  color: #d11a2a;
+}
+
+.azul{
+  background: #ddeaff;
+  color: #246bfd;
+}
+
+/* CAIXA DA TABELA */
+
+.tabela-box{
+  background: white; /* fundo branco */
+
+  border-radius: 15px; /* bordas arredondadas */
+
+  padding: 25px; /* espaço interno */
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* sombra */
+
+  overflow-x: auto; /* scroll horizontal */
+}
+
+/* TOPO DA TABELA */
+
+.tabela-topo{
+  display: flex; /* flexbox */
+
+  justify-content: space-between; /* separa itens */
+
+  align-items: center; /* centraliza */
+
+  margin-bottom: 25px; /* espaço abaixo */
+
+  gap: 20px; /* espaço entre itens */
+}
+
+/* BUSCA */
+
+.busca{
+  flex: 1; /* ocupa espaço */
+
+  background: #f5f5f5; /* fundo */
+
+  padding: 12px 15px; /* espaço interno */
+
+  border-radius: 10px; /* borda arredondada */
+
+  display: flex; /* flexbox */
+
+  align-items: center; /* centraliza */
+
+  gap: 10px; /* espaço */
+}
+
+.busca input{
+  border: none; /* remove borda */
+
+  background: transparent; /* transparente */
+
+  width: 100%; /* largura total */
+
+  outline: none; /* remove borda ao clicar */
+
+  font-size: 15px; /* tamanho texto */
+}
+
+/* BOTÕES */
+
+.acoes-topo{
+  display: flex; /* flexbox */
+
+  gap: 15px; /* espaço entre botões */
+}
+
+.filtro,
+.novo{
+  border: none; /* remove borda */
+
+  padding: 12px 20px; /* espaço interno */
+
+  border-radius: 10px; /* borda arredondada */
+
+  cursor: pointer; /* mãozinha */
+
+  display: flex; /* flexbox */
+
+  align-items: center; /* centraliza */
+
+  gap: 8px; /* espaço */
+
+  font-size: 15px; /* tamanho texto */
+
+  transition: 0.3s; /* animação */
+}
+
+.filtro{
+  background: #efefef; /* fundo cinza */
+}
+
+.novo{
+  background: #f4c542; /* fundo amarelo */
+
+  color: black; /* texto preto */
+
+  font-weight: bold; /* negrito */
+}
+
+.filtro:hover,
+.novo:hover{
+  transform: translateY(-2px); /* sobe ao passar mouse */
+}
+
+/* TABELA */
+
+table{
+  width: 100%; /* largura total */
+
+  min-width: 700px; /* largura mínima */
+
+  border-collapse: collapse; /* remove espaços */
+}
+
+thead{
+  background: #fafafa; /* fundo cabeçalho */
+}
+
+th{
+  text-align: left; /* alinhamento */
+
+  padding: 18px; /* espaço interno */
+
+  color: #555; /* cor */
+
+  font-size: 15px; /* tamanho texto */
+}
+
+td{
+  padding: 18px; /* espaço interno */
+
+  border-top: 1px solid #eee; /* linha */
+
+  color: #333; /* cor texto */
+}
+
+/* USUÁRIO */
+
+.usuario{
+  display: flex; /* flexbox */
+
+  align-items: center; /* centraliza */
+
+  gap: 10px; /* espaço */
+}
+
+.usuario img{
+  width: 40px; /* largura */
+
+  height: 40px; /* altura */
+
+  border-radius: 50%; /* círculo */
+}
+
+/* STATUS */
+
+.status{
+  padding: 6px 12px; /* espaço interno */
+
+  border-radius: 30px; /* arredondado */
+
+  font-size: 13px; /* tamanho */
+
+  font-weight: bold; /* negrito */
+}
+
+.status.ativo{
+  background: #dff5e4; /* fundo verde */
+
+  color: #1d9c47; /* texto verde */
+}
+
+.status.inativo{
+  background: #ffdede; /* fundo vermelho */
+
+  color: #d11a2a; /* texto vermelho */
+}
+
+/* AÇÕES */
+
+.acoes{
+  display: flex; /* flexbox */
+
+  gap: 15px; /* espaço */
+}
+
+.acoes i{
+  cursor: pointer; /* mãozinha */
+
+  font-size: 20px; /* tamanho ícone */
+
+  transition: 0.3s; /* animação */
+}
+
+.acoes i:hover{
+  transform: scale(1.1); /* aumenta */
+}
+
+.bx-trash{
+  color: red; /* vermelho */
+}
+
+.bx-edit{
+  color: #f4c542; /* amarelo */
+}
+
+.bx-show{
+  color: #246bfd; /* azul */
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login Admin</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/login.css">
+
+    <!-- BOXICONS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+          rel='stylesheet'>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="login-box">
+
+            <!-- LOGO -->
+            <div class="logo">
+
+                <h1>
+                    ARK <span>TRAINNER</span>
+                </h1>
+
+                <p>
+                    Painel Administrativo
+                </p>
+
+            </div>
+
+            <!-- EMAIL -->
+            <div class="input-box">
+
+                <i class='bx bx-envelope'></i>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Digite seu email"
+                >
+
+            </div>
+
+            <!-- SENHA -->
+            <div class="input-box">
+
+                <i class='bx bx-lock-alt'></i>
+
+                <input
+                    type="password"
+                    id="senha"
+                    placeholder="Digite sua senha"
+                >
+
+            </div>
+
+            <!-- BOTÃO ENTRAR -->
+            <button onclick="login()">
+
+                Entrar
+
+            </button>
+
+            <!-- DIVISOR -->
+            <div class="divisor">
+
+                <span>ou</span>
+
+            </div>
+
+            <!-- BOTÃO GOOGLE -->
+            <button class="google-btn">
+
+                <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
+                    alt="Google"
+                >
+
+                <span>Entrar com Google</span>
+
+            </button>
+
+            <!-- ERRO -->
+            <p id="erro"></p>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function login() {
+
+            const email =
+                document.getElementById('email').value;
+
+            const senha =
+                document.getElementById('senha').value;
+
+            fetch('http://localhost:3000/login', {
+
+                method: 'POST',
+
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+
+                body: JSON.stringify({
+
+                    email,
+                    senha
+
+                })
+
+            })
+
+            .then(res => res.json())
+
+            .then(data => {
+
+                if (data.sucesso) {
+
+                    localStorage.setItem(
+                        'logado',
+                        'true'
+                    );
+
+                    localStorage.setItem(
+                        'tipo',
+                        data.tipo
+                    );
+
+                    localStorage.setItem(
+                        'nome',
+                        data.nome
+                    );
+
+                    window.location.href =
+                        'admin.html';
+
+                } else {
+
+                    document.getElementById('erro')
+                        .innerText =
+                        'Email ou senha inválidos';
+
+                }
+
+            })
+
+            .catch(() => {
+
+                document.getElementById('erro')
+                    .innerText =
+                    'Erro ao conectar servidor';
+
+            });
+
+        }
+
+    </script>
+
+</body>
+
+</html>
