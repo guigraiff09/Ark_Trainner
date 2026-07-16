@@ -148,7 +148,7 @@ body{
     text-transform: uppercase;
 }
 .card{
-    width: 320px;
+    width: 320px; 
     background: rgba(97,96,96,.2);
     border-radius: 15px;
     position: relative;

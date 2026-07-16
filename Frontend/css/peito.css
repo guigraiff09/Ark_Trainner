@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght=100;200;300;400;500;600;700;800;900&display=swap');
 
 *{
     margin: 0;
@@ -22,7 +22,9 @@ body{
     min-height: 100vh;
 }
 
-
+/* ==========================================
+HEADER & NAVEGAÇÃO
+========================================== */
 .header{
     position: fixed;
     top: 0;
@@ -35,7 +37,7 @@ body{
 
 .nav-bar{
     width: 100%;
-    max-width: 1700px;
+    max-width: 2200px; /* Expandido para telas 4K */
     margin: auto;
     padding: 1rem 5%;
     display: flex;
@@ -43,9 +45,7 @@ body{
     justify-content: space-between;
     gap: 20px;
     list-style-type: none;
-    
 }
-
 
 .logo{
     width: 180px;
@@ -53,16 +53,25 @@ body{
     height: auto;
 }
 
+#menu-icon {
+    display: none; /* Escondido por padrão em telas grandes */
+    font-size: 2.2rem;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1001;
+}
+
 .nav{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    flex-wrap: wrap;
 }
+
 .nav li{
     list-style-type: none;
 }
+
 .nav a{
     color: #fff;
     font-size: 1.1rem;
@@ -72,33 +81,35 @@ body{
 
 .nav a:hover{
     color: #ffc300;
-    font-size: 1.3rem;
- }
-.nav a img{
-    color: #ffc300;
-    font-size: 1.8rem;
-}
-.button a{
-    background: #ffc300;
-    color: #000;
-    padding: 0.8rem 1.5rem;
-    border-radius: 10px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
+    font-size: 1.2rem;
 }
 
-.nav button a:hover{
+/* BOTÃO LOGIN */
+.button {
+    background: #ffc300;
+    padding: 0.6rem 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.button a{
+    color: #000;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button a:hover {
     transform: scale(1.05);
     color: #000;
 }
 
+/* DROPDOWN MENU */
 .dropdown{
     position: relative;
-}
-.i{
-    font-size: 12px;
-    transition: 0.3s ease;
 }
 
 .dropdown-menu{
@@ -125,285 +136,312 @@ body{
 
 .dropdown:hover .dropdown-menu{
     display: block;
-    color: #fff;
 }
 
+/* ==========================================
+GRID DE TREINOS (RESPONSIVO & ULTRA-WIDE / 4K)
+========================================== */
 .container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    /* Ajusta colunas automaticamente: de 1 coluna no celular até 6+ colunas em TVs 4K */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    padding: 10rem 3% 0;
+    padding: 140px 5% 60px;
     justify-items: center;
+    max-width: 2200px; /* Alinhado para TVs 4K e Ultrawides */
+    margin: 30px auto 0;
+    width: 100%;
 }
-.tipo-treino{
-    position: absolute;
-    top: 20px;
-    left: 70%;
-    color: #ffc300;
-    border: 2px solid #ffc300;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 10;
-    padding: 2px 10px;
-    border-radius: 10px;
-    text-transform: uppercase;
-}
+
 .card{
-    width: 320px;
-    background: rgba(97,96,96,.2);
+    width: 100%;
+    max-width: 340px;
+    background: rgba(97, 96, 96, 0.15);
     border-radius: 15px;
     position: relative;
     overflow: hidden;
+    border: 1px solid #1c1c1c;
 }
 
 .card:hover{
     transform: translateY(-5px);
+    border-color: #333;
 }
-.card a{
-    position: relative;
+
+.tipo-treino{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #ffc300;
+    border: 1px solid #ffc300;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 10;
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .card img {
-  width: 100%;
-  height: 200px;
-  border-radius: 15px;
-  outline: none;
-  object-fit: cover; /* Recorta proporcionalmente sem amassar */
+    width: 100%;
+    height: 220px;
+    border-radius: 15px 15px 0 0;
+    object-fit: cover;
     display: block;
 }
 
 figcaption{
     display: flex;
     flex-direction: column;
-    padding: 0 10px;
+    padding: 20px 15px;
+    gap: 10px;
 }
+
 .nome-treino{
-    font-size: 18px;
+    font-size: 1.15rem;
     color: #fff;
+    font-weight: 600;
     text-transform: uppercase;
-    outline: none;
+    letter-spacing: 0.5px;
 }
 
 .treino{
-   display: flex;
-   text-transform: capitalize;
-   gap: 20px;
-   outline: none;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    gap: 12px;
+    width: 100%;
+    position: relative;
 }
 
 .nivel{
     color: #ffc300;
-    font-size: 18px;
+    font-size: 0.95rem;
+    font-weight: 500;
 }
 
 .tipo{
-    font-size: 16px;
-    color: #fff;
+    font-size: 0.95rem;
+    color: #bbb;
 }
 
 .barra{
-    color: #fff;
+    color: #444;
 }
-.treino i{
-    font-size: 30px;
-    color: #ffc300;
-    background-color:#111111;
-    height:  35px;
+
+.btn-seta {
+    background: transparent;
+    margin-left: auto;
     cursor: pointer;
 }
 
-
-@media(max-width: 1200px){
-
-    .slider-container{
-        width: 760px;
-    }
+.treino i{
+    font-size: 2rem;
+    color: #ffc300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-@media(max-width: 850px){
-
-    .slider-container{
-        width: 360px;
-    }
-
-    .card{
-        min-width: 320px;
-    }
-
-    #prev-button img,
-    #next-button img{
-        width: 35px;
-        height: 35px;
-    }
-}
-.footer {
-  width: 100%;
-  background: #000;
-  color: #fff;
-  padding: 40px 5% 20px;
-}
-
-.container-box {
-  width: 100%;
-  max-width: 1400px;
-  margin: auto;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo-ark {
-  display: flex;
-  justify-content: center;
-}
-
-.logo-ark img {
-  width: 220px;
-  max-width: 100%;
-  height: auto;
-}
-
-hr {
-  width: 100%;
-  border: none;
-  border-top: 1px solid #333;
-  margin: 25px 0;
-}
-
-.contato {
-  text-align: center;
-}
-
-.contato h3 {
-  margin-bottom: 20px;
-  font-size: 2rem;
-  color: #fff;
-}
-
-.contato a {
-
-  flex-direction: column;
-  margin: 0 10px;
-
-}
-
-.contato img {
-  width: 32px;
-}
-
-.políticas {
-  text-align: center;
-}
-
-.políticas a {
-  color: #fff;
-  font-size: 1.2rem;
-}
-
-.políticas a:hover {
-  color: #ffc300;
-}
-
-.final {
-  text-align: center;
-  font-size: 0.95rem;
-  line-height: 1.7;
-  max-width: 1200px;
-  margin: auto;
+.treino i:hover {
+    transform: scale(1.1);
 }
 
 /* ==========================================
-   MEDIA QUERIES (RESPONSIVIDADE)
-   ========================================== */
-
-/* Para Notebooks e Tablets (Até 992px) */
-@media (max-width: 992px) {
-  .text-motivation h1 {
-    font-size: 2.8rem;
-  }
-
-  .text-motivation h2 {
-    font-size: 1.5rem;
-  }
-
-  .img-treino {
-    height: 380px;
-    /* Diminui um pouco a altura do banner */
-  }
-}
-
-/* Para Tablets e Celulares Grandes (Até 768px) */
-@media (max-width: 768px) {
-  .header .nav-bar {
-    flex-direction: column;
-    gap: 15px;
-    padding: 1rem;
-  }
-
-  .nav {
-    gap: 5px;
-  }
-
-  .nav a {
-    margin: 0 0.8rem;
-    font-size: 1rem;
-  }
-
-  .container-img {
-    margin-top: 130px;
-    /* Ajuste pelo tamanho do menu maior */
-  }
-
-  .text-motivation {
-    left: 5%;
-    max-width: 90%;
-  }
-
-  .text-motivation h1 {
-    font-size: 2.2rem;
-  }
-
-  .text-motivation h2 {
-    font-size: 1.2rem;
-  }
-
-  .nav-box .ul li {
-    padding: 10px 15px;
-    /* Diminui o espaçamento dos botões de categorias */
-  }
-}
-
-/* Para Celulares Pequenos (Até 480px) */
-@media (max-width: 480px) {
-  .nav {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .container-img {
-    margin-top: 220px;
-    /* Ajuste para o menu vertical */
-  }
-
-  .img-treino {
-    height: 320px;
-  }
-
-  .text-motivation h1 {
-    font-size: 1.8rem;
-  }
-
-  .text-motivation h2 {
-    font-size: 1rem;
-  }
-
-  /* Transforma a barra de categorias em uma lista vertical em telas muito pequenas */
-  .nav-box .ul {
-    flex-direction: column;
-  }
-
-  .nav-box .ul li {
+FOOTER
+========================================== */
+.footer {
     width: 100%;
+    background: #000;
+    color: #fff;
+    padding: 40px 5% 20px;
+    border-top: 1px solid #222;
+}
+
+.container-box {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-ark img {
+    width: 180px;
+    height: auto;
+}
+
+hr {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #222;
+    margin: 25px 0;
+}
+
+.contato {
     text-align: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
+}
+
+.contato h3 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.contato a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.contato img {
+    width: 30px;
+}
+
+.políticas {
+    text-align: center;
+}
+
+.políticas a {
+    color: #fff;
+    font-size: 1rem;
+}
+
+.políticas a:hover {
+    color: #ffc300;
+}
+
+.final {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* ==========================================
+MEDIA QUERIES (RESPONSIVIDADE MULTI-TELA)
+========================================== */
+
+/* Telas Grandes / Notebooks de Alta Resolução */
+@media(max-width: 1200px){
+    .container {
+        padding-top: 110px;
+    }
+}
+
+/* Tablets, iPads e Telas Médias (Ativação do Menu Hambúrguer) */
+@media (max-width: 992px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;                     
+        right: -100%;
+        width: 100%;
+        max-width: 180px; /* Menu sutil e elegante */
+        height: 100vh;              
+        background: #0d0d0d;        
+        flex-direction: column;
+        /* Centralização perfeita dos itens no menu lateral */
+        justify-content: flex-start;
+        align-items: center;
+        padding: 8rem 1.5rem;
+        gap: 2.5rem;
+        border-left: 1px solid #222;
+        z-index: 1000;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+    }
+
+    .nav.active {
+        right: 0;
+    }
+
+    .nav li {
+        width: 100%;
+        text-align: left;
+    }
+
+    .nav a {
+        font-size: 1.1rem;
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+
+    /* Centralização do botão de Login no menu mobile */
+    .login-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .button a{
+        width: 100%;
+        max-width: 160px; 
+        text-align: center;
+        /* Tamanho controlado e centrado */
+    }
+
+    .dropdown-menu {
+        position: relative;
+        top: 5px;
+        background-color: #1a1a1a;
+        box-shadow: none;
+        width: 100%;
+    }
+    
+    .dropdown-menu li a {
+        text-align: left;
+    }
+}
+
+/* Celulares Grandes e Pequenos (Menos de 576px) 
+   - Aqui reduzimos ligeiramente o tamanho dos cards para telas de celular */
+@media (max-width: 576px) {
+    .container {
+        grid-template-columns: 1fr; /* Um card por linha */
+        padding-left: 8%;
+        padding-right: 8%;
+        gap: 20px;
+    }
+    
+    .card {
+        max-width: 290px; /* Reduzido de 340px para 290px */
+    }
+
+    .card img {
+        height: 180px; /* Imagem do card mais compacta */
+    }
+
+    figcaption {
+        padding: 15px 12px; /* Espaçamento interno reduzido */
+        gap: 8px;
+    }
+
+    .nome-treino {
+        font-size: 1.05rem; /* Título levemente menor */
+    }
+
+    .treino i {
+        font-size: 1.8rem; /* Ícone de seta um pouco menor */
+    }
+}
+
+/* Celulares Muito Pequenos (Menos de 360px) */
+@media (max-width: 360px) {
+    .container {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .card {
+        max-width: 260px; /* Ainda mais compacto para mini-telas */
+    }
+
+    .card img {
+        height: 160px;
+    }
 }

@@ -23,9 +23,8 @@ body{
 }
 
 /* ==========================================
-HEADER
+HEADER & NAVEGAÇÃO
 ========================================== */
-
 .header{
     position: fixed;
     top: 0;
@@ -41,7 +40,6 @@ HEADER
     max-width: 1700px;
     margin: auto;
     padding: 1rem 5%;
-    list-style: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -54,12 +52,19 @@ HEADER
     height: auto;
 }
 
+#menu-icon {
+    display: none;
+    font-size: 2.2rem;
+    color: #fff;
+    cursor: pointer;
+}
+
 .nav{
     display: flex;
-    align-items: center;
+    align-items: left;
     justify-content: center;
     gap: 2rem;
-    flex-wrap: wrap;
+    list-style: none;
 }
 
 .nav a{
@@ -70,30 +75,30 @@ HEADER
 
 .nav a:hover{
     color: #ffc300;
-    font-size: 1.3rem;
- }
+    font-size: 1.2rem;
+}
 
-.button a{
+.button {
     background: #ffc300;
-    color: #000;
-    padding: 0.8rem 1.5rem;
+    padding: 0.6rem 1.5rem;
     border-radius: 10px;
-    font-size: 1rem;
-    font-weight: 600;
     cursor: pointer;
 }
 
-.nav button a:hover{
+.button a{
+    color: #000;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.button a:hover{
     transform: scale(1.05);
     color: #000;
 }
 
+/* DROPDOWN MENU */
 .dropdown{
     position: relative;
-}
-.i{
-    font-size: 12px;
-    transition: 0.3s ease;
 }
 
 .dropdown-menu{
@@ -121,36 +126,36 @@ HEADER
 .dropdown:hover .dropdown-menu{
     display: block;
 }
-/* ==========================================
-MAIN
-========================================== */
 
+/* ==========================================
+MAIN CONTAINER
+========================================== */
 .main-container{
     width: 100%;
     max-width: 1700px;
     margin: auto;
-    padding: 180px 5% 80px;
+    padding: 140px 5% 80px;
 }
 
 /* ==========================================
-SEÇÃO SOBRE
+SEÇÃO SOBRE (LADO A LADO DINÂMICO)
 ========================================== */
-
 .container-sobre{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 60px;
-    flex-wrap: wrap;
+    gap: 40px;
+    width: 100%;
 }
 
 .sobre{
-    flex: 1 1 500px;
+    flex: 1.2; /* Dá uma leve preferência de espaço para o bloco de texto */
 }
 
 .sobre h1{
-    font-size: clamp(3rem,6vw,6rem);
+    font-size: clamp(2.2rem, 4.5vw, 5.5rem);
     margin-bottom: 20px;
+    margin-top: 5rem;
     line-height: 1.1;
 }
 
@@ -159,62 +164,63 @@ SEÇÃO SOBRE
 }
 
 .sobre p{
-    font-size: clamp(1rem,2vw,1.6rem);
-    line-height: 1.7;
+    font-size: clamp(0.95rem, 1.4vw, 1.4rem);
+    line-height: 1.6;
     max-width: 700px;
     margin-bottom: 15px;
 }
 
-/* ==========================================
-IMAGEM
-========================================== */
-
 .foto-sobre{
-    flex: 1 1 400px;
+    flex: 0.8;
     display: flex;
     justify-content: center;
 }
 
 .foto-sobre img{
     width: 100%;
-    max-width: 500px;
+    max-width: 480px;
     height: auto;
+    border-radius: 15px;
+    object-fit: cover;
 }
 
 /* ==========================================
-CARDS
+CARDS QUE EMPURRAM O CONTEÚDO (HOVER EFECT)
 ========================================== */
-
 .container-nos{
     width: 100%;
-    margin-top: 100px;
-
+    margin-top: 80px;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
+    align-items: start; /* Impede que os cartões estiquem artificialmente juntos */
 }
 
 .card-sobre{
-    position: relative;
     border: 2px solid #fff;
     border-radius: 20px;
     padding: 25px;
-
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 20px;
-
     background: #111;
+    overflow: hidden;
+    height: auto; /* Permite que o card mude de altura dinamicamente */
 }
 
 .card-sobre:hover{
-    transform: translateY(-8px);
+    transform: translateY(-5px);
     border-color: #ffc300;
 }
 
 .card-sobre img{
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+}
+
+.item {
+    flex: 1;
 }
 
 .item h3{
@@ -227,40 +233,39 @@ CARDS
     font-size: 1rem;
 }
 
-/* TOOLTIP */
-
+/* FRASE MOTIVACIONAL EM BLOCKS (EMPURRA O LAYOUT) */
 .moti-item{
-    position: absolute;
-    top: 115%;
-    left: 20px;
-
-    width: 280px;
-    padding: 20px;
-
-    background: #333;
-    border-radius: 12px;
-
-    display: none;
-    z-index: 100;
-    box-shadow: 0 10px 20px rgba(0,0,0,.4);
+    max-height: 0; /* Começa fechado sem ocupar espaço */
+    opacity: 0;
+    margin-top: 0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .moti{
-    color: #fff;
-    padding: 0;
-    margin: 0;
-    line-height: 1.6;
+    color: #ffc300;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-weight: 500;
+    border-top: 1px dashed #333;
+    padding-top: 10px;
 }
 
+/* Aplicação do Efeito de Empuxo */
 .card-sobre:hover .moti-item{
-    display: block;
+    max-height: 120px; /* Abre o bloco empurrando fisicamente o grid e os cards abaixo */
+    opacity: 1;
+    margin-top: 15px;
 }
 
+/* ==========================================
+FOOTER
+========================================== */
 .footer{
     width: 100%;
     background: #000;
     color: #fff;
-    padding: 80px 5% 20px;
+    padding: 60px 5% 20px;
 }
 
 .container-box{
@@ -273,31 +278,25 @@ CARDS
     justify-content: center;
 }
 
-.logo-ark{
-    display: flex;
-    justify-content: center;
-}
-
 .logo-ark img{
-    width: 220px;
-    max-width: 100%;
+    width: 180px;
     height: auto;
 }
 
 hr{
     width: 100%;
     border: none;
-    border-top: 1px solid #333;
+    border-top: 1px solid #222;
     margin: 25px 0;
 }
 
-.contato{
+.contato {
     text-align: center;
-}
 
+}
 .contato h3{
     margin-bottom: 20px;
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 .contato a{
@@ -306,16 +305,12 @@ hr{
 }
 
 .contato img{
-    width: 32px;
-}
-
-.políticas{
-    text-align: center;
+    width: 30px;
 }
 
 .políticas a{
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .políticas a:hover{
@@ -324,171 +319,143 @@ hr{
 
 .final{
     text-align: center;
-    font-size: 0.95rem;
-    line-height: 1.7;
-    max-width: 1200px;
-    margin: auto;
+    font-size: 0.9rem;
+    color: #888;
 }
 
 /* ==========================================
-NOTEBOOK
+SISTEMA COMPLETO DE RESPONSIVIDADE (TELA POR TELA)
 ========================================== */
 
-@media(max-width:1400px){
-
-    .sobre h1{
-        font-size: 4.5rem;
+/* Notebooks e Desktops Intermediários (Até 1200px) */
+@media (max-width: 1200px) {
+    .main-container {
+        padding-top: 120px;
     }
-
-    .foto-sobre img{
-        max-width: 600px;
+    .container-sobre {
+        gap: 30px;
     }
 }
 
-/* ==========================================
-TABLET
-========================================== */
+/* Tablets e Celulares Deitados - Ativação do Menu Hambúrguer (Até 992px) */
+@media (max-width: 992px) {
+    #menu-icon {
+        display: block; /* Revela o hambúrguer */
+        position: relative !important;
+        z-index: 2000 !important;
+    }
 
-@media(max-width:1000px){
-
-    .nav-bar{
+    .nav {
+        position: fixed;
+        top: 0px;
+        right: -100%; /* Oculta lateralmente */
+        width: 100%;
+        max-width: 180px;
+        height: 100vh !important; 
+        background: #0d0d0d;
         flex-direction: column;
+        justify-content: flex-start;
+        padding: 6rem 1rem 2rem 1rem !important; 
+        gap: 2.5rem;
+        border-left: 1px solid #222;
+        z-index: 1000;
+        transition: 0.4s ease;
+        
     }
 
-    .container-sobre{
+    .nav.active {
+        right: 0; /* Menu aparece deslizando */
+    }
+
+    .dropdown-menu {
+        position: relative;
+        top: 10px;
+        background-color: #1a1a1a;
+        box-shadow: none;
+    }
+}
+
+/* Celulares Padrão (Até 768px) */
+@media (max-width: 768px) {
+    /* Mantém em linha (lado a lado), adaptando os textos */
+    .container-sobre {
+        flex-direction: row; 
+        gap: 20px;
+    }
+
+    .sobre h1 {
+        font-size: 1.8rem;
+    }
+
+    .sobre p {
+        font-size: 0.9rem;
+    }
+
+    .container-nos {
+        grid-template-columns: 1fr; /* Cartões empilham na vertical em telas menores */
+        gap: 20px;
+    }
+}
+
+/* Celulares Pequenos e Telas Mini (Até 480px) */
+@media (max-width: 480px) {
+    /* Apenas aqui eles quebram em coluna para as letras não ficarem exprimidas em 1 coluna fina */
+    .container-sobre {
         flex-direction: column-reverse;
         text-align: center;
     }
 
-    .sobre{
-        width: 100%;
-    }
-
-    .sobre p{
-        margin: auto;
-        margin-bottom: 15px;
-    }
-
-    .foto-sobre{
-        width: 100%;
-    }
-
-    .foto-sobre img{
-        max-width: 500px;
-    }
-
-    .container-nos{
-        margin-top: 40px;
-    }
-}
-
-/* ==========================================
-CELULAR
-========================================== */
-
-@media(max-width:700px){
-
-    .main-container{
-        padding-top: 300px;
-    }
-
-    .nav{
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .nav a{
-        font-size: 1rem;
-    }
-
-    .nav button{
-        width: 100%;
-        max-width: 250px;
-    }
-
-    .sobre h1{
-        font-size: 2.7rem;
-    }
-
-    .sobre p{
-        font-size: 1rem;
-    }
-
-    .foto-sobre img{
+    .foto-sobre img {
         max-width: 100%;
     }
 
-    .container-nos{
-        grid-template-columns: 1fr;
-    }
-
-    .card-sobre{
-        padding: 20px;
-    }
-
-    .item h3{
-        font-size: 1.1rem;
-    }
-
-    .item p{
-        font-size: 0.95rem;
+    .sobre h1 {
+        font-size: 2.2rem;
     }
 }
 
-/* ==========================================
-TV / 4K
-========================================== */
-
-@media(min-width:2200px){
-
-    .main-container{
-        max-width: 2400px;
+/* Monitores Gigantes, Ultra-wide e Telas de TV (A partir de 2200px) */
+@media (min-width: 2200px) {
+    .main-container {
+        max-width: 2000px;
+        padding-top: 180px;
     }
 
-    .logo{
-        width: 260px;
+    .logo {
+        width: 240px;
     }
 
-    .nav a{
+    .nav a {
+        font-size: 1.4rem;
+    }
+
+    .sobre h1 {
+        font-size: 6.5rem;
+    }
+
+    .sobre p {
         font-size: 2rem;
+        max-width: 900px;
     }
 
-    .nav button{
+    .foto-sobre img {
+        max-width: 700px;
+    }
+
+    .container-nos {
+        gap: 40px;
+        grid-template-columns: repeat(4, 1fr); /* Força os 4 ficarem em linha no 4K */
+    }
+
+    .card-sobre {
+        padding: 35px;
+    }
+
+    .item h3 {
         font-size: 1.8rem;
-        padding: 1rem 2rem;
     }
 
-    .sobre h1{
-        font-size: 8rem;
-    }
-
-    .sobre p{
-        font-size: 2.2rem;
-        max-width: 1000px;
-    }
-
-    .foto-sobre img{
-        max-width: 1000px;
-    }
-
-    .container-nos{
-        gap: 50px;
-    }
-
-    .card-sobre{
-        padding: 40px;
-    }
-
-    .card-sobre img{
-        width: 80px;
-        height: 80px;
-    }
-
-    .item h3{
-        font-size: 2rem;
-    }
-
-    .item p{
-        font-size: 1.5rem;
+    .item p {
+        font-size: 1.3rem;
     }
 }

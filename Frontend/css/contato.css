@@ -22,7 +22,9 @@ body{
     min-height: 100vh;
 }
 
-
+/* ==========================================
+HEADER & NAVEGAÇÃO
+========================================== */
 .header{
     position: fixed;
     top: 0;
@@ -42,9 +44,7 @@ body{
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    list-style-type: none;
 }
-
 
 .logo{
     width: 180px;
@@ -52,52 +52,54 @@ body{
     height: auto;
 }
 
+#menu-icon {
+    display: none;
+    font-size: 2.2rem;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1001; /* Fica acima do menu lateral aberto */
+}
+
 .nav{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    flex-wrap: wrap;
+    list-style: none;
 }
-.nav li{
-    list-style-type: none;
-}
+
 .nav a{
     color: #fff;
     font-size: 1.1rem;
     font-weight: 500;
-    text-align: center;
 }
 
 .nav a:hover{
     color: #ffc300;
-    font-size: 1.3rem;
- }
-.nav a img{
-    color: #ffc300;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
 }
-.button a{
+
+.button {
     background: #ffc300;
-    color: #000;
-    padding: 0.8rem 1.5rem;
+    padding: 0.6rem 1.5rem;
     border-radius: 10px;
-    font-size: 1rem;
-    font-weight: 600;
     cursor: pointer;
 }
 
-.nav button a:hover{
-    transform: scale(1.05);
+.button a{
     color: #000;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
+.button a:hover{
+    transform: scale(1.05);
+    color: #000 ;
+}
+
+/* DROPDOWN MENU */
 .dropdown{
     position: relative;
-}
-.i{
-    font-size: 12px;
-    transition: 0.3s ease;
 }
 
 .dropdown-menu{
@@ -125,45 +127,41 @@ body{
 .dropdown:hover .dropdown-menu{
     display: block;
 }
-/* ==========================================
-MAIN
-========================================== */
 
+/* ==========================================
+MAIN CONTAINER
+========================================== */
 .main-container{
     width: 100%;
     max-width: 1700px;
     margin: auto;
-    padding: 180px 5% 80px;
+    padding: 140px 5% 80px;
 }
 
 /* ==========================================
-CONTAINER PRINCIPAL
+CONTAINER PRINCIPAL (TEXTO + IMAGEM LADO A LADO)
 ========================================== */
-
 .container-content{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 60px;
-    flex-wrap: wrap;
+    gap: 40px;
+    width: 100%;
+    margin-top: 80px;
 }
 
-/* ==========================================
-FRASE
-========================================== */
-
 .frase{
-    flex: 1 1 500px;
+    flex: 1.2;
 }
 
 .frase h2{
     color: #ffc300;
-    font-size: clamp(2rem,4vw,4rem);
-    margin-bottom: 20px;
+    font-size: clamp(1.2rem, 2.2vw, 2rem);
+    margin-bottom: 10px;
 }
 
 .frase h1{
-    font-size: clamp(2.5rem,5vw,5rem);
+    font-size: clamp(1.8rem, 3.8vw, 3.8rem);
     line-height: 1.1;
     margin-bottom: 20px;
 }
@@ -173,49 +171,47 @@ FRASE
 }
 
 .frase p{
-    max-width: 600px;
-    line-height: 1.7;
-    font-size: 1.1rem;
+    max-width: 650px;
+    line-height: 1.6;
+    font-size: clamp(0.85rem, 1.15vw, 1.1rem);
+    color: #ddd;
 }
 
-/* ==========================================
-IMAGEM
-========================================== */
-
 .img-cont{
-    flex: 1 1 400px;
+    flex: 0.8;
     display: flex;
     justify-content: center;
 }
 
 .img-cont img{
     width: 100%;
-    max-width: 650px;
+    max-width: 540px;
     height: auto;
+    border-radius: 15px;
 }
 
 /* ==========================================
 FORMULÁRIO
 ========================================== */
-
 .container-input{
     width: 100%;
     border: 2px solid #fff;
     border-radius: 20px;
     padding: 40px;
-    background: #000;
-    margin-top: 70px;
+    background: #050505;
+    margin-top: 60px;
 }
 
 .container-input h3{
-    font-size: clamp(2rem,3vw,3rem);
-    margin-bottom: 30px;
+    font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+    margin-bottom: 25px;
 }
 
 .input-box{
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
+    width: 100%;
 }
 
 .input-box input,
@@ -226,26 +222,24 @@ FORMULÁRIO
     border-radius: 10px;
     padding: 16px;
     color: #fff;
-    font-size: 1rem;
+    font-size: 0.95rem;
 }
 
-.input-box input:hover{
-    font-size: 1.4;
-    background-color: #ffc300;
-    color: #000;
+.input-box input:focus,
+.input-box textarea:focus,
+.input-box input:hover,
+.input-box textarea:hover {
+    background-color: #111;
+    border-color: #ffc300;
 }
-.input-box  textarea:hover{
-    font-size: 1.4;
-    background-color: #ffc300;
-    color: #000;
-}
+
 .input-box textarea{
     resize: none;
     height: 140px;
 }
 
 .input-box button{
-    width: 200px;
+    width: 220px;
     padding: 15px;
     border-radius: 10px;
     background: #ffc300;
@@ -256,46 +250,50 @@ FORMULÁRIO
 }
 
 .input-box button:hover{
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 /* ==========================================
 CONTATO BOX
 ========================================== */
-
 .contato-box{
     width: 100%;
     border: 2px solid #fff;
     border-radius: 20px;
     padding: 40px;
-    margin-top: 40px;
+    margin-top: 30px;
     background: #111;
 }
 
 .box-cont{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
 }
 
 .formas-contato{
-    line-height: 1.8;
+    line-height: 1.6;
 }
 
 .formas-contato h3,
 .formas-contato h4{
     color: #ffc300;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    font-size: 1.15rem;
+}
+
+.formas-contato p{
+    color: #ccc;
+    font-size: 0.95rem;
 }
 
 /* ==========================================
 FOOTER
 ========================================== */
-
 .footer{
     background: #000;
     color: #fff;
-    padding: 50px 5% 20px;
+    padding: 40px 5% 20px;
 }
 
 .container-box{
@@ -306,29 +304,34 @@ FOOTER
 }
 
 .logo-ark img{
-    width: 220px;
-    max-width: 100%;
+    width: 180px;
+    height: auto;
 }
 
 hr{
     width: 100%;
     border: 0;
-    border-top: 1px solid #333;
-    margin: 30px 0;
+    border-top: 1px solid #222;
+    margin: 25px 0;
 }
 
-.contato{
-    font-size: 24px;
+.contato h3 {
+    margin-bottom: 15px;
+    font-size: 1.25rem;
 }
 
 .contato a{
     display: inline-block;
-    margin: 15px 10px 0;
+    margin: 0 10px;
+}
+
+.contato img{
+    width: 30px;
 }
 
 .políticas a{
     color: #fff;
-    font-size: 22px;
+    font-size: 0.95rem;
 }
 
 .políticas a:hover{
@@ -336,64 +339,103 @@ hr{
 }
 
 .final{
-    text-align: center;
-    font-size: 14px;
-    line-height: 1.7;
+    font-size: 0.85rem;
+    color: #888;
 }
 
 /* ==========================================
-NOTEBOOK
+MEDIA QUERIES - RESPONSIVIDADE COMPLETA
 ========================================== */
 
-/* Telas médias (Tira o absoluto antes que as caixas batam uma na outra) */
-@media (max-width: 1550px ) {
+@media (max-width: 1200px) {
     .main-container {
-
-        min-height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 140px 20px 0;
-        min-width: 300px;
-
-    }
-}
-@media(max-width:1400px){
-
-    .img-cont img{
-        max-width: 550px;
-    }
-
-    .frase h1{
-        font-size: 4rem;
+        padding-top: 110px;
     }
 }
 
-/* ==========================================
-TABLET
-========================================== */
-
-@media(max-width:1000px){
-
-    .nav-bar{
-        flex-direction: column;
+/* Tablets e Celulares - Ativação e Correção do Menu Lateral Estreito */
+@media(max-width: 992px){
+    #menu-icon {
+        display: block;
+        position: relative !important;
+        z-index: 2000 !important;
     }
 
+    .nav {
+        position: fixed;
+        top: 0;                     /* Começa do topo absoluto da janela */
+        right: -100%;
+        width: 100%;
+        max-width: 180px;           /* DIMINUÍDA A LATERAL DO MENU (Mais estreito) */
+        height: 100vh;              /* ALTURA PEGANDO TUDO (Full Screen) */
+        background: #0d0d0d;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 6rem 1.5rem 2rem;  /* Espaço superior para não sobrepor o ícone */
+        gap: 2rem;
+        border-left: 1px solid #222;
+        z-index: 1000;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+    }
+
+    .nav.active {
+        right: 0;
+    }
+
+    .nav li {
+        width: 100%;
+    }
+
+    .nav a {
+        font-size: 1rem;
+        display: block;
+        width: 100%;
+    }
+
+    .login-wrapper {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .nav button {
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: relative;
+        top: 5px;
+        background-color: #161616;
+        box-shadow: none;
+        width: 100%;
+    }
+}
+
+/* Telas Médias e de Smartphones (Frase e Imagem LADO A LADO com foto ampliada) */
+@media(max-width: 768px){
     .container-content{
-        flex-direction: column-reverse;
-        text-align: center;
+        flex-direction: row;        /* MANTER LADO A LADO */
+        align-items: center;
+        gap: 25px;
     }
 
-    .frase p{
-        margin: auto;
+    .frase {
+        flex: 1.1;                  /* Equilibra o espaço com a foto */
     }
 
-    .img-cont img{
-        max-width: 500px;
+    .frase h1 {
+        font-size: 1.5rem;          /* Letras menores para evitar quebras feias */
     }
 
-    .container-input{
-        padding: 30px;
+    .frase p {
+        font-size: 0.85rem;
+    }
+
+    .img-cont {
+        flex: 0.9;                  /* AUMENTA O ESPAÇO DA FOTO QUANDO FICA PEQUENO */
+    }
+
+    .img-cont img {
+        max-width: 100%;            /* Faz a foto expandir e preencher o bloco responsivamente */
     }
 
     .input-box button{
@@ -401,133 +443,64 @@ TABLET
     }
 }
 
-/* ==========================================
-CELULAR
-========================================== */
-
-@media(max-width:700px){
-
-    .main-container{
-        padding-top: 300px;
+/* Telas Muito Estreitas (Abaixo de 480px) - Inversão necessária apenas para legibilidade extrema */
+@media(max-width: 480px) {
+    .container-content{
+        flex-direction: column-reverse; 
+        text-align: center;
+        gap: 20px;
     }
 
-    .nav{
-        flex-direction: column;
-        width: 100%;
+    .frase p {
+        margin: 0 auto;
     }
 
-    .nav a{
-        font-size: 1rem;
-    }
-
-    .nav button{
-        width: 100%;
-        max-width: 250px;
-    }
-
-    .frase h1{
-        font-size: 2.5rem;
-    }
-
-    .frase h2{
-        font-size: 2rem;
-    }
-
-    .frase p{
-        font-size: 1rem;
+    .img-cont img{
+        max-width: 85%;
     }
 
     .container-input,
-    .contato-box{
+    .contato-box {
         padding: 20px;
-    }
-
-    .container-input h3{
-        text-align: center;
-    }
-
-    .contato{
-        font-size: 18px;
-    }
-
-    .políticas a{
-        font-size: 18px;
-    }
-
-    .logo-ark img{
-        width: 180px;
-    }
-
-    .final{
-        font-size: 12px;
     }
 }
 
-/* ==========================================
-TV / 4K
-========================================== */
-
-@media(min-width:2200px){
-
+/* Monitores Ultra-Wide e 4K (A partir de 2200px) */
+@media(min-width: 2200px){
     .main-container{
-        max-width: 2400px;
+        max-width: 2000px;
+        padding-top: 180px;
     }
 
-    .logo{
-        width: 260px;
+    .logo {
+        width: 240px;
     }
 
-    .nav a{
-        font-size: 2rem;
-    }
-
-    .nav button{
-        font-size: 1.8rem;
-        padding: 1rem 2rem;
+    .nav a {
+        font-size: 1.3rem;
     }
 
     .frase h1{
-        font-size: 7rem;
-    }
-
-    .frase h2{
         font-size: 5rem;
     }
 
     .frase p{
-        font-size: 2rem;
+        font-size: 1.4rem;
         max-width: 900px;
     }
 
     .img-cont img{
-        max-width: 900px;
-    }
-
-    .container-input h3{
-        font-size: 4rem;
+        max-width: 700px;
     }
 
     .input-box input,
     .input-box textarea{
-        font-size: 1.5rem;
-        padding: 25px;
+        font-size: 1.2rem;
+        padding: 22px;
     }
 
     .input-box button{
-        width: 300px;
-        font-size: 1.5rem;
-    }
-
-    .contato-box{
-        padding: 60px;
-    }
-
-    .formas-contato h3,
-    .formas-contato h4{
-        font-size: 2rem;
-    }
-
-    .formas-contato p{
-        font-size: 1.5rem;
+        width: 280px;
+        font-size: 1.15rem;
     }
 }

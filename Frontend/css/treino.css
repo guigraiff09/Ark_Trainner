@@ -1,6 +1,9 @@
+/* ==========================================================================
+   1. CONFIGURAÇÕES GLOBAIS E RESETS
+   ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -11,29 +14,31 @@
     transition: 0.3s ease;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     background: #000;
     color: #fff;
     overflow-x: hidden;
     min-height: 100vh;
 }
 
-
-.header{
+/* ==========================================================================
+   2. HEADER & MENU DE NAVEGAÇÃO (DESKTOP)
+   ========================================================================== */
+.header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     background: #000;
-    z-index: 999;
+    z-index: 1999;
     border-bottom: 1px solid #222;
 }
 
-.nav-bar{
+.nav-bar {
     width: 100%;
     max-width: 1700px;
     margin: auto;
@@ -42,486 +47,499 @@ body{
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    list-style-type: none;
 }
 
-
-.logo{
+.logo {
     width: 180px;
-    max-width: 100%;
     height: auto;
 }
 
-.nav{
+#menu-icon {
+    display: none;
+    font-size: 2.2rem;
+    color: #fff;
+    cursor: pointer;
+    z-index: 2001;
+}
+
+.nav {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    flex-wrap: wrap;
-}
-.nav li{
-    list-style-type: none;
-}
-.nav a{
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: 500;
-    text-align: center;
+    list-style: none;
 }
 
-.nav a:hover{
-    color: #ffc300;
-    font-size: 1.3rem;
- }
-.nav a img{
-    color: #ffc300;
-    font-size: 1.8rem;
+.nav a {
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 500;
 }
-.button a{
+
+.nav a:hover {
+    color: #ffc300;
+}
+
+/* Botão de Login */
+.nav .button a {
     background: #ffc300;
     color: #000;
-    padding: 0.8rem 1.5rem;
-    border-radius: 10px;
-    font-size: 1rem;
+    padding: 0.6rem 1.4rem;
+    border-radius: 8px;
     font-weight: 600;
-    cursor: pointer;
+    display: inline-block;
 }
 
-.nav button a:hover{
+.nav .button a:hover {
     transform: scale(1.05);
+    background: #e6b000;
     color: #000;
 }
 
-.dropdown{
+/* Dropdown Menu (Submenu Treinos) */
+.dropdown {
     position: relative;
 }
-.i{
-    font-size: 12px;
-    transition: 0.3s ease;
-    color: #fff;
 
-}
-
-.dropdown-menu{
+.dropdown-menu {
     position: absolute;
     top: 100%;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: #333;
     list-style: none;
-    padding: 10px 0;
+    padding: 8px 0;
     min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    z-index: 999;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    z-index: 2000;
     display: none;
-    border-radius: 10px;
+    border-radius: 8px;
+    border: 1px solid #222;
 }
 
-.dropdown-menu li a{
+.dropdown-menu li a {
     display: block;
-    padding: 10px 15px;
-    font-size: 14px;
+    padding: 10px 20px;
+    font-size: 0.95rem;
     color: #fff;
     text-align: left;
 }
 
-.dropdown:hover .dropdown-menu{
-    display: block;
-}
-/* --- BANNER DE MOTIVAÇÃO (TEXTO SOBRE A IMAGEM) --- */
-.container-img {
-  position: relative;
-  text-align: center;
-  margin-top: 80px;
-  /* Alinhado com o header fixo */
-  width: 100%;
-  overflow: hidden;
+.dropdown-menu li a:hover {
+    background: #1c1c1c;
+    color: #ffc300;
+    font-size: 0.95rem; /* Evita que o texto quebre o layout no hover */
 }
 
-/* Ajustado para cobrir bem o fundo sem achatar a imagem */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* ==========================================================================
+   3. BANNER PRINCIPAL DE MOTIVAÇÃO
+   ========================================================================== */
+.container-img {
+    position: relative;
+    text-align: center;
+    margin-top: 80px;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+}
+
 .img-treino {
-  height: 450px;
-  width: 100%;
-  object-fit: cover;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .text-motivation {
-  position: absolute;
-  left: 3%;
-  /* Alinhado à esquerda de forma fluida */
-  top: 49%;
-  transform: translateY(-50%);
-  /* Centraliza apenas verticalmente */
-  color: #fff;
-  z-index: 10;
-  text-align: left;
-  max-width: 550px;
-  /* Impede o texto de esticar demais */
-  width: 90%;
-  /* Garante respiro nas laterais no mobile */
+    position: absolute;
+    left: 5%;
+    top: 75%;
+    transform: translateY(-50%);
+    color: #fff;
+    z-index: 10;
+    text-align: left;
+    max-width: 550px;
+    width: 90%;
 }
 
 .text-motivation h1 {
-  font-size: 3.5rem;
-  /* Convertido para rem */
-  text-transform: uppercase;
-  padding: 70px 0;
-  line-height: 1.1;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 15px;
 }
 
 .text-motivation h2 {
-  font-size: 1.8rem;
-  text-transform: uppercase;
-  font-weight: 400;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    line-height: 1.3;
 }
 
 .destaque {
-  color: #ffc300;
+    color: #ffc300;
 }
 
-/* --- FILTRO DE CATEGORIAS (HEADER-BOX) --- */
-.header-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
-  /* Fluido */
-  max-width: 1200px;
-  margin: 40px auto 0;
-  /* Centraliza horizontalmente */
-  border: 2px solid #000;
-  background-color: #ffc300;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.nav-box {
-  width: 100%;
-}
-
-.nav-box .ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  flex-wrap: wrap;
-  /* Permite quebrar linha se faltar espaço */
-  width: 100%;
-}
-
-/* Corrigido: Seletor correto para os itens da lista */
-.nav-box .ul li {
-  text-transform: uppercase;
-  padding: 15px 30px;
-}
-
-/* Corrigido: Seletor correto para os links da lista */
-.nav-box .ul li a {
-  color: #000;
-  font-size: 16px;
-  font-weight: 600;
-  display: inline-block;
-}
-
-.nav-box .ul li a:hover {
-  font-size: 1.2rem;
-}
-/* =========================
-   SLIDER
-========================= */
-
-.slider{
+/* ==========================================================================
+   4. COMPONENTE DE SLIDER E CARDS (MÉDIO / COMPACTO)
+   ========================================================================== */
+.slider {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    margin-top: 40px;
+    gap: 15px;
+    margin: 60px 0;
+    padding: 0 5%;
 }
 
-/* CONTAINER VISÍVEL */
-
-.slider-container{
-    width: 1100px;
+/* Container que esconde as sobras no Desktop */
+.slider-container {
+    width: 1080px; /* Espaço exato para 3 cards de 320px + gaps */
     overflow: hidden;
 }
 
-/* LINHA DOS CARDS */
-
-.container-slider{
+.container-slider {
     display: flex;
     align-items: center;
     gap: 30px;
-    transition: transform .5s ease;
+    transition: transform .5s ease-in-out;
 }
 
-/* =========================
-   CARD
-========================= */
-
-.card{
-    background-color: rgba(97, 96, 96, 0.2);
-    border: 2px solid #000;
-    border-radius: 20px;
+/* Estrutura do Card individual */
+.card {
+    background-color: rgba(30, 30, 30, 0.4);
+    border: 2px solid #111;
+    border-radius: 16px;
     min-width: 320px;
+    max-width: 320px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease;
     padding: 10px;
     position: relative;
 }
 
-.card:hover{
+.card:hover {
     transform: translateY(-5px);
-    
+    border-color: #ffc300;
 }
 
-.card a img{
+.card a img {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    border-radius: 20px;
-    box-shadow: 10px 10px 10px rgb(31, 30, 31);
+    border-radius: 12px;
 }
 
-.card figcaption{
+.card figcaption h4 {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 15px 5px 5px;
     text-transform: uppercase;
     color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Etiqueta amarela sobre a imagem */
+.tipo-treino {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    border: 1px solid #ffc300;
+    color: #ffc300;
+    font-size: 12px;
+    padding: 2px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 5;
     font-weight: 600;
 }
 
-.tipo-treino{
-  position: absolute;
-  top: 30px;
-  left: 70%;
-  border: 2px solid #ffc300;
-  color: #ffc300;
-  font-size: 15px;
-  padding: 0 0.8rem;
-  border-radius: 10px;
-  text-transform: uppercase;
-  background-color: rgba(0,0,0,0.10);
-  z-index: 10;
-}
-
-/* =========================
-   BOTÕES
-========================= */
-
-#prev-button,
-#next-button{
+/* Botões de navegação do Slider */
+#prev-button, 
+#next-button {
     background: transparent;
-    border: none;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#prev-button img,
-#next-button img{
-    width: 45px;
-    height: 45px;
+#prev-button img, 
+#next-button img {
+    width: 40px;
+    height: 40px;
+    opacity: 0.7;
 }
 
-/* =========================
-   RESPONSIVO
-========================= */
-
-@media(max-width: 1200px){
-
-    .slider-container{
-        width: 760px;
-    }
+#prev-button img:hover, 
+#next-button img:hover {
+    opacity: 1;
 }
 
-@media(max-width: 850px){
-
-    .slider-container{
-        width: 360px;
-    }
-
-    .card{
-        min-width: 320px;
-    }
-
-    #prev-button img,
-    #next-button img{
-        width: 35px;
-        height: 35px;
-    }
-}
+/* ==========================================================================
+   5. FOOTER (RODAPÉ)
+   ========================================================================== */
 .footer {
-  width: 100%;
-  background: #000;
-  color: #fff;
-  padding: 40px 5% 20px;
+    width: 100%;
+    background: #000;
+    border-top: 1px solid #111;
+    padding: 40px 5% 20px;
 }
 
 .container-box {
-  width: 100%;
-  max-width: 1400px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo-ark {
-  display: flex;
-  justify-content: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    text-align: center;
 }
 
 .logo-ark img {
-  width: 220px;
-  max-width: 100%;
-  height: auto;
+    width: 160px;
+    height: auto;
 }
 
 hr {
-  width: 100%;
-  border: none;
-  border-top: 1px solid #333;
-  margin: 25px 0;
-}
-
-.contato {
-  text-align: center;
+    border: none;
+    border-top: 1px solid #222;
+    margin: 20px 0;
 }
 
 .contato h3 {
-  margin-bottom: 20px;
-  font-size: 2rem;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
 }
 
 .contato a {
-  display: inline-block;
-  margin: 0 10px;
+    margin: 0 10px;
+    display: inline-block;
 }
 
 .contato img {
-  width: 32px;
-}
-
-.políticas {
-  text-align: center;
+    width: 28px;
 }
 
 .políticas a {
-  color: #fff;
-  font-size: 1.2rem;
+    color: #aaa;
+    font-size: 1rem;
 }
 
 .políticas a:hover {
-  color: #ffc300;
+    color: #ffc300;
 }
 
 .final {
-  text-align: center;
-  font-size: 0.95rem;
-  line-height: 1.7;
-  max-width: 1200px;
-  margin: auto;
+    color: #666;
+    font-size: 0.85rem;
 }
 
-/* ==========================================
-   MEDIA QUERIES (RESPONSIVIDADE)
-   ========================================== */
+/* ==========================================================================
+   6. MEDIA QUERIES (SISTEMA DE RESPONSIVIDADE INTERMEDIÁRIA E MOBILE)
+   ========================================================================== */
 
-/* Para Notebooks e Tablets (Até 992px) */
+/* --- TABLETS E DISPOSITIVOS MÉDIOS (Até 992px) --- */
 @media (max-width: 992px) {
-  .text-motivation h1 {
-    font-size: 2.8rem;
-  }
+    #menu-icon {
+        display: block; /* Ativa o ícone hamburguer */
+        position: relative !important;
+        z-index: 2000 !important;
+    }
 
-  .text-motivation h2 {
-    font-size: 1.5rem;
-  }
+    /* Transforma o menu em uma barra lateral oculta */
+    .nav-container {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        max-width: 180px;
+        height: 100vh;
+        background: #0d0d0d;
+        border-left: 1px solid #222;
+        padding: 6rem 2rem;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.8);
+        z-index: 1000;
+        overflow-y: auto;
+        transition:  0.4s ease-in-out;
+    }
 
-  .img-treino {
-    height: 380px;
-    /* Diminui um pouco a altura do banner */
-  }
+    .nav-container.active {
+        right: 0; /* Desloca o menu para dentro da tela quando ativo */
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
+    }
+
+    .nav li {
+        width: 100%;
+        text-align: left;
+    }
+
+    .nav a {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        font-size: 1.1rem;
+    }
+
+    .nav a:hover {
+        font-size: 1.1rem; /* Desativa o aumento de fonte que quebrava o menu mobile */
+    }
+
+    /* Submenu vertical integrado na lateral */
+    .dropdown-menu {
+        position: relative;
+        display: none;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        background: #1a1a1a;
+        box-shadow: none;
+        border-radius: 0;
+        border: none;
+        padding: 5px 0;
+        border-radius: 8px;
+
+    }
+
+    .dropdown:hover .dropdown-menu{
+        display: block;
+    }
+
+    .nav .button {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+     .button {
+        width: 100% !important;
+        justify-content: center !important;
+        background: transparent !important;
+        background-color: transparent !important;
+        margin-top: 1rem !important;
+    }
+
+    .button a {
+        width: 140px !important;
+        text-align: center !important;
+        padding: 0.6rem 0 !important;
+        font-size: 0.95rem !important;
+        border-radius: 8px !important;
+    }
+
+    /* Ajustes iniciais do Banner e Texto */
+    .container-img {
+        height: 380px !important;
+    }
+
+    .text-motivation {
+        top: 75% !important; /* Começa a empurrar o texto para baixo para livrar o rosto */
+        transform: translateY(-50%) !important;
+    }
+
+    /* Slider exibe 2 cards inteiros */
+    .slider-container {
+        width: 710px;
+    }
 }
 
-/* Para Tablets e Celulares Grandes (Até 768px) */
-@media (max-width: 768px) {
-  .header .nav-bar {
-    flex-direction: column;
-    gap: 15px;
-    padding: 1rem;
-  }
+/* --- SMARTPHONES GRANDES (Até 850px) --- */
+@media (max-width: 850px) {
+    /* CORREÇÃO DO BANNER: Move o texto totalmente para baixo para não tampar a foto */
+    .container-img {
+        height: 340px !important;
+    }
 
-  .nav {
-    gap: 5px;
-  }
+    .text-motivation {
+        top: 80% !important; /* Desce completamente a frase motivacional */
+        left: 5% !important;
+    }
 
-  .nav a {
-    margin: 0 0.8rem;
-    font-size: 1rem;
-  }
+    .text-motivation h1 {
+        font-size: 2rem !important;
+        margin-bottom: 5px !important;
+    }
 
-  .container-img {
-    margin-top: 130px;
-    /* Ajuste pelo tamanho do menu maior */
-  }
+    .text-motivation h2 {
+        font-size: 1.1rem !important;
+        line-height: 1.3 !important;
+    }
 
-  .text-motivation {
-    left: 5%;
-    max-width: 90%;
-  }
+    /* CORREÇÃO DO SLIDER TRAVADO: Acabou com os cards cortados ao meio */
+    .slider-container {
+        width: 280px !important; /* Enquadra exatamente UM único card por vez */
+    }
 
-  .text-motivation h1 {
-    font-size: 2.2rem;
-  }
+    .container-slider {
+        gap: 20px !important; /* Ajusta o espaço interno de transição */
+    }
 
-  .text-motivation h2 {
-    font-size: 1.2rem;
-  }
+    /* CARDS DIMINUÍDOS E COMPACTOS */
+    .card {
+        min-width: 280px !important;
+        max-width: 280px !important;
+        padding: 8px !important;
+    }
 
-  .nav-box .ul li {
-    padding: 10px 15px;
-    /* Diminui o espaçamento dos botões de categorias */
-  }
+    .card a img {
+        height: 160px !important; /* Diminui a foto interna para o card ficar menor */
+    }
+
+    .card figcaption h4 {
+        font-size: 0.9rem !important;
+    }
+
+    .tipo-treino {
+        top: 15px !important;
+        right: 15px !important;
+        font-size: 11px !important;
+    }
+
+    #prev-button img, 
+    #next-button img {
+        width: 32px !important;
+        height: 32px !important;
+    }
 }
 
-/* Para Celulares Pequenos (Até 480px) */
-@media (max-width: 480px) {
-  .nav {
-    flex-direction: column;
-    gap: 12px;
-  }
+/* --- SMARTPHONES PEQUENOS (Até 380px) --- */
+@media (max-width: 380px) {
+    .container-img {
+        height: 300px !important;
+    }
 
-  .container-img {
-    margin-top: 220px;
-    /* Ajuste para o menu vertical */
-  }
+    .text-motivation {
+        top: 82% !important;
+    }
 
-  .img-treino {
-    height: 320px;
-  }
+    .text-motivation h1 {
+        font-size: 1.6rem !important;
+    }
 
-  .text-motivation h1 {
-    font-size: 1.8rem;
-  }
+    .text-motivation h2 {
+        font-size: 0.9rem !important;
+    }
 
-  .text-motivation h2 {
-    font-size: 1rem;
-  }
+    /* Contração final para telas muito pequenas (ex: iPhone SE antigo) */
+    .slider-container {
+        width: 245px !important;
+    }
 
-  /* Transforma a barra de categorias em uma lista vertical em telas muito pequenas */
-  .nav-box .ul {
-    flex-direction: column;
-  }
-
-  .nav-box .ul li {
-    width: 100%;
-    text-align: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
+    .card {
+        min-width: 245px !important;
+        max-width: 245px !important;
+    }
 }
