@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght=100;200;300;400;500;600;700;800;900&display=swap');
 
 *{
     margin: 0;
@@ -22,7 +22,9 @@ body{
     min-height: 100vh;
 }
 
-
+/* ==========================================
+HEADER & NAVEGAÇÃO 
+========================================== */
 .header{
     position: fixed;
     top: 0;
@@ -35,16 +37,14 @@ body{
 
 .nav-bar{
     width: 100%;
-    max-width: 1700px;
+    max-width: 1920px;
     margin: auto;
     padding: 1rem 5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    list-style-type: none;
 }
-
 
 .logo{
     width: 180px;
@@ -56,61 +56,65 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
+    gap: 2.5rem;
 }
+
 .nav li{
     list-style-type: none;
 }
+
 .nav a{
     color: #fff;
     font-size: 1.1rem;
     font-weight: 500;
-    text-align: center;
 }
 
-.nav a:hover{
+.nav li a:hover{
+    transform: scale(1.05);
     color: #ffc300;
-    font-size: 1.3rem;
- }
-.nav a img{
-    color: #ffc300;
-    font-size: 1.8rem;
 }
-.button a{
-    background: #ffc300;
-    color: #000;
-    padding: 0.8rem 1.5rem;
-    border-radius: 10px;
-    font-size: 1rem;
-    font-weight: 600;
+
+#menu-icon {
+    font-size: 2.3rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+.button {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
     cursor: pointer;
 }
 
-.nav button a:hover{
-    transform: scale(1.05);
+.button a{
+    background: #ffc300;
     color: #000;
+    padding: 0.6rem 2rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-block;
 }
 
+/* DROPDOWN */
 .dropdown{
     position: relative;
-}
-.i{
-    font-size: 12px;
-    transition: 0.3s ease;
-    color: #fff;
-
 }
 
 .dropdown-menu{
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #333;
+    background-color: #111;
+    border: 1px solid #222;
     list-style: none;
     padding: 10px 0;
     min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
     z-index: 999;
     display: none;
     border-radius: 10px;
@@ -127,401 +131,283 @@ body{
 .dropdown:hover .dropdown-menu{
     display: block;
 }
-/* --- BANNER DE MOTIVAÇÃO (TEXTO SOBRE A IMAGEM) --- */
+
+/* ==========================================
+BANNER DE MOTIVAÇÃO (DIMINUÍDO NO PC)
+========================================== */
 .container-img {
-  position: relative;
-  text-align: center;
-  margin-top: 80px;
-  /* Alinhado com o header fixo */
-  width: 100%;
-  overflow: hidden;
+    position: relative;
+    text-align: center;
+    margin-top: 80px;
+    width: 100%;
+    max-width: 2560px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
 }
 
-/* Ajustado para cobrir bem o fundo sem achatar a imagem */
 .img-treino {
-  height: 450px;
-  width: 100%;
-  object-fit: cover;
+    height: 320px; /* Diminuído para não pegar a tela inteira do PC */
+    width: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .text-motivation {
-  position: absolute;
-  left: 3%;
-  /* Alinhado à esquerda de forma fluida */
-  top: 49%;
-  transform: translateY(-50%);
-  /* Centraliza apenas verticalmente */
-  color: #fff;
-  z-index: 10;
-  text-align: left;
-  max-width: 550px;
-  /* Impede o texto de esticar demais */
-  width: 90%;
-  /* Garante respiro nas laterais no mobile */
+    position: absolute;
+    left: 5%;
+    top: 79%;
+    transform: translateY(-50%);
+    color: #fff;
+    z-index: 10;
+    text-align: left;
+    max-width: 700px;
+    width: 90%;
 }
 
 .text-motivation h1 {
-  font-size: 3.5rem;
-  /* Convertido para rem */
-  text-transform: uppercase;
-  padding: 70px 0;
-  line-height: 1.1;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    line-height: 1.1;
 }
 
 .text-motivation h2 {
-  font-size: 1.8rem;
-  text-transform: uppercase;
-  font-weight: 400;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 400;
 }
 
 .destaque {
-  color: #ffc300;
+    color: #ffc300;
 }
 
-/* --- FILTRO DE CATEGORIAS (HEADER-BOX) --- */
-.header-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
-  /* Fluido */
-  max-width: 1200px;
-  margin: 40px auto 0;
-  /* Centraliza horizontalmente */
-  border: 2px solid #000;
-  background-color: #ffc300;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.nav-box {
-  width: 100%;
-}
-
-.nav-box .ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  flex-wrap: wrap;
-  /* Permite quebrar linha se faltar espaço */
-  width: 100%;
-}
-
-/* Corrigido: Seletor correto para os itens da lista */
-.nav-box .ul li {
-  text-transform: uppercase;
-  padding: 15px 30px;
-}
-
-/* Corrigido: Seletor correto para os links da lista */
-.nav-box .ul li a {
-  color: #000;
-  font-size: 16px;
-  font-weight: 600;
-  display: inline-block;
-}
-
-.nav-box .ul li a:hover {
-  font-size: 1.2rem;
-}
-/* =========================
-   SLIDER
-========================= */
-
-.slider{
+/* ==========================================
+SLIDER & CARDS (CORRIGIDO ALINHAMENTO COMPLETO)
+========================================== */
+.slider {
     width: 100%;
+    max-width: 1600px;
+    margin: 50px auto;
     display: flex;
-    align-items: center;
+    align-items: center;       /* Alinha as setas verticalmente com o centro do slider-container */
     justify-content: center;
-    gap: 20px;
-    margin-top: 40px;
+    gap: 15px;
 }
 
-/* CONTAINER VISÍVEL */
-
-.slider-container{
-    width: 1100px;
+.slider-container {
+    width: 1110px; /* Janela que mostra os cards */
     overflow: hidden;
-}
-
-/* LINHA DOS CARDS */
-
-.container-slider{
     display: flex;
-    align-items: center;
-    gap: 30px;
-    transition: transform .5s ease;
+    align-items: center;       /* Garante que o conteúdo interno fique no meio */
 }
 
-/* =========================
-   CARD
-========================= */
+.container-slider {
+    display: flex;
+    align-items: center;       /* Alinha todos os cards perfeitamente na horizontal */
+    justify-content: flex-start; 
+    gap:30px;
+    transition: transform 0.5s ease-in-out;
+    padding: 20px 5px;         /* Espaço extra em cima e embaixo para o hover não cortar */
+}
 
-.card{
-    background-color: rgba(97, 96, 96, 0.2);
-    border: 2px solid #000;
+.card {
+    background-color: rgba(97, 96, 96, 0.15);
+    border: 1px solid #222;
     border-radius: 20px;
-    min-width: 320px;
+    min-width: 350px;
+    max-width: 350px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease;
-    padding: 10px;
+    padding: 20px;
     position: relative;
+    box-sizing: border-box;    /* Garante que o padding não quebre o tamanho */
 }
 
-.card:hover{
-    transform: translateY(-5px);
-    
+.card:hover {
+    transform: translateY(-5px); /* Reduzi um pouco para não descompensar o alinhamento */
+    border-color: #ffc300;
 }
 
-.card a img{
+/* CORREÇÃO AQUI: Garante que o link da imagem se comporte como bloco */
+.card a {
+    display: block;
     width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 20px;
-    box-shadow: 10px 10px 10px rgb(31, 30, 31);
+    height: 210px;
 }
 
-.card figcaption{
+.card a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.card figcaption {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 15px 5px 0;
     text-transform: uppercase;
     color: #fff;
     font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
 }
 
-.tipo-treino{
-  position: absolute;
-  top: 30px;
-  left: 70%;
-  border: 2px solid #ffc300;
-  color: #ffc300;
-  font-size: 15px;
-  padding: 0 0.8rem;
-  border-radius: 10px;
-  text-transform: uppercase;
-  background-color: rgba(0,0,0,0.10);
-  z-index: 10;
+.tipo-treino {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    border: 1px solid #ffc300;
+    color: #ffc300;
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 10;
+    font-weight: 700;
 }
 
-/* =========================
-   BOTÕES
-========================= */
-
-#prev-button,
-#next-button{
+/* BOTÕES ISOLADOS DE COMPORTAMENTOS EXTERNOS */
+#prev-button, #next-button {
     background: transparent;
-    border: none;
     cursor: pointer;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    padding: 0;
+    margin: 0;
+    border: none;
+    line-height: 0;            /* Remove o espaçamento de texto que o HTML põe em botões */
 }
 
-#prev-button img,
-#next-button img{
+#prev-button img, #next-button img {
     width: 45px;
     height: 45px;
+    display: block;
+}
+/* ==========================================
+FOOTER
+========================================== */
+.footer {
+    width: 100%;
+    background: #000;
+    padding: 60px 5% 30px;
+    border-top: 1px solid #222;
 }
 
-/* =========================
-   RESPONSIVO
-========================= */
+.container-box {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-ark img { width: 190px; }
+hr { width: 100%; border-top: 1px solid #222; margin: 30px 0; }
+.contato h3 { margin-bottom: 20px; font-size: 1.6rem; }
+.contato a { margin: 0 12px; display: inline-block; }
+.contato img { width: 32px; }
+.políticas a { color: #fff; font-size: 1.1rem; }
+.políticas a:hover { color: #ffc300; }
+.final { text-align: center; font-size: 0.9rem; color: #777; }
+
+/* ==========================================
+MEDIA QUERIES - RESPONSIVIDADE
+========================================== */
 
 @media(max-width: 1200px){
-
     .slider-container{
-        width: 760px;
+        width: 710px; /* Janela para 2 cards */
+        display: flex;
+        align-items: center;
     }
 }
 
-@media(max-width: 850px){
-
-    .slider-container{
-        width: 360px;
+@media (max-width: 992px) {
+    #menu-icon {
+        display: block;
+        z-index: 2000;
     }
 
-    .card{
-        min-width: 320px;
+    .nav {
+        position: fixed;
+        top: 0;                     
+        right: -100%;
+        width: 100%;
+        max-width: 260px;
+        height: 100vh;
+        background: #0d0d0d;
+        border-left: 1px solid #222;
+        flex-direction: column;
+        justify-content: flex-start; 
+        align-items: flex-start;       
+        padding: 6rem 2rem 2rem;
+        gap: 1.8rem;
+        z-index: 1000;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
     }
 
-    #prev-button img,
-    #next-button img{
+    .nav.active {
+        right: 0; 
+    }
+
+    /* Ajustado para garantir centralização vertical no tablet */
+    .slider-container {
+        width: 370px; /* Janela para 1 card perfeito */
+        display: flex;
+        align-items: center;
+    }
+
+    .text-motivation h1 { font-size: 2.3rem; }
+    .text-motivation h2 { font-size: 1.3rem; }
+}
+
+/* CELULARES */
+@media (max-width: 480px) {
+    .img-treino {
+        height: 380px; 
+    }
+
+    .text-motivation {
+        left: 10%;
+        width: 100%;
+    }
+
+    .text-motivation h1 { font-size: 2rem; }
+    .text-motivation h2 { font-size: 1.1rem; }
+
+    /* Ajustado para garantir alinhamento no celular */
+    .slider-container {
+        width: 350px; 
+        display: flex;
+        align-items: center;
+    }
+    
+    .card {
+        min-width: 310px;
+        max-width: 310px;
+    }
+
+    #prev-button img, #next-button img {
         width: 35px;
         height: 35px;
     }
 }
-.footer {
-  width: 100%;
-  background: #000;
-  color: #fff;
-  padding: 40px 5% 20px;
-}
 
-.container-box {
-  width: 100%;
-  max-width: 1400px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo-ark {
-  display: flex;
-  justify-content: center;
-}
-
-.logo-ark img {
-  width: 220px;
-  max-width: 100%;
-  height: auto;
-}
-
-hr {
-  width: 100%;
-  border: none;
-  border-top: 1px solid #333;
-  margin: 25px 0;
-}
-
-.contato {
-  text-align: center;
-}
-
-.contato h3 {
-  margin-bottom: 20px;
-  font-size: 2rem;
-}
-
-.contato a {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-.contato img {
-  width: 32px;
-}
-
-.políticas {
-  text-align: center;
-}
-
-.políticas a {
-  color: #fff;
-  font-size: 1.2rem;
-}
-
-.políticas a:hover {
-  color: #ffc300;
-}
-
-.final {
-  text-align: center;
-  font-size: 0.95rem;
-  line-height: 1.7;
-  max-width: 1200px;
-  margin: auto;
-}
-
-/* ==========================================
-   MEDIA QUERIES (RESPONSIVIDADE)
-   ========================================== */
-
-/* Para Notebooks e Tablets (Até 992px) */
-@media (max-width: 992px) {
-  .text-motivation h1 {
-    font-size: 2.8rem;
-  }
-
-  .text-motivation h2 {
-    font-size: 1.5rem;
-  }
-
-  .img-treino {
-    height: 380px;
-    /* Diminui um pouco a altura do banner */
-  }
-}
-
-/* Para Tablets e Celulares Grandes (Até 768px) */
-@media (max-width: 768px) {
-  .header .nav-bar {
-    flex-direction: column;
-    gap: 15px;
-    padding: 1rem;
-  }
-
-  .nav {
-    gap: 5px;
-  }
-
-  .nav a {
-    margin: 0 0.8rem;
-    font-size: 1rem;
-  }
-
-  .container-img {
-    margin-top: 130px;
-    /* Ajuste pelo tamanho do menu maior */
-  }
-
-  .text-motivation {
-    left: 5%;
-    max-width: 90%;
-  }
-
-  .text-motivation h1 {
-    font-size: 2.2rem;
-  }
-
-  .text-motivation h2 {
-    font-size: 1.2rem;
-  }
-
-  .nav-box .ul li {
-    padding: 10px 15px;
-    /* Diminui o espaçamento dos botões de categorias */
-  }
-}
-
-/* Para Celulares Pequenos (Até 480px) */
-@media (max-width: 480px) {
-  .nav {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .container-img {
-    margin-top: 220px;
-    /* Ajuste para o menu vertical */
-  }
-
-  .img-treino {
-    height: 320px;
-  }
-
-  .text-motivation h1 {
-    font-size: 1.8rem;
-  }
-
-  .text-motivation h2 {
-    font-size: 1rem;
-  }
-
-  /* Transforma a barra de categorias em uma lista vertical em telas muito pequenas */
-  .nav-box .ul {
-    flex-direction: column;
-  }
-
-  .nav-box .ul li {
-    width: 100%;
-    text-align: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
+@media (max-width: 360px) {
+    .slider-container {
+        width: 285px;
+        display: flex;
+        align-items: center;
+    }
+    .card {
+        min-width: 250px;
+        max-width: 250px;
+    }
 }
