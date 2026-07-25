@@ -83,7 +83,7 @@ body{
 
 .nav a:hover{
     color: #ffc300;
-    font-size: 1.2rem;
+    transform: scale(1.05);
 }
 
 /* Container do botão de login (Corrigido o mistério do fundo branco) */
@@ -108,7 +108,7 @@ body{
 }
 
 .button a:hover{
-    font-size: 1.1rem;
+    transform: scale(1.05);
     color: #000;
 }
 
@@ -402,7 +402,7 @@ hr{
     /* Botão de login transparente sem fundos fantasmas */
     .button {
         width: 100% !important;
-        justify-content: center !important;
+        justify-content: left !important;
         background: transparent !important;
         background-color: transparent !important;
         margin-top: 1rem !important;
