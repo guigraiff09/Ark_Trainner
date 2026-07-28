@@ -1,241 +1,234 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Usuários</title>
+  <title>Gerenciamento de Usuários - Digital Ark</title>
 
   <link rel="stylesheet" href="../css/usuariosadmin.css">
 
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="shortcut icon" href="../Assets/IMG/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
 
-<div class="container">
+  <div class="container">
 
-  <!-- SIDEBAR -->
+    <button class="menu-toggle" id="menu-toggle">
+      <i class='bx bx-menu'></i>
+    </button>
 
-  <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
 
-    <div class="logo">
-      <h2>Admin<span>Panel</span></h2>
-    </div>
-
-    <ul>
-
-      <li class="active">
-        <a href="usuariosadmin.html">
-          <i class='bx bx-user'></i>
-          Usuários
-        </a>
-      </li>
-
-      <li>
-        <a href="dashboard.html">
-          <i class='bx bx-home'></i>
-          Dashboard
-        </a>
-      </li>
-
-
-      <li>
-        <a href="admin.html">
-           <i class='bx bx-message-square-detail'></i>
-           <span>Mensagens</span>
-        </a>
-     </li>
-
-   
-
-    </ul>
-
-    <div class="logout">
-      <i class='bx bx-log-out'></i>
-      Sair
-   <link href="login.html">
-    </div>
-
-  </aside>
-
-  <!-- CONTEÚDO -->
-
-  <main class="content">
-
-    <!-- TOPO -->
-
-    <div class="topo">
-
-      <div>
-        <h1>Usuários</h1>
-        <p>Gerencie os usuários cadastrados no sistema.</p>
+      <div class="logo">
+        <h2>ARK <span>TRAINER</span></h2>
       </div>
 
-      <div class="admin">
-        <i class='bx bx-user-circle'></i>
-        <span>Administrador</span>
-        
+      <ul class="nav-links">
+        <li class="active">
+          <a href="usuariosadmin.html">
+            <i class='bx bx-user'></i>
+            <span>Usuários</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="dashboard.html">
+            <i class='bx bx-home'></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="admin.html">
+            <i class='bx bx-message-square-detail'></i>
+            <span>Mensagens</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="logout" id="btn-logout" onclick="fazerLogout()">
+        <i class='bx bx-log-out'></i>
+        <span>Sair</span>
       </div>
 
-    </div>
+    </aside>
 
-    <!-- CARDS -->
+    <div class="overlay" id="overlay"></div>
 
-    <div class="cards">
+    <main class="content">
 
-      <!-- CARD 1 -->
-
-      <div class="card">
-
-        <div class="icone amarelo">
-          <i class='bx bx-user'></i>
-        </div>
-
+      <div class="topo">
         <div>
-          <h3>Total de Usuários</h3>
-          <p>Todos os usuários</p>
+          <h1>Usuários</h1>
+          <p>Gerencie os usuários cadastrados no sistema.</p>
+        </div>
+
+        <div class="admin">
+          <i class='bx bx-user-circle'></i>
+          <span id="nome-admin">Administrador</span>
+        </div>
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="icone amarelo">
+            <i class='bx bx-user'></i>
+          </div>
+          <div>
+            <h3 id="total-usuarios">24</h3>
+            <p>Total de Usuários</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="icone verde">
+            <i class='bx bx-check'></i>
+          </div>
+          <div>
+            <h3 id="total-ativos">20</h3>
+            <p>Usuários Ativos</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="icone vermelho">
+            <i class='bx bx-user-x'></i>
+          </div>
+          <div>
+            <h3 id="total-inativos">4</h3>
+            <p>Usuários Inativos</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="icone azul">
+            <i class='bx bx-calendar'></i>
+          </div>
+          <div>
+            <h3 id="novos-hoje">5</h3>
+            <p>Novos Cadastros</p>
+          </div>
         </div>
 
       </div>
 
-      <!-- CARD 2 -->
+      <div class="tabela-box">
 
-      <div class="card">
+        <div class="tabela-topo">
+          <div class="busca">
+            <i class='bx bx-search'></i>
+            <input type="text" id="input-busca" placeholder="Buscar usuário por nome ou e-mail...">
+          </div>
 
-        <div class="icone verde">
-          <i class='bx bx-check'></i>
+          <div class="acoes-topo">
+            <button class="filtro">
+              <i class='bx bx-filter'></i>
+              <span>Filtros</span>
+            </button>
+
+            <button class="novo">
+              <i class='bx bx-plus'></i>
+              <span>Novo Usuário</span>
+            </button>
+          </div>
         </div>
 
-        <div>
-          <h3>Ativos</h3>
-          <p>Usuários ativos</p>
-        </div>
+        <div class="tabela-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Status</th>
+                <th>Data de Cadastro</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
 
-      </div>
+            <tbody id="tabela-usuarios">
+              <tr>
+                <td>#001</td>
+                <td>
+                  <div class="usuario">
+                    <span>Carlos Eduardo</span>
+                  </div>
+                </td>
+                <td>carlos.eduardo@email.com</td>
+                <td>
+                  <span class="status ativo">Ativo</span>
+                </td>
+                <td>25/07/2026</td>
+                <td class="acoes">
+                  <i class='bx bx-show' title="Visualizar"></i>
+                  <i class='bx bx-edit' title="Editar"></i>
+                  <i class='bx bx-trash' title="Excluir"></i>
+                </td>
+              </tr>
 
-      <!-- CARD 3 -->
-
-      <div class="card">
-
-        <div class="icone vermelho">
-          <i class='bx bx-user-x'></i>
-        </div>
-
-        <div>
-          <h3>Inativos</h3>
-          <p>Usuários inativos</p>
-        </div>
-
-      </div>
-
-      <!-- CARD 4 -->
-
-      <div class="card">
-
-        <div class="icone azul">
-          <i class='bx bx-calendar'></i>
-        </div>
-
-        <div>
-          <h3>Novos Cadastros</h3>
-          <p>Últimos usuários</p>
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- TABELA -->
-
-    <div class="tabela-box">
-
-      <div class="tabela-topo">
-
-        <!-- BUSCA -->
-
-        <div class="busca">
-          <i class='bx bx-search'></i>
-
-          <input 
-            type="text" 
-            placeholder="Buscar usuário por nome ou email..."
-          >
-        </div>
-
-        <!-- BOTÕES -->
-
-        <div class="acoes-topo">
-
-          <button class="filtro">
-            <i class='bx bx-filter'></i>
-            Filtros
-          </button>
-
-          <button class="novo">
-            <i class='bx bx-plus'></i>
-            Novo Usuário
-          </button>
-
+              <tr>
+                <td>#002</td>
+                <td>
+                  <div class="usuario">
+                    <span>Mariana Silva</span>
+                  </div>
+                </td>
+                <td>mariana.silva@email.com</td>
+                <td>
+                  <span class="status inativo">Inativo</span>
+                </td>
+                <td>20/07/2026</td>
+                <td class="acoes">
+                  <i class='bx bx-show' title="Visualizar"></i>
+                  <i class='bx bx-edit' title="Editar"></i>
+                  <i class='bx bx-trash' title="Excluir"></i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
       </div>
 
-      <!-- TABELA -->
+    </main>
 
-      <table>
+  </div>
 
-        <thead>
+  <script>
+    // MENU MOBILE TOGGLE
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
 
-          <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Status</th>
-            <th>Data de Cadastro</th>
-            <th>Ações</th>
-          </tr>
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+      overlay.classList.toggle('active');
+    });
 
-        </thead>
+    overlay.addEventListener('click', () => {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('active');
+    });
 
-        <tbody>
+    // SISTEMA DE LOGOUT
+    function fazerLogout() {
+      localStorage.removeItem('logado');
+      localStorage.removeItem('tipo');
+      localStorage.removeItem('nome');
+      window.location.href = 'login.html';
+    }
 
-          
-
-            <td>
-              <div class="usuario">
-
-               
-
-              
-
-              </div>
-            </td>
-
-        
-              <span class="status ativo">
-                Ativo
-              </span>
-            </td>
-
-            
-
-            <td class="acoes">
-              <i class='bx bx-show'></i>
-              <i class='bx bx-edit'></i>
-              <i class='bx bx-trash'></i>
-            </td>
-
-          
-        </tbody>=
-
-      </table>
-
-    </div>
-
-  </main>
-
-</div>
+    // CARREGAR NOME DO ADMIN
+    const nomeSalvo = localStorage.getItem('nome');
+    if (nomeSalvo) {
+      document.getElementById('nome-admin').innerText = nomeSalvo;
+    }
+  </script>
 
 </body>
+
 </html>

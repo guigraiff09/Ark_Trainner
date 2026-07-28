@@ -1,401 +1,471 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ==========================================
+   1. RESET GLOBAL
+========================================== */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-body{
-    background: #f5f5f5;
-}
-
-/* CONTAINER */
-
-.container{
-    display: flex; /* deixa sidebar e conteúdo lado a lado */
-    min-height: 100vh; /* altura mínima da tela inteira */
-}
-
-/* SIDEBAR */
-
-.sidebar{
-    width: 250px; /* largura do menu lateral */
-
-    background: linear-gradient(180deg, #050816, #0b132b); /* degradê */
-  
-    color: white; /* cor do texto */
-  
-    padding: 10px 0px; /* espaço interno */
-  
-    display: flex; /* ativa flexbox */
-  
-    
-    flex-direction: column; /* organiza em coluna */
-    }
-
-/* LOGO */
-
-.logo{
-    margin-bottom: 40px;
-}
-
-.logo h3{
-    font-size: 28px;
-    
-}
-
-.logo span{
-    color: #f4c542;
-}
-
-/* MENU */
-
-nav{
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 15px;
-}
-
-nav a{
     text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
 
-    color: white;
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    background: #000;
+    color: #fff;
+    min-height: 100vh;
+}
 
+/* ==========================================
+   2. ESTRUTURA PRINCIPAL
+========================================== */
+.container {
     display: flex;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
 
-    align-items: center;
+/* ==========================================
+   3. SIDEBAR (MENU LATERAL FIXO)
+========================================== */
+.sidebar {
+    width: 260px;
+    background: #0a0a0a;
+    border-right: 1px solid #222;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1000;
+}
 
+.logo h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 35px;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #ffc300;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
     gap: 10px;
-
-    padding: 14px;
-
-    border-radius: 10px;
-
-    transition: 0.3s;
 }
 
-nav a:hover{
-    background: #f4c542;
-
-    color: black;
+.nav-links a {
+    color: #aaa;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 500;
 }
 
-nav .active{
-    background: #f4c542;
-
-    color: black;
+.nav-links a i {
+    font-size: 1.3rem;
 }
 
-nav a i{
-    font-size: 22px;
+.nav-links a:hover,
+.nav-links a.active {
+    background: #ffc300;
+    color: #000;
+    font-weight: 600;
 }
 
-/* MAIN */
+.logout {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    padding: 12px 16px;
+    border-radius: 12px;
+    color: #ff4d4d;
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-top: auto;
+}
 
-.main{
+.logout:hover {
+    background: rgba(255, 77, 77, 0.12);
+}
+
+/* ==========================================
+   4. CONTEÚDO PRINCIPAL (MAIN)
+========================================== */
+.main {
     flex: 1;
-
-    padding: 30px;
+    margin-left: 260px;
+    padding: 35px;
+    width: calc(100% - 260px);
+    max-width: 100%;
 }
 
 /* TOPO */
-
-.topo{
+.topo {
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     margin-bottom: 30px;
+    gap: 20px;
 }
 
-.topo h1{
-    font-size: 38px;
-
-    margin-bottom: 5px;
+.topo h1 {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 700;
 }
 
-.topo p{
-    color: #777;
+.topo p {
+    color: #888;
+    font-size: 0.9rem;
+    margin-top: 2px;
 }
 
-.admin{
+.admin {
     display: flex;
-
     align-items: center;
-
     gap: 10px;
-
-    font-size: 18px;
+    background: rgba(97, 96, 96, 0.12);
+    border: 1px solid #222;
+    padding: 8px 18px;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 0.88rem;
+    white-space: nowrap;
 }
 
-.admin i{
-    font-size: 40px;
+.admin i {
+    font-size: 1.6rem;
+    color: #ffc300;
 }
 
-/* CARDS */
-
-.cards{
+/* CARDS ESTATÍSTICOS */
+.cards {
     display: grid;
-
-    grid-template-columns: repeat(4,1fr);
-
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-
     margin-bottom: 30px;
 }
 
-.card{
-    background: white;
-
-    border-radius: 15px;
-
-    padding: 25px;
-
+.card {
+    background: rgba(97, 96, 96, 0.1);
+    border: 1px solid #222;
+    padding: 20px;
+    border-radius: 16px;
     display: flex;
-
     align-items: center;
-
-    gap: 20px;
-
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    gap: 16px;
 }
 
-/* ICONES */
+.card-info {
+    overflow: hidden;
+}
 
-.icone{
-    width: 70px;
+.card h3 {
+    color: #aaa;
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
 
-    height: 70px;
+.card h2 {
+    font-size: 1.7rem;
+    color: #fff;
+    font-weight: 700;
+    margin: 2px 0;
+}
 
+.card p {
+    color: #666;
+    font-size: 0.78rem;
+}
+
+/* ÍCONES DOS CARDS */
+.icone {
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
+    font-size: 24px;
+    flex-shrink: 0;
 }
 
-.icone i{
-    font-size: 32px;
-}
+.azul { background: rgba(52, 152, 219, 0.15); color: #3498db; }
+.verde { background: rgba(46, 204, 113, 0.15); color: #2ecc71; }
+.amarelo { background: rgba(255, 195, 0, 0.15); color: #ffc300; }
+.vermelho { background: rgba(255, 77, 77, 0.15); color: #ff4d4d; }
 
-.azul{
-    background: #dbeafe;
-    color: #2563eb;
-}
-
-.verde{
-    background: #dcfce7;
-    color: #16a34a;
-}
-
-.amarelo{
-    background: #fef3c7;
-    color: #d97706;
-}
-
-.vermelho{
-    background: #fee2e2;
-    color: #dc2626;
-}
-
-/* TEXTO DOS CARDS */
-
-.card h3{
-    font-size: 16px;
-}
-
-.card h2{
-    font-size: 35px;
-
-    margin: 5px 0;
-}
-
-.card p{
-    color: #777;
-
-    font-size: 14px;
-}
-
-/* GRAFICOS */
-
-.graficos{
+/* ==========================================
+   5. SEÇÃO DE GRÁFICOS
+========================================== */
+.graficos {
     display: grid;
-
     grid-template-columns: 2fr 1fr;
-
     gap: 20px;
-
     margin-bottom: 30px;
 }
 
-.grafico-grande,
-.grafico-pequeno{
-    background: white;
-
-    border-radius: 15px;
-
-    padding: 25px;
-
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+.grafico-card {
+    background: rgba(97, 96, 96, 0.1);
+    border: 1px solid #222;
+    border-radius: 18px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
 }
 
-/* TITULO GRAFICO */
-
-.titulo{
+.titulo-header {
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     margin-bottom: 20px;
 }
 
-select{
-    padding: 8px;
+.titulo-header h2 {
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 600;
+}
 
+select {
+    padding: 6px 12px;
     border-radius: 8px;
-
-    border: 1px solid #ddd;
+    background: #0d0d0d;
+    border: 1px solid #222;
+    color: #aaa;
+    font-size: 0.82rem;
+    cursor: pointer;
 }
 
-/* AREA DO GRAFICO */
+.container-chart {
+    position: relative;
+    width: 100%;
+    height: 240px;
+}
 
-.grafico-fake{
-    height: 300px;
-
-    background: #f1f1f1;
-
-    border-radius: 10px;
-
+/* CÍRCULO DONUT */
+.circulo-wrapper {
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
-    color: #777;
+    flex: 1;
+    padding: 10px 0;
 }
 
-/* CIRCULO */
-
-.circulo{
-    width: 180px;
-
-    height: 180px;
-
+.circulo {
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
-
-    margin: 25px auto;
-
     background: conic-gradient(
-        #16a34a 0% 70%,
-        #dc2626 70% 100%
+        #2ecc71 0% 80%,
+        #ff4d4d 80% 100%
     );
 }
 
-/* STATUS */
-
-.status{
+.status {
     display: flex;
-
-    flex-direction: column;
-
-    gap: 15px;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #aaa;
 }
 
-.bolinha{
-    width: 12px;
+.status div {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
 
-    height: 12px;
-
+.bolinha {
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-
-    display: inline-block;
-
-    margin-right: 10px;
 }
 
-/* LISTAS */
+.bolinha.verde { background: #2ecc71; }
+.bolinha.vermelho { background: #ff4d4d; }
 
-.listas{
+/* ==========================================
+   6. LISTAS INFORMATIVAS
+========================================== */
+.listas {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 20px;
 }
 
-.lista{
-    background: white;
-
-    border-radius: 15px;
-
-    padding: 25px;
-
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+.lista-card {
+    background: rgba(97, 96, 96, 0.1);
+    border: 1px solid #222;
+    border-radius: 18px;
+    padding: 22px;
 }
 
-.titulo-lista{
-    margin-bottom: 20px;
-}
-
-.vazio{
-    background: #f8f8f8;
-
-    padding: 40px;
-
-    border-radius: 10px;
-
+.vazio {
+    background: #0d0d0d;
+    border: 1px solid #1c1c1c;
+    padding: 30px 20px;
+    border-radius: 12px;
     text-align: center;
-
-    color: #777;
+    color: #666;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
 }
 
-/* RESPONSIVO */
-
-@media(max-width: 1200px){
-
-    .cards{
-        grid-template-columns: repeat(2,1fr);
-    }
-
-    .graficos{
-        grid-template-columns: 1fr;
-    }
-
-    .listas{
-        grid-template-columns: 1fr;
-    }
-
+.vazio i {
+    font-size: 2rem;
+    color: #444;
 }
 
-@media(max-width: 768px){
+.vazio p {
+    font-size: 0.85rem;
+}
 
-    .container{
-        flex-direction: column;
+/* ==========================================
+   7. CONTROLES E OVERLAY MOBILE
+========================================== */
+.menu-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1100;
+    background: #ffc300;
+    color: #000;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    z-index: 950;
+}
+
+/* ==========================================
+   8. MEDIA QUERIES (RESPONSIVIDADE COMPLETA)
+========================================== */
+
+/* TELAS ATÉ 1200px (Notebooks menores) */
+@media (max-width: 1200px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .sidebar{
+    .graficos {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* TELAS ATÉ 992px (Tablets / Dispositivos Médios) */
+@media (max-width: 992px) {
+    .menu-toggle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sidebar {
+        left: -260px;
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+    .overlay.active {
+        display: block;
+    }
+
+    .main {
+        margin-left: 0;
         width: 100%;
+        padding: 75px 20px 30px;
     }
+}
 
-    .cards{
+/* TELAS ATÉ 768px (Tablets Pequenos / Celulares Grandes) */
+@media (max-width: 768px) {
+    .listas {
         grid-template-columns: 1fr;
     }
 
-    .topo{
+    .topo {
         flex-direction: column;
-
         align-items: flex-start;
-
-        gap: 15px;
+        gap: 12px;
     }
 
+    .admin {
+        align-self: flex-start;
+    }
+}
+
+/* TELAS ATÉ 480px (Smartphones) */
+@media (max-width: 480px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .topo h1 {
+        font-size: 1.5rem;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    .container-chart {
+        height: 200px;
+    }
+
+    .grafico-card, .lista-card {
+        padding: 16px;
+    }
+}
+
+/* TELAS ULTRAWIDE (+1800px) */
+@media (min-width: 1800px) {
+    .sidebar { width: 300px; }
+    .main { margin-left: 300px; width: calc(100% - 300px); padding: 50px; }
+    .topo h1 { font-size: 2.8rem; }
+    .card h2 { font-size: 2.2rem; }
+    .container-chart { height: 350px; }
 }

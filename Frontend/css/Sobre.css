@@ -1,21 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-*{
+/* ==========================================
+   1. RESET GLOBAL
+========================================== */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
     text-decoration: none;
     border: none;
     outline: none;
-    transition: 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     background: #000;
     color: #fff;
     overflow-x: hidden;
@@ -23,9 +26,15 @@ body{
 }
 
 /* ==========================================
+<<<<<<< HEAD
 HEADER & NAVEGAÇÃO
 ========================================== */
 .header{
+=======
+   2. HEADER & NAVEGAÇÃO 
+========================================== */
+.header {
+>>>>>>> dev
     position: fixed;
     top: 0;
     left: 0;
@@ -35,23 +44,22 @@ HEADER & NAVEGAÇÃO
     border-bottom: 1px solid #222;
 }
 
-.nav-bar{
+.nav-bar {
     width: 100%;
-    max-width: 1700px;
+    max-width: 1920px;
     margin: auto;
     padding: 1rem 5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
 }
 
-.logo{
+.logo {
     width: 180px;
-    max-width: 100%;
     height: auto;
 }
 
+<<<<<<< HEAD
 #menu-icon {
     display: none;
     font-size: 2.2rem;
@@ -65,16 +73,31 @@ HEADER & NAVEGAÇÃO
     justify-content: center;
     gap: 2rem;
     list-style: none;
+=======
+.nav {
+    display: flex;
+    justify-content: flex-start;
+>>>>>>> dev
 }
 
-.nav a{
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.nav-list a {
     color: #fff;
     font-size: 1.1rem;
     font-weight: 500;
+    display: inline-block; /* Permite o transform scale funcionar com precisão */
 }
 
-.nav a:hover{
+.nav-list a:hover {
+    transform: scale(1.05);
     color: #ffc300;
+<<<<<<< HEAD
     font-size: 1.2rem;
 }
 
@@ -93,36 +116,105 @@ HEADER & NAVEGAÇÃO
 
 .button a:hover{
     transform: scale(1.05);
-    color: #000;
+=======
 }
 
+#menu-icon {
+    font-size: 2.3rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+.button {
+    background: transparent;
+    cursor: pointer;
+}
+
+.button a {
+    background-color: #ffc300;
+>>>>>>> dev
+    color: #000;
+    padding: 0.6rem 2rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-block;
+    border: 2px solid #ffc300; /* Borda amarela */
+    transition: all 0.3s ease;
+}
+
+<<<<<<< HEAD
 /* DROPDOWN MENU */
 .dropdown{
+=======
+/* CORREÇÃO DO BOTÃO NO HOVER: Fundo Fica Preto e Texto Amarelo */
+.button a:hover {
+    background-color: #ffc300;
+    color: #000 !important;            /* Texto fica amarelo */
+    transform: scale(1.05);
+}
+
+/* DROPDOWN */
+.dropdown {
+>>>>>>> dev
     position: relative;
 }
 
-.dropdown-menu{
+.dropdown-menu {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #333;
+    background-color: #111;
+    border: 1px solid #222;
     list-style: none;
     padding: 10px 0;
     min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
     z-index: 999;
     display: none;
     border-radius: 10px;
 }
 
-.dropdown-menu li a{
+.dropdown-menu li a {
     display: block;
     padding: 10px 15px;
     font-size: 14px;
     color: #fff;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* ==========================================
+   3. SEÇÃO PRINCIPAL (TEXTO + FOTO LADO A LADO)
+========================================== */
+.main-container {
+    margin-top: 100px;
+    padding: 40px 5%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-sobre {
+    display: flex;
+    flex-direction: row; /* Garante que fica sempre na horizontal */
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.sobre {
+    flex: 1;
+    min-width: 0;
     text-align: left;
 }
 
+<<<<<<< HEAD
 .dropdown:hover .dropdown-menu{
     display: block;
 }
@@ -266,18 +358,141 @@ FOOTER
     background: #000;
     color: #fff;
     padding: 60px 5% 20px;
+=======
+.sobre h1 {
+    font-size: 3.2rem;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    line-height: 1.1;
 }
 
-.container-box{
+.sobre p {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.sobre .para {
+    font-size: 1.05rem;
+    color: #ccc;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.destaque {
+    color: #ffc300;
+}
+
+.foto-sobre {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.foto-sobre img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    border: 1px solid #222;
+}
+
+/* ==========================================
+   4. CARDS (REVELAR TEXTO APENAS NO HOVER)
+========================================== */
+.container-nos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    width: 100%;
+}
+
+.card-sobre {
+    background-color: rgba(97, 96, 96, 0.15);
+    border: 1px solid #222;
+    border-radius: 20px;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-sobre:hover {
+    transform: translateY(-5px);
+    border-color: #ffc300;
+    background-color: rgba(97, 96, 96, 0.25);
+}
+
+.card-sobre img {
+    width: 48px;
+    height: 48px;
+}
+
+.card-sobre h3 {
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+.card-sobre p {
+    color: #ffc300;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* Frase escondida */
+.moti-item {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 1px solid transparent;
+    transition: all 0.4s ease-in-out;
+}
+
+/* Frase aparece no Hover */
+.card-sobre:hover .moti-item {
+    max-height: 100px;
+    opacity: 1;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top-color: #333;
+}
+
+.moti-item .moti {
+    color: #aaa;
+    font-size: 0.85rem;
+    font-weight: 300;
+}
+
+/* ==========================================
+   5. FOOTER
+========================================== */
+.footer {
+    width: 100%;
+    background: #000;
+    padding: 60px 5% 30px;
+    border-top: 1px solid #222;
+    margin-top: 50px;
+>>>>>>> dev
+}
+
+.container-box {
     width: 100%;
     max-width: 1400px;
     margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
+<<<<<<< HEAD
 .logo-ark img{
     width: 180px;
     height: auto;
@@ -334,9 +549,40 @@ SISTEMA COMPLETO DE RESPONSIVIDADE (TELA POR TELA)
     }
     .container-sobre {
         gap: 30px;
-    }
-}
+=======
+.logo-ark img { width: 180px; }
+hr { width: 100%; border-top: 1px solid #222; margin: 30px 0; }
+.contato h3 { margin-bottom: 20px; font-size: 1.5rem; text-align: center; }
+.contato a { margin: 0 12px; display: inline-block; }
+.contato img { width: 32px; }
+.políticas a { color: #fff; font-size: 1.1rem; }
+.políticas a:hover { color: #ffc300; }
+.final { text-align: center; font-size: 0.9rem; color: #777; }
 
+/* ==========================================
+   6. RESPONSIVIDADE (CELULARES E TABLETS)
+========================================== */
+@media (max-width: 992px) {
+    #menu-icon {
+        display: block;
+        z-index: 2000;
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;                     
+        right: -100%;
+        width: 100%;
+        max-width: 260px;
+        height: 100vh;
+        background: #0d0d0d;
+        border-left: 1px solid #222;
+        z-index: 1000;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+>>>>>>> dev
+    }
+
+<<<<<<< HEAD
 /* Tablets e Celulares Deitados - Ativação do Menu Hambúrguer (Até 992px) */
 @media (max-width: 992px) {
     #menu-icon {
@@ -411,9 +657,84 @@ SISTEMA COMPLETO DE RESPONSIVIDADE (TELA POR TELA)
 
     .sobre h1 {
         font-size: 2.2rem;
+=======
+    .nav.active {
+        right: 0; 
     }
+
+    .nav-list {
+        flex-direction: column;
+        justify-content: flex-start; 
+        align-items: flex-start;       
+        padding: 6rem 2rem 2rem;
+        gap: 1.8rem;
+    }
+
+    .container-sobre {
+        flex-direction: row; 
+        gap: 20px;
+    }
+
+    .sobre h1 { font-size: 2.2rem; }
+    .sobre p { font-size: 1.1rem; }
+    .sobre .para { font-size: 0.95rem; }
+    .foto-sobre img { max-width: 280px; }
 }
 
+@media (max-width: 576px) {
+    .main-container {
+        padding: 20px 4%;
+        margin-top: 80px;
+    }
+
+    .container-sobre {
+        flex-direction: row; /* Lado a lado no celular */
+        gap: 10px;
+        align-items: center;
+        margin-top: 0px;
+    }
+
+    .sobre h1 { 
+        font-size: 1.2rem; 
+        margin-top: 50px;
+    }
+
+    .sobre p { 
+        font-size: 0.8rem; 
+        margin-bottom: 6px;
+    }
+
+    .sobre .para { 
+        font-size: 0.68rem; 
+        line-height: 1.2;
+    }
+
+    .foto-sobre img { 
+        max-width: 125px;
+        border-radius: 12px;
+        margin-top: 15px;
+    }
+
+    .container-nos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .card-sobre {
+        padding: 12px 8px;
+    }
+
+    .card-sobre img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .card-sobre h3 {
+        font-size: 0.95rem;
+>>>>>>> dev
+    }
+
+<<<<<<< HEAD
 /* Monitores Gigantes, Ultra-wide e Telas de TV (A partir de 2200px) */
 @media (min-width: 2200px) {
     .main-container {
@@ -457,5 +778,9 @@ SISTEMA COMPLETO DE RESPONSIVIDADE (TELA POR TELA)
 
     .item p {
         font-size: 1.3rem;
+=======
+    .card-sobre p {
+        font-size: 0.8rem;
+>>>>>>> dev
     }
 }

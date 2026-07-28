@@ -83,7 +83,7 @@ body{
 
 .nav a:hover{
     color: #ffc300;
-    font-size: 1.2rem;
+    transform: scale(1.05);
 }
 
 /* Container do botão de login (Corrigido o mistério do fundo branco) */
@@ -108,7 +108,7 @@ body{
 }
 
 .button a:hover{
-    font-size: 1.1rem;
+    transform: scale(1.05);
     color: #000;
 }
 
@@ -313,12 +313,12 @@ hr{
     .nav-container {
         position: fixed !important;
         top: 0 !important;
-        right: -180px !important;      
+        right: -100% !important;      
         width: 100% !important;
-        max-width: 180px;       
+        max-width: 240px;       
         height: 100vh !important;      
-        background: #0d0d0d !important; 
-        padding: 6rem 1rem 2rem 1rem !important; 
+          background: #0d0d0d;
+        padding: 6rem 2rem 2rem;
         box-shadow: -10px 0 25px rgba(0, 0, 0, 0.7) !important;
         transition: 0.4s ease-in-out !important;
         z-index: 1999 !important;
@@ -364,7 +364,7 @@ hr{
         display: none !important; 
         position: relative !important;   
         top: 0 !important;
-        left: 10% !important;
+        right: 0 !important;
         width: 100% !important;
         background-color: #1a1a1a !important; 
         box-shadow: none !important;
@@ -388,7 +388,7 @@ hr{
     .dropdown-menu li a {
         text-align: left !important; 
         font-size: 0.95rem !important;
-        padding: 8px 0 !important;
+        padding: 8px 15px !important;
         color: #ccc !important;
     }
 
@@ -402,7 +402,7 @@ hr{
     /* Botão de login transparente sem fundos fantasmas */
     .button {
         width: 100% !important;
-        justify-content: center !important;
+        justify-content: left !important;
         background: transparent !important;
         background-color: transparent !important;
         margin-top: 1rem !important;

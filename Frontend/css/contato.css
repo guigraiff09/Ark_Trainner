@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-*{
+/* ==========================================
+   1. RESET GLOBAL
+========================================== */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,14 +11,14 @@
     border: none;
     outline: none;
     font-family: 'Poppins', sans-serif;
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     background: #000;
     color: #fff;
     overflow-x: hidden;
@@ -23,9 +26,15 @@ body{
 }
 
 /* ==========================================
+<<<<<<< HEAD
 HEADER & NAVEGAÇÃO
 ========================================== */
 .header{
+=======
+   2. HEADER & NAVEGAÇÃO 
+========================================== */
+.header {
+>>>>>>> dev
     position: fixed;
     top: 0;
     left: 0;
@@ -35,23 +44,29 @@ HEADER & NAVEGAÇÃO
     border-bottom: 1px solid #222;
 }
 
-.nav-bar{
+.nav-bar {
     width: 100%;
-    max-width: 1700px;
+    max-width: 1920px;
     margin: auto;
     padding: 1rem 5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+<<<<<<< HEAD
     gap: 20px;
 }
 
 .logo{
+=======
+}
+
+.logo {
+>>>>>>> dev
     width: 180px;
-    max-width: 100%;
     height: auto;
 }
 
+<<<<<<< HEAD
 #menu-icon {
     display: none;
     font-size: 2.2rem;
@@ -72,10 +87,31 @@ HEADER & NAVEGAÇÃO
     color: #fff;
     font-size: 1.1rem;
     font-weight: 500;
+=======
+.nav {
+    display: flex;
+    justify-content: flex-start;
 }
 
-.nav a:hover{
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.nav-list a {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: inline-block;
+>>>>>>> dev
+}
+
+.nav-list a:hover {
+    transform: scale(1.05);
     color: #ffc300;
+<<<<<<< HEAD
     font-size: 1.2rem;
 }
 
@@ -99,31 +135,94 @@ HEADER & NAVEGAÇÃO
 
 /* DROPDOWN MENU */
 .dropdown{
+=======
+}
+
+#menu-icon {
+    font-size: 2.3rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+.button a {
+    background-color: #ffc300;
+    color: #000;
+    padding: 0.6rem 2rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-block;
+    border: 2px solid #ffc300;
+    transition: all 0.3s ease;
+}
+
+.button a:hover {
+    color: #000 !important;
+
+    transform: scale(1.05);
+}
+
+/* DROPDOWN */
+.dropdown {
+>>>>>>> dev
     position: relative;
 }
 
-.dropdown-menu{
+.dropdown-menu {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #333;
+    background-color: #111;
+    border: 1px solid #222;
     list-style: none;
     padding: 10px 0;
     min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
     z-index: 999;
     display: none;
     border-radius: 10px;
 }
 
-.dropdown-menu li a{
+.dropdown-menu li a {
     display: block;
     padding: 10px 15px;
     font-size: 14px;
     color: #fff;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* ==========================================
+   3. SEÇÃO PRINCIPAL (FALE CONOSCO + IMAGEM)
+========================================== */
+.main-container {
+    margin-top: 100px;
+    padding: 40px 5%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-content {
+    display: flex;
+    flex-direction: row; /* Lado a lado */
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.frase {
+    flex: 1;
+    min-width: 0;
     text-align: left;
 }
 
+<<<<<<< HEAD
 .dropdown:hover .dropdown-menu{
     display: block;
 }
@@ -162,14 +261,27 @@ CONTAINER PRINCIPAL (TEXTO + IMAGEM LADO A LADO)
 
 .frase h1{
     font-size: clamp(1.8rem, 3.8vw, 3.8rem);
-    line-height: 1.1;
-    margin-bottom: 20px;
+=======
+.frase h2 {
+    color: #ffc300;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 5px;
 }
 
-.destaque{
+.frase h1 {
+    font-size: 3.2rem;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+>>>>>>> dev
+    line-height: 1.1;
+}
+
+.destaque {
     color: #ffc300;
 }
 
+<<<<<<< HEAD
 .frase p{
     max-width: 650px;
     line-height: 1.6;
@@ -179,24 +291,49 @@ CONTAINER PRINCIPAL (TEXTO + IMAGEM LADO A LADO)
 
 .img-cont{
     flex: 0.8;
-    display: flex;
-    justify-content: center;
+=======
+.frase p {
+    font-size: 1.05rem;
+    color: #ccc;
+    font-weight: 300;
+    line-height: 1.6;
 }
 
-.img-cont img{
+.img-cont {
+    flex: 1;
+    min-width: 0;
+>>>>>>> dev
+    display: flex;
+    justify-content: flex-end;
+}
+
+.img-cont img {
     width: 100%;
+<<<<<<< HEAD
     max-width: 540px;
     height: auto;
     border-radius: 15px;
+=======
+    max-width: 450px;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    border: 1px solid #222;
+>>>>>>> dev
 }
 
 /* ==========================================
-FORMULÁRIO
+   4. FORMULÁRIO DE CONTATO
 ========================================== */
+<<<<<<< HEAD
 .container-input{
+=======
+.container-input {
+>>>>>>> dev
     width: 100%;
-    border: 2px solid #fff;
+    border: 1px solid #222;
     border-radius: 20px;
+<<<<<<< HEAD
     padding: 40px;
     background: #050505;
     margin-top: 60px;
@@ -204,28 +341,43 @@ FORMULÁRIO
 
 .container-input h3{
     font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+=======
+    padding: 35px;
+    background: rgba(97, 96, 96, 0.1);
+    margin-top: 30px;
+}
+
+.container-input h3 {
+    font-size: 1.8rem;
+    color: #fff;
+>>>>>>> dev
     margin-bottom: 25px;
 }
 
-.input-box{
+.input-box {
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
     margin-bottom: 20px;
     width: 100%;
+=======
+    margin-bottom: 18px;
+>>>>>>> dev
 }
 
 .input-box input,
-.input-box textarea{
+.input-box textarea {
     width: 100%;
-    background: transparent;
-    border: 1px solid #333;
+    background: #0d0d0d;
+    border: 1px solid #222;
     border-radius: 10px;
-    padding: 16px;
+    padding: 14px 18px;
     color: #fff;
     font-size: 0.95rem;
 }
 
 .input-box input:focus,
+<<<<<<< HEAD
 .input-box textarea:focus,
 .input-box input:hover,
 .input-box textarea:hover {
@@ -234,75 +386,138 @@ FORMULÁRIO
 }
 
 .input-box textarea{
-    resize: none;
-    height: 140px;
+=======
+.input-box textarea:focus {
+    border-color: #ffc300;
+    background: #111;
 }
 
+.input-box textarea {
+>>>>>>> dev
+    resize: none;
+    height: 130px;
+}
+
+<<<<<<< HEAD
 .input-box button{
     width: 220px;
     padding: 15px;
+=======
+.input-box button {
+    width: 180px;
+    padding: 12px;
+>>>>>>> dev
     border-radius: 10px;
     background: #ffc300;
     color: #000;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
+    border: 2px solid #ffc300;
 }
 
+<<<<<<< HEAD
 .input-box button:hover{
+=======
+.input-box button:hover {
+    background-color: #000 !important;
+    color: #ffc300 !important;
+>>>>>>> dev
     transform: scale(1.03);
 }
 
 /* ==========================================
-CONTATO BOX
+   5. CARDS DE OUTRAS FORMAS DE CONTATO
 ========================================== */
+<<<<<<< HEAD
 .contato-box{
+=======
+.contato-box {
+>>>>>>> dev
     width: 100%;
-    border: 2px solid #fff;
+    border: 1px solid #222;
     border-radius: 20px;
+<<<<<<< HEAD
     padding: 40px;
     margin-top: 30px;
     background: #111;
+=======
+    padding: 30px;
+    margin-top: 30px;
+    background: rgba(97, 96, 96, 0.1);
+>>>>>>> dev
 }
 
-.box-cont{
+.box-cont {
     display: grid;
+<<<<<<< HEAD
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
 }
 
 .formas-contato{
+=======
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.formas-contato {
+>>>>>>> dev
     line-height: 1.6;
 }
 
-.formas-contato h3,
-.formas-contato h4{
+.formas-contato h3 {
     color: #ffc300;
+<<<<<<< HEAD
     margin-bottom: 8px;
     font-size: 1.15rem;
 }
 
 .formas-contato p{
+=======
+    font-size: 1.3rem;
+}
+
+.formas-contato h4 {
+    color: #ffc300;
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+
+.formas-contato p {
+>>>>>>> dev
     color: #ccc;
     font-size: 0.95rem;
 }
 
 /* ==========================================
-FOOTER
+   6. FOOTER
 ========================================== */
+<<<<<<< HEAD
 .footer{
     background: #000;
     color: #fff;
     padding: 40px 5% 20px;
+=======
+.footer {
+    width: 100%;
+    background: #000;
+    padding: 60px 5% 30px;
+    border-top: 1px solid #222;
+    margin-top: 50px;
+>>>>>>> dev
 }
 
-.container-box{
+.container-box {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
 }
 
+<<<<<<< HEAD
 .logo-ark img{
     width: 180px;
     height: auto;
@@ -345,8 +560,27 @@ hr{
 
 /* ==========================================
 MEDIA QUERIES - RESPONSIVIDADE COMPLETA
-========================================== */
+=======
+.logo-ark img { width: 180px; }
+hr { width: 100%; border-top: 1px solid #222; margin: 30px 0; }
+.contato h3 { margin-bottom: 20px; font-size: 1.5rem; text-align: center; }
+.contato a { margin: 0 12px; display: inline-block; }
+.contato img { width: 32px; }
+.políticas a { color: #fff; font-size: 1.1rem; }
+.políticas a:hover { color: #ffc300; }
+.final { text-align: center; font-size: 0.9rem; color: #777; }
 
+/* ==========================================
+   7. RESPONSIVIDADE (TABLETS E SMARTPHONES)
+>>>>>>> dev
+========================================== */
+@media (max-width: 992px) {
+    #menu-icon {
+        display: block;
+        z-index: 2000;
+    }
+
+<<<<<<< HEAD
 @media (max-width: 1200px) {
     .main-container {
         padding-top: 110px;
@@ -503,4 +737,109 @@ MEDIA QUERIES - RESPONSIVIDADE COMPLETA
         width: 280px;
         font-size: 1.15rem;
     }
+=======
+    .nav {
+        position: fixed;
+        top: 0;                     
+        right: -100%;
+        width: 100%;
+        max-width: 260px;
+        height: 100vh;
+        background: #0d0d0d;
+        border-left: 1px solid #222;
+        z-index: 1000;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+    }
+
+    .nav.active {
+        right: 0; 
+    }
+
+    .nav-list {
+        flex-direction: column;
+        justify-content: flex-start; 
+        align-items: flex-start;       
+        padding: 6rem 2rem 2rem;
+        gap: 1.8rem;
+    }
+
+    .container-content {
+        flex-direction: row; 
+        gap: 20px;
+    }
+
+    .frase h2 { font-size: 1.3rem; }
+    .frase h1 { font-size: 2.2rem; }
+    .frase p { font-size: 0.95rem; }
+    .img-cont img { max-width: 280px; }
+}
+
+@media (max-width: 576px) {
+    .main-container {
+        padding: 20px 4%;
+        margin-top: 80px;
+    }
+
+    .container-content {
+        flex-direction: row; /* Mantém lado a lado no celular */
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+
+    .frase h2 { 
+        font-size: 0.85rem; 
+        margin-bottom: 2px;
+    }
+
+    .frase h1 { 
+        font-size: 1.2rem; 
+        margin-bottom: 4px;
+    }
+
+    .frase p { 
+        font-size: 0.68rem; 
+        line-height: 1.2;
+    }
+
+    .img-cont img { 
+        max-width: 125px;
+        border-radius: 12px;
+    }
+
+    .container-input {
+        padding: 20px 15px;
+    }
+
+    .container-input h3 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .input-box button {
+        width: 100%;
+    }
+
+    .box-cont {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+/* ==========================================
+   8. TELAS 4K / TVS
+========================================== */
+@media (min-width: 2200px) {
+    .main-container {
+        max-width: 2000px;
+    }
+
+    .frase h1 { font-size: 5rem; }
+    .frase h2 { font-size: 3rem; }
+    .frase p { font-size: 1.8rem; }
+    .img-cont img { max-width: 700px; }
+    .container-input h3 { font-size: 2.8rem; }
+    .input-box input, .input-box textarea { font-size: 1.3rem; }
+    .input-box button { font-size: 1.3rem; width: 250px; }
+>>>>>>> dev
 }

@@ -1,256 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+/* ==========================================
+   1. RESET GLOBAL
+========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
 }
 
-body{
-
-    height:100vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    background:
-    linear-gradient(
-        135deg,
-        #050816,
-        #0b132b
-    );
-
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    padding: 20px;
+    overflow-x: hidden;
 }
 
-.container{
-
-    width:100%;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
+/* ==========================================
+   2. CONTAINER & LOGIN BOX
+========================================== */
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.login-box{
-
-    width:400px;
-
-    background:white;
-
-    padding:40px;
-
-    border-radius:20px;
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,0.3);
-
+.login-box {
+    width: 100%;
+    max-width: 420px;
+    background: rgba(97, 96, 96, 0.1);
+    border: 1px solid #222;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
 }
 
-.logo{
-
-    text-align:center;
-
-    margin-bottom:35px;
-
+/* ==========================================
+   3. LOGO / TÍTULOS
+========================================== */
+.logo {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-.logo h1{
-
-    font-size:38px;
-
-    color:#111;
-
+.logo h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 1px;
 }
 
-.logo span{
-
-    color:#f4c542;
-
+.destaque {
+    color: #ffc300;
 }
 
-.logo p{
-
-    margin-top:8px;
-
-    color:#666;
-
+.logo p {
+    margin-top: 5px;
+    color: #aaa;
+    font-size: 0.95rem;
+    font-weight: 300;
 }
 
-.input-box{
-
-    width:100%;
-
-    height:55px;
-
-    background:#f5f5f5;
-
-    border-radius:12px;
-
-    display:flex;
-
-    align-items:center;
-
-    padding:0 15px;
-
-    margin-bottom:20px;
-
+/* ==========================================
+   4. INPUTS
+========================================== */
+.input-box {
+    width: 100%;
+    height: 52px;
+    background: #0d0d0d;
+    border: 1px solid #222;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    margin-bottom: 18px;
 }
 
-.input-box i{
-
-    font-size:22px;
-
-    color:#666;
-
-    margin-right:10px;
-
+.input-box:focus-within {
+    border-color: #ffc300;
 }
 
-.input-box input{
-
-    width:100%;
-
-    border:none;
-
-    background:none;
-
-    outline:none;
-
-    font-size:16px;
-
+.input-box i {
+    font-size: 20px;
+    color: #ffc300;
+    margin-right: 12px;
 }
 
-/* BOTÃO ENTRAR */
-
-button{
-
-    width:100%;
-
-    height:55px;
-
-    border:none;
-
-    border-radius:12px;
-
-    background:#f4c542;
-
-    color:#111;
-
-    font-size:18px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:0.3s;
-
+.input-box input {
+    width: 100%;
+    background: transparent;
+    color: #fff;
+    font-size: 0.95rem;
 }
 
-button:hover{
+.input-box input::placeholder {
+    color: #666;
+}
 
-    transform:translateY(-2px);
+/* ==========================================
+   5. BOTÕES DE AÇÃO
+========================================== */
+.btn-entrar {
+    width: 100%;
+    height: 52px;
+    border-radius: 12px;
+    background: #ffc300;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: 2px solid #ffc300;
+    margin-top: 5px;
+}
 
-    background:#ffcf33;
+.btn-entrar:hover {
+    color: #000 !important;
 
+    transform: translateY(-2px);
 }
 
 /* DIVISOR */
-
-.divisor{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-
-    margin:25px 0;
-
+.divisor {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 22px 0;
 }
 
 .divisor::before,
-.divisor::after{
-
-    content:"";
-
-    flex:1;
-
-    height:1px;
-
-    background:#ddd;
-
+.divisor::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #222;
 }
 
-.divisor span{
-
-    color:#888;
-
-    font-size:14px;
-
+.divisor span {
+    color: #777;
+    font-size: 0.85rem;
+    text-transform: lowercase;
 }
 
-/* GOOGLE */
-
-.google-btn{
-
-    width:100%;
-
-    height:55px;
-
-    background:white;
-
-    border:1px solid #ddd;
-
-    border-radius:12px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:12px;
-
-    color:#444;
-
-    font-size:16px;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    transition:0.3s;
-
+/* BOTÃO GOOGLE */
+.google-btn {
+    width: 100%;
+    height: 52px;
+    background: #0d0d0d;
+    border: 1px solid #222;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
 }
 
-.google-btn:hover{
-
-    background:#f7f7f7;
-
-    transform:translateY(-2px);
-
+.google-btn:hover {
+    background: #151515;
+    border-color: #ffc300;
+    transform: translateY(-2px);
 }
 
-.google-btn img{
-
-    width:22px;
-
-    height:22px;
-
+.google-btn img {
+    width: 20px;
+    height: 20px;
 }
 
-#erro{
+/* ==========================================
+   6. MENSAGENS E LINKS
+========================================== */
+#erro {
+    text-align: center;
+    color: #ff4d4d;
+    font-size: 0.85rem;
+    margin-top: 15px;
+    min-height: 20px;
+}
 
-    text-align:center;
+.voltar {
+    text-align: center;
+    margin-top: 15px;
+}
 
-    color:red;
+.voltar a {
+    color: #aaa;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
 
-    margin-top:20px;
+.voltar a:hover {
+    color: #ffc300;
+}
 
+/* ==========================================
+   7. RESPONSIVIDADE
+========================================== */
+@media (max-width: 480px) {
+    .login-box {
+        padding: 30px 20px;
+        border-radius: 16px;
+    }
+
+    .logo h1 {
+        font-size: 1.6rem;
+    }
+
+    .input-box, .btn-entrar, .google-btn {
+        height: 48px;
+    }
+}
+
+@media (min-width: 2200px) {
+    .login-box {
+        max-width: 600px;
+        padding: 60px 45px;
+    }
+
+    .logo h1 { font-size: 3rem; }
+    .logo p { font-size: 1.3rem; }
+    .input-box, .btn-entrar, .google-btn { height: 65px; font-size: 1.2rem; }
+    .input-box i { font-size: 26px; }
 }

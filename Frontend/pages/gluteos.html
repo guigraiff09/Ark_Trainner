@@ -6,24 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/gluteo.css">
-    <title>Peito</title>
+    <title>Glúteos</title>
 </head>
 
 <body>
 
     <header class="header">
-
         <div class="nav-bar">
-
             <img src="../Assets/IMG/logo ARK.png" alt="Logo Ark" class="logo">
+            <i class='bx bx-menu' id="menu-icon"></i>
 
-            <nav class="nav">
-
+            <nav class="nav" id="nav-container">
                 <li><a href="../index.html">INÍCIO</a></li>
 
-                <li class="dropdown"> <a href="../pages/treino.html" class="dropdown-toggle">TREINO
-                        <i class='bx bx-chevron-down'></i></a>
-
+                <li class="dropdown"> 
+                    <a href="../pages/treino.html" class="dropdown-toggle">TREINO <i class='bx bx-chevron-down'></i></a>
                     <ul class="dropdown-menu">
                         <li> <a href="../pages/peito.html">Peito</a></li>
                         <li> <a href="../pages/costa.html">Costas</a></li>
@@ -37,8 +34,10 @@
 
                 <li><a href="../pages/sobre.html">SOBRE NÓS</a></li>
                 <li><a href="../pages/contato.html">CONTATO</a></li>
-                <button type="button" class="button"><a href="../pages/login.html">Login</a></button>
-
+                
+                <li class="login-wrapper">
+                    <button type="button" class="button"><a href="../pages/login.html">Login</a></button>
+                </li>
             </nav>
         </div>
     </header>
@@ -47,14 +46,14 @@
         <div class="card">
             <span class="tipo-treino">Glúteos</span>
             <figure>
-                <img src="../Assets/IMG/AFundo.png" alt="pec-deck">
+                <img src="../Assets/IMG/AFundo.png" alt="Afundo">
                 <figcaption>
-                    <p class="nome-treino">AFundo</p>
+                    <p class="nome-treino">Afundo</p>
                     <div class="treino">
-                        <p class="nivel">Intermediário </p>
-                        <p>/</p>
+                        <p class="nivel">Intermediário</p>
+                        <p class="barra">/</p>
                         <p class="tipo">frente da coxa</p>
-                        <button><a href="#"><i class='bx bx-right-arrow-circle'></i></a></button>
+                        <button class="btn-seta"><a href="#"><i class='bx bx-right-arrow-circle'></i></a></button>
                     </div>
                 </figcaption>
             </figure>
@@ -63,14 +62,14 @@
         <div class="card">
             <span class="tipo-treino">Glúteos</span>
             <figure>
-                <img src="../Assets/IMG/CadeiraAbdutora.png" alt="Supino inclinado com halter">
+                <img src="../Assets/IMG/CadeiraAbdutora.png" alt="Cadeira Abdutora">
                 <figcaption>
                     <p class="nome-treino">Cadeira Abdutora</p>
                     <div class="treino">
-                        <p class="nivel">Intermediário </p>
-                        <p>/</p>
+                        <p class="nivel">Intermediário</p>
+                        <p class="barra">/</p>
                         <p class="tipo">Lateral do Bumbum</p>
-                        <button><a href="#"><i class='bx bx-right-arrow-circle'></i></a></button>
+                        <button class="btn-seta"><a href="#"><i class='bx bx-right-arrow-circle'></i></a></button>
                     </div>
                 </figcaption>
             </figure>
@@ -79,14 +78,14 @@
         <div class="card">
             <span class="tipo-treino">Glúteos</span>
             <figure>
-                <img src="../Assets/IMG/Agachamento-Livre.png" alt="Supino inclinado na barra">
+                <img src="../Assets/IMG/Agachamento-Livre.png" alt="Agachamento Livre">
                 <figcaption>
                     <p class="nome-treino">Agachamento Livre</p>
                     <div class="treino">
-                        <p class="nivel">Intermediário </p>
-                        <p>/</p>
+                        <p class="nivel">Intermediário</p>
+                        <p class="barra">/</p>
                         <p class="tipo">Frente da Coxa</p>
-                        <button><a href="#"><i class='bx bx-right-arrow-circle'></i></a></button>
+                        <button class="btn-seta"><a href="#"><i class='bx bx-right-arrow-circle'></i></a></button>
                     </div>
                 </figcaption>
             </figure>
@@ -95,14 +94,14 @@
         <div class="card">
             <span class="tipo-treino">Glúteos</span>
             <figure>
-                <img src="../Assets/IMG/AgachamentoSumô.png" alt="Supino inclinado no smith">
+                <img src="../Assets/IMG/AgachamentoSumô.png" alt="Agachamento Sumô">
                 <figcaption>
                     <p class="nome-treino">Agachamento Sumô</p>
                     <div class="treino">
-                        <p class="nivel">Intermediário </p>
-                        <p>/</p>
+                        <p class="nivel">Intermediário</p>
+                        <p class="barra">/</p>
                         <p class="tipo">Interno da Coxa</p>
-                        <button><a href="#"><i class='bx bx-right-arrow-circle'></i></a></button>
+                        <button class="btn-seta"><a href="#"><i class='bx bx-right-arrow-circle'></i></a></button>
                     </div>
                 </figcaption>
             </figure>
@@ -111,14 +110,14 @@
         <div class="card">
             <span class="tipo-treino">Glúteos</span>
             <figure>
-                <img src="../Assets/IMG/LegPress-45.png" alt="Supino reto com halter">
+                <img src="../Assets/IMG/LegPress-45.png" alt="Leg Press 45">
                 <figcaption>
                     <p class="nome-treino">Leg Press 45</p>
                     <div class="treino">
-                        <p class="nivel">Intermediário </p>
-                        <p>/</p>
+                        <p class="nivel">Intermediário</p>
+                        <p class="barra">/</p>
                         <p class="tipo">Frente da Coxa</p>
-                        <button><a href="#"><i class='bx bx-right-arrow-circle'></i></a></button>
+                        <button class="btn-seta"><a href="#"><i class='bx bx-right-arrow-circle'></i></a></button>
                     </div>
                 </figcaption>
             </figure>
@@ -127,89 +126,62 @@
         <div class="card">
             <span class="tipo-treino">Glúteos</span>
             <figure>
-                <img src="../Assets/IMG/ElevaçãoPélvica.png" alt="Supino reto na barra">
+                <img src="../Assets/IMG/ElevaçãoPélvica.png" alt="Elevação Pélvica">
                 <figcaption>
                     <p class="nome-treino">Elevação Pélvica</p>
                     <div class="treino">
-                        <p class="nivel">Intermediário </p>
-                        <p>/</p>
+                        <p class="nivel">Intermediário</p>
+                        <p class="barra">/</p>
                         <p class="tipo">gluteos</p>
-                        <button><a href="#"><i class='bx bx-right-arrow-circle'></i></a></button>
+                        <button class="btn-seta"><a href="#"><i class='bx bx-right-arrow-circle'></i></a></button>
                     </div>
                 </figcaption>
             </figure>
         </div>
-
     </main>
 
     <footer class="footer">
-
         <div class="container-box">
-
             <div class="logo-ark">
-
                 <img src="../Assets/IMG/logo ARK.png" alt="Logo Ark">
-
             </div>
-
             <hr>
-
-            <!-- CONTATO -->
-
             <div class="contato">
-
                 <h3>Contato</h3>
-
                 <a href="https://www.instagram.com/digital.ark_?igsh=MWpuMGlrZjVkeDd3eg==" target="_blank">
                     <img src="https://img.icons8.com/ios-glyphs/30/ffffff/instagram-new.png" alt="Instagram">
-
                 </a>
-
                 <a href="https://www.facebook.com/share/1GMEdyGDB4/?mibextid=wwXlfr" target="_blank">
-
-                    <img src="https://img.icons8.com/fluency-systems-regular/30/ffffff/facebook-new--v1.png"
-                        alt="Facebook">
-
+                    <img src="https://img.icons8.com/fluency-systems-regular/30/ffffff/facebook-new--v1.png" alt="Facebook">
                 </a>
-
                 <a href="https://www.tiktok.com/@digital.ark_?_r=1&_t=ZS-96a4QGzlzPd" target="_blank">
-
                     <img src="https://img.icons8.com/ios/30/ffffff/tiktok--v1.png" alt="TikTok">
-
                 </a>
-
             </div>
-
             <hr>
-
-            <!-- POLÍTICAS -->
-
             <div class="políticas">
-
-                <a href="../pages/Políticas.html">
-
-                    Políticas de Privacidade
-
-                </a>
-
+                <a href="../pages/Políticas.html">Políticas de Privacidade</a>
             </div>
-
             <hr>
-
-            <!-- FINAL -->
-
             <div class="final">
-
-                <p>
-                    &copy; Digital Ark. Todos os direitos reservados.
-                </p>
-
+                <p>&copy; Digital Ark. Todos os direitos reservados.</p>
             </div>
-
         </div>
-
     </footer>
 
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const navContainer = document.getElementById('nav-container');
+
+        menuIcon.addEventListener('click', () => {
+            navContainer.classList.toggle('active');
+            if (navContainer.classList.contains('active')) {
+                menuIcon.className = 'bx bx-x';
+            } else {
+                menuIcon.className = 'bx bx-menu';
+            }
+        });
+    </script>
 </body>
 
 </html>

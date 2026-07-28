@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 /* ==========================================================================
    1. CONFIGURAÇÕES GLOBAIS E RESETS
    ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+=======
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght=100;200;300;400;500;600;700;800;900&display=swap');
+>>>>>>> dev
 
 * {
     margin: 0;
@@ -25,10 +29,17 @@ body {
     min-height: 100vh;
 }
 
+<<<<<<< HEAD
 /* ==========================================================================
    2. HEADER & MENU DE NAVEGAÇÃO (DESKTOP)
    ========================================================================== */
 .header {
+=======
+/* ==========================================
+HEADER & NAVEGAÇÃO 
+========================================== */
+.header{
+>>>>>>> dev
     position: fixed;
     top: 0;
     left: 0;
@@ -40,7 +51,7 @@ body {
 
 .nav-bar {
     width: 100%;
-    max-width: 1700px;
+    max-width: 1920px;
     margin: auto;
     padding: 1rem 5%;
     display: flex;
@@ -49,7 +60,11 @@ body {
     gap: 20px;
 }
 
+<<<<<<< HEAD
 .logo {
+=======
+.logo{
+>>>>>>> dev
     width: 180px;
     height: auto;
 }
@@ -66,6 +81,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+<<<<<<< HEAD
     gap: 2rem;
     list-style: none;
 }
@@ -93,9 +109,53 @@ body {
 .nav .button a:hover {
     transform: scale(1.05);
     background: #e6b000;
-    color: #000;
+=======
+    gap: 2.5rem;
 }
 
+.nav li{
+    list-style-type: none;
+}
+
+.nav a{
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.nav li a:hover{
+    transform: scale(1.05);
+    color: #ffc300;
+}
+
+#menu-icon {
+    font-size: 2.3rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+.button {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.button a{
+    background: #ffc300;
+>>>>>>> dev
+    color: #000;
+    padding: 0.6rem 2rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+<<<<<<< HEAD
 /* Dropdown Menu (Submenu Treinos) */
 .dropdown {
     position: relative;
@@ -107,11 +167,28 @@ body {
     left: 50%;
     transform: translateX(-50%);
     background-color: #333;
+=======
+/* DROPDOWN */
+.dropdown{
+    position: relative;
+}
+
+.dropdown-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #111;
+    border: 1px solid #222;
+>>>>>>> dev
     list-style: none;
     padding: 8px 0;
     min-width: 160px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+<<<<<<< HEAD
     z-index: 2000;
+=======
+    z-index: 999;
+>>>>>>> dev
     display: none;
     border-radius: 8px;
     border: 1px solid #222;
@@ -135,40 +212,68 @@ body {
     display: block;
 }
 
+<<<<<<< HEAD
 /* ==========================================================================
    3. BANNER PRINCIPAL DE MOTIVAÇÃO
    ========================================================================== */
+=======
+/* ==========================================
+BANNER DE MOTIVAÇÃO (DIMINUÍDO NO PC)
+========================================== */
+>>>>>>> dev
 .container-img {
     position: relative;
     text-align: center;
     margin-top: 80px;
     width: 100%;
+<<<<<<< HEAD
     height: 450px;
+=======
+    max-width: 2560px;
+    margin-left: auto;
+    margin-right: auto;
+>>>>>>> dev
     overflow: hidden;
 }
 
 .img-treino {
+<<<<<<< HEAD
     height: 100%;
     width: 100%;
     object-fit: cover;
     object-position: center;
+=======
+    height: 320px; /* Diminuído para não pegar a tela inteira do PC */
+    width: 100%;
+    object-fit: cover;
+    display: block;
+>>>>>>> dev
 }
 
 .text-motivation {
     position: absolute;
     left: 5%;
+<<<<<<< HEAD
     top: 75%;
+=======
+    top: 79%;
+>>>>>>> dev
     transform: translateY(-50%);
     color: #fff;
     z-index: 10;
     text-align: left;
+<<<<<<< HEAD
     max-width: 550px;
+=======
+    max-width: 700px;
+>>>>>>> dev
     width: 90%;
 }
 
 .text-motivation h1 {
     font-size: 3.5rem;
     text-transform: uppercase;
+<<<<<<< HEAD
     line-height: 1.1;
     margin-bottom: 15px;
 }
@@ -178,21 +283,40 @@ body {
     text-transform: uppercase;
     font-weight: 400;
     line-height: 1.3;
+=======
+    margin-bottom: 5px;
+    line-height: 1.1;
+}
+
+.text-motivation h2 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 400;
+>>>>>>> dev
 }
 
 .destaque {
     color: #ffc300;
 }
 
+<<<<<<< HEAD
 /* ==========================================================================
    4. COMPONENTE DE SLIDER E CARDS (MÉDIO / COMPACTO)
    ========================================================================== */
+=======
+/* ==========================================
+SLIDER & CARDS (CORRIGIDO ALINHAMENTO COMPLETO)
+========================================== */
+>>>>>>> dev
 .slider {
     width: 100%;
+    max-width: 1600px;
+    margin: 50px auto;
     display: flex;
-    align-items: center;
+    align-items: center;       /* Alinha as setas verticalmente com o centro do slider-container */
     justify-content: center;
     gap: 15px;
+<<<<<<< HEAD
     margin: 60px 0;
     padding: 0 5%;
 }
@@ -221,10 +345,42 @@ body {
     display: flex;
     flex-direction: column;
     padding: 10px;
+=======
+}
+
+.slider-container {
+    width: 1110px; /* Janela que mostra os cards */
+    overflow: hidden;
+    display: flex;
+    align-items: center;       /* Garante que o conteúdo interno fique no meio */
+}
+
+.container-slider {
+    display: flex;
+    align-items: center;       /* Alinha todos os cards perfeitamente na horizontal */
+    justify-content: flex-start; 
+    gap:30px;
+    transition: transform 0.5s ease-in-out;
+    padding: 20px 5px;         /* Espaço extra em cima e embaixo para o hover não cortar */
+}
+
+.card {
+    background-color: rgba(97, 96, 96, 0.15);
+    border: 1px solid #222;
+    border-radius: 20px;
+    min-width: 350px;
+    max-width: 350px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+>>>>>>> dev
     position: relative;
+    box-sizing: border-box;    /* Garante que o padding não quebre o tamanho */
 }
 
 .card:hover {
+<<<<<<< HEAD
     transform: translateY(-5px);
     border-color: #ffc300;
 }
@@ -241,6 +397,31 @@ body {
     justify-content: center;
     align-items: center;
     padding: 15px 5px 5px;
+=======
+    transform: translateY(-5px); /* Reduzi um pouco para não descompensar o alinhamento */
+    border-color: #ffc300;
+}
+
+/* CORREÇÃO AQUI: Garante que o link da imagem se comporte como bloco */
+.card a {
+    display: block;
+    width: 100%;
+    height: 210px;
+}
+
+.card a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.card figcaption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 5px 0;
+>>>>>>> dev
     text-transform: uppercase;
     color: #fff;
     font-size: 1rem;
@@ -262,18 +443,45 @@ body {
     background-color: rgba(0, 0, 0, 0.75);
     z-index: 5;
     font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
 }
 
+<<<<<<< HEAD
 /* Botões de navegação do Slider */
 #prev-button, 
 #next-button {
-    background: transparent;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+=======
+.tipo-treino {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    border: 1px solid #ffc300;
+    color: #ffc300;
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 10;
+    font-weight: 700;
 }
 
+/* BOTÕES ISOLADOS DE COMPORTAMENTOS EXTERNOS */
+#prev-button, #next-button {
+>>>>>>> dev
+    background: transparent;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    border: none;
+    line-height: 0;            /* Remove o espaçamento de texto que o HTML põe em botões */
+}
+
+<<<<<<< HEAD
 #prev-button img, 
 #next-button img {
     width: 40px;
@@ -541,5 +749,132 @@ hr {
     .card {
         min-width: 245px !important;
         max-width: 245px !important;
+=======
+#prev-button img, #next-button img {
+    width: 45px;
+    height: 45px;
+    display: block;
+}
+/* ==========================================
+FOOTER
+========================================== */
+.footer {
+    width: 100%;
+    background: #000;
+    padding: 60px 5% 30px;
+    border-top: 1px solid #222;
+}
+
+.container-box {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-ark img { width: 190px; }
+hr { width: 100%; border-top: 1px solid #222; margin: 30px 0; }
+.contato h3 { margin-bottom: 20px; font-size: 1.6rem; }
+.contato a { margin: 0 12px; display: inline-block; }
+.contato img { width: 32px; }
+.políticas a { color: #fff; font-size: 1.1rem; }
+.políticas a:hover { color: #ffc300; }
+.final { text-align: center; font-size: 0.9rem; color: #777; }
+
+/* ==========================================
+MEDIA QUERIES - RESPONSIVIDADE
+========================================== */
+
+@media(max-width: 1200px){
+    .slider-container{
+        width: 710px; /* Janela para 2 cards */
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (max-width: 992px) {
+    #menu-icon {
+        display: block;
+        z-index: 2000;
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;                     
+        right: -100%;
+        width: 100%;
+        max-width: 260px;
+        height: 100vh;
+        background: #0d0d0d;
+        border-left: 1px solid #222;
+        flex-direction: column;
+        justify-content: flex-start; 
+        align-items: flex-start;       
+        padding: 6rem 2rem 2rem;
+        gap: 1.8rem;
+        z-index: 1000;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+    }
+
+    .nav.active {
+        right: 0; 
+    }
+
+    /* Ajustado para garantir centralização vertical no tablet */
+    .slider-container {
+        width: 370px; /* Janela para 1 card perfeito */
+        display: flex;
+        align-items: center;
+    }
+
+    .text-motivation h1 { font-size: 2.3rem; }
+    .text-motivation h2 { font-size: 1.3rem; }
+}
+
+/* CELULARES */
+@media (max-width: 480px) {
+    .img-treino {
+        height: 380px; 
+    }
+
+    .text-motivation {
+        left: 10%;
+        width: 100%;
+    }
+
+    .text-motivation h1 { font-size: 2rem; }
+    .text-motivation h2 { font-size: 1.1rem; }
+
+    /* Ajustado para garantir alinhamento no celular */
+    .slider-container {
+        width: 350px; 
+        display: flex;
+        align-items: center;
+    }
+    
+    .card {
+        min-width: 310px;
+        max-width: 310px;
+    }
+
+    #prev-button img, #next-button img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 360px) {
+    .slider-container {
+        width: 285px;
+        display: flex;
+        align-items: center;
+    }
+    .card {
+        min-width: 250px;
+        max-width: 250px;
+>>>>>>> dev
     }
 }
