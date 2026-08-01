@@ -18,13 +18,31 @@ html {
 body {
     background: #000;
     color: #fff;
-    overflow: hidden;
+    overflow-x: hidden;
     height: 100vh;
+}
+
+
+.btn-seta {
+    background: transparent;
+    cursor: pointer;
+    transform: scale(-1);
+    padding: 20px 70px;
+}
+
+.btn-seta a i{
+    font-size: 2rem;
+    color: #ffc300;
+
+}
+
+.btn-seta i:hover {
+    transform: scale(1.1);
 }
 
 header{
     margin-left: 80px;
-    margin-top: 80px;
+    margin-top: 40px;
     text-transform: uppercase;
     border-left: 4px solid #ffc300;
     padding-left: 12px;
@@ -96,4 +114,22 @@ h3{
 }
 p1{
     font-size: 15px;
+}
+
+.btn-seta {
+    background: transparent;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.btn-seta i{
+    font-size: 2rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-seta i:hover {
+    transform: scale(1.1);
 }
