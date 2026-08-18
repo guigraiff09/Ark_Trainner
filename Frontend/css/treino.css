@@ -147,7 +147,7 @@ BANNER DE MOTIVAÇÃO (DIMINUÍDO NO PC)
 }
 
 .img-treino {
-    height: 320px; /* Diminuído para não pegar a tela inteira do PC */
+    height: 370px; /* Diminuído para não pegar a tela inteira do PC */
     width: 100%;
     object-fit: cover;
     display: block;
