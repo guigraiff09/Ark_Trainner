@@ -77,6 +77,11 @@ body {
     color: #ffc300;
 }
 
+.nav-list p:hover {
+    transform: scale(1.09);
+    color: #ffc300;
+}
+
 #menu-icon {
     font-size: 2.3rem;
     color: #fff;
