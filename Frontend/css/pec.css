@@ -80,7 +80,7 @@ body {
 
 .nav-list a:hover {
     color: #ffc300;
-    font-size: 1.02rem;
+    font-size: 1.2rem;
 }
 
 /* DROPDOWN MENU */
@@ -146,7 +146,7 @@ body {
 }
 
 .button-login:hover {
-    transform: scale(1.05);
+    transform: scale(1.09);
     background: #e6b000;
 }
 

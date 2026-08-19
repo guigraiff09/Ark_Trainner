@@ -73,7 +73,7 @@ body {
 }
 
 .nav-list a:hover {
-    transform: scale(1.05);
+    transform: scale(1.09);
     color: #ffc300;
 }
 
@@ -98,7 +98,8 @@ body {
     font-weight: 600;
     display: inline-block;
     border: 2px solid #ffc300; /* Borda amarela */
-    transition: all 0.3s ease;
+    transition:  0.5s ease;
+    text-transform: uppercase;
 }
 
 /* CORREÇÃO DO BOTÃO NO HOVER: Fundo Fica Preto e Texto Amarelo */
