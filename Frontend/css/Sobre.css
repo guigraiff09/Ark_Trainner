@@ -26,15 +26,9 @@ body {
 }
 
 /* ==========================================
-<<<<<<< HEAD
-HEADER & NAVEGAÇÃO
-========================================== */
-.header{
-=======
    2. HEADER & NAVEGAÇÃO 
 ========================================== */
 .header {
->>>>>>> dev
     position: fixed;
     top: 0;
     left: 0;
@@ -59,25 +53,9 @@ HEADER & NAVEGAÇÃO
     height: auto;
 }
 
-<<<<<<< HEAD
-#menu-icon {
-    display: none;
-    font-size: 2.2rem;
-    color: #fff;
-    cursor: pointer;
-}
-
-.nav{
-    display: flex;
-    align-items: left;
-    justify-content: center;
-    gap: 2rem;
-    list-style: none;
-=======
 .nav {
     display: flex;
     justify-content: flex-start;
->>>>>>> dev
 }
 
 .nav-list {
@@ -97,26 +75,6 @@ HEADER & NAVEGAÇÃO
 .nav-list a:hover {
     transform: scale(1.05);
     color: #ffc300;
-<<<<<<< HEAD
-    font-size: 1.2rem;
-}
-
-.button {
-    background: #ffc300;
-    padding: 0.6rem 1.5rem;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.button a{
-    color: #000;
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-.button a:hover{
-    transform: scale(1.05);
-=======
 }
 
 #menu-icon {
@@ -133,7 +91,6 @@ HEADER & NAVEGAÇÃO
 
 .button a {
     background-color: #ffc300;
->>>>>>> dev
     color: #000;
     padding: 0.6rem 2rem;
     border-radius: 10px;
@@ -144,10 +101,6 @@ HEADER & NAVEGAÇÃO
     transition: all 0.3s ease;
 }
 
-<<<<<<< HEAD
-/* DROPDOWN MENU */
-.dropdown{
-=======
 /* CORREÇÃO DO BOTÃO NO HOVER: Fundo Fica Preto e Texto Amarelo */
 .button a:hover {
     background-color: #ffc300;
@@ -157,7 +110,6 @@ HEADER & NAVEGAÇÃO
 
 /* DROPDOWN */
 .dropdown {
->>>>>>> dev
     position: relative;
 }
 
@@ -214,151 +166,6 @@ HEADER & NAVEGAÇÃO
     text-align: left;
 }
 
-<<<<<<< HEAD
-.dropdown:hover .dropdown-menu{
-    display: block;
-}
-
-/* ==========================================
-MAIN CONTAINER
-========================================== */
-.main-container{
-    width: 100%;
-    max-width: 1700px;
-    margin: auto;
-    padding: 140px 5% 80px;
-}
-
-/* ==========================================
-SEÇÃO SOBRE (LADO A LADO DINÂMICO)
-========================================== */
-.container-sobre{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    width: 100%;
-}
-
-.sobre{
-    flex: 1.2; /* Dá uma leve preferência de espaço para o bloco de texto */
-}
-
-.sobre h1{
-    font-size: clamp(2.2rem, 4.5vw, 5.5rem);
-    margin-bottom: 20px;
-    margin-top: 5rem;
-    line-height: 1.1;
-}
-
-.destaque{
-    color: #ffc300;
-}
-
-.sobre p{
-    font-size: clamp(0.95rem, 1.4vw, 1.4rem);
-    line-height: 1.6;
-    max-width: 700px;
-    margin-bottom: 15px;
-}
-
-.foto-sobre{
-    flex: 0.8;
-    display: flex;
-    justify-content: center;
-}
-
-.foto-sobre img{
-    width: 100%;
-    max-width: 480px;
-    height: auto;
-    border-radius: 15px;
-    object-fit: cover;
-}
-
-/* ==========================================
-CARDS QUE EMPURRAM O CONTEÚDO (HOVER EFECT)
-========================================== */
-.container-nos{
-    width: 100%;
-    margin-top: 80px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
-    align-items: start; /* Impede que os cartões estiquem artificialmente juntos */
-}
-
-.card-sobre{
-    border: 2px solid #fff;
-    border-radius: 20px;
-    padding: 25px;
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    background: #111;
-    overflow: hidden;
-    height: auto; /* Permite que o card mude de altura dinamicamente */
-}
-
-.card-sobre:hover{
-    transform: translateY(-5px);
-    border-color: #ffc300;
-}
-
-.card-sobre img{
-    width: 45px;
-    height: 45px;
-    flex-shrink: 0;
-}
-
-.item {
-    flex: 1;
-}
-
-.item h3{
-    font-size: 1.3rem;
-    margin-bottom: 5px;
-}
-
-.item p{
-    color: #ccc;
-    font-size: 1rem;
-}
-
-/* FRASE MOTIVACIONAL EM BLOCKS (EMPURRA O LAYOUT) */
-.moti-item{
-    max-height: 0; /* Começa fechado sem ocupar espaço */
-    opacity: 0;
-    margin-top: 0;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.moti{
-    color: #ffc300;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    font-weight: 500;
-    border-top: 1px dashed #333;
-    padding-top: 10px;
-}
-
-/* Aplicação do Efeito de Empuxo */
-.card-sobre:hover .moti-item{
-    max-height: 120px; /* Abre o bloco empurrando fisicamente o grid e os cards abaixo */
-    opacity: 1;
-    margin-top: 15px;
-}
-
-/* ==========================================
-FOOTER
-========================================== */
-.footer{
-    width: 100%;
-    background: #000;
-    color: #fff;
-    padding: 60px 5% 20px;
-=======
 .sobre h1 {
     font-size: 3.2rem;
     text-transform: uppercase;
@@ -480,7 +287,6 @@ FOOTER
     padding: 60px 5% 30px;
     border-top: 1px solid #222;
     margin-top: 50px;
->>>>>>> dev
 }
 
 .container-box {
@@ -492,64 +298,6 @@ FOOTER
     align-items: center;
 }
 
-<<<<<<< HEAD
-.logo-ark img{
-    width: 180px;
-    height: auto;
-}
-
-hr{
-    width: 100%;
-    border: none;
-    border-top: 1px solid #222;
-    margin: 25px 0;
-}
-
-.contato {
-    text-align: center;
-
-}
-.contato h3{
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-}
-
-.contato a{
-    display: inline-block;
-    margin: 0 10px;
-}
-
-.contato img{
-    width: 30px;
-}
-
-.políticas a{
-    color: #fff;
-    font-size: 1.1rem;
-}
-
-.políticas a:hover{
-    color: #ffc300;
-}
-
-.final{
-    text-align: center;
-    font-size: 0.9rem;
-    color: #888;
-}
-
-/* ==========================================
-SISTEMA COMPLETO DE RESPONSIVIDADE (TELA POR TELA)
-========================================== */
-
-/* Notebooks e Desktops Intermediários (Até 1200px) */
-@media (max-width: 1200px) {
-    .main-container {
-        padding-top: 120px;
-    }
-    .container-sobre {
-        gap: 30px;
-=======
 .logo-ark img { width: 180px; }
 hr { width: 100%; border-top: 1px solid #222; margin: 30px 0; }
 .contato h3 { margin-bottom: 20px; font-size: 1.5rem; text-align: center; }
@@ -579,85 +327,8 @@ hr { width: 100%; border-top: 1px solid #222; margin: 30px 0; }
         border-left: 1px solid #222;
         z-index: 1000;
         box-shadow: -5px 0 15px rgba(0,0,0,0.5);
->>>>>>> dev
     }
 
-<<<<<<< HEAD
-/* Tablets e Celulares Deitados - Ativação do Menu Hambúrguer (Até 992px) */
-@media (max-width: 992px) {
-    #menu-icon {
-        display: block; /* Revela o hambúrguer */
-        position: relative !important;
-        z-index: 2000 !important;
-    }
-
-    .nav {
-        position: fixed;
-        top: 0px;
-        right: -100%; /* Oculta lateralmente */
-        width: 100%;
-        max-width: 180px;
-        height: 100vh !important; 
-        background: #0d0d0d;
-        flex-direction: column;
-        justify-content: flex-start;
-        padding: 6rem 1rem 2rem 1rem !important; 
-        gap: 2.5rem;
-        border-left: 1px solid #222;
-        z-index: 1000;
-        transition: 0.4s ease;
-        
-    }
-
-    .nav.active {
-        right: 0; /* Menu aparece deslizando */
-    }
-
-    .dropdown-menu {
-        position: relative;
-        top: 10px;
-        background-color: #1a1a1a;
-        box-shadow: none;
-    }
-}
-
-/* Celulares Padrão (Até 768px) */
-@media (max-width: 768px) {
-    /* Mantém em linha (lado a lado), adaptando os textos */
-    .container-sobre {
-        flex-direction: row; 
-        gap: 20px;
-    }
-
-    .sobre h1 {
-        font-size: 1.8rem;
-    }
-
-    .sobre p {
-        font-size: 0.9rem;
-    }
-
-    .container-nos {
-        grid-template-columns: 1fr; /* Cartões empilham na vertical em telas menores */
-        gap: 20px;
-    }
-}
-
-/* Celulares Pequenos e Telas Mini (Até 480px) */
-@media (max-width: 480px) {
-    /* Apenas aqui eles quebram em coluna para as letras não ficarem exprimidas em 1 coluna fina */
-    .container-sobre {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
-
-    .foto-sobre img {
-        max-width: 100%;
-    }
-
-    .sobre h1 {
-        font-size: 2.2rem;
-=======
     .nav.active {
         right: 0; 
     }
@@ -731,56 +402,9 @@ hr { width: 100%; border-top: 1px solid #222; margin: 30px 0; }
 
     .card-sobre h3 {
         font-size: 0.95rem;
->>>>>>> dev
     }
 
-<<<<<<< HEAD
-/* Monitores Gigantes, Ultra-wide e Telas de TV (A partir de 2200px) */
-@media (min-width: 2200px) {
-    .main-container {
-        max-width: 2000px;
-        padding-top: 180px;
-    }
-
-    .logo {
-        width: 240px;
-    }
-
-    .nav a {
-        font-size: 1.4rem;
-    }
-
-    .sobre h1 {
-        font-size: 6.5rem;
-    }
-
-    .sobre p {
-        font-size: 2rem;
-        max-width: 900px;
-    }
-
-    .foto-sobre img {
-        max-width: 700px;
-    }
-
-    .container-nos {
-        gap: 40px;
-        grid-template-columns: repeat(4, 1fr); /* Força os 4 ficarem em linha no 4K */
-    }
-
-    .card-sobre {
-        padding: 35px;
-    }
-
-    .item h3 {
-        font-size: 1.8rem;
-    }
-
-    .item p {
-        font-size: 1.3rem;
-=======
     .card-sobre p {
         font-size: 0.8rem;
->>>>>>> dev
     }
 }

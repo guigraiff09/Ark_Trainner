@@ -26,15 +26,9 @@ body {
 }
 
 /* ==========================================
-<<<<<<< HEAD
-HEADER & NAVEGAÇÃO
-========================================== */
-.header{
-=======
    2. HEADER & NAVEGAÇÃO 
 ========================================== */
 .header {
->>>>>>> dev
     position: fixed;
     top: 0;
     left: 0;
@@ -52,42 +46,13 @@ HEADER & NAVEGAÇÃO
     display: flex;
     align-items: center;
     justify-content: space-between;
-<<<<<<< HEAD
-    gap: 20px;
-}
-
-.logo{
-=======
 }
 
 .logo {
->>>>>>> dev
     width: 180px;
     height: auto;
 }
 
-<<<<<<< HEAD
-#menu-icon {
-    display: none;
-    font-size: 2.2rem;
-    color: #fff;
-    cursor: pointer;
-    z-index: 1001; /* Fica acima do menu lateral aberto */
-}
-
-.nav{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    list-style: none;
-}
-
-.nav a{
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: 500;
-=======
 .nav {
     display: flex;
     justify-content: flex-start;
@@ -105,37 +70,11 @@ HEADER & NAVEGAÇÃO
     font-size: 1.1rem;
     font-weight: 500;
     display: inline-block;
->>>>>>> dev
 }
 
 .nav-list a:hover {
     transform: scale(1.05);
     color: #ffc300;
-<<<<<<< HEAD
-    font-size: 1.2rem;
-}
-
-.button {
-    background: #ffc300;
-    padding: 0.6rem 1.5rem;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.button a{
-    color: #000;
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-.button a:hover{
-    transform: scale(1.05);
-    color: #000 ;
-}
-
-/* DROPDOWN MENU */
-.dropdown{
-=======
 }
 
 #menu-icon {
@@ -165,7 +104,6 @@ HEADER & NAVEGAÇÃO
 
 /* DROPDOWN */
 .dropdown {
->>>>>>> dev
     position: relative;
 }
 
@@ -222,46 +160,6 @@ HEADER & NAVEGAÇÃO
     text-align: left;
 }
 
-<<<<<<< HEAD
-.dropdown:hover .dropdown-menu{
-    display: block;
-}
-
-/* ==========================================
-MAIN CONTAINER
-========================================== */
-.main-container{
-    width: 100%;
-    max-width: 1700px;
-    margin: auto;
-    padding: 140px 5% 80px;
-}
-
-/* ==========================================
-CONTAINER PRINCIPAL (TEXTO + IMAGEM LADO A LADO)
-========================================== */
-.container-content{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    width: 100%;
-    margin-top: 80px;
-}
-
-.frase{
-    flex: 1.2;
-}
-
-.frase h2{
-    color: #ffc300;
-    font-size: clamp(1.2rem, 2.2vw, 2rem);
-    margin-bottom: 10px;
-}
-
-.frase h1{
-    font-size: clamp(1.8rem, 3.8vw, 3.8rem);
-=======
 .frase h2 {
     color: #ffc300;
     font-size: 1.8rem;
@@ -273,7 +171,6 @@ CONTAINER PRINCIPAL (TEXTO + IMAGEM LADO A LADO)
     font-size: 3.2rem;
     text-transform: uppercase;
     margin-bottom: 15px;
->>>>>>> dev
     line-height: 1.1;
 }
 
@@ -281,17 +178,6 @@ CONTAINER PRINCIPAL (TEXTO + IMAGEM LADO A LADO)
     color: #ffc300;
 }
 
-<<<<<<< HEAD
-.frase p{
-    max-width: 650px;
-    line-height: 1.6;
-    font-size: clamp(0.85rem, 1.15vw, 1.1rem);
-    color: #ddd;
-}
-
-.img-cont{
-    flex: 0.8;
-=======
 .frase p {
     font-size: 1.05rem;
     color: #ccc;
@@ -302,46 +188,26 @@ CONTAINER PRINCIPAL (TEXTO + IMAGEM LADO A LADO)
 .img-cont {
     flex: 1;
     min-width: 0;
->>>>>>> dev
     display: flex;
     justify-content: flex-end;
 }
 
 .img-cont img {
     width: 100%;
-<<<<<<< HEAD
-    max-width: 540px;
-    height: auto;
-    border-radius: 15px;
-=======
     max-width: 450px;
     height: auto;
     border-radius: 20px;
     object-fit: cover;
     border: 1px solid #222;
->>>>>>> dev
 }
 
 /* ==========================================
    4. FORMULÁRIO DE CONTATO
 ========================================== */
-<<<<<<< HEAD
-.container-input{
-=======
 .container-input {
->>>>>>> dev
     width: 100%;
     border: 1px solid #222;
     border-radius: 20px;
-<<<<<<< HEAD
-    padding: 40px;
-    background: #050505;
-    margin-top: 60px;
-}
-
-.container-input h3{
-    font-size: clamp(1.5rem, 2.5vw, 2.2rem);
-=======
     padding: 35px;
     background: rgba(97, 96, 96, 0.1);
     margin-top: 30px;
@@ -350,19 +216,13 @@ CONTAINER PRINCIPAL (TEXTO + IMAGEM LADO A LADO)
 .container-input h3 {
     font-size: 1.8rem;
     color: #fff;
->>>>>>> dev
     margin-bottom: 25px;
 }
 
 .input-box {
     display: flex;
     flex-direction: column;
-<<<<<<< HEAD
-    margin-bottom: 20px;
-    width: 100%;
-=======
     margin-bottom: 18px;
->>>>>>> dev
 }
 
 .input-box input,
@@ -377,36 +237,19 @@ CONTAINER PRINCIPAL (TEXTO + IMAGEM LADO A LADO)
 }
 
 .input-box input:focus,
-<<<<<<< HEAD
-.input-box textarea:focus,
-.input-box input:hover,
-.input-box textarea:hover {
-    background-color: #111;
-    border-color: #ffc300;
-}
-
-.input-box textarea{
-=======
 .input-box textarea:focus {
     border-color: #ffc300;
     background: #111;
 }
 
 .input-box textarea {
->>>>>>> dev
     resize: none;
     height: 130px;
 }
 
-<<<<<<< HEAD
-.input-box button{
-    width: 220px;
-    padding: 15px;
-=======
 .input-box button {
     width: 180px;
     padding: 12px;
->>>>>>> dev
     border-radius: 10px;
     background: #ffc300;
     color: #000;
@@ -416,65 +259,36 @@ CONTAINER PRINCIPAL (TEXTO + IMAGEM LADO A LADO)
     border: 2px solid #ffc300;
 }
 
-<<<<<<< HEAD
-.input-box button:hover{
-=======
 .input-box button:hover {
     background-color: #000 !important;
     color: #ffc300 !important;
->>>>>>> dev
     transform: scale(1.03);
 }
 
 /* ==========================================
    5. CARDS DE OUTRAS FORMAS DE CONTATO
 ========================================== */
-<<<<<<< HEAD
-.contato-box{
-=======
 .contato-box {
->>>>>>> dev
     width: 100%;
     border: 1px solid #222;
     border-radius: 20px;
-<<<<<<< HEAD
-    padding: 40px;
-    margin-top: 30px;
-    background: #111;
-=======
     padding: 30px;
     margin-top: 30px;
     background: rgba(97, 96, 96, 0.1);
->>>>>>> dev
 }
 
 .box-cont {
     display: grid;
-<<<<<<< HEAD
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
-}
-
-.formas-contato{
-=======
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
 }
 
 .formas-contato {
->>>>>>> dev
     line-height: 1.6;
 }
 
 .formas-contato h3 {
     color: #ffc300;
-<<<<<<< HEAD
-    margin-bottom: 8px;
-    font-size: 1.15rem;
-}
-
-.formas-contato p{
-=======
     font-size: 1.3rem;
 }
 
@@ -485,7 +299,6 @@ CONTAINER PRINCIPAL (TEXTO + IMAGEM LADO A LADO)
 }
 
 .formas-contato p {
->>>>>>> dev
     color: #ccc;
     font-size: 0.95rem;
 }
@@ -493,19 +306,12 @@ CONTAINER PRINCIPAL (TEXTO + IMAGEM LADO A LADO)
 /* ==========================================
    6. FOOTER
 ========================================== */
-<<<<<<< HEAD
-.footer{
-    background: #000;
-    color: #fff;
-    padding: 40px 5% 20px;
-=======
 .footer {
     width: 100%;
     background: #000;
     padding: 60px 5% 30px;
     border-top: 1px solid #222;
     margin-top: 50px;
->>>>>>> dev
 }
 
 .container-box {
@@ -517,50 +323,6 @@ CONTAINER PRINCIPAL (TEXTO + IMAGEM LADO A LADO)
     align-items: center;
 }
 
-<<<<<<< HEAD
-.logo-ark img{
-    width: 180px;
-    height: auto;
-}
-
-hr{
-    width: 100%;
-    border: 0;
-    border-top: 1px solid #222;
-    margin: 25px 0;
-}
-
-.contato h3 {
-    margin-bottom: 15px;
-    font-size: 1.25rem;
-}
-
-.contato a{
-    display: inline-block;
-    margin: 0 10px;
-}
-
-.contato img{
-    width: 30px;
-}
-
-.políticas a{
-    color: #fff;
-    font-size: 0.95rem;
-}
-
-.políticas a:hover{
-    color: #ffc300;
-}
-
-.final{
-    font-size: 0.85rem;
-    color: #888;
-}
-
-/* ==========================================
-MEDIA QUERIES - RESPONSIVIDADE COMPLETA
-=======
 .logo-ark img { width: 180px; }
 hr { width: 100%; border-top: 1px solid #222; margin: 30px 0; }
 .contato h3 { margin-bottom: 20px; font-size: 1.5rem; text-align: center; }
@@ -572,7 +334,6 @@ hr { width: 100%; border-top: 1px solid #222; margin: 30px 0; }
 
 /* ==========================================
    7. RESPONSIVIDADE (TABLETS E SMARTPHONES)
->>>>>>> dev
 ========================================== */
 @media (max-width: 992px) {
     #menu-icon {
@@ -580,164 +341,6 @@ hr { width: 100%; border-top: 1px solid #222; margin: 30px 0; }
         z-index: 2000;
     }
 
-<<<<<<< HEAD
-@media (max-width: 1200px) {
-    .main-container {
-        padding-top: 110px;
-    }
-}
-
-/* Tablets e Celulares - Ativação e Correção do Menu Lateral Estreito */
-@media(max-width: 992px){
-    #menu-icon {
-        display: block;
-        position: relative !important;
-        z-index: 2000 !important;
-    }
-
-    .nav {
-        position: fixed;
-        top: 0;                     /* Começa do topo absoluto da janela */
-        right: -100%;
-        width: 100%;
-        max-width: 180px;           /* DIMINUÍDA A LATERAL DO MENU (Mais estreito) */
-        height: 100vh;              /* ALTURA PEGANDO TUDO (Full Screen) */
-        background: #0d0d0d;
-        flex-direction: column;
-        justify-content: flex-start;
-        padding: 6rem 1.5rem 2rem;  /* Espaço superior para não sobrepor o ícone */
-        gap: 2rem;
-        border-left: 1px solid #222;
-        z-index: 1000;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
-    }
-
-    .nav.active {
-        right: 0;
-    }
-
-    .nav li {
-        width: 100%;
-    }
-
-    .nav a {
-        font-size: 1rem;
-        display: block;
-        width: 100%;
-    }
-
-    .login-wrapper {
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .nav button {
-        width: 100%;
-    }
-
-    .dropdown-menu {
-        position: relative;
-        top: 5px;
-        background-color: #161616;
-        box-shadow: none;
-        width: 100%;
-    }
-}
-
-/* Telas Médias e de Smartphones (Frase e Imagem LADO A LADO com foto ampliada) */
-@media(max-width: 768px){
-    .container-content{
-        flex-direction: row;        /* MANTER LADO A LADO */
-        align-items: center;
-        gap: 25px;
-    }
-
-    .frase {
-        flex: 1.1;                  /* Equilibra o espaço com a foto */
-    }
-
-    .frase h1 {
-        font-size: 1.5rem;          /* Letras menores para evitar quebras feias */
-    }
-
-    .frase p {
-        font-size: 0.85rem;
-    }
-
-    .img-cont {
-        flex: 0.9;                  /* AUMENTA O ESPAÇO DA FOTO QUANDO FICA PEQUENO */
-    }
-
-    .img-cont img {
-        max-width: 100%;            /* Faz a foto expandir e preencher o bloco responsivamente */
-    }
-
-    .input-box button{
-        width: 100%;
-    }
-}
-
-/* Telas Muito Estreitas (Abaixo de 480px) - Inversão necessária apenas para legibilidade extrema */
-@media(max-width: 480px) {
-    .container-content{
-        flex-direction: column-reverse; 
-        text-align: center;
-        gap: 20px;
-    }
-
-    .frase p {
-        margin: 0 auto;
-    }
-
-    .img-cont img{
-        max-width: 85%;
-    }
-
-    .container-input,
-    .contato-box {
-        padding: 20px;
-    }
-}
-
-/* Monitores Ultra-Wide e 4K (A partir de 2200px) */
-@media(min-width: 2200px){
-    .main-container{
-        max-width: 2000px;
-        padding-top: 180px;
-    }
-
-    .logo {
-        width: 240px;
-    }
-
-    .nav a {
-        font-size: 1.3rem;
-    }
-
-    .frase h1{
-        font-size: 5rem;
-    }
-
-    .frase p{
-        font-size: 1.4rem;
-        max-width: 900px;
-    }
-
-    .img-cont img{
-        max-width: 700px;
-    }
-
-    .input-box input,
-    .input-box textarea{
-        font-size: 1.2rem;
-        padding: 22px;
-    }
-
-    .input-box button{
-        width: 280px;
-        font-size: 1.15rem;
-    }
-=======
     .nav {
         position: fixed;
         top: 0;                     
@@ -841,5 +444,4 @@ hr { width: 100%; border-top: 1px solid #222; margin: 30px 0; }
     .container-input h3 { font-size: 2.8rem; }
     .input-box input, .input-box textarea { font-size: 1.3rem; }
     .input-box button { font-size: 1.3rem; width: 250px; }
->>>>>>> dev
 }
