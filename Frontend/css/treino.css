@@ -64,6 +64,7 @@ HEADER & NAVEGAÇÃO
     align-items: center;
     justify-content: center;
     gap: 2.5rem;
+    
 }
 
 .nav li{
@@ -74,10 +75,11 @@ HEADER & NAVEGAÇÃO
     color: #fff;
     font-size: 1.1rem;
     font-weight: 500;
+    transition: 0.5s ease;
 }
 
 .nav li a:hover{
-    transform: scale(1.05);
+    font-size: 1.2rem;
     color: #ffc300;
 }
 
@@ -88,23 +90,30 @@ HEADER & NAVEGAÇÃO
     display: none;
 }
 
+
 .button {
     background: transparent;
-    padding: 0;
-    margin: 0;
-    border: none;
-    outline: none;
     cursor: pointer;
 }
 
-.button a{
-    background: #ffc300;
+.button a {
+    background-color: #ffc300;
     color: #000;
     padding: 0.6rem 2rem;
     border-radius: 10px;
     font-size: 1rem;
     font-weight: 600;
     display: inline-block;
+    border: 2px solid #ffc300; /* Borda amarela */
+    transition:  0.5s ease;
+    text-transform: uppercase;
+}
+
+/* CORREÇÃO DO BOTÃO NO HOVER: Fundo Fica Preto e Texto Amarelo */
+.button a:hover {
+    background-color: #ffc300;
+    color: #000 !important;            /* Texto fica amarelo */
+    transform: scale(1.05);
 }
 
 /* DROPDOWN */
@@ -161,7 +170,7 @@ BANNER DE MOTIVAÇÃO (DIMINUÍDO NO PC)
 }
 
 .img-treino {
-    height: 320px; /* Diminuído para não pegar a tela inteira do PC */
+    height: 370px; /* Diminuído para não pegar a tela inteira do PC */
     width: 100%;
     object-fit: cover;
     display: block;
@@ -388,7 +397,6 @@ MEDIA QUERIES - RESPONSIVIDADE
     .nav.active {
         right: 0; 
     }
-
     /* Ajustado para garantir centralização vertical no tablet */
     .slider-container {
         width: 370px; /* Janela para 1 card perfeito */

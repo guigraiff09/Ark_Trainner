@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro - ARK Trainer</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="../css/cadastro.css">
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet">
+    <link
+        rel="shortcut icon"
+        href="../Assets/IMG/favicon.ico"
+        type="image/x-icon">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="login-box">
+
+            <!-- LOGO -->
+
+            <div class="logo">
+
+                <h1>
+                    ARK
+                    <span class="destaque">
+                        TRAINER
+                    </span>
+                </h1>
+
+                <p>
+                    Crie sua conta
+                </p>
+
+            </div>
+
+
+            <!-- NOME -->
+
+            <div class="input-box">
+
+                <i class='bx bx-user'></i>
+
+                <input
+                    type="text"
+                    id="nome"
+                    placeholder="Digite seu nome completo"
+                    required>
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="input-box">
+
+                <i class='bx bx-envelope'></i>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Digite seu e-mail"
+                    required>
+
+            </div>
+
+
+            <!-- SENHA -->
+
+            <div class="input-box">
+
+                <i class='bx bx-lock-alt'></i>
+
+                <input
+                    type="password"
+                    id="senha"
+                    placeholder="Digite sua senha"
+                    required>
+
+            </div>
+
+
+            <!-- CONFIRMAR SENHA -->
+
+            <div class="input-box">
+
+                <i class='bx bx-lock'></i>
+
+                <input
+                    type="password"
+                    id="confirmarSenha"
+                    placeholder="Confirme sua senha"
+                    required>
+
+            </div>
+
+
+            <!-- BOTÃO CADASTRAR -->
+
+            <button
+                class="btn-entrar"
+                onclick="cadastrar()">
+
+                Criar conta
+
+            </button>
+
+
+            <!-- MENSAGEM -->
+
+            <p id="erro"></p>
+
+
+            <!-- DIVISOR -->
+
+            <div class="divisor">
+
+                <span>ou</span>
+
+            </div>
+
+
+            <!-- VOLTAR PARA LOGIN -->
+
+            <div class="voltar">
+
+                <a href="login.html">
+
+                    <i class='bx bx-arrow-back'></i>
+
+                    Já possui uma conta? Entrar
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function cadastrar() {
+
+            const nome =
+                document.getElementById('nome').value.trim();
+
+            const email =
+                document.getElementById('email').value.trim();
+
+            const senha =
+                document.getElementById('senha').value;
+
+            const confirmarSenha =
+                document.getElementById('confirmarSenha').value;
+
+            const erro =
+                document.getElementById('erro');
+
+
+            // LIMPA MENSAGEM
+
+            erro.innerText = '';
+
+
+            // VERIFICA CAMPOS
+
+            if (!nome || !email || !senha || !confirmarSenha) {
+
+                erro.innerText =
+                    'Preencha todos os campos.';
+
+                return;
+
+            }
+
+
+            // VERIFICA SENHAS
+
+            if (senha !== confirmarSenha) {
+
+                erro.innerText =
+                    'As senhas não coincidem.';
+
+                return;
+
+            }
+
+
+            // ENVIA PARA O BACKEND
+
+            fetch('http://localhost:3000/cadastro', {
+
+                method: 'POST',
+
+                headers: {
+
+                    'Content-Type':
+                        'application/json'
+
+                },
+
+                body: JSON.stringify({
+
+                    nome: nome,
+
+                    email: email,
+
+                    senha: senha
+
+                })
+
+            })
+
+            .then(res => res.json())
+
+            .then(data => {
+
+                if (data.sucesso) {
+
+                    alert(
+                        'Cadastro realizado com sucesso!'
+                    );
+
+                    window.location.href =
+                        'login.html';
+
+                } else {
+
+                    erro.innerText =
+                        data.mensagem ||
+                        'Não foi possível realizar o cadastro.';
+
+                }
+
+            })
+
+            .catch(error => {
+
+                console.log(error);
+
+                erro.innerText =
+                    'Erro ao conectar ao servidor.';
+
+            });
+
+        }
+
+    </script>
+
+</body>
+
+</html>
