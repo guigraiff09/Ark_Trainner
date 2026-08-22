@@ -1,21 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-*{
+/* ==========================================
+   1. RESET GLOBAL
+========================================== */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
     text-decoration: none;
     border: none;
     outline: none;
-    transition: 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     background: #000;
     color: #fff;
     overflow-x: hidden;
@@ -23,9 +26,9 @@ body{
 }
 
 /* ==========================================
-HEADER & NAVEGAÇÃO
+   2. HEADER & NAVEGAÇÃO 
 ========================================== */
-.header{
+.header {
     position: fixed;
     top: 0;
     left: 0;
@@ -35,427 +38,374 @@ HEADER & NAVEGAÇÃO
     border-bottom: 1px solid #222;
 }
 
-.nav-bar{
+.nav-bar {
     width: 100%;
-    max-width: 1700px;
+    max-width: 1920px;
     margin: auto;
     padding: 1rem 5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
 }
 
-.logo{
+.logo {
     width: 180px;
-    max-width: 100%;
     height: auto;
 }
 
-#menu-icon {
-    display: none;
-    font-size: 2.2rem;
-    color: #fff;
-    cursor: pointer;
+.nav {
+    display: flex;
+    justify-content: flex-start;
 }
 
-.nav{
+.nav-list {
     display: flex;
-    align-items: left;
-    justify-content: center;
-    gap: 2rem;
+    align-items: center;
+    gap: 2.5rem;
     list-style: none;
 }
 
-.nav a{
+.nav-list a {
     color: #fff;
     font-size: 1.1rem;
     font-weight: 500;
+    display: inline-block; /* Permite o transform scale funcionar com precisão */
 }
 
-.nav a:hover{
+.nav-list a:hover {
+    transform: scale(1.09);
     color: #ffc300;
-    font-size: 1.2rem;
+}
+
+#menu-icon {
+    font-size: 2.3rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
 }
 
 .button {
-    background: #ffc300;
-    padding: 0.6rem 1.5rem;
-    border-radius: 10px;
+    background: transparent;
     cursor: pointer;
 }
 
-.button a{
+.button a {
+    background-color: #ffc300;
     color: #000;
+    padding: 0.6rem 2rem;
+    border-radius: 10px;
     font-size: 1rem;
     font-weight: 600;
+    display: inline-block;
+    border: 2px solid #ffc300; /* Borda amarela */
+    transition:  0.5s ease;
+    text-transform: uppercase;
 }
 
-.button a:hover{
+/* CORREÇÃO DO BOTÃO NO HOVER: Fundo Fica Preto e Texto Amarelo */
+.button a:hover {
+    background-color: #ffc300;
+    color: #000 !important;            /* Texto fica amarelo */
     transform: scale(1.05);
-    color: #000;
 }
 
-/* DROPDOWN MENU */
-.dropdown{
+/* DROPDOWN */
+.dropdown {
     position: relative;
 }
 
-.dropdown-menu{
+.dropdown-menu {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #333;
+    background-color: #111;
+    border: 1px solid #222;
     list-style: none;
     padding: 10px 0;
     min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
     z-index: 999;
     display: none;
     border-radius: 10px;
 }
 
-.dropdown-menu li a{
+.dropdown-menu li a {
     display: block;
     padding: 10px 15px;
     font-size: 14px;
     color: #fff;
-    text-align: left;
 }
 
-.dropdown:hover .dropdown-menu{
+.dropdown:hover .dropdown-menu {
     display: block;
 }
 
 /* ==========================================
-MAIN CONTAINER
+   3. SEÇÃO PRINCIPAL (TEXTO + FOTO LADO A LADO)
 ========================================== */
-.main-container{
-    width: 100%;
-    max-width: 1700px;
-    margin: auto;
-    padding: 140px 5% 80px;
+.main-container {
+    margin-top: 100px;
+    padding: 40px 5%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* ==========================================
-SEÇÃO SOBRE (LADO A LADO DINÂMICO)
-========================================== */
-.container-sobre{
+.container-sobre {
     display: flex;
+    flex-direction: row; /* Garante que fica sempre na horizontal */
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
+    gap: 30px;
     width: 100%;
+    margin-bottom: 60px;
 }
 
-.sobre{
-    flex: 1.2; /* Dá uma leve preferência de espaço para o bloco de texto */
+.sobre {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
 }
 
-.sobre h1{
-    font-size: clamp(2.2rem, 4.5vw, 5.5rem);
-    margin-bottom: 20px;
-    margin-top: 5rem;
+.sobre h1 {
+    font-size: 3.2rem;
+    text-transform: uppercase;
+    margin-bottom: 15px;
     line-height: 1.1;
 }
 
-.destaque{
-    color: #ffc300;
-}
-
-.sobre p{
-    font-size: clamp(0.95rem, 1.4vw, 1.4rem);
-    line-height: 1.6;
-    max-width: 700px;
+.sobre p {
+    font-size: 1.3rem;
+    font-weight: 500;
     margin-bottom: 15px;
 }
 
-.foto-sobre{
-    flex: 0.8;
-    display: flex;
-    justify-content: center;
+.sobre .para {
+    font-size: 1.05rem;
+    color: #ccc;
+    font-weight: 300;
+    line-height: 1.6;
 }
 
-.foto-sobre img{
+.destaque {
+    color: #ffc300;
+}
+
+.foto-sobre {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.foto-sobre img {
     width: 100%;
-    max-width: 480px;
+    max-width: 450px;
     height: auto;
-    border-radius: 15px;
+    border-radius: 20px;
     object-fit: cover;
+    border: 1px solid #222;
 }
 
 /* ==========================================
-CARDS QUE EMPURRAM O CONTEÚDO (HOVER EFECT)
+   4. CARDS (REVELAR TEXTO APENAS NO HOVER)
 ========================================== */
-.container-nos{
-    width: 100%;
-    margin-top: 80px;
+.container-nos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
-    align-items: start; /* Impede que os cartões estiquem artificialmente juntos */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    width: 100%;
 }
 
-.card-sobre{
-    border: 2px solid #fff;
+.card-sobre {
+    background-color: rgba(97, 96, 96, 0.15);
+    border: 1px solid #222;
     border-radius: 20px;
-    padding: 25px;
+    padding: 25px 20px;
     display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    background: #111;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    position: relative;
     overflow: hidden;
-    height: auto; /* Permite que o card mude de altura dinamicamente */
 }
 
-.card-sobre:hover{
+.card-sobre:hover {
     transform: translateY(-5px);
     border-color: #ffc300;
+    background-color: rgba(97, 96, 96, 0.25);
 }
 
-.card-sobre img{
-    width: 45px;
-    height: 45px;
-    flex-shrink: 0;
+.card-sobre img {
+    width: 48px;
+    height: 48px;
 }
 
-.item {
-    flex: 1;
-}
-
-.item h3{
+.card-sobre h3 {
     font-size: 1.3rem;
-    margin-bottom: 5px;
+    color: #fff;
 }
 
-.item p{
-    color: #ccc;
-    font-size: 1rem;
-}
-
-/* FRASE MOTIVACIONAL EM BLOCKS (EMPURRA O LAYOUT) */
-.moti-item{
-    max-height: 0; /* Começa fechado sem ocupar espaço */
-    opacity: 0;
-    margin-top: 0;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.moti{
+.card-sobre p {
     color: #ffc300;
-    font-size: 0.95rem;
-    line-height: 1.5;
     font-weight: 500;
-    border-top: 1px dashed #333;
-    padding-top: 10px;
+    font-size: 0.95rem;
 }
 
-/* Aplicação do Efeito de Empuxo */
-.card-sobre:hover .moti-item{
-    max-height: 120px; /* Abre o bloco empurrando fisicamente o grid e os cards abaixo */
+/* Frase escondida */
+.moti-item {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 1px solid transparent;
+    transition: all 0.4s ease-in-out;
+}
+
+/* Frase aparece no Hover */
+.card-sobre:hover .moti-item {
+    max-height: 100px;
     opacity: 1;
-    margin-top: 15px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top-color: #333;
+}
+
+.moti-item .moti {
+    color: #aaa;
+    font-size: 0.85rem;
+    font-weight: 300;
 }
 
 /* ==========================================
-FOOTER
+   5. FOOTER
 ========================================== */
-.footer{
+.footer {
     width: 100%;
     background: #000;
-    color: #fff;
-    padding: 60px 5% 20px;
+    padding: 60px 5% 30px;
+    border-top: 1px solid #222;
+    margin-top: 50px;
 }
 
-.container-box{
+.container-box {
     width: 100%;
     max-width: 1400px;
     margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
-.logo-ark img{
-    width: 180px;
-    height: auto;
-}
-
-hr{
-    width: 100%;
-    border: none;
-    border-top: 1px solid #222;
-    margin: 25px 0;
-}
-
-.contato {
-    text-align: center;
-
-}
-.contato h3{
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-}
-
-.contato a{
-    display: inline-block;
-    margin: 0 10px;
-}
-
-.contato img{
-    width: 30px;
-}
-
-.políticas a{
-    color: #fff;
-    font-size: 1.1rem;
-}
-
-.políticas a:hover{
-    color: #ffc300;
-}
-
-.final{
-    text-align: center;
-    font-size: 0.9rem;
-    color: #888;
-}
+.logo-ark img { width: 180px; }
+hr { width: 100%; border-top: 1px solid #222; margin: 30px 0; }
+.contato h3 { margin-bottom: 20px; font-size: 1.5rem; text-align: center; }
+.contato a { margin: 0 12px; display: inline-block; }
+.contato img { width: 32px; }
+.políticas a { color: #fff; font-size: 1.1rem; }
+.políticas a:hover { color: #ffc300; }
+.final { text-align: center; font-size: 0.9rem; color: #777; }
 
 /* ==========================================
-SISTEMA COMPLETO DE RESPONSIVIDADE (TELA POR TELA)
+   6. RESPONSIVIDADE (CELULARES E TABLETS)
 ========================================== */
-
-/* Notebooks e Desktops Intermediários (Até 1200px) */
-@media (max-width: 1200px) {
-    .main-container {
-        padding-top: 120px;
-    }
-    .container-sobre {
-        gap: 30px;
-    }
-}
-
-/* Tablets e Celulares Deitados - Ativação do Menu Hambúrguer (Até 992px) */
 @media (max-width: 992px) {
     #menu-icon {
-        display: block; /* Revela o hambúrguer */
-        position: relative !important;
-        z-index: 2000 !important;
+        display: block;
+        z-index: 2000;
     }
 
     .nav {
         position: fixed;
-        top: 0px;
-        right: -100%; /* Oculta lateralmente */
+        top: 0;                     
+        right: -100%;
         width: 100%;
-        max-width: 180px;
-        height: 100vh !important; 
+        max-width: 260px;
+        height: 100vh;
         background: #0d0d0d;
-        flex-direction: column;
-        justify-content: flex-start;
-        padding: 6rem 1rem 2rem 1rem !important; 
-        gap: 2.5rem;
         border-left: 1px solid #222;
         z-index: 1000;
-        transition: 0.4s ease;
-        
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
     }
 
     .nav.active {
-        right: 0; /* Menu aparece deslizando */
+        right: 0; 
     }
 
-    .dropdown-menu {
-        position: relative;
-        top: 10px;
-        background-color: #1a1a1a;
-        box-shadow: none;
+    .nav-list {
+        flex-direction: column;
+        justify-content: flex-start; 
+        align-items: flex-start;       
+        padding: 6rem 2rem 2rem;
+        gap: 1.8rem;
     }
-}
 
-/* Celulares Padrão (Até 768px) */
-@media (max-width: 768px) {
-    /* Mantém em linha (lado a lado), adaptando os textos */
     .container-sobre {
         flex-direction: row; 
         gap: 20px;
     }
 
-    .sobre h1 {
-        font-size: 1.8rem;
-    }
-
-    .sobre p {
-        font-size: 0.9rem;
-    }
-
-    .container-nos {
-        grid-template-columns: 1fr; /* Cartões empilham na vertical em telas menores */
-        gap: 20px;
-    }
+    .sobre h1 { font-size: 2.2rem; }
+    .sobre p { font-size: 1.1rem; }
+    .sobre .para { font-size: 0.95rem; }
+    .foto-sobre img { max-width: 280px; }
 }
 
-/* Celulares Pequenos e Telas Mini (Até 480px) */
-@media (max-width: 480px) {
-    /* Apenas aqui eles quebram em coluna para as letras não ficarem exprimidas em 1 coluna fina */
-    .container-sobre {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
-
-    .foto-sobre img {
-        max-width: 100%;
-    }
-
-    .sobre h1 {
-        font-size: 2.2rem;
-    }
-}
-
-/* Monitores Gigantes, Ultra-wide e Telas de TV (A partir de 2200px) */
-@media (min-width: 2200px) {
+@media (max-width: 576px) {
     .main-container {
-        max-width: 2000px;
-        padding-top: 180px;
+        padding: 20px 4%;
+        margin-top: 80px;
     }
 
-    .logo {
-        width: 240px;
+    .container-sobre {
+        flex-direction: row; /* Lado a lado no celular */
+        gap: 10px;
+        align-items: center;
+        margin-top: 0px;
     }
 
-    .nav a {
-        font-size: 1.4rem;
+    .sobre h1 { 
+        font-size: 1.2rem; 
+        margin-top: 50px;
     }
 
-    .sobre h1 {
-        font-size: 6.5rem;
+    .sobre p { 
+        font-size: 0.8rem; 
+        margin-bottom: 6px;
     }
 
-    .sobre p {
-        font-size: 2rem;
-        max-width: 900px;
+    .sobre .para { 
+        font-size: 0.68rem; 
+        line-height: 1.2;
     }
 
-    .foto-sobre img {
-        max-width: 700px;
+    .foto-sobre img { 
+        max-width: 125px;
+        border-radius: 12px;
+        margin-top: 15px;
     }
 
     .container-nos {
-        gap: 40px;
-        grid-template-columns: repeat(4, 1fr); /* Força os 4 ficarem em linha no 4K */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
 
     .card-sobre {
-        padding: 35px;
+        padding: 12px 8px;
     }
 
-    .item h3 {
-        font-size: 1.8rem;
+    .card-sobre img {
+        width: 36px;
+        height: 36px;
     }
 
-    .item p {
-        font-size: 1.3rem;
+    .card-sobre h3 {
+        font-size: 0.95rem;
+    }
+
+    .card-sobre p {
+        font-size: 0.8rem;
     }
 }

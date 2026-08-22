@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/contato.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="shortcut icon" href="../Assets/IMG/favicon.ico" type="image/x-icon">
-    <title>Contato</title>
+    <title>Contato - Digital Ark</title>
 </head>
 
 <body>
@@ -16,8 +16,9 @@
         <div class="nav-bar">
             <img src="../Assets/IMG/logo ARK.png" alt="Logo Ark" class="logo">
             
-            <div id="menu-icon" class="bx bx-menu"></div>
+            <i class='bx bx-menu' id="menu-icon"></i>
 
+<<<<<<< HEAD
             <nav class="nav">
                 <li><a href="/index.html">INÍCIO</a></li>
                 <li class="dropdown"> 
@@ -35,6 +36,29 @@
                 <li><a href="../pages/sobre.html">SOBRE NÓS</a></li>
                 <li><a href="../pages/contato.html">CONTATO</a></li>
                 <li class="login-wrapper"><button type="button" class="button"><a href="../pages/login.html">Login</a></button></li>
+=======
+            <nav class="nav" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="../index.html">INÍCIO</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="../pages/treino.html" class="dropdown-toggle">TREINO <i class='bx bx-chevron-down'></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../pages/peito.html">Peito</a></li>
+                            <li><a href="../pages/costa.html">Costas</a></li>
+                            <li><a href="../pages/ombro.html">Ombro</a></li>
+                            <li><a href="../pages/perna.html">Perna</a></li>
+                            <li><a href="../pages/abdomen.html">Abdômen</a></li>
+                            <li><a href="../pages/gluteos.html">Glúteos</a></li>
+                            <li><a href="../pages/cardio.html">Cárdios</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="../pages/sobre.html">SOBRE NÓS</a></li>
+                    <li><a href="../pages/contato.html">CONTATO</a></li>
+                    <li class="button"><a href="../pages/login.html">Login</a></li>
+                </ul>
+>>>>>>> dad253a6f7a8c6f4a9c45a74e7435fbefa1218f7
             </nav>
         </div>
     </header>
@@ -59,26 +83,29 @@
                 <div class="input-box">
                     <input type="text" id="nome" placeholder="Nome Completo" required>
                 </div>
+
                 <div class="input-box">
                     <input type="email" id="email" placeholder="E-mail" required>
                 </div>
+
                 <div class="input-box">
                     <textarea id="mensagem" placeholder="Mensagem" required></textarea>
                 </div>
+
                 <div class="input-box">
-                    <button onclick="enviar()">Enviar</button>
+                    <button type="button" onclick="enviar()">Enviar</button>
                 </div>
             </div>
         </section>
 
         <section class="contato-box">
             <div class="box-cont">
-                <div class="formas-contato">
+                <div class="formas-contato destaque-titulo">
                     <h3>Outras formas de contato</h3>
                 </div>
                 <div class="formas-contato">
                     <h4>WhatsApp</h4>
-                    <p>(11) 93732-6475 | (11) 95117-3652</p>
+                    <p>(11) 93732-6475 | (11) 99548-6774</p>
                 </div>
                 <div class="formas-contato">
                     <h4>E-mail</h4>
@@ -123,15 +150,15 @@
     </footer>
 
     <script>
+        // TOGGLE MENU CELULAR
         const menuIcon = document.getElementById('menu-icon');
-        const nav = document.querySelector('.nav');
+        const navMenu = document.getElementById('nav-menu');
 
         menuIcon.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            // Altera o ícone de hambúrguer para um 'X' ao abrir o menu
-            menuIcon.classList.toggle('bx-x');
+            navMenu.classList.toggle('active');
         });
 
+        // ENVIO DO FORMULÁRIO
         function enviar() {
             const nome = document.getElementById('nome').value;
             const email = document.getElementById('email').value;

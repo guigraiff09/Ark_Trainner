@@ -1,7 +1,4 @@
-/* ==========================================================================
-   1. CONFIGURAÇÕES GLOBAIS E RESETS
-   ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght=100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
     margin: 0;
@@ -25,10 +22,10 @@ body {
     min-height: 100vh;
 }
 
-/* ==========================================================================
-   2. HEADER & MENU DE NAVEGAÇÃO (DESKTOP)
-   ========================================================================== */
-.header {
+/* ==========================================
+HEADER & NAVEGAÇÃO 
+========================================== */
+.header{
     position: fixed;
     top: 0;
     left: 0;
@@ -40,7 +37,7 @@ body {
 
 .nav-bar {
     width: 100%;
-    max-width: 1700px;
+    max-width: 1920px;
     margin: auto;
     padding: 1rem 5%;
     display: flex;
@@ -49,7 +46,7 @@ body {
     gap: 20px;
 }
 
-.logo {
+.logo{
     width: 180px;
     height: auto;
 }
@@ -66,52 +63,75 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
-    list-style: none;
+    gap: 2.5rem;
+    
 }
 
-.nav a {
+.nav li{
+    list-style-type: none;
+}
+
+.nav a{
     color: #fff;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     font-weight: 500;
+    transition: 0.5s ease;
 }
 
-.nav a:hover {
+.nav li a:hover{
+    font-size: 1.2rem;
     color: #ffc300;
 }
 
-/* Botão de Login */
-.nav .button a {
-    background: #ffc300;
+#menu-icon {
+    font-size: 2.3rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+
+.button {
+    background: transparent;
+    cursor: pointer;
+}
+
+.button a {
+    background-color: #ffc300;
     color: #000;
-    padding: 0.6rem 1.4rem;
-    border-radius: 8px;
+    padding: 0.6rem 2rem;
+    border-radius: 10px;
+    font-size: 1rem;
     font-weight: 600;
     display: inline-block;
+    border: 2px solid #ffc300; /* Borda amarela */
+    transition:  0.5s ease;
+    text-transform: uppercase;
 }
 
-.nav .button a:hover {
+/* CORREÇÃO DO BOTÃO NO HOVER: Fundo Fica Preto e Texto Amarelo */
+.button a:hover {
+    background-color: #ffc300;
+    color: #000 !important;            /* Texto fica amarelo */
     transform: scale(1.05);
-    background: #e6b000;
-    color: #000;
 }
 
-/* Dropdown Menu (Submenu Treinos) */
-.dropdown {
+/* DROPDOWN */
+.dropdown{
     position: relative;
 }
 
-.dropdown-menu {
+.dropdown-menu{
     position: absolute;
     top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #333;
+    left: 0;
+    background-color: #111;
+    border: 1px solid #222;
     list-style: none;
     padding: 8px 0;
     min-width: 160px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.5);
-    z-index: 2000;
+    z-index: 999;
     display: none;
     border-radius: 8px;
     border: 1px solid #222;
@@ -135,112 +155,123 @@ body {
     display: block;
 }
 
-/* ==========================================================================
-   3. BANNER PRINCIPAL DE MOTIVAÇÃO
-   ========================================================================== */
+/* ==========================================
+BANNER DE MOTIVAÇÃO (DIMINUÍDO NO PC)
+========================================== */
 .container-img {
     position: relative;
     text-align: center;
     margin-top: 80px;
     width: 100%;
-    height: 450px;
+    max-width: 2560px;
+    margin-left: auto;
+    margin-right: auto;
     overflow: hidden;
 }
 
 .img-treino {
-    height: 100%;
+    height: 370px; /* Diminuído para não pegar a tela inteira do PC */
     width: 100%;
     object-fit: cover;
-    object-position: center;
+    display: block;
 }
 
 .text-motivation {
     position: absolute;
     left: 5%;
-    top: 75%;
+    top: 79%;
     transform: translateY(-50%);
     color: #fff;
     z-index: 10;
     text-align: left;
-    max-width: 550px;
+    max-width: 700px;
     width: 90%;
 }
 
 .text-motivation h1 {
     font-size: 3.5rem;
     text-transform: uppercase;
+    margin-bottom: 5px;
     line-height: 1.1;
-    margin-bottom: 15px;
 }
 
 .text-motivation h2 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     text-transform: uppercase;
     font-weight: 400;
-    line-height: 1.3;
 }
 
 .destaque {
     color: #ffc300;
 }
 
-/* ==========================================================================
-   4. COMPONENTE DE SLIDER E CARDS (MÉDIO / COMPACTO)
-   ========================================================================== */
+/* ==========================================
+SLIDER & CARDS (CORRIGIDO ALINHAMENTO COMPLETO)
+========================================== */
 .slider {
     width: 100%;
+    max-width: 1600px;
+    margin: 50px auto;
     display: flex;
-    align-items: center;
+    align-items: center;       /* Alinha as setas verticalmente com o centro do slider-container */
     justify-content: center;
     gap: 15px;
-    margin: 60px 0;
-    padding: 0 5%;
 }
 
-/* Container que esconde as sobras no Desktop */
 .slider-container {
-    width: 1080px; /* Espaço exato para 3 cards de 320px + gaps */
+    width: 1110px; /* Janela que mostra os cards */
     overflow: hidden;
+    display: flex;
+    align-items: center;       /* Garante que o conteúdo interno fique no meio */
 }
 
 .container-slider {
     display: flex;
-    align-items: center;
-    gap: 30px;
-    transition: transform .5s ease-in-out;
+    align-items: center;       /* Alinha todos os cards perfeitamente na horizontal */
+    justify-content: flex-start; 
+    gap:30px;
+    transition: transform 0.5s ease-in-out;
+    padding: 20px 5px;         /* Espaço extra em cima e embaixo para o hover não cortar */
 }
 
-/* Estrutura do Card individual */
 .card {
-    background-color: rgba(30, 30, 30, 0.4);
-    border: 2px solid #111;
-    border-radius: 16px;
-    min-width: 320px;
-    max-width: 320px;
+    background-color: rgba(97, 96, 96, 0.15);
+    border: 1px solid #222;
+    border-radius: 20px;
+    min-width: 350px;
+    max-width: 350px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 20px;
     position: relative;
+    box-sizing: border-box;    /* Garante que o padding não quebre o tamanho */
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Reduzi um pouco para não descompensar o alinhamento */
     border-color: #ffc300;
+}
+
+/* CORREÇÃO AQUI: Garante que o link da imagem se comporte como bloco */
+.card a {
+    display: block;
+    width: 100%;
+    height: 210px;
 }
 
 .card a img {
     width: 100%;
-    height: 180px;
+    height: 100%;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 15px;
 }
 
-.card figcaption h4 {
+.card figcaption {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15px 5px 5px;
+    padding: 15px 5px 0;
     text-transform: uppercase;
     color: #fff;
     font-size: 1rem;
@@ -262,284 +293,161 @@ body {
     background-color: rgba(0, 0, 0, 0.75);
     z-index: 5;
     font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
 }
 
-/* Botões de navegação do Slider */
-#prev-button, 
-#next-button {
+.tipo-treino {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    border: 1px solid #ffc300;
+    color: #ffc300;
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 10;
+    font-weight: 700;
+}
+
+/* BOTÕES ISOLADOS DE COMPORTAMENTOS EXTERNOS */
+#prev-button, #next-button {
     background: transparent;
     cursor: pointer;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    padding: 0;
+    margin: 0;
+    border: none;
+    line-height: 0;            /* Remove o espaçamento de texto que o HTML põe em botões */
 }
 
-#prev-button img, 
-#next-button img {
-    width: 40px;
-    height: 40px;
-    opacity: 0.7;
+#prev-button img, #next-button img {
+    width: 45px;
+    height: 45px;
+    display: block;
 }
-
-#prev-button img:hover, 
-#next-button img:hover {
-    opacity: 1;
-}
-
-/* ==========================================================================
-   5. FOOTER (RODAPÉ)
-   ========================================================================== */
+/* ==========================================
+FOOTER
+========================================== */
 .footer {
     width: 100%;
     background: #000;
-    border-top: 1px solid #111;
-    padding: 40px 5% 20px;
+    padding: 60px 5% 30px;
+    border-top: 1px solid #222;
 }
 
 .container-box {
     width: 100%;
     max-width: 1400px;
     margin: auto;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.logo-ark img {
-    width: 160px;
-    height: auto;
+.logo-ark img { width: 190px; }
+hr { width: 100%; border-top: 1px solid #222; margin: 30px 0; }
+.contato h3 { margin-bottom: 20px; font-size: 1.6rem; }
+.contato a { margin: 0 12px; display: inline-block; }
+.contato img { width: 32px; }
+.políticas a { color: #fff; font-size: 1.1rem; }
+.políticas a:hover { color: #ffc300; }
+.final { text-align: center; font-size: 0.9rem; color: #777; }
+
+/* ==========================================
+MEDIA QUERIES - RESPONSIVIDADE
+========================================== */
+
+@media(max-width: 1200px){
+    .slider-container{
+        width: 710px; /* Janela para 2 cards */
+        display: flex;
+        align-items: center;
+    }
 }
 
-hr {
-    border: none;
-    border-top: 1px solid #222;
-    margin: 20px 0;
-}
-
-.contato h3 {
-    margin-bottom: 15px;
-    font-size: 1.5rem;
-}
-
-.contato a {
-    margin: 0 10px;
-    display: inline-block;
-}
-
-.contato img {
-    width: 28px;
-}
-
-.políticas a {
-    color: #aaa;
-    font-size: 1rem;
-}
-
-.políticas a:hover {
-    color: #ffc300;
-}
-
-.final {
-    color: #666;
-    font-size: 0.85rem;
-}
-
-/* ==========================================================================
-   6. MEDIA QUERIES (SISTEMA DE RESPONSIVIDADE INTERMEDIÁRIA E MOBILE)
-   ========================================================================== */
-
-/* --- TABLETS E DISPOSITIVOS MÉDIOS (Até 992px) --- */
 @media (max-width: 992px) {
     #menu-icon {
-        display: block; /* Ativa o ícone hamburguer */
-        position: relative !important;
-        z-index: 2000 !important;
-    }
-
-    /* Transforma o menu em uma barra lateral oculta */
-    .nav-container {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 100%;
-        max-width: 180px;
-        height: 100vh;
-        background: #0d0d0d;
-        border-left: 1px solid #222;
-        padding: 6rem 2rem;
-        box-shadow: -10px 0 30px rgba(0,0,0,0.8);
-        z-index: 1000;
-        overflow-y: auto;
-        transition:  0.4s ease-in-out;
-    }
-
-    .nav-container.active {
-        right: 0; /* Desloca o menu para dentro da tela quando ativo */
+        display: block;
+        z-index: 2000;
     }
 
     .nav {
+        position: fixed;
+        top: 0;                     
+        right: -100%;
+        width: 100%;
+        max-width: 260px;
+        height: 100vh;
+        background: #0d0d0d;
+        border-left: 1px solid #222;
         flex-direction: column;
-        align-items: stretch;
-        gap: 1.5rem;
+        justify-content: flex-start; 
+        align-items: flex-start;       
+        padding: 6rem 2rem 2rem;
+        gap: 1.8rem;
+        z-index: 1000;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
     }
 
-    .nav li {
-        width: 100%;
-        text-align: left;
+    .nav.active {
+        right: 0; 
     }
-
-    .nav a {
-        display: block;
-        width: 100%;
-        padding: 10px 0;
-        font-size: 1.1rem;
-    }
-
-    .nav a:hover {
-        font-size: 1.1rem; /* Desativa o aumento de fonte que quebrava o menu mobile */
-    }
-
-    /* Submenu vertical integrado na lateral */
-    .dropdown-menu {
-        position: relative;
-        display: none;
-        top: 0;
-        left: 0;
-        transform: none;
-        width: 100%;
-        background: #1a1a1a;
-        box-shadow: none;
-        border-radius: 0;
-        border: none;
-        padding: 5px 0;
-        border-radius: 8px;
-
-    }
-
-    .dropdown:hover .dropdown-menu{
-        display: block;
-    }
-
-    .nav .button {
+    /* Ajustado para garantir centralização vertical no tablet */
+    .slider-container {
+        width: 370px; /* Janela para 1 card perfeito */
         display: flex;
-        justify-content: center;
-        margin-top: 1rem;
+        align-items: center;
     }
 
-     .button {
-        width: 100% !important;
-        justify-content: center !important;
-        background: transparent !important;
-        background-color: transparent !important;
-        margin-top: 1rem !important;
-    }
+    .text-motivation h1 { font-size: 2.3rem; }
+    .text-motivation h2 { font-size: 1.3rem; }
+}
 
-    .button a {
-        width: 140px !important;
-        text-align: center !important;
-        padding: 0.6rem 0 !important;
-        font-size: 0.95rem !important;
-        border-radius: 8px !important;
-    }
-
-    /* Ajustes iniciais do Banner e Texto */
-    .container-img {
-        height: 380px !important;
+/* CELULARES */
+@media (max-width: 480px) {
+    .img-treino {
+        height: 380px; 
     }
 
     .text-motivation {
-        top: 75% !important; /* Começa a empurrar o texto para baixo para livrar o rosto */
-        transform: translateY(-50%) !important;
+        left: 10%;
+        width: 100%;
     }
 
-    /* Slider exibe 2 cards inteiros */
+    .text-motivation h1 { font-size: 2rem; }
+    .text-motivation h2 { font-size: 1.1rem; }
+
+    /* Ajustado para garantir alinhamento no celular */
     .slider-container {
-        width: 710px;
+        width: 350px; 
+        display: flex;
+        align-items: center;
+    }
+    
+    .card {
+        min-width: 310px;
+        max-width: 310px;
+    }
+
+    #prev-button img, #next-button img {
+        width: 35px;
+        height: 35px;
     }
 }
 
-/* --- SMARTPHONES GRANDES (Até 850px) --- */
-@media (max-width: 850px) {
-    /* CORREÇÃO DO BANNER: Move o texto totalmente para baixo para não tampar a foto */
-    .container-img {
-        height: 340px !important;
-    }
-
-    .text-motivation {
-        top: 80% !important; /* Desce completamente a frase motivacional */
-        left: 5% !important;
-    }
-
-    .text-motivation h1 {
-        font-size: 2rem !important;
-        margin-bottom: 5px !important;
-    }
-
-    .text-motivation h2 {
-        font-size: 1.1rem !important;
-        line-height: 1.3 !important;
-    }
-
-    /* CORREÇÃO DO SLIDER TRAVADO: Acabou com os cards cortados ao meio */
+@media (max-width: 360px) {
     .slider-container {
-        width: 280px !important; /* Enquadra exatamente UM único card por vez */
+        width: 285px;
+        display: flex;
+        align-items: center;
     }
-
-    .container-slider {
-        gap: 20px !important; /* Ajusta o espaço interno de transição */
-    }
-
-    /* CARDS DIMINUÍDOS E COMPACTOS */
     .card {
-        min-width: 280px !important;
-        max-width: 280px !important;
-        padding: 8px !important;
-    }
-
-    .card a img {
-        height: 160px !important; /* Diminui a foto interna para o card ficar menor */
-    }
-
-    .card figcaption h4 {
-        font-size: 0.9rem !important;
-    }
-
-    .tipo-treino {
-        top: 15px !important;
-        right: 15px !important;
-        font-size: 11px !important;
-    }
-
-    #prev-button img, 
-    #next-button img {
-        width: 32px !important;
-        height: 32px !important;
-    }
-}
-
-/* --- SMARTPHONES PEQUENOS (Até 380px) --- */
-@media (max-width: 380px) {
-    .container-img {
-        height: 300px !important;
-    }
-
-    .text-motivation {
-        top: 82% !important;
-    }
-
-    .text-motivation h1 {
-        font-size: 1.6rem !important;
-    }
-
-    .text-motivation h2 {
-        font-size: 0.9rem !important;
-    }
-
-    /* Contração final para telas muito pequenas (ex: iPhone SE antigo) */
-    .slider-container {
-        width: 245px !important;
-    }
-
-    .card {
-        min-width: 245px !important;
-        max-width: 245px !important;
+        min-width: 250px;
+        max-width: 250px;
     }
 }

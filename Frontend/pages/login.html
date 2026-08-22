@@ -5,18 +5,34 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <title>Login Admin</title>
+    <title>Login - Digital Ark</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/login.css">
+    <link
+        rel="stylesheet"
+        href="../css/login.css"
+    >
 
     <!-- BOXICONS -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
-          rel='stylesheet'>
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- FAVICON -->
+    <link
+        rel="shortcut icon"
+        href="../Assets/IMG/favicon.ico"
+        type="image/x-icon"
+    >
 
 </head>
+
 
 <body>
 
@@ -24,11 +40,18 @@
 
         <div class="login-box">
 
-            <!-- LOGO -->
+
+            <!-- ==================================
+                 LOGO
+            ================================== -->
+
             <div class="logo">
 
                 <h1>
-                    ARK <span>TRAINNER</span>
+                    ARK
+                    <span class="destaque">
+                        TRAINER
+                    </span>
                 </h1>
 
                 <p>
@@ -37,137 +60,279 @@
 
             </div>
 
-            <!-- EMAIL -->
+
+            <!-- ==================================
+                 EMAIL
+            ================================== -->
+
             <div class="input-box">
 
-                <i class='bx bx-envelope'></i>
+                <i class="bx bx-envelope"></i>
 
                 <input
                     type="email"
                     id="email"
-                    placeholder="Digite seu email"
+                    placeholder="Digite seu e-mail"
+                    required
                 >
 
             </div>
 
-            <!-- SENHA -->
+
+            <!-- ==================================
+                 SENHA
+            ================================== -->
+
             <div class="input-box">
 
-                <i class='bx bx-lock-alt'></i>
+                <i class="bx bx-lock-alt"></i>
 
                 <input
                     type="password"
                     id="senha"
                     placeholder="Digite sua senha"
+                    required
                 >
 
             </div>
 
-            <!-- BOTÃO ENTRAR -->
-            <button onclick="login()">
+
+            <!-- ==================================
+                 BOTÃO ENTRAR
+            ================================== -->
+
+            <button
+                class="btn-entrar"
+                type="button"
+                onclick="login()"
+            >
 
                 Entrar
 
             </button>
 
-            <!-- DIVISOR -->
-            <div class="divisor">
 
-                <span>ou</span>
+            <!-- ==================================
+                 CADASTRO
+            ================================== -->
+
+            <div class="cadastro-link">
+
+                <span>
+                    Não possui uma conta?
+                </span>
+
+                <a href="cadastro.html">
+                    Cadastre-se
+                </a>
 
             </div>
 
-            <!-- BOTÃO GOOGLE -->
-            <button class="google-btn">
+
+            <!-- ==================================
+                 LOGIN GOOGLE
+            ================================== -->
+
+            <button
+                class="google-btn"
+                type="button"
+            >
 
                 <img
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
                     alt="Google"
                 >
 
-                <span>Entrar com Google</span>
+                <span>
+                    Entrar com Google
+                </span>
 
             </button>
 
-            <!-- ERRO -->
+
+            <!-- ==================================
+                 MENSAGEM DE ERRO
+            ================================== -->
+
             <p id="erro"></p>
+
+
+            <!-- ==================================
+                 VOLTAR
+            ================================== -->
+
+            <div class="voltar">
+
+                <a href="../index.html">
+
+                    <i class="bx bx-left-arrow-alt"></i>
+
+                    Voltar para o início
+
+                </a>
+
+            </div>
+
 
         </div>
 
     </div>
 
+
+    <!-- ==========================================
+         JAVASCRIPT - LOGIN
+    ========================================== -->
+
     <script>
 
         function login() {
 
+            // Pega o email digitado
             const email =
-                document.getElementById('email').value;
+                document.getElementById('email').value.trim();
 
+
+            // Pega a senha digitada
             const senha =
                 document.getElementById('senha').value;
+
+
+            // Elemento que mostra erros
+            const erro =
+                document.getElementById('erro');
+
+
+            // Limpa mensagem anterior
+            erro.innerText = '';
+
+
+            // ==================================
+            // VALIDAÇÃO
+            // ==================================
+
+            if (!email || !senha) {
+
+                erro.innerText =
+                    'Preencha todos os campos!';
+
+                return;
+
+            }
+
+
+            // ==================================
+            // ENVIA PARA O BACKEND
+            // ==================================
 
             fetch('http://localhost:3000/login', {
 
                 method: 'POST',
 
                 headers: {
-                    'Content-Type': 'application/json'
+
+                    'Content-Type':
+                        'application/json'
+
                 },
 
                 body: JSON.stringify({
 
-                    email,
-                    senha
+                    email: email,
+
+                    senha: senha
 
                 })
 
             })
 
+
+            // ==================================
+            // CONVERTE RESPOSTA
+            // ==================================
+
             .then(res => res.json())
+
+
+            // ==================================
+            // PROCESSA LOGIN
+            // ==================================
 
             .then(data => {
 
                 if (data.sucesso) {
 
+
+                    // Salva que está logado
                     localStorage.setItem(
                         'logado',
                         'true'
                     );
 
+
+                    // Salva o tipo:
+                    // admin ou funcionario
                     localStorage.setItem(
                         'tipo',
                         data.tipo
                     );
 
+
+                    // Salva o nome
                     localStorage.setItem(
                         'nome',
                         data.nome
                     );
 
+
+                    // Vai para o painel
                     window.location.href =
                         'admin.html';
 
+
                 } else {
 
-                    document.getElementById('erro')
-                        .innerText =
-                        'Email ou senha inválidos';
+                    erro.innerText =
+                        'E-mail ou senha inválidos';
 
                 }
 
             })
 
-            .catch(() => {
 
-                document.getElementById('erro')
-                    .innerText =
-                    'Erro ao conectar servidor';
+            // ==================================
+            // ERRO DE CONEXÃO
+            // ==================================
+
+            .catch(error => {
+
+                console.error(error);
+
+                erro.innerText =
+                    'Erro ao conectar ao servidor';
 
             });
 
         }
 
+
+        // ==========================================
+        // ENTER PARA FAZER LOGIN
+        // ==========================================
+
+        document
+            .getElementById('senha')
+            .addEventListener('keydown', function(event) {
+
+                if (event.key === 'Enter') {
+
+                    login();
+
+                }
+
+            });
+
     </script>
+
 
 </body>
 

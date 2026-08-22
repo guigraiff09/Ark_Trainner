@@ -37,9 +37,9 @@ HEADER & NAVEGAÇÃO
 
 .nav-bar{
     width: 100%;
-    max-width: 2200px; /* Expandido para telas 4K */
+    max-width: 2400px;
     margin: auto;
-    padding: 1rem 5%;
+    padding: 1.2rem 5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -54,7 +54,7 @@ HEADER & NAVEGAÇÃO
 }
 
 #menu-icon {
-    display: none; /* Escondido por padrão em telas grandes */
+    display: none;
     font-size: 2.2rem;
     color: #fff;
     cursor: pointer;
@@ -77,6 +77,7 @@ HEADER & NAVEGAÇÃO
     font-size: 1.1rem;
     font-weight: 500;
     text-align: center;
+    transition: 0.5 ease;
 }
 
 .nav a:hover{
@@ -86,25 +87,28 @@ HEADER & NAVEGAÇÃO
 
 /* BOTÃO LOGIN */
 .button {
-    background: #ffc300;
-    padding: 0.6rem 1.5rem;
-    border-radius: 10px;
+    background: transparent;
     cursor: pointer;
-    transition: 0.5s;
 }
 
-.button a{
+.button a {
+    background-color: #ffc300;
     color: #000;
+    padding: 0.6rem 2rem;
+    border-radius: 10px;
     font-size: 1rem;
     font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
+    border: 2px solid #ffc300; /* Borda amarela */
+    transition:  0.5s ease;
+    text-transform: uppercase;
 }
 
+/* CORREÇÃO DO BOTÃO NO HOVER: Fundo Fica Preto e Texto Amarelo */
 .button a:hover {
+    background-color: #ffc300;
+    color: #000 !important;            /* Texto fica amarelo */
     transform: scale(1.05);
-    color: #000;
 }
 
 /* DROPDOWN MENU */
@@ -116,11 +120,12 @@ HEADER & NAVEGAÇÃO
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #333;
+    background-color: #111;
+    border: 1px solid #222;
     list-style: none;
     padding: 10px 0;
     min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
     z-index: 999;
     display: none;
     border-radius: 10px;
@@ -139,17 +144,16 @@ HEADER & NAVEGAÇÃO
 }
 
 /* ==========================================
-GRID DE TREINOS (RESPONSIVO & ULTRA-WIDE / 4K)
+GRID DE TREINOS RESPONSIVO
 ========================================== */
 .container{
     display: grid;
-    /* Ajusta colunas automaticamente: de 1 coluna no celular até 6+ colunas em TVs 4K */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
     gap: 30px;
-    padding: 140px 5% 60px;
+    padding: 160px 5% 80px;
     justify-items: center;
-    max-width: 2200px; /* Alinhado para TVs 4K e Ultrawides */
-    margin: 30px auto 0;
+    max-width: 2400px;
+    margin: auto;
     width: 100%;
 }
 
@@ -161,6 +165,7 @@ GRID DE TREINOS (RESPONSIVO & ULTRA-WIDE / 4K)
     position: relative;
     overflow: hidden;
     border: 1px solid #1c1c1c;
+    margin-top: 30px;
 }
 
 .card:hover{
@@ -225,7 +230,6 @@ figcaption{
 .tipo{
     font-size: 0.95rem;
     color: #bbb;
-    display: flex;
 }
 
 .barra{
@@ -239,15 +243,11 @@ figcaption{
 }
 
 .treino i{
+    font-size: 2rem;
+    color: #ffc300;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 30px;
-    color: #ffc300;
-    background-color:#111111;
-    height:  35px;
-    padding: 0 50px;
-   
 }
 
 .treino i:hover {
@@ -324,17 +324,15 @@ hr {
 }
 
 /* ==========================================
-MEDIA QUERIES (RESPONSIVIDADE MULTI-TELA)
+MEDIA QUERIES (SISTEMA DE MÁXIMA RESPONSIVIDADE)
 ========================================== */
 
-/* Telas Grandes / Notebooks de Alta Resolução */
 @media(max-width: 1200px){
     .container {
-        padding-top: 110px;
+        padding-top: 120px;
     }
 }
 
-/* Tablets, iPads e Telas Médias (Ativação do Menu Hambúrguer) */
 @media (max-width: 992px) {
     #menu-icon {
         display: block;
@@ -345,15 +343,14 @@ MEDIA QUERIES (RESPONSIVIDADE MULTI-TELA)
         top: 0;                     
         right: -100%;
         width: 100%;
-        max-width: 180px; /* Menu sutil e elegante */
+        max-width: 240px;
         height: 100vh;              
         background: #0d0d0d;        
         flex-direction: column;
-        /* Centralização perfeita dos itens no menu lateral */
-        justify-content: flex-start;
-        align-items: center;
-        padding: 8rem 1.5rem;
-        gap: 2.5rem;
+        justify-content: flex-start; 
+        align-items: flex-start;       
+        padding: 6rem 2rem 2rem;
+        gap: 1.8rem;
         border-left: 1px solid #222;
         z-index: 1000;
         box-shadow: -5px 0 15px rgba(0,0,0,0.5);
@@ -375,75 +372,71 @@ MEDIA QUERIES (RESPONSIVIDADE MULTI-TELA)
         text-align: left;
     }
 
-    /* Centralização do botão de Login no menu mobile */
     .login-wrapper {
         width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         margin-top: 15px;
     }
 
-    .button a{
+    .button {
         width: 100%;
-        max-width: 160px; 
+        max-width: 140px;
+    }
+
+    .button a {
+        padding: 0.6rem 0;
+        width: 100%;
         text-align: center;
-        /* Tamanho controlado e centrado */
     }
 
     .dropdown-menu {
         position: relative;
         top: 5px;
-        background-color: #1a1a1a;
+        background-color: #161616;
         box-shadow: none;
         width: 100%;
     }
-    
-    .dropdown-menu li a {
-        text-align: left;
-    }
 }
 
-/* Celulares Grandes e Pequenos (Menos de 576px) 
-   - Aqui reduzimos ligeiramente o tamanho dos cards para telas de celular */
 @media (max-width: 576px) {
     .container {
-        grid-template-columns: 1fr; /* Um card por linha */
-        padding-left: 8%;
-        padding-right: 8%;
+        grid-template-columns: 1fr;
+        padding-left: 10%;
+        padding-right: 10%;
         gap: 20px;
     }
     
     .card {
-        max-width: 290px; /* Reduzido de 340px para 290px */
+        max-width: 280px;
     }
 
     .card img {
-        height: 180px; /* Imagem do card mais compacta */
+        height: 180px;
     }
 
     figcaption {
-        padding: 15px 12px; /* Espaçamento interno reduzido */
+        padding: 15px 12px;
         gap: 8px;
     }
 
     .nome-treino {
-        font-size: 1.05rem; /* Título levemente menor */
+        font-size: 1rem;
     }
 
     .treino i {
-        font-size: 1.8rem; /* Ícone de seta um pouco menor */
+        font-size: 1.8rem;
     }
 }
 
-/* Celulares Muito Pequenos (Menos de 360px) */
-@media (max-width: 360px) {
+@media (max-width: 375px) {
     .container {
-        padding-left: 5%;
-        padding-right: 5%;
+        padding-left: 6%;
+        padding-right: 6%;
     }
 
     .card {
-        max-width: 260px; /* Ainda mais compacto para mini-telas */
+        max-width: 250px;
     }
 
     .card img {

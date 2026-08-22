@@ -4,10 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="shortcut icon" href="../Assets/IMG/favicon.ico" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/Sobre.css">
-    <title>Sobre Nós</title>
+    
+    <script src="../js/card-slider.js" defer></script>
+
+    <title>Sobre Nós - Ark Treinner</title>
 </head>
 
 <body>
@@ -16,9 +20,10 @@
         <div class="nav-bar">
             <img src="../Assets/IMG/logo ARK.png" alt="Logo Ark" class="logo">
 
-            <div id="menu-icon" class="bx bx-menu"></div>
+            <i class='bx bx-menu' id="menu-icon"></i>
 
             <nav class="nav">
+<<<<<<< HEAD
                 <li><a href="/index.html">INÍCIO</a></li>
                 <li class="dropdown"> 
                     <a href="../pages/treino.html" class="dropdown-toggle">TREINO <i class='bx bx-chevron-down'></i></a>
@@ -35,6 +40,30 @@
                 <li><a href="../pages/sobre.html">SOBRE NÓS</a></li>
                 <li><a href="../pages/contato.html">CONTATO</a></li>
                 <button type="button" class="button"><a href="../pages/login.html">Login</a></button>
+=======
+                <ul class="nav-list">
+                    <li><a href="../index.html">INÍCIO</a></li>
+
+                    <li class="dropdown">
+                        <a href="../pages/treino.html" class="dropdown-toggle">TREINO <i class='bx bx-chevron-down'></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../pages/peito.html">Peito</a></li>
+                            <li><a href="../pages/costa.html">Costas</a></li>
+                            <li><a href="../pages/ombro.html">Ombro</a></li>
+                            <li><a href="../pages/perna.html">Perna</a></li>
+                            <li><a href="../pages/abdomen.html">Abdômen</a></li>
+                            <li><a href="../pages/gluteos.html">Glúteos</a></li>
+                            <li><a href="../pages/cardio.html">Cárdios</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="../pages/sobre.html">SOBRE NÓS</a></li>
+                    <li><a href="../pages/contato.html">CONTATO</a></li>
+                    <li>
+                        <button type="button" class="button"><a href="../pages/login.html">Login</a></button>
+                    </li>
+                </ul>
+>>>>>>> dad253a6f7a8c6f4a9c45a74e7435fbefa1218f7
             </nav>
         </div>
     </header>
@@ -44,12 +73,10 @@
         <section class="container-sobre">
             <div class="sobre">
                 <h1>
-                    Sobre
-                    <span class="destaque">Nós</span>
+                    Sobre <span class="destaque">Nós</span>
                 </h1>
                 <p>
-                    Mais que uma academia,
-                    <span class="destaque">um estilo de vida.</span>
+                    Mais que uma academia, <span class="destaque">um estilo de vida.</span>
                 </p>
                 <p class="para">
                     A Ark Treinner nasceu com o propósito de transformar vidas através do treino, disciplina e superação diária.
@@ -68,7 +95,9 @@
                     <h3>Foco</h3>
                     <p>Em cada detalhe</p>
                     <div class="moti-item">
-                        <p class="moti">Só quem foca consegue chegar lá.</p>
+                        <p class="moti">
+                            Só quem foca consegue chegar lá.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -79,7 +108,9 @@
                     <h3>Disciplina</h3>
                     <p>No dia a dia</p>
                     <div class="moti-item">
-                        <p class="moti">A constância constrói resultados indestrutíveis.</p>
+                        <p class="moti">
+                            A constância gera resultados extraordinários.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -90,7 +121,9 @@
                     <h3>Evolução</h3>
                     <p>Constante</p>
                     <div class="moti-item">
-                        <p class="moti">Seja sua melhor versão a cada amanhecer.</p>
+                        <p class="moti">
+                            1% melhor a cada dia, sempre em frente.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -101,20 +134,22 @@
                     <h3>Comunidade</h3>
                     <p>Que te impulsiona</p>
                     <div class="moti-item">
-                        <p class="moti">Juntos somos mais fortes e vamos mais longe.</p>
+                        <p class="moti">
+                            Juntos somos mais fortes e vamos mais longe.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
     </main>
-    <hr>
 
     <footer class="footer">
         <div class="container-box">
             <div class="logo-ark">
                 <img src="../Assets/IMG/logo ARK.png" alt="Logo Ark">
             </div>
+            
             <hr>
             <div class="contato">
                 <h3>Contato</h3>
@@ -139,13 +174,5 @@
         </div>
     </footer>
 
-    <script>
-        const menuIcon = document.getElementById('menu-icon');
-        const nav = document.querySelector('.nav');
-
-        menuIcon.addEventListener('click', () => {
-            nav.classList.toggle('active');
-        });
-    </script>
 </body>
 </html>

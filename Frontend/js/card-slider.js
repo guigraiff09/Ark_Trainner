@@ -1,52 +1,263 @@
-// ==========================================================================
-// CONTROLE DO SLIDER DE CARDS (RESPONSIVO E DINÂMICO)
-// ==========================================================================
+document.addEventListener("DOMContentLoaded", () => {
 
-const containerSlider = document.querySelector('.container-slider');
-const cards = document.querySelectorAll('.card');
-const prevButton = document.getElementById('prev-button');
-const nextButton = document.getElementById('next-button');
+    /* ==========================================
+       CONTROLE DO MENU HAMBÚRGUER
+    ========================================== */
 
-let currentIndex = 0;
+    const menuIcon = document.getElementById("menu-icon");
+    const navbar = document.querySelector(".nav");
 
-function updateSliderPosition() {
-    if (cards.length === 0) return;
+    if (menuIcon && navbar) {
 
-    // 1. Pega a largura exata de um card atualizado no momento (seja desktop ou mobile)
-    const cardWidth = cards[0].offsetWidth;
+        menuIcon.addEventListener("click", () => {
 
-    // 2. Pega o espaçamento real (gap) configurado no CSS entre os cards
-    const computedStyle = window.getComputedStyle(containerSlider);
-    const gap = parseFloat(computedStyle.gap) || 0;
+            navbar.classList.toggle("active");
+            menuIcon.classList.toggle("bx-x");
 
-    // 3. Calcula o deslocamento perfeito sem deixar sobras ou cortar
-    const moveDistance = currentIndex * (cardWidth + gap);
-    
-    containerSlider.style.transform = `translateX(-${moveDistance}px)`;
-}
+        });
 
-// Evento para o botão de Avançar (Próximo)
-nextButton.addEventListener('click', () => {
-    // Evita avançar além do limite de cards disponíveis
-    const maxIndex = cards.length - 1; 
-    
-    if (currentIndex < maxIndex) {
-        currentIndex++;
-    } else {
-        currentIndex = 0; // Volta para o primeiro se chegar ao fim (Loop opcional)
+
+        document.querySelectorAll(".nav a").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                navbar.classList.remove("active");
+                menuIcon.classList.remove("bx-x");
+
+            });
+
+        });
+
     }
     updateSliderPosition();
 });
 
-// Evento para o botão de Voltar (Anterior)
-prevButton.addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-    } else {
-        currentIndex = cards.length - 1; // Vai para o último se voltar do primeiro
-    }
-    updateSliderPosition();
-});
 
-// Recalcula o tamanho se o usuário girar o celular ou mudar o tamanho da tela
-window.addEventListener('resize', updateSliderPosition);
+    /* ==========================================
+       CONTROLE DO SLIDER DE CARDS
+    ========================================== */
+
+    const containerSlider =
+        document.querySelector(".container-slider");
+
+    const cards =
+        document.querySelectorAll(".card");
+
+    const prevButton =
+        document.getElementById("prev-button");
+
+    const nextButton =
+        document.getElementById("next-button");
+
+
+    /* Verifica se o carrossel existe */
+
+    if (
+        !containerSlider ||
+        cards.length === 0 ||
+        !prevButton ||
+        !nextButton
+    ) {
+        return;
+    }
+
+
+    let currentIndex = 0;
+
+
+    /* ==========================================
+       QUANTIDADE DE CARDS VISÍVEIS
+    ========================================== */
+
+    function getVisibleCards() {
+
+        const screenWidth = window.innerWidth;
+
+
+        /* CELULAR */
+
+        if (screenWidth <= 600) {
+
+            return 1;
+
+        }
+
+
+        /* TABLET / NOTEBOOK MENOR */
+
+        if (screenWidth <= 1200) {
+
+            return 2;
+
+        }
+
+
+        /* COMPUTADOR */
+
+        return 3;
+    }
+
+
+    /* ==========================================
+       ATUALIZA POSIÇÃO DO SLIDER
+    ========================================== */
+
+    function updateSliderPosition() {
+
+        if (cards.length === 0) {
+            return;
+        }
+
+
+        /* Largura real do card */
+
+        const cardWidth =
+            cards[0].offsetWidth;
+
+
+        /* Espaçamento entre os cards */
+
+        const computedStyle =
+            window.getComputedStyle(containerSlider);
+
+        const gap =
+            parseFloat(computedStyle.gap) || 0;
+
+
+        /* Quantidade de cards visíveis */
+
+        const visibleCards =
+            getVisibleCards();
+
+
+        /* Última posição possível */
+
+        const maxIndex =
+            Math.max(
+                0,
+                cards.length - visibleCards
+            );
+
+
+        /* Evita ultrapassar o último card */
+
+        if (currentIndex > maxIndex) {
+
+            currentIndex = maxIndex;
+
+        }
+
+
+        /* Calcula quanto o slider deve andar */
+
+        const moveDistance =
+            currentIndex *
+            (cardWidth + gap);
+
+
+        /* Move os cards */
+
+        containerSlider.style.transform =
+            `translateX(-${moveDistance}px)`;
+
+    }
+
+
+    /* ==========================================
+       BOTÃO PRÓXIMO
+    ========================================== */
+
+    nextButton.addEventListener("click", () => {
+
+        const visibleCards =
+            getVisibleCards();
+
+
+        const maxIndex =
+            Math.max(
+                0,
+                cards.length - visibleCards
+            );
+
+
+        /* Se ainda não chegou ao final */
+
+        if (currentIndex < maxIndex) {
+
+            currentIndex++;
+
+        }
+
+        /* Se chegou ao final,
+           volta para o primeiro */
+
+        else {
+
+            currentIndex = 0;
+
+        }
+
+
+        updateSliderPosition();
+
+    });
+
+
+    /* ==========================================
+       BOTÃO ANTERIOR
+    ========================================== */
+
+    prevButton.addEventListener("click", () => {
+
+        const visibleCards =
+            getVisibleCards();
+
+
+        const maxIndex =
+            Math.max(
+                0,
+                cards.length - visibleCards
+            );
+
+
+        /* Se não está no primeiro */
+
+        if (currentIndex > 0) {
+
+            currentIndex--;
+
+        }
+
+        /* Se está no primeiro,
+           vai para o último conjunto */
+
+        else {
+
+            currentIndex = maxIndex;
+
+        }
+
+
+        updateSliderPosition();
+
+    });
+
+
+    /* ==========================================
+       REDIMENSIONAMENTO DA TELA
+    ========================================== */
+
+    window.addEventListener("resize", () => {
+
+        updateSliderPosition();
+
+    });
+
+
+    /* ==========================================
+       POSIÇÃO INICIAL
+    ========================================== */
+
+    updateSliderPosition();
+
+
