@@ -133,7 +133,7 @@ body{
     border-radius: 10px;
 }
 
-.dropdown-menu li p{
+.dropdown-menu li a{
     display: block;
     padding: 10px 15px;
     font-size: 14px;
@@ -299,7 +299,7 @@ figcaption p{
     flex-direction: column;
 
     position: relative;
-
+    cursor: pointer;
     transition: transform 0.3s ease,
                 border-color 0.3s ease;
 }
