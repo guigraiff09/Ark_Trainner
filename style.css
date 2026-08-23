@@ -133,7 +133,7 @@ body{
     border-radius: 10px;
 }
 
-.dropdown-menu li a{
+.dropdown-menu li p{
     display: block;
     padding: 10px 15px;
     font-size: 14px;
