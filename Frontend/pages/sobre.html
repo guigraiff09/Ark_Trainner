@@ -8,9 +8,6 @@
     <link rel="shortcut icon" href="../Assets/IMG/favicon.ico" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/Sobre.css">
-    
-    <script src="../js/card-slider.js" defer></script>
-
     <title>Sobre Nós - Ark Treinner</title>
 </head>
 
@@ -56,9 +53,11 @@
                 <h1>
                     Sobre <span class="destaque">Nós</span>
                 </h1>
+
                 <p>
                     Mais que uma academia, <span class="destaque">um estilo de vida.</span>
                 </p>
+
                 <p class="para">
                     A Ark Treinner nasceu com o propósito de transformar vidas através do treino, disciplina e superação diária.
                 </p>
@@ -70,6 +69,7 @@
         </section>
 
         <section class="container-nos">
+
             <div class="card-sobre">
                 <img src="https://img.icons8.com/ios/50/ffffff/flex-biceps.png" alt="Força">
                 <div class="item">
@@ -121,6 +121,7 @@
                     </div>
                 </div>
             </div>
+
         </section>
 
     </main>
@@ -132,6 +133,7 @@
             </div>
             
             <hr>
+
             <div class="contato">
                 <h3>Contato</h3>
                 <a href="https://www.instagram.com/digital.ark_?igsh=MWpuMGlrZjVkeDd3eg==" target="_blank">
@@ -144,16 +146,34 @@
                     <img src="https://img.icons8.com/ios/30/ffffff/tiktok--v1.png" alt="TikTok">
                 </a>
             </div>
+
             <hr>
+
             <div class="políticas">
                 <a href="../pages/Políticas.html">Políticas de Privacidade</a>
             </div>
+
             <hr>
+
             <div class="final">
                 <p>&copy; Digital Ark. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
+    <script>document.addEventListener('DOMContentLoaded', () => {
+    const menuIcon = document.querySelector('#menu-icon');
+    const nav = document.querySelector('.nav');
+
+    if (menuIcon && nav) {
+        menuIcon.addEventListener('click', () => {
+            // Alterna a exibição do menu
+            nav.classList.toggle('active');
+            
+            // Alterna o ícone entre 'menu' e 'X' (fechar)
+            menuIcon.classList.toggle('bx-x');
+        });
+    }
+});</script>
 </body>
 </html>

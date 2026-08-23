@@ -384,11 +384,6 @@ MEDIA QUERIES (SISTEMA DE MÁXIMA RESPONSIVIDADE)
         margin-top: 15px;
     }
 
-    .button {
-        width: 100%;
-        max-width: 140px;
-    }
-
     .dropdown-menu {
         position: relative;
         top: 5px;

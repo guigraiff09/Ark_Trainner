@@ -380,13 +380,8 @@ MEDIA QUERIES (RESPONSIVIDADE)
         margin-top: 15px;
     }
 
-    .button {
-        width: 100%;
-        max-width: 140px;
-    }
 
     .button a {
-        padding: 0.6rem 0;
         width: 100%;
         text-align: center;
     }
