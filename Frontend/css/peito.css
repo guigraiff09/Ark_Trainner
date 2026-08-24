@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght=100;200;300;400;500;600;700;800;900&display=swap');
 
 *{
     margin: 0;
@@ -111,12 +111,12 @@ HEADER & NAVEGAÇÃO
     transform: scale(1.05);
 }
 
-/* DROPDOWN MENU */
-.dropdown{
+/* DROPDOWN */
+.dropdown {
     position: relative;
 }
 
-.dropdown-menu{
+.dropdown-menu {
     position: absolute;
     top: 100%;
     left: 0;
@@ -131,7 +131,7 @@ HEADER & NAVEGAÇÃO
     border-radius: 10px;
 }
 
-.dropdown-menu li a{
+.dropdown-menu li a {
     display: block;
     padding: 10px 15px;
     font-size: 14px;
@@ -139,7 +139,7 @@ HEADER & NAVEGAÇÃO
     text-align: left;
 }
 
-.dropdown:hover .dropdown-menu{
+.dropdown:hover .dropdown-menu {
     display: block;
 }
 
@@ -382,11 +382,6 @@ MEDIA QUERIES (SISTEMA DE MÁXIMA RESPONSIVIDADE)
         display: flex;
         justify-content: flex-start;
         margin-top: 15px;
-    }
-
-    .button {
-        width: 100%;
-        max-width: 140px;
     }
 
     .dropdown-menu {

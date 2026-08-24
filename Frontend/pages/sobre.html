@@ -7,8 +7,11 @@
     <link rel="shortcut icon" href="../Assets/IMG/favicon.ico" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/Sobre.css">
+<<<<<<< HEAD
     <script src="../js/card-slider.js" defer></script>
 
+=======
+>>>>>>> main
     <title>Sobre Nós - Ark Treinner</title>
 </head>
 
@@ -22,10 +25,10 @@
 
             <nav class="nav">
                 <ul class="nav-list">
-                    <li><a href="../index.html">INÍCIO</a></li>
+                    <li><a href="/index.html">INÍCIO</a></li>
 
                     <li class="dropdown">
-                        <p class="dropdown-toggle">TREINO <i class='bx bx-chevron-down'></i></p>
+                        <p  class="dropdown-toggle">TREINO <i class='bx bx-chevron-down'></i></p>
                         <ul class="dropdown-menu">
                             <li><a href="../pages/peito.html">Peito</a></li>
                             <li><a href="../pages/costa.html">Costas</a></li>
@@ -162,5 +165,21 @@
         </div>
     </footer>
 
+<script>
+const navbar = document.querySelector(".nav");
+
+    if (menuIcon && navbar) {
+        menuIcon.addEventListener("click", () => {
+            navbar.classList.toggle("active");
+            menuIcon.classList.toggle("bx-x");
+        });
+
+        document.querySelectorAll(".nav a").forEach(link => {
+            link.addEventListener("click", () => {
+                navbar.classList.remove("active");
+                menuIcon.classList.remove("bx-x");
+            });
+        });
+    }</script>
 </body>
 </html>

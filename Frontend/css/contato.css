@@ -348,7 +348,7 @@ hr { width: 100%; border-top: 1px solid #222; margin: 30px 0; }
         top: 0;                     
         right: -100%;
         width: 100%;
-        max-width: 260px;
+        max-width: 240px;
         height: 100vh;
         background: #0d0d0d;
         border-left: 1px solid #222;
@@ -389,7 +389,7 @@ hr { width: 100%; border-top: 1px solid #222; margin: 30px 0; }
         flex-direction: row; /* Mantém lado a lado no celular */
         gap: 10px;
         align-items: center;
-        margin-bottom: 25px;
+        margin-top: 35px;
     }
 
     .frase h2 { 
@@ -408,7 +408,7 @@ hr { width: 100%; border-top: 1px solid #222; margin: 30px 0; }
     }
 
     .img-cont img { 
-        max-width: 125px;
+        max-width: 195px;
         border-radius: 12px;
     }
 
