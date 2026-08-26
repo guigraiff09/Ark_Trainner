@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+/* ==========================================
+   RESET E ESTILOS GLOBAIS
+   ========================================== */
 * {
     margin: 0;
     padding: 0;
@@ -11,125 +14,445 @@
     transition: all 0.3s ease;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    background: #000;
-    color: #fff;
+    background-color: #000;
+    color: #ffffff;
     overflow-x: hidden;
-    height: 100vh;
-}
-
-
-.btn-seta {
-    background: transparent;
-    cursor: pointer;
-    transform: scale(-1);
-    padding: 20px 70px;
-}
-
-.btn-seta a i{
-    font-size: 2rem;
-    color: #ffc300;
-
-}
-
-.btn-seta i:hover {
-    transform: scale(1.1);
-}
-
-header{
-    margin-left: 80px;
-    margin-top: 40px;
-    text-transform: uppercase;
-    border-left: 4px solid #ffc300;
-    padding-left: 12px;
-    line-height: 1;
-}
-
-.container-box{
- display: flex;
-}
-.exercicio{
-    margin-top: 60px;
-    margin-left: 80px;
+    min-height: 100vh;
+    display: flex;
     flex-direction: column;
-    
-    
-}
-.exercicio iframe{
-    border-radius: 10px;
-    display: flex;   
 }
 
-.frase{
-    margin-left: 15rem;
-    margin-top: 80px;  
-   
-}
-
-h2{
-    color: #ffc300;
-    text-transform: uppercase;
-   padding: 10px 0;
-}
-
-p{
-    font-size: 20px;
-    padding: 10px;
-}
-.destaque{
+.destaque {
     color: #ffc300;
 }
-.auxilio{
-    border-left: 4px solid #ffc300;
-    padding-left: 12px;
-    line-height: 1;
-}
-.temp{
-   background-color: #2c2c2c;
-   width: 80%;
-   height: auto;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   border-radius: 10px;
-   margin-top: 140px;
-   margin-left: 70px;
-   padding: 30px 0;
-   gap: 200px;
-}
-.box-t{
-    text-align: center;
-}
-.text{
-    text-transform: uppercase;
-    font-size: 30px;
+
+/* ==========================================
+   HEADER & NAVEGAÇÃO
+   ========================================== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #000000;
+    z-index: 1000;
+    border-bottom: 1px solid #222222;
 }
 
-h3{
-    font-size: 25px;
-}
-p1{
-    font-size: 15px;
-}
-
-.btn-seta {
-    background: transparent;
-    margin-left: auto;
-    cursor: pointer;
-}
-
-.btn-seta i{
-    font-size: 2rem;
-    color: #fff;
+.nav-bar {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 5%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 130px;
+    height: auto;
+    display: block;
+}
+
+#menu-icon {
+    display: none;
+    font-size: 2.2rem;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-list a {
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition:  0.5s ease;
+}
+
+.nav-list a:hover {
+    color: #ffc300;
+    font-size: 1.2rem;
+}
+
+/* DROPDOWN MENU */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #141414;
+    border: 1px solid #222222;
+    list-style: none;
+    padding: 8px 0;
+    min-width: 170px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+    z-index: 1000;
+    display: none;
+    border-radius: 8px;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 18px;
+    font-size: 0.9rem;
+    color: #dddddd;
+    transition: 0.5s ease;
+}
+
+.dropdown-menu li a:hover {
+    background: #222222;
+    color: #ffc300;
+    font-size: 1.02rem;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* BOTÃO LOGIN */
+.button-login {
+    background: #ffc300;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.button-login a {
+    color: #000000;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.5rem 1.5rem;
+    display: block;
+    transition: 0.5s ease;
+    text-transform: uppercase;
+}
+
+.button-login:hover {
+    transform: scale(1.09);
+    background: #e6b000;
+}
+
+.button-login a:hover {
+    color: #000000;
+}
+
+/* ==========================================
+   CONTEÚDO PRINCIPAL
+   ========================================== */
+.main-content {
+    width: 100%;
+    max-width: 1400px;
+    margin: 110px auto 0 auto;
+    padding: 2rem 5%;
+    flex: 1;
+}
+
+.nome-treino {
+    text-transform: uppercase;
+    border-left: 4px solid #ffc300;
+    padding-left: 14px;
+    line-height: 1.2;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    letter-spacing: 0.5px;
+}
+
+/* GRID PRINCIPAL (Vídeo + Descrição) */
+.workout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.exercicio-media {
+    width: 100%;
+}
+
+/* Container de Vídeo Proporcional Responsivo (16:9) */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Aspect Ratio 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 300px;
+    border: 0;
+    border-radius: 12px;
+}
+
+.exercicio-info {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
-.btn-seta i:hover {
-    transform: scale(1.1);
+.exercicio-info h2 {
+    color: #ffc300;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+p.descricao {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #cccccc;
+    margin-bottom: 1.5rem;
+}
+
+.auxilio {
+    border-left: 3px solid #ffc300;
+    padding-left: 14px;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #aaaaaa;
+    background: rgba(255, 195, 0, 0.03);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 0 8px 8px 0;
+}
+
+/* PAINEL DE INFORMAÇÕES DO TREINO */
+.info-panel {
+    background-color: #141414;
+    border: 1px solid #222222;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    border-radius: 12px;
+    margin-top: 3rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.box-t .text {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    color: #888888;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.box-t h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+.footer {
+    width: 100%;
+    background: #000000;
+    color: #ffffff;
+    padding: 40px 5% 20px;
+    border-top: 1px solid #222222;
+    margin-top: 4rem;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-ark img {
+    width: 150px;
+    height: auto;
+}
+
+.footer hr {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #222222;
+    margin: 20px 0;
+}
+
+.contato {
+    text-align: center;
+}
+
+.contato h3 {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.contato-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.contato img {
+    width: 28px;
+    height: 28px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.contato img:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.politicas a {
+    color: #aaaaaa;
+    font-size: 0.9rem;
+}
+
+.politicas a:hover {
+    color: #ffc300;
+}
+
+.final {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #666666;
+}
+
+/* ==========================================
+   RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================== */
+
+/* Tablets e Telas Médias (Abaixo de 992px) */
+@media (max-width: 992px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        max-width: 240px;
+        height: 100vh;
+        background: #111111;
+        padding: 5rem 2rem 2rem;
+        border-left: 1px solid #222222;
+        z-index: 1000;
+        box-shadow: -10px 0 25px rgba(0,0,0,0.8);
+        transition: right 0.4s ease;
+    }
+
+    .nav.active {
+        right: 0;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+
+    .dropdown {
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        background: #1a1a1a;
+        margin-top: 10px;
+        width: 100%;
+        display: none;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+
+    .workout-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .nome-treino {
+        font-size: 1.5rem;
+    }
+}
+
+/* Dispositivos Móveis (Abaixo de 600px) */
+@media (max-width: 600px) {
+    .main-content {
+        margin-top: 90px;
+        padding: 1.5rem 4%;
+    }
+
+    .info-panel {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem 1rem;
+    }
+
+    .box-t h3 {
+        font-size: 1.2rem;
+    }
+
+    p.descricao {
+        font-size: 0.95rem;
+    }
+
+    .nome-treino {
+        font-size: 1.3rem;
+    }
+}
+
+/* Telas Ultra-Wide (Acima de 1800px) */
+@media (min-width: 1800px) {
+    .main-content, .nav-bar, .footer-container {
+        max-width: 1600px;
+    }
+
+    .nome-treino {
+        font-size: 2.2rem;
+    }
+
+    p.descricao {
+        font-size: 1.15rem;
+    }
+
+    .box-t h3 {
+        font-size: 1.6rem;
+    }
 }
