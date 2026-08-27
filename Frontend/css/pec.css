@@ -55,9 +55,7 @@ header{
 .exercicio{
     margin-top: 60px;
     margin-left: 80px;
-    flex-direction: column;
-    
-    
+    flex-direction: column; 
 }
 .exercicio iframe{
     border-radius: 10px;
