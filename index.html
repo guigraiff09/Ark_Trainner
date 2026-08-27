@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="../Frontend/Assets/IMG/favicon.ico" type="image/x-icon">
+    <script src="../Frontend/js/card-slider.js" defer></script>
+    <title>Ark Trainner</title>
+</head>
+
+<body>
+    <!--Header menu-->
+    <header class="header">
+        <div class="nav-bar">
+            <img src="../Frontend/Assets/IMG/logo ARK.png" alt="Logo Ark" class="logo">
+
+            <i class='bx bx-menu' id="menu-icon"></i>
+
+            <div class="nav-container" id="nav-container">
+                <ul class="nav">
+                    <li><a href="./index.html">INÍCIO</a></li>
+
+                    <li class="dropdown"> 
+                        <a  class="dropdown-toggle">TREINO <i class='bx bx-chevron-down'></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../Frontend/pages/peito.html">Peito</a></li>
+                            <li><a href="../Frontend/pages/costa.html">Costas</a></li>
+                            <li><a href="../Frontend/pages/ombro.html">Ombro</a></li>
+                            <li><a href="../Frontend/pages/perna.html">Perna</a></li>
+                            <li><a href="../Frontend/pages/abdomen.html">Abdômen</a></li>
+                            <li><a href="../Frontend/pages/gluteos.html">Glúteos</a></li>
+                            <li><a href="../Frontend/pages/cardio.html">Cárdios</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="../Frontend/pages/sobre.html">SOBRE NÓS</a></li>
+                    <li><a href="../Frontend/pages/contato.html">CONTATO</a></li>
+                    <li>
+                        <button type="button" class="button">
+                            <a href="../Frontend/pages/login.html">LOGIN</a>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <hr>
+
+    <!-- CARROSSEL -->
+
+    <section class="carrossel">
+
+        <div class="carrossel-inner" id="carrossel">
+
+            <img src="../Frontend/Assets/IMG/img05.png" alt="Treino 1">
+
+            <img src="../Frontend/Assets/IMG/img06.png" alt="Treino 2">
+
+            <img src="../Frontend/Assets/IMG/img07.png" alt="Treino 3">
+
+            <img src="../Frontend/Assets/IMG/img08.png" alt="Treino 4">
+
+        </div>
+
+    </section>
+
+    <!-- CARDS -->
+
+    <section class="container-cardex">
+
+        <div class="card-ex">
+
+            <figure>
+                <a href="#">
+                    <img src="../Frontend/Assets/IMG/img01.png" alt="Treino de costa">
+                </a>
+
+                <figcaption>
+                    <h3>Puxada Alta Aberta</h3>
+                    <p>Exercício focado no desenvolvimento das costas, especialmente do dorsal. </p>
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+        <div class="card-ex">
+
+            <figure>
+
+                <a href="#">
+                    <img src="../Frontend/Assets/IMG/img02.png" alt="Treino de perna">
+                </a>
+
+                <figcaption>
+                    <h3>Agachamento no Smith</h3>
+                    <p>Exercício focado no desenvolvimento das pernas e glúteos, especialmente dos quadríceps.</p>
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+        <div class="card-ex">
+
+            <figure>
+
+                <a href="#">
+                    <img src="../Frontend/Assets/IMG/img03.png" alt="Treino de abdômen">
+                </a>
+
+                <figcaption>
+                    <h3>Roda Abdominal</h3>
+                    <p>Exercício focado no desenvolvimento do abdômen, especialmente da região central do core.</p>
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+    </section><hr>
+
+    <div class="slider">
+
+        <button id="prev-button" type="button">
+            <img src="https://img.icons8.com/sf-black/50/ffffff/back.png" alt="Anterior">
+        </button>
+    
+        <div class="slider-container">
+    
+            <div class="container-slider">
+    
+                <!-- PEITO -->
+    
+                <div class="card">
+                    <div class="tipo-treino"><span>Peito</span></div>
+                    <figure>
+                        <a href="./Frontend/pages/exercicios/peito-pec.html">
+                            <img src="/Frontend/Assets/IMG/pec deck.jpg" alt="Pec Deck">
+                        </a>
+                        <figcaption>
+                            <h4>Pec Deck</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+    
+                <div class="card">
+                    <div class="tipo-treino"><span>Peito</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/Supino inclinado com halter.jpg" alt="Supino inclinado com halter">
+                        </a>
+                        <figcaption>
+                            <h4>Supino inclinado com halter</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+    
+                <div class="card">
+                    <div class="tipo-treino"><span>Peito</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/Supino inclinado na barra.jpg" alt="Supino inclinado na barra">
+                        </a>
+                        <figcaption>
+                            <h4>Supino inclinado na barra</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+    
+                <div class="card">
+                    <div class="tipo-treino"><span>Peito</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/Supino inclinado no smith.jpg" alt="Supino inclinado no smith">
+                        </a>
+                        <figcaption>
+                            <h4>Supino inclinado no Smith</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+    
+                <div class="card">
+                    <div class="tipo-treino"><span>Peito</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/Supino reto com halter.jpg" alt="Supino reto com halter">
+                        </a>
+                        <figcaption>
+                            <h4>Supino reto com halter</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+    
+                <div class="card">
+                    <div class="tipo-treino"><span>Peito</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/Supino reto no smith.jpg" alt="Supino reto no Smith">
+                        </a>
+                        <figcaption>
+                            <h4>Supino reto no Smith</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+    
+                <div class="card">
+                    <div class="tipo-treino"><span>Peito</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/Supino reto na barra.jpg" alt="Supino reto na barra">
+                        </a>
+                        <figcaption>
+                            <h4>Supino reto na barra</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+    
+                <div class="card">
+                    <div class="tipo-treino"><span>Peito</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/crucifixo na polia.jpg" alt="Crucifixo na polia">
+                        </a>
+                        <figcaption>
+                            <h4>Crucifixo na polia</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+    
+    
+                <!-- COSTAS -->
+    
+                <div class="card">
+                    <div class="tipo-treino"><span>Costas</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/remada curvada.png" alt="Remada curvada">
+                        </a>
+                        <figcaption>
+                            <h4>Remada Curvada</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+    
+                <div class="card">
+                    <div class="tipo-treino"><span>Costas</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/puxada alta.png" alt="Puxada alta">
+                        </a>
+                        <figcaption>
+                            <h4>Puxada Alta</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+    
+                <div class="card">
+                    <div class="tipo-treino"><span>Costas</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/remada unilateral.png" alt="Remada unilateral">
+                        </a>
+                        <figcaption>
+                            <h4>Remada Unilateral</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+    
+                <div class="card">
+                    <div class="tipo-treino"><span>Costas</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/pullover polia.png" alt="Pullover polia">
+                        </a>
+                        <figcaption>
+                            <h4>Pullover Polia</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+    
+                <div class="card">
+                    <div class="tipo-treino"><span>Costas</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/remada baixa com triangulo.png" alt="Remada baixa com triângulo">
+                        </a>
+                        <figcaption>
+                            <h4>Remada Baixa com Triângulo</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+    
+                <div class="card">
+                    <div class="tipo-treino"><span>Costas</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/extensão de lombar.png" alt="Extensão de lombar">
+                        </a>
+                        <figcaption>
+                            <h4>Extensão de Lombar</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+    
+    
+                <!-- OMBRO -->
+    
+                <div class="card">
+                    <div class="tipo-treino"><span>Ombro</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/desenvolvimento.png" alt="Desenvolvimento">
+                        </a>
+                        <figcaption>
+                            <h4>Desenvolvimento</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+    
+                <div class="card">
+                    <div class="tipo-treino"><span>Ombro</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/elevação-frontal.png" alt="Elevação frontal">
+                        </a>
+                        <figcaption>
+                            <h4>Elevação Frontal</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+    
+                <div class="card">
+                    <div class="tipo-treino"><span>Ombro</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/elevação-lateral.png" alt="Elevação lateral">
+                        </a>
+                        <figcaption>
+                            <h4>Elevação Lateral</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+    
+                <div class="card">
+                    <div class="tipo-treino"><span>Ombro</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/face-pull.png" alt="Face Pull">
+                        </a>
+                        <figcaption>
+                            <h4>Face Pull</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+    
+                <div class="card">
+                    <div class="tipo-treino"><span>Ombro</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/crucifixo inverso.png" alt="Crucifixo inverso">
+                        </a>
+                        <figcaption>
+                            <h4>Crucifixo Inverso</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+              
+                <!-- PERNA -->
+
+                <div class="card">
+                    <div class="tipo-treino"><span>Perna</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/stiff.png" alt="Stiff">
+                        </a>
+                        <figcaption>
+                            <h4>Stiff</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="card">
+                    <div class="tipo-treino"><span>Perna</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/afundo1.png" alt="Afundo">
+                        </a>
+                        <figcaption>
+                            <h4>Afundo</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="card">
+                    <div class="tipo-treino"><span>Perna</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/cadeira-extensora.png" alt="cadeira-extensora">
+                        </a>
+                        <figcaption>
+                            <h4>Cadeira Extensora</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="card">
+                    <div class="tipo-treino"><span>Perna</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/leg45.png" alt="leg45">
+                        </a>
+                        <figcaption>
+                            <h4>Leg Press 45°</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="card">
+                    <div class="tipo-treino"><span>Perna</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/agachamentolivre.png" alt="agachamentolivre">
+                        </a>
+                        <figcaption>
+                            <h4>Agachamento livre</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="card">
+                    <div class="tipo-treino"><span>Perna</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/hack-squat.png" alt="hack-squat">
+                        </a>
+                        <figcaption>
+                            <h4>Hack Squat</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="card">
+                    <div class="tipo-treino"><span>Perna</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/cadeira-flexora.png" alt="cadeira-flexora">
+                        </a>
+                        <figcaption>
+                            <h4>Cadeira Flexora</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <!-- Abdômen -->
+
+                <div class="card">
+                    <div class="tipo-treino"><span>Abdômen</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/prancha-lateral.png" alt="prancha-lateral">
+                        </a>
+                        <figcaption>
+                            <h4>Prancha Lateral</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="card">
+                    <div class="tipo-treino"><span>Abdômen</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/abdomen-remador.png" alt="abdomen-remador">
+                        </a>
+                        <figcaption>
+                            <h4>Abdômen Remador</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="card">
+                    <div class="tipo-treino"><span>Abdômen</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/abdomem-supra-tradicional.png" alt="abdomem-supra-tradicional">
+                        </a>
+                        <figcaption>
+                            <h4>Abdômen Supra Tradicional</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="card">
+                    <div class="tipo-treino"><span>Abdômen</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/abdominal-tesoura-estatico.png" alt="abdominal-tesoura-estatico">
+                        </a>
+                        <figcaption>
+                            <h4>Abdominal Tesoura Estático</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="card">
+                    <div class="tipo-treino"><span>Abdômen</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/abdominal-canivete.png" alt="abdominal-canivete">
+                        </a>
+                        <figcaption>
+                            <h4>Abdominal Canivete</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <!-- Glúteos -->
+
+                <div class="card">
+                    <div class="tipo-treino"><span>Glúteos</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/CadeiraAbdutora.png" alt="CadeiraAbdutora">
+                        </a>
+                        <figcaption>
+                            <h4>Cadeira Abdutora</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="card">
+                    <div class="tipo-treino"><span>Glúteos</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/AgachamentoSumô.png" alt="AgachamentoSumô">
+                        </a>
+                        <figcaption>
+                            <h4>Agachamento Sumô</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="card">
+                    <div class="tipo-treino"><span>Glúteos</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/ElevaçãoPélvica.png" alt="ElevaçãoPélvica">
+                        </a>
+                        <figcaption>
+                            <h4>Elevação Pélvica</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+                
+                <!-- Cardios -->
+
+                <div class="card">
+                    <div class="tipo-treino"><span>Cardios</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/pular-corda.png" alt="pular-corda">
+                        </a>
+                        <figcaption>
+                            <h4>Pular Corda</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="card">
+                    <div class="tipo-treino"><span>Cardios</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/caminhada.png" alt="caminhada">
+                        </a>
+                        <figcaption>
+                            <h4>Caminhada Rápida na Esteira</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="card">
+                    <div class="tipo-treino"><span>Cardios</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/eliptico.png" alt="eliptico">
+                        </a>
+                        <figcaption>
+                            <h4>Elíptico</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="card">
+                    <div class="tipo-treino"><span>Cardios</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/bicicleta.png" alt="bicicleta">
+                        </a>
+                        <figcaption>
+                            <h4>Bicicleta Ergométrica</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="card">
+                    <div class="tipo-treino"><span>Cardios</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/mountain-climbers.png" alt="mountain-climbers">
+                        </a>
+                        <figcaption>
+                            <h4>Mountain Climbers</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="card">
+                    <div class="tipo-treino"><span>Cardios</span></div>
+                    <figure>
+                        <a href="#">
+                            <img src="/Frontend/Assets/IMG/corrida-na-esteira.png" alt="corrida-na-esteira">
+                        </a>
+                        <figcaption>
+                            <h4>Corrida na Esteira</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+    
+            </div>
+    
+        </div>
+    
+        <button id="next-button" type="button">
+            <img src="https://img.icons8.com/ios-glyphs/50/ffffff/more-than.png" alt="Próximo">
+        </button>
+    
+    </div>
+
+            </div>
+        </div>
+<hr>
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="container-box">
+
+            <div class="logo-ark">
+
+                <img src="../Frontend/Assets/IMG/logo ARK.png" alt="Logo Ark">
+
+            </div>
+
+            <hr>
+
+            <!-- CONTATO -->
+
+            <div class="contato">
+                <h3>Contato</h3>
+                <a href="https://www.instagram.com/digital.ark_?igsh=MWpuMGlrZjVkeDd3eg==" target="_blank">
+                    <i class='bx bxl-instagram'></i>
+                </a>
+                <a href="https://www.facebook.com/share/1GMEdyGDB4/?mibextid=wwXlfr" target="_blank">
+                    <i class='bx bxl-facebook'></i>
+                </a>
+                <a href="https://www.tiktok.com/@digital.ark_?_r=1&_t=ZS-96a4QGzlzPd" target="_blank">
+                    <i class='bx bxl-tiktok'></i>
+                </a>
+            </div>
+
+            <hr>
+
+            <!-- POLÍTICAS -->
+
+            <div class="políticas">
+
+                <a href="../Frontend/pages/Políticas.html">
+
+                    Políticas de Privacidade
+
+                </a>
+
+            </div>
+
+            <hr>
+
+            <!-- FINAL -->
+
+            <div class="final">
+
+                <p>
+                    &copy; Digital Ark. Todos os direitos reservados.
+                    
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script src="./Frontend/js/carrossel.js"></script>
+
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const navContainer = document.getElementById('nav-container');
+
+        menuIcon.addEventListener('click', () => {
+            navContainer.classList.toggle('active');
+            // Muda o ícone de 'hambúrguer' para 'X' quando aberto
+            if (navContainer.classList.contains('active')) {
+                menuIcon.className = 'bx bx-x';
+            } else {
+                menuIcon.className = 'bx bx-menu';
+            }
+        });
+    </script>
+ 
+</body>
+
+</html>
