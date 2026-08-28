@@ -122,8 +122,8 @@ body{
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #111;
-    border: 1px solid #333;
+    background-color: #333;
+    border: none;
     list-style: none;
     padding: 10px 0;
     min-width: 160px;
@@ -396,25 +396,17 @@ figcaption p{
 #prev-button,
 #next-button {
     position: absolute;
-
     top: 50%;
-
     transform: translateY(-50%);
-
     width: 45px;
     height: 45px;
-
     padding: 0;
     margin: 0;
-
     background: transparent;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     cursor: pointer;
-
     z-index: 20;
 }
 
@@ -484,9 +476,10 @@ hr{
     margin: 0 10px;
 }
 
-.contato img{
-    width: 32px;
-}
+.contato i { font-size: 25px; 
+    outline: none;
+     color: #ccc; 
+    }
 
 .políticas{
     text-align: center;
@@ -512,7 +505,7 @@ hr{
 
 /* ==========================================
    UNIFICAÇÃO RESPONSIVA: ATÉ TABLETS / CELULARES (max-width: 992px)
-   ========================================== */
+   ========================================== */ 
 @media (max-width: 992px) {
     #menu-icon {
         display: block !important; 
@@ -543,7 +536,7 @@ hr{
     .nav {
         flex-direction: column !important;
         gap: 1.5rem !important; 
-        align-items: center !important; 
+        align-items: left !important; 
         justify-content: flex-start !important;
         width: 100% !important;
     }
@@ -577,10 +570,10 @@ hr{
         top: 0 !important;
         right: 0 !important;
         width: 100% !important;
-        background-color: #111111 !important; 
+        background-color: #1a1a1a !important; 
         box-shadow: none !important;
         border: none !important;
-        padding: 10px 0 !important;
+        padding: 10px 20px  !important;
         margin-top: 10px !important;
         border-radius: 8px !important;
         overflow-x: hidden;
@@ -618,7 +611,7 @@ hr{
     }
  
     .button a {
-        width: 130px !important;
+        width: 140px !important;
         text-align: center !important;
         padding: 0.6rem 0 !important;
         font-size: 0.95rem !important;
@@ -633,6 +626,7 @@ hr{
         width: 100% !important;
         height: auto !important; /* Altura livre para não achatar */
         overflow: hidden !important;
+        position: relative !important;
     }
 
     .carrossel-inner {

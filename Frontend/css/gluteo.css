@@ -301,9 +301,11 @@ hr {
     margin: 0 10px;
 }
 
-.contato img {
-    width: 30px;
-}
+.contato i {
+     font-size: 25px;
+     outline: none; 
+     color: #ccc; 
+    }
 
 .políticas {
     text-align: center;
@@ -384,10 +386,6 @@ MEDIA QUERIES (SISTEMA DE MÁXIMA RESPONSIVIDADE)
         margin-top: 15px;
     }
 
-    .button {
-        width: 100%;
-        max-width: 140px;
-    }
 
     .dropdown-menu {
         position: relative;

@@ -196,6 +196,11 @@ hr{
    margin-top: 15px;
 }
 
+.contato i { font-size: 25px; 
+    outline: none;
+     color: #ccc; 
+    }
+
 .políticas a{
    display: flex;
    align-items: center;
