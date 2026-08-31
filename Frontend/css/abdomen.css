@@ -153,14 +153,9 @@ GRID DE TREINOS RESPONSIVO
 }
 
 .card{
-<<<<<<< HEAD
-    width: 320px; 
-    background: rgba(97,96,96,.2);
-=======
     width: 100%;
     max-width: 340px;
     background: rgba(97, 96, 96, 0.15);
->>>>>>> dev
     border-radius: 15px;
     position: relative;
     overflow: hidden;
