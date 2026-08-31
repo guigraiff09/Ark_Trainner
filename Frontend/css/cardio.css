@@ -300,9 +300,11 @@ hr {
     margin: 0 10px;
 }
 
-.contato img {
-    width: 30px;
-}
+.contato i { 
+    font-size: 25px; 
+    outline: none;
+     color: #ccc;
+     }
 
 .políticas {
     text-align: center;

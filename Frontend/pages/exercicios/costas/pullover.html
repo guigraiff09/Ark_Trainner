@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Frontend/css/pec.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="/Frontend/Assets/IMG/favicon.ico" type="image/x-icon">
+    <title>Exercício Peito - Digital Ark</title>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-bar">
+            <img src="/Frontend/Assets/IMG/logo ARK.png" alt="Logo Ark" class="logo">
+            
+            <i class='bx bx-menu' id="menu-icon"></i>
+
+            <nav class="nav" id="nav-container">
+                <ul class="nav-list">
+                    <li><a href="/index.html">INÍCIO</a></li>
+                    <li class="dropdown"> 
+                        <a class="dropdown-toggle">TREINO <i class='bx bx-chevron-down'></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Frontend/pages/peito.html">Peito</a></li>
+                            <li><a href="/Frontend/pages/costa.html">Costas</a></li>
+                            <li><a href="/Frontend/pages/ombro.html">Ombro</a></li>
+                            <li><a href="/Frontend/pages/perna.html">Perna</a></li>
+                            <li><a href="/Frontend/pages/abdomen.html">Abdômen</a></li>
+                            <li><a href="/Frontend/pages/gluteos.html">Glúteos</a></li>
+                            <li><a href="/Frontend/pages/cardio.html">Cárdios</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/Frontend/pages/sobre.html">SOBRE NÓS</a></li>
+                    <li><a href="/Frontend/pages/contato.html">CONTATO</a></li>
+                    <li class="login-wrapper">
+                        <div class="button-login"><a href="../login.html">Login</a></div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <h1 class="nome-treino"> Pullover Polia</h1>
+        
+        <div class="workout-grid">
+            <div class="exercicio-media">
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/GhfwvlZbLGM?si=atPjq86sFp5co5BA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+            <div class="exercicio-info">
+                <h2>Otimização do Peitoral Superior</h2>
+                <p class="descricao">
+                    <span class="destaque">Mantenha</span> as escápulas <span class="destaque">aduzidas e coladas</span> no banco durante todo o movimento. Na fase concêntrica, <span class="destaque">empurre a barra</span> na linha das clavículas focando na <span class="destaque">contração do peitoral superior.</span> Evite projetar os <span class="destaque">ombros à frente</span>.
+                </p>
+                <p class="auxilio">
+                    <span class="destaque">"Ideal para enfatizar</span> a porção clavicular do peito <span class="destaque">e desenvolver o volume</span> da parte alta do tórax."
+                </p>
+            </div>
+        </div>
+
+        <section class="info-panel">
+            <div class="box-t">
+                <p class="text">Volume</p>
+                <h3>04 Séries</h3>
+            </div>
+
+            <div class="box-t">
+                <p class="text">Intensidade</p>
+                <h3>10 Repetições</h3>
+            </div>
+
+            <div class="box-t">
+                <p class="text">Descanso</p>
+                <h3>90 Segundos</h3>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="logo-ark">
+                <img src="/Frontend/Assets/IMG/logo ARK.png" alt="Logo Ark">
+            </div>
+            <hr>
+            <div class="contato">
+                <h3>Contato</h3>
+                <a href="https://www.instagram.com/digital.ark_?igsh=MWpuMGlrZjVkeDd3eg==" target="_blank">
+                    <i class='bx bxl-instagram'></i>
+                </a>
+                <a href="https://www.facebook.com/share/1GMEdyGDB4/?mibextid=wwXlfr" target="_blank">
+                    <i class='bx bxl-facebook'></i>
+                </a>
+                <a href="https://www.tiktok.com/@digital.ark_?_r=1&_t=ZS-96a4QGzlzPd" target="_blank">
+                    <i class='bx bxl-tiktok'></i>
+                </a>
+            </div>
+            <hr>
+            <div class="politicas">
+                <a href="../Políticas.html">Políticas de Privacidade</a>
+            </div>
+            <hr>
+            <div class="final">
+                <p>&copy; Digital Ark. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const navContainer = document.getElementById('nav-container');
+
+        menuIcon.addEventListener('click', () => {
+            navContainer.classList.toggle('active');
+            menuIcon.classList.toggle('bx-x');
+        });
+    </script>
+</body>
+</html>
+
