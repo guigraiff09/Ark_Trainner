@@ -201,15 +201,18 @@ hr{
      color: #ccc; 
     }
 
-.políticas a{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   color: #fff;
-   padding: 20px; /* Reduzido de 40px */
-   font-size: 24px;
-}
-
+    .políticas {
+        text-align: center;
+    }
+    
+    .políticas a {
+        color: #fff;
+        font-size: 0.9rem;
+    }
+    
+    .políticas a:hover {
+        color: #ffc300;
+    }
 .final{
    color: #fff;
    text-align: center;
