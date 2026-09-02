@@ -159,21 +159,26 @@
         </div>
     </footer>
 
-<script>const navbar = document.querySelector(".nav");
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuIcon = document.querySelector("#menu-icon");
+        const navbar = document.querySelector(".nav");
 
-    if (menuIcon && navbar) {
-        menuIcon.addEventListener("click", () => {
-            navbar.classList.toggle("active");
-            menuIcon.classList.toggle("bx-x");
-        });
-
-        document.querySelectorAll(".nav a").forEach(link => {
-            link.addEventListener("click", () => {
-                navbar.classList.remove("active");
-                menuIcon.classList.remove("bx-x");
+        if (menuIcon && navbar) {
+            menuIcon.addEventListener("click", () => {
+                navbar.classList.toggle("active");
+                menuIcon.classList.toggle("bx-x");
             });
-        });
-    }
-    </script>
+
+            document.querySelectorAll(".nav a").forEach(link => {
+                link.addEventListener("click", () => {
+                    navbar.classList.remove("active");
+                    menuIcon.classList.remove("bx-x");
+                });
+            });
+        }
+    });
+</script>
+
 </body>
 </html>
