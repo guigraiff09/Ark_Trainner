@@ -532,7 +532,7 @@ hr{
 
     .card-ex {
         width: 100% !important;
-        max-width: 100% !important;
+        max-width: 300px !important;
         padding: 12px !important;
         border-radius: 12px !important;
     }
