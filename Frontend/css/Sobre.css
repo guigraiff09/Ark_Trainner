@@ -87,6 +87,7 @@ body {
     color: #fff;
     cursor: pointer;
     display: none;
+    transition: 0.5s ease;
 }
 
 .button {
