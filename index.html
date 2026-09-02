@@ -703,23 +703,24 @@
 
     </footer>
 
-    <script src="./Frontend/js/carrossel.js"></script>
+   <script>
+    const menuIcon = document.getElementById('menu-icon');
+    const navContainer = document.getElementById('nav-container');
 
-    <script>
-        const menuIcon = document.getElementById('menu-icon');
-        const navContainer = document.getElementById('nav-container');
+    // Abre e fecha o menu ao clicar no ícone
+    menuIcon.addEventListener('click', () => {
+        navContainer.classList.toggle('active');
+        menuIcon.classList.toggle('bx bx-x'); // Adiciona/remove a classe de fechar (X)
+    });
 
-        menuIcon.addEventListener('click', () => {
-            navContainer.classList.toggle('active');
-            // Muda o ícone de 'hambúrguer' para 'X' quando aberto
-            if (navContainer.classList.contains('active')) {
-                menuIcon.className = 'bx bx-x';
-            } else {
-                menuIcon.className = 'bx bx-menu';
-            }
+    // Fechar o menu automaticamente ao clicar em um link
+    document.querySelectorAll('.nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            navContainer.classList.remove('active');
+            menuIcon.classList.remove('bx-x');
         });
-    </script>
- 
+    });
+</script>
 </body>
 
 </html>
