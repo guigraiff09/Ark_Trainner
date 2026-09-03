@@ -1,287 +1,260 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght=0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif; /* Corrigido */
+    font-family: 'Poppins', sans-serif;
     border: none;
     outline: none;
     text-decoration: none;
     transition: 0.2s linear;
-    box-sizing: border-box; /* Adicionado globalmente */
+    box-sizing: border-box;
 }
 
-body{
+body {
     display: flex;
-    background: black;
-    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    background-color: #000000;
+    align-items: center;
     flex-direction: column;
     min-height: 100vh;
     overflow-x: hidden;
 }
 
 /* --- TEXTO DA POLÍTICA --- */
-.politica{
+.politica {
     color: #fff;
     width: 100%;
-    max-width: 1000px; /* Não passa disso em telas grandes */
-    padding: 120px 40px 60px; /* 120px no topo compensa o header fixo */
+    max-width: 1000px;
+    padding: 120px 20px 60px;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
-/* Fallback caso usem listas comuns na página de termos */
-.li{
-   list-style-position: inside;
-   padding-left: 20px; /* Reduzido para não quebrar no mobile */
-   margin-bottom: 10px;
+.politica h1 {
+    color: #ffc300;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.politica h2 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.politica p {
+    color: #ddd;
+}
+
+.li {
+    list-style-position: inside;
+    padding-left: 10px;
+    margin-top: 10px;
+    color: #ddd;
 }
 
 /* --- HEADER & NAV-BAR --- */
-.header{
+.header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: #000;
+    background: #000000;
     z-index: 999;
     border-bottom: 1px solid #222;
 }
 
-.nav-bar{
+.nav-bar {
     width: 100%;
     max-width: 1700px;
-    margin: auto;
+    margin: 0 auto;
     padding: 1rem 5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    list-style-type: none;
 }
 
-
-.logo{
+.logo {
     width: 180px;
     max-width: 100%;
     height: auto;
+    display: block;
 }
 
-.nav{
+.nav-list {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    flex-wrap: wrap;
+    list-style: none;
 }
-.nav li{
-    list-style-type: none;
-}
-.nav a{
+
+.nav-list a {
     color: #fff;
     font-size: 1.1rem;
     font-weight: 500;
     text-align: center;
-    transition: 0.5s ease;
+    transition: 0.3s ease;
 }
 
-.nav a:hover{
+.nav-list a:hover {
     color: #ffc300;
-    font-size: 1.2rem;
- }
-
-.nav a img{
-    color: #ffc300;
-    font-size: 1.8rem;
 }
 
-.button a{
+/* --- BOTÃO DE LOGIN --- */
+.button {
     background-color: #ffc300;
-    color: #000;
-    padding: 0.8rem 1.5rem;
+    color: #000 !important;
+    padding: 0.6rem 1.4rem;
     border-radius: 10px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     text-transform: uppercase;
-    transition: 0.5s ease;
+    display: inline-block;
 }
 
-.nav button a:hover{
-    transform: scale(1.09);
-    color: #000;
+.button:hover {
+    transform: scale(1.05);
+    background-color: #e6b000;
 }
 
-.dropdown{
+/* --- DROPDOWN --- */
+.dropdown {
     position: relative;
 }
-.i{
-    font-size: 12px;
-    transition: 0.3s ease;
-}
 
-.dropdown-menu{
+.dropdown-menu {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #333;
+    background-color: #1a1a1a;
     list-style: none;
     padding: 10px 0;
     min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    z-index: 999;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    z-index: 1000;
     display: none;
-    border-radius: 10px;
+    border-radius: 8px;
+    border: 1px solid #333;
 }
 
-.dropdown-menu li a{
+.dropdown-menu li a {
     display: block;
     padding: 10px 15px;
-    font-size: 14px;
+    font-size: 0.95rem;
     color: #fff;
     text-align: left;
 }
 
-.dropdown:hover .dropdown-menu{
+.dropdown-menu li a:hover {
+    background-color: #222;
+    color: #ffc300;
+}
+
+.dropdown:hover .dropdown-menu {
     display: block;
 }
+
 /* --- FOOTER --- */
-.footer{
+.footer {
     background-color: #000;
     color: #fff;
-    padding: 40px 5% 20px; /* Padding lateral menor */
+    padding: 40px 5% 20px;
     width: 100%;
+    margin-top: auto;
 }
 
 .container-box {
-   display: flex;
-   justify-content: center;
-   text-align: center;
-   gap: 20px;
-   font-size: 20px; /* Reduzido ligeiramente para telas menores */
-   flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
 }
 
-.logo-ark img{
-   max-width: 250px;
-   width: 100%; /* Ajuste dinâmico */
-   height: auto;
-   padding: 10px;
+.logo-ark img {
+    max-width: 200px;
+    width: 100%;
+    height: auto;
 }
 
-hr{
+hr {
     border: 0;
     border-top: 1px solid #333;
     width: 80%;
-    margin: 30px auto; /* Centraliza a linha automaticamente */
+    margin: 20px auto;
 }
 
-.container-box a{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   gap: 10px;
-   color:#fff;
+.contato h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
 }
 
-.contato{
-   color: #fff;
-   text-align: center;
-   padding: 10px;
-   font-size: 24px;
+.contato a {
+    display: inline-block;
+    padding: 5px 10px;
 }
 
-.contato a{
-   display: inline-block;
-   padding: 10px;
-   margin-top: 15px;
+.contato i {
+    font-size: 28px;
+    color: #ccc;
+    transition: 0.3s;
 }
 
-.contato i { font-size: 25px; 
-    outline: none;
-     color: #ccc; 
-    }
+.contato i:hover {
+    color: #ffc300;
+}
 
-    .políticas {
-        text-align: center;
-    }
-    
-    .políticas a {
-        color: #fff;
-        font-size: 0.9rem;
-    }
-    
-    .políticas a:hover {
-        color: #ffc300;
-    }
-.final{
-   color: #fff;
-   text-align: center;
-   font-size: 14px;
-   padding: 20px;
+.politicas a {
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.politicas a:hover {
+    color: #ffc300;
+}
+
+.final {
+    color: #888;
+    font-size: 0.85rem;
 }
 
 /* ==========================================
    MEDIA QUERIES (RESPONSIVIDADE)
    ========================================== */
 
-/* Para Tablets e Celulares Grandes (Até 768px) */
 @media (max-width: 768px) {
-    .header .nav-bar {
-        flex-direction: column; /* Empilha logo e itens do menu */
+    .nav-bar {
+        flex-direction: column;
         gap: 15px;
         padding: 1rem;
     }
 
-    .nav {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
+    .nav-list {
+        gap: 1rem;
         flex-wrap: wrap;
     }
 
-    .nav a {
-        margin: 0 0.8rem;
-        font-size: 1rem;
-    }
-
-    .nav a:hover {
-        font-size: 1.1rem;
-    }
-
-    .nav button {
-        font-size: 1rem;
-        padding: 0.4rem 0.8rem;
-    }
-
     .politica {
-        padding: 160px 20px 40px; /* Dá mais espaço no topo devido ao menu maior */
-    }
-
-    .contato, .políticas a {
-        font-size: 20px;
+        padding-top: 160px;
     }
 }
 
-/* Para Celulares Pequenos (Até 480px) */
 @media (max-width: 480px) {
-    .nav {
-        flex-direction: column; /* Transforma o menu superior em vertical */
+    .nav-list {
+        flex-direction: column;
         gap: 12px;
     }
 
     .politica {
-        padding-top: 240px; /* Ajuste para evitar sobreposição do texto pelo menu */
+        padding-top: 280px;
     }
 
     .politica h1 {
-        font-size: 1.8rem; /* Trata títulos grandes dentro das políticas */
-    }
-
-    .li {
-        padding-left: 10px;
-    }
-
-    .políticas a {
-        padding: 10px;
+        font-size: 1.6rem;
     }
 }
