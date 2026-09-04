@@ -51,9 +51,11 @@ body {
 }
 .botão-seta i{
     color: #ffc300;
-    font-size: 25px;
+    font-size: 40px;
     background-color: #000;
-    height: 40px;
+    height: 45px;
+    padding: 0 0 4rem;
+
 }
 .logo {
     width: 130px;
@@ -166,7 +168,7 @@ body {
     width: 100%;
     max-width: 1400px;
     margin: 110px auto 0 auto;
-    padding: 2rem 5%;
+    padding: 0rem 5%;
     flex: 1;
 }
 
