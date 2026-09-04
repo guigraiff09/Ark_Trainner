@@ -24,7 +24,7 @@
                     <li><a href="./index.html">INÍCIO</a></li>
 
                     <li class="dropdown"> 
-                        <a  class="dropdown-toggle">TREINO <i class='bx bx-chevron-down'></i></a>
+                        <a class="dropdown-toggle">TREINO <i class='bx bx-chevron-down'></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="../Frontend/pages/peito.html">Peito</a></li>
                             <li><a href="../Frontend/pages/costa.html">Costas</a></li>
@@ -691,23 +691,72 @@
 
     </footer>
 
-   <script>
+  <script>
+
     const menuIcon = document.getElementById('menu-icon');
+
     const navContainer = document.getElementById('nav-container');
 
-    // Abre e fecha o menu ao clicar no ícone
+
+
+    // Abre e fecha o menu principal ao clicar no ícone hambúrguer
+
     menuIcon.addEventListener('click', () => {
+
         navContainer.classList.toggle('active');
-        menuIcon.classList.toggle('bx bx-x'); // Adiciona/remove a classe de fechar (X)
+
+        menuIcon.classList.toggle('bx bx-x');
+
     });
 
-    // Fechar o menu automaticamente ao clicar em um link
-    document.querySelectorAll('.nav a').forEach(link => {
-        link.addEventListener('click', () => {
-            navContainer.classList.remove('active');
-            menuIcon.classList.remove('bx-x');
+
+
+    // Toggle para o dropdown do Treino no celular
+
+    const dropdownTreino = document.querySelector('.dropdown-treino > a, .treino-toggle'); // Ajuste o seletor para o link do seu submenu Treino
+
+    if (dropdownTreino) {
+
+        dropdownTreino.addEventListener('click', (e) => {
+
+            // Evita a navegação/fechamento e alterna a exibição do submenu
+
+            e.preventDefault();
+
+            e.stopPropagation();
+
+            const parent = dropdownTreino.parentElement;
+
+            parent.classList.toggle('open');
+
         });
+
+    }
+
+
+
+    // Fecha o menu apenas ao clicar em links comuns (Home, Políticas, etc.) que NÃO abrem submenus
+
+    document.querySelectorAll('.nav a:not(.dropdown-toggle)').forEach(link => {
+
+        link.addEventListener('click', (e) => {
+
+            // Se o link tiver submenu ou href="#", não fecha o menu principal
+
+            if (link.getAttribute('href') === '#' || link.classList.contains('has-submenu')) {
+
+                return;
+
+            }
+
+            navContainer.classList.remove('active');
+
+            menuIcon.classList.remove('bx-x');
+
+        });
+
     });
+
 </script>
 </body>
 
