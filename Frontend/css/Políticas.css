@@ -63,6 +63,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
 }
 
 .logo {
@@ -234,6 +235,7 @@ hr {
         padding: 40px 20px;
         gap: 1.5rem;
         box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+        padding: 6rem 2rem 2rem;
     }
 
     .nav.active {
