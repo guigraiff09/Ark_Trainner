@@ -24,7 +24,7 @@
                     <li><a href="./index.html">INÍCIO</a></li>
 
                     <li class="dropdown"> 
-                        <a  class="dropdown-toggle">TREINO <i class='bx bx-chevron-down'></i></a>
+                        <a class="dropdown-toggle">TREINO <i class='bx bx-chevron-down'></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="../Frontend/pages/peito.html">Peito</a></li>
                             <li><a href="../Frontend/pages/costa.html">Costas</a></li>
@@ -74,7 +74,7 @@
         <div class="card-ex">
 
             <figure>
-                <a href="#">
+                <a href="./Frontend/pages/exercicios/costas/puxadaalta.html">
                     <img src="../Frontend/Assets/IMG/img01.png" alt="Treino de costa">
                 </a>
 
@@ -91,13 +91,13 @@
 
             <figure>
 
-                <a href="#">
-                    <img src="../Frontend/Assets/IMG/img02.png" alt="Treino de perna">
+                <a href="./Frontend/pages/exercicios/cardio/Pular-Corda.html">
+                    <img src="./Frontend/Assets/IMG/mountain-climbers.png" alt="Treino de perna">
                 </a>
 
                 <figcaption>
-                    <h3>Agachamento no Smith</h3>
-                    <p>Exercício focado no desenvolvimento das pernas e glúteos, especialmente dos quadríceps.</p>
+                    <h3>Mountain Climbers</h3>
+                    <p>Exercício focado no fortalecimento do core e condicionamento, especialmente do abdômen e ombros.</p>
                 </figcaption>
 
             </figure>
@@ -108,13 +108,13 @@
 
             <figure>
 
-                <a href="#">
-                    <img src="../Frontend/Assets/IMG/img03.png" alt="Treino de abdômen">
+                <a href="./Frontend/pages/exercicios/abdomen/remador.html">
+                    <img src="./Frontend/Assets/IMG/abdomen-remador.png" alt="Treino de abdômen">
                 </a>
 
                 <figcaption>
-                    <h3>Roda Abdominal</h3>
-                    <p>Exercício focado no desenvolvimento do abdômen, especialmente da região central do core.</p>
+                    <h3>Abdômen Remador</h3>
+                    <p>Exercício focado no desenvolvimento do abdômen, especialmente da região lateral e oblíquos.</p>
                 </figcaption>
 
             </figure>
@@ -198,7 +198,7 @@
                 <div class="card">
                     <div class="tipo-treino"><span>Peito</span></div>
                     <figure>
-                        <a href="./Frontend/pages/exercicios/peito/peito-smith.html">
+                        <a href="./Frontend/pages/exercicios/peito/supino-reto-smith.html">
                             <img src="/Frontend/Assets/IMG/Supino reto no smith.jpg" alt="Supino reto no Smith">
                         </a>
                         <figcaption>
@@ -691,23 +691,72 @@
 
     </footer>
 
-   <script>
+  <script>
+
     const menuIcon = document.getElementById('menu-icon');
+
     const navContainer = document.getElementById('nav-container');
 
-    // Abre e fecha o menu ao clicar no ícone
+
+
+    // Abre e fecha o menu principal ao clicar no ícone hambúrguer
+
     menuIcon.addEventListener('click', () => {
+
         navContainer.classList.toggle('active');
-        menuIcon.classList.toggle(' bx-x'); // Adiciona/remove a classe de fechar (X)
+
+        menuIcon.classList.toggle('bx bx-x');
+
     });
 
-    // Fechar o menu automaticamente ao clicar em um link
-    document.querySelectorAll('.nav a').forEach(link => {
-        link.addEventListener('click', () => {
-            navContainer.classList.remove('active');
-            menuIcon.classList.remove('bx-x');
+
+
+    // Toggle para o dropdown do Treino no celular
+
+    const dropdownTreino = document.querySelector('.dropdown-treino > a, .treino-toggle'); // Ajuste o seletor para o link do seu submenu Treino
+
+    if (dropdownTreino) {
+
+        dropdownTreino.addEventListener('click', (e) => {
+
+            // Evita a navegação/fechamento e alterna a exibição do submenu
+
+            e.preventDefault();
+
+            e.stopPropagation();
+
+            const parent = dropdownTreino.parentElement;
+
+            parent.classList.toggle('open');
+
         });
+
+    }
+
+
+
+    // Fecha o menu apenas ao clicar em links comuns (Home, Políticas, etc.) que NÃO abrem submenus
+
+    document.querySelectorAll('.nav a:not(.dropdown-toggle)').forEach(link => {
+
+        link.addEventListener('click', (e) => {
+
+            // Se o link tiver submenu ou href="#", não fecha o menu principal
+
+            if (link.getAttribute('href') === '#' || link.classList.contains('has-submenu')) {
+
+                return;
+
+            }
+
+            navContainer.classList.remove('active');
+
+            menuIcon.classList.remove('bx-x');
+
+        });
+
     });
+
 </script>
 </body>
 
