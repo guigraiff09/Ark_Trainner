@@ -286,8 +286,10 @@ body {
 }
 
 .formas-contato {
-    line-height: 1.6;
+   flex-direction: column;
     outline: none;
+    text-align: center;
+    padding: 10px 0;
 }
 .formas-contato img{
     flex-direction: column;

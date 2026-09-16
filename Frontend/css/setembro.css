@@ -1,254 +1,247 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body{
+    background: #000;
+    color: #fff;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
+/* HEADER */
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    background: #000;
+
+    z-index: 999;
+
+    border-bottom: none;
+}
+
+
+/* NAV-BAR */
+
+.nav-bar{
+    width: 100%;
+    max-width: 1920px;
+
+    margin: auto;
+
+    padding: 1rem 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+/*LOGO */
+
+.logo{
+    width: 180px;
+    height: auto;
+    display: block;
+}
+
+
+/*NAVEGAÇÃO*/
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 2rem;
+
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list > li{
+    display: flex;
+    align-items: center;
+}
+
+
+/*LINKS */
+
+.nav a{
+    color: #fff;
+
+    font-size: 1.1rem;
+    font-weight: 500;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+.nav a:hover{
+    color: #ffc300;
+    transform: scale(1.09);
+}
+
+.nav .pagina-atual{
+    color: #ffc300;
+}
+
+
 /* =========================================
-   CONFIGURAÇÕES GERAIS
+   DROPDOWN
    ========================================= */
 
-   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+.dropdown{
+    position: relative;
+}
 
-   *{
-       margin: 0;
-       padding: 0;
-       box-sizing: border-box;
-       text-decoration: none;
-       border: none;
-       outline: none;
-       font-family: 'Poppins', sans-serif;
-   }
-   
-   html{
-       scroll-behavior: smooth;
-       overflow-x: hidden;
-   }
-   
-   body{
-       background: #000;
-       color: #fff;
-       min-height: 100vh;
-       overflow-x: hidden;
-   }
-   
-   
-   
-   
-   .header{
-       position: fixed;
-       top: 0;
-       left: 0;
-       width: 100%;
-   
-       background: #000;
-   
-       z-index: 999;
-   
-       border-bottom: none;
-   }
-   
-   
-   
-   
-   .nav-bar{
-       width: 100%;
-       max-width: 1920px;
-   
-       margin: auto;
-   
-       padding: 1rem 5%;
-   
-       display: flex;
-       align-items: center;
-       justify-content: space-between;
-   
-       gap: 20px;
-   }
-   
-   
-   
-   
-   .logo{
-       width: 180px;
-       height: auto;
-       display: block;
-   }
-   
-   
-  /
-   
-   .nav{
-       display: flex;
-       align-items: center;
-       justify-content: center;
-   }
-   
-   .nav-list{
-       display: flex;
-       align-items: center;
-       justify-content: center;
-   
-       gap: 2rem;
-   
-       list-style: none;
-   }
-   
-   .nav-list > li{
-       display: flex;
-       align-items: center;
-   }
-   
-   
-   
-   .nav a{
-       color: #fff;
-   
-       font-size: 1.1rem;
-       font-weight: 500;
-   
-       text-align: center;
-   
-       text-decoration: none;
-   
-       transition: 0.5s ease;
-   }
-   
-   
- 
-   
-   .nav a:hover{
-       color: #ffc300;
-       transform: scale(1.09);
-   }
-   
-   
-  
-   
-   .nav .pagina-atual{
-       color: #ffc300;
-   }
-   
-   
-   
-   .dropdown{
-       position: relative;
-   }
-   
-   .dropdown > a{
-       display: flex;
-       align-items: center;
-       gap: 4px;
-   }
-   
-   .dropdown > a i{
-       font-size: 1.2rem;
-   }
-   
-   
-   
-   
-   .dropdown-menu{
-       position: absolute;
-   
-       top: 100%;
-       left: 0;
-   
-       background-color: #333;
-   
-       list-style: none;
-   
-       padding: 10px 0;
-   
-       min-width: 160px;
-   
-       box-shadow: 0 8px 16px rgba(0,0,0,0.5);
-   
-       display: none;
-   
-       border-radius: 10px;
-   
-       z-index: 999;
-   }
-   
-   
-  
-   
-   .dropdown-menu li{
-       display: block;
-       width: 100%;
-   }
-   
+.dropdown > a{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
 
-   
-   .dropdown-menu li a{
-       display: block;
-   
-       width: 100%;
-   
-       padding: 10px 15px;
-   
-       font-size: 14px;
-   
-       color: #fff;
-   
-       text-align: left;
-   
-       transform: none;
-   }
-   
-   
-   
-   
-   .dropdown-menu li a:hover{
-       color: #ffc300;
-   
-       background: #222;
-   
-       transform: none;
-   }
-   
-   
-   
-   
-   .dropdown:hover .dropdown-menu{
-       display: block;
-   }
-   
-   
-   
-   .button{
-       background: transparent !important;
-   
-       padding: 0 !important;
-       margin: 0 !important;
-   
-       display: flex !important;
-       align-items: center;
-   }
-   
-   .button a{
-       background: #ffc300 !important;
-   
-       color: #000 !important;
-   
-       padding: 0.6rem 2rem;
-   
-       border-radius: 10px;
-   
-       font-size: 1rem;
-   
-       font-weight: 600;
-   
-       cursor: pointer;
-   
-       display: inline-block;
-   }
-   
-   .button a:hover{
-       transform: scale(1.05);
-   
-       color: #000 !important;
-   }
+.dropdown > a i{
+    font-size: 1.2rem;
+}
 
-   
+.dropdown-menu{
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    background-color: #333;
+
+    list-style: none;
+
+    padding: 10px 0;
+
+    min-width: 160px;
+
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+
+    display: none;
+
+    border-radius: 10px;
+
+    z-index: 999;
+}
+
+.dropdown-menu li{
+    display: block;
+    width: 100%;
+}
+
+.dropdown-menu li a{
+    display: block;
+
+    width: 100%;
+
+    padding: 10px 15px;
+
+    font-size: 14px;
+
+    color: #fff;
+
+    text-align: left;
+
+    transform: none;
+}
+
+.dropdown-menu li a:hover{
+    color: #ffc300;
+
+    background: #222;
+
+    transform: none;
+}
+
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
+
+
+/* =========================================
+   BOTÃO LOGIN
+   ========================================= */
+
+.button{
+    background: transparent !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    display: flex !important;
+    align-items: center;
+}
+
+.button a{
+    background: #ffc300 !important;
+
+    color: #000 !important;
+
+    padding: 0.6rem 2rem;
+
+    border-radius: 10px;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: inline-block;
+}
+
+.button a:hover{
+    transform: scale(1.05);
+
+    color: #000 !important;
+}
+
+
+/* =========================================
+   HERO - SETEMBRO AMARELO
+   ========================================= */
 
 .setembro-hero{
     position: relative;
+
     width: 100%;
     height: 750px;
 
@@ -257,9 +250,6 @@
     display: flex;
     align-items: center;
 }
-
-
-
 
 .hero-image{
     position: absolute;
@@ -274,7 +264,6 @@
 
     z-index: 1;
 }
-
 
 .hero-overlay{
     position: absolute;
@@ -296,7 +285,9 @@
 }
 
 
-
+/* =========================================
+   CONTEÚDO DO HERO
+   ========================================= */
 
 .setembro-hero-content{
     position: relative;
@@ -306,17 +297,10 @@
     width: 100%;
     max-width: 1920px;
 
-    margin: 0 auto;
+    margin: 60px auto 0;
 
     padding-left: 8%;
-
-    margin-top: 60px;
 }
-
-
-/* =========================================
-   LABEL
-   ========================================= */
 
 .hero-label{
     margin-bottom: 18px;
@@ -338,9 +322,6 @@
     padding-left: 12px;
 }
 
-
-
-
 .setembro-hero-content h1{
     max-width: 700px;
 
@@ -357,9 +338,6 @@
     margin-bottom: 20px;
 }
 
-
-/* Palavra SOZINHO */
-
 .setembro-hero-content h1 strong{
     display: block;
 
@@ -367,9 +345,6 @@
 
     font-weight: 800;
 }
-
-
-
 
 .hero-subtitle{
     color: #fff;
@@ -384,6 +359,9 @@
 }
 
 
+/* =========================================
+   CAMPANHA
+   ========================================= */
 
 .hero-campanha{
     position: absolute;
@@ -419,6 +397,9 @@
 }
 
 
+/* =========================================
+   LAÇO AMARELO
+   ========================================= */
 
 .laco-amarelo{
     position: relative;
@@ -473,3 +454,1295 @@
     z-index: 2;
 }
 
+
+/* =========================================
+   CONSCIENTIZAÇÃO
+   ========================================= */
+
+.conscientizacao{
+    width: 100%;
+
+    background: #000;
+
+    padding: 120px 8%;
+}
+
+.conscientizacao-container{
+    width: 100%;
+    max-width: 1920px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 80px;
+}
+
+
+/* =========================================
+   TEXTO
+   ========================================= */
+
+.conscientizacao-text{
+    width: 42%;
+}
+
+.section-label{
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+}
+
+.section-label span{
+    display: block;
+
+    width: 35px;
+    height: 3px;
+
+    background: #ffc300;
+}
+
+.section-label p{
+    color: #ffc300;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+.conscientizacao-text h2{
+    color: #fff;
+
+    font-size: 3.2rem;
+
+    font-weight: 300;
+
+    line-height: 1.1;
+
+    margin-bottom: 25px;
+}
+
+.conscientizacao-text h2 strong{
+    display: block;
+
+    color: #ffc300;
+
+    font-weight: 700;
+}
+
+.conscientizacao-text > p{
+    color: #999;
+
+    font-size: 1.05rem;
+
+    font-weight: 300;
+
+    line-height: 1.8;
+
+    max-width: 600px;
+}
+
+
+/* =========================================
+   CARDS
+   ========================================= */
+
+.conscientizacao-cards{
+    width: 52%;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.conscientizacao-card{
+    position: relative;
+
+    min-height: 190px;
+
+    padding: 30px;
+
+    background: #0b0b0b;
+
+    border: 1px solid #222;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    transition: 0.3s ease;
+}
+
+.conscientizacao-card:hover{
+    border-color: #ffc300;
+
+    transform: translateY(-5px);
+
+    background: #101010;
+}
+
+.conscientizacao-card i{
+    color: #ffc300;
+
+    font-size: 2.2rem;
+
+    margin-bottom: 15px;
+}
+
+.conscientizacao-card h3{
+    color: #fff;
+
+    font-size: 1.3rem;
+
+    font-weight: 600;
+
+    margin-bottom: 3px;
+}
+
+.conscientizacao-card p{
+    color: #888;
+
+    font-size: 0.95rem;
+
+    font-weight: 400;
+}
+
+.conscientizacao-card span{
+    position: absolute;
+
+    left: 30px;
+    bottom: 22px;
+
+    width: 30px;
+    height: 2px;
+
+    background: #ffc300;
+}
+ 
+/* =========================================
+   COMO POSSO AJUDAR
+   ========================================= */
+
+   .como-ajudar{
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+
+    min-height: 650px;
+
+    display: flex;
+    align-items: stretch;
+
+    background: #080808;
+}
+
+
+/* =========================================
+   IMAGEM
+   ========================================= */
+
+.como-ajudar-image{
+    width: 50%;
+    min-height: 650px;
+
+    overflow: hidden;
+}
+
+.como-ajudar-image img{
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: 0.5s ease;
+}
+
+.como-ajudar-image img:hover{
+    transform: scale(1.03);
+}
+
+
+/* =========================================
+   CONTEÚDO
+   ========================================= */
+
+.como-ajudar-content{
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 80px 8%;
+}
+
+
+/* =========================================
+   TÍTULO
+   ========================================= */
+
+.como-ajudar-content .section-label{
+    margin-bottom: 25px;
+}
+
+.como-ajudar-content h2{
+    color: #fff;
+
+    font-size: 3.2rem;
+
+    font-weight: 300;
+
+    line-height: 1.1;
+
+    margin-bottom: 40px;
+}
+
+.como-ajudar-content h2 strong{
+    display: block;
+
+    color: #ffc300;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   LISTA
+   ========================================= */
+
+.como-ajudar-content ul{
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 22px;
+
+    padding: 0;
+    margin: 0;
+}
+
+.como-ajudar-content li{
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    color: #fff;
+
+    font-size: 1.05rem;
+
+    font-weight: 400;
+}
+
+.como-ajudar-content li i{
+    color: #ffc300;
+
+    font-size: 1.5rem;
+
+    flex-shrink: 0;
+}
+
+.como-ajudar-content li span{
+    color: #ccc;
+
+    transition: 0.3s ease;
+}
+
+.como-ajudar-content li:hover span{
+    color: #fff;
+
+    transform: translateX(5px);
+}
+
+
+/* =========================================
+   APOIO / CVV
+   ========================================= */
+
+.apoio-cvv{
+    width: 100%;
+
+    background: #000;
+
+    padding: 90px 8%;
+}
+
+
+.apoio-cvv-container{
+    width: 100%;
+    max-width: 1700px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1.2fr 0.8fr 1fr;
+
+    align-items: center;
+
+    gap: 50px;
+
+    padding: 45px 50px;
+
+    background: #0b0b0b;
+
+    border: 1px solid #222;
+
+    border-radius: 16px;
+}
+
+
+/* =========================================
+   BLOCO PRINCIPAL
+   ========================================= */
+
+.apoio-item{
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.apoio-icon{
+    width: 65px;
+    height: 65px;
+
+    min-width: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #ffc300;
+
+    border-radius: 12px;
+}
+
+.apoio-icon i{
+    color: #000;
+
+    font-size: 2rem;
+}
+
+.apoio-text h3{
+    color: #fff;
+
+    font-size: 1.5rem;
+
+    font-weight: 300;
+
+    line-height: 1.1;
+
+    margin-bottom: 7px;
+}
+
+.apoio-text h3 strong{
+    color: #ffc300;
+
+    font-weight: 700;
+
+    margin-left: 5px;
+}
+
+.apoio-text p{
+    color: #888;
+
+    font-size: 0.9rem;
+
+    font-weight: 400;
+}
+
+
+/* =========================================
+   NÚMERO DO CVV
+   ========================================= */
+
+.apoio-cvv-numero{
+    text-align: center;
+
+    padding: 10px 30px;
+
+    border-left: 1px solid #222;
+    border-right: 1px solid #222;
+}
+
+.apoio-cvv-numero h2{
+    color: #ffc300;
+
+    font-size: 2.4rem;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+}
+
+.apoio-cvv-numero p{
+    color: #777;
+
+    font-size: 0.8rem;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   SERVIÇOS DE SAÚDE
+   ========================================= */
+
+.apoio-servicos{
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+.apoio-servicos-icon{
+    width: 55px;
+    height: 55px;
+
+    min-width: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #ffc300;
+
+    border-radius: 10px;
+}
+
+.apoio-servicos-icon i{
+    color: #ffc300;
+
+    font-size: 1.7rem;
+}
+
+.apoio-servicos p{
+    color: #999;
+
+    font-size: 0.85rem;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   RESPONSIVIDADE
+   ========================================= */
+
+@media (max-width: 1200px){
+
+    .como-ajudar{
+        min-height: 580px;
+    }
+
+    .como-ajudar-image{
+        min-height: 580px;
+    }
+
+    .como-ajudar-content{
+        padding: 60px 6%;
+    }
+
+    .como-ajudar-content h2{
+        font-size: 2.7rem;
+    }
+
+    .apoio-cvv{
+        padding: 80px 7%;
+    }
+
+    .apoio-cvv-container{
+        gap: 30px;
+
+        padding: 40px;
+    }
+
+    .apoio-cvv-numero h2{
+        font-size: 2rem;
+    }
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 992px){
+
+    .como-ajudar{
+        flex-direction: column;
+
+        min-height: auto;
+    }
+
+    .como-ajudar-image{
+        width: 100%;
+
+        height: 450px;
+
+        min-height: 450px;
+    }
+
+    .como-ajudar-content{
+        width: 100%;
+
+        padding: 80px 6%;
+    }
+
+    .como-ajudar-content h2{
+        font-size: 2.8rem;
+    }
+
+    .apoio-cvv{
+        padding: 70px 6%;
+    }
+
+    .apoio-cvv-container{
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding: 40px;
+    }
+
+    .apoio-cvv-numero{
+        border-left: none;
+        border-right: none;
+
+        border-top: 1px solid #222;
+        border-bottom: 1px solid #222;
+
+        padding: 30px 0;
+    }
+
+    .apoio-cvv-numero h2{
+        font-size: 2.3rem;
+    }
+
+    .apoio-servicos{
+        justify-content: center;
+    }
+}
+
+
+/* =========================================
+   CELULAR
+   ========================================= */
+
+@media (max-width: 576px){
+
+    .como-ajudar-image{
+        height: 330px;
+
+        min-height: 330px;
+    }
+
+    .como-ajudar-content{
+        padding: 65px 7%;
+    }
+
+    .como-ajudar-content .section-label{
+        margin-bottom: 18px;
+    }
+
+    .como-ajudar-content h2{
+        font-size: 2.2rem;
+
+        line-height: 1.15;
+
+        margin-bottom: 30px;
+    }
+
+    .como-ajudar-content ul{
+        gap: 18px;
+    }
+
+    .como-ajudar-content li{
+        align-items: flex-start;
+
+        gap: 12px;
+
+        font-size: 0.9rem;
+
+        line-height: 1.5;
+    }
+
+    .como-ajudar-content li i{
+        font-size: 1.3rem;
+
+        margin-top: 1px;
+    }
+
+
+    /* CVV */
+
+    .apoio-cvv{
+        padding: 60px 7%;
+    }
+
+    .apoio-cvv-container{
+        gap: 30px;
+
+        padding: 30px 22px;
+
+        border-radius: 12px;
+    }
+
+    .apoio-item{
+        gap: 15px;
+    }
+
+    .apoio-icon{
+        width: 50px;
+        height: 50px;
+
+        min-width: 50px;
+    }
+
+    .apoio-icon i{
+        font-size: 1.5rem;
+    }
+
+    .apoio-text h3{
+        font-size: 1.2rem;
+    }
+
+    .apoio-text p{
+        font-size: 0.75rem;
+    }
+
+    .apoio-cvv-numero{
+        padding: 25px 0;
+    }
+
+    .apoio-cvv-numero h2{
+        font-size: 2rem;
+    }
+
+    .apoio-cvv-numero p{
+        font-size: 0.75rem;
+    }
+
+    .apoio-servicos{
+        align-items: flex-start;
+
+        gap: 14px;
+    }
+
+    .apoio-servicos-icon{
+        width: 48px;
+        height: 48px;
+
+        min-width: 48px;
+    }
+
+    .apoio-servicos-icon i{
+        font-size: 1.5rem;
+    }
+
+    .apoio-servicos p{
+        font-size: 0.75rem;
+
+        line-height: 1.5;
+    }
+}
+
+
+/* =========================================
+   CELULARES MUITO PEQUENOS
+   ========================================= */
+
+@media (max-width: 380px){
+
+    .como-ajudar-image{
+        height: 280px;
+
+        min-height: 280px;
+    }
+
+    .como-ajudar-content{
+        padding: 55px 7%;
+    }
+
+    .como-ajudar-content h2{
+        font-size: 1.9rem;
+    }
+
+    .como-ajudar-content li{
+        font-size: 0.82rem;
+    }
+
+    .apoio-cvv-container{
+        padding: 25px 18px;
+    }
+
+    .apoio-text h3{
+        font-size: 1.05rem;
+    }
+
+    .apoio-text p{
+        font-size: 0.68rem;
+    }
+
+    .apoio-cvv-numero h2{
+        font-size: 1.8rem;
+    }
+}
+
+
+/* =========================================
+   TELAS MUITO GRANDES
+   ========================================= */
+
+@media (min-width: 2200px){
+
+    .como-ajudar{
+        max-width: 2400px;
+    }
+
+    .como-ajudar-image{
+        min-height: 800px;
+    }
+
+    .como-ajudar-content{
+        padding: 100px 8%;
+    }
+
+    .como-ajudar-content h2{
+        font-size: 4rem;
+    }
+
+    .como-ajudar-content li{
+        font-size: 1.25rem;
+    }
+
+    .como-ajudar-content li i{
+        font-size: 1.8rem;
+    }
+
+    .apoio-cvv{
+        padding: 120px 8%;
+    }
+
+    .apoio-cvv-container{
+        max-width: 2200px;
+
+        padding: 60px 70px;
+    }
+
+    .apoio-text h3{
+        font-size: 2rem;
+    }
+
+    .apoio-cvv-numero h2{
+        font-size: 3rem;
+    }
+
+    .apoio-servicos p{
+        font-size: 1rem;
+    }
+}
+
+/* =========================================
+   TABLET / NOTEBOOK
+   ========================================= */
+
+@media (max-width: 1200px){
+
+    .nav-list{
+        gap: 1.3rem;
+    }
+
+    .nav a{
+        font-size: 0.95rem;
+    }
+
+    .logo{
+        width: 150px;
+    }
+
+    .button a{
+        padding: 0.55rem 1.4rem;
+    }
+
+    .setembro-hero{
+        height: 680px;
+    }
+
+    .setembro-hero-content{
+        padding-left: 7%;
+    }
+
+    .setembro-hero-content h1{
+        font-size: 3.8rem;
+    }
+
+    .conscientizacao{
+        padding: 100px 7%;
+    }
+
+    .conscientizacao-container{
+        gap: 50px;
+    }
+
+    .conscientizacao-text h2{
+        font-size: 2.7rem;
+    }
+
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 992px){
+
+    .nav-bar{
+        padding: 0.9rem 3%;
+    }
+
+    .logo{
+        width: 130px;
+    }
+
+    .nav-list{
+        gap: 0.8rem;
+    }
+
+    .nav a{
+        font-size: 0.78rem;
+    }
+
+    .dropdown > a i{
+        font-size: 1rem;
+    }
+
+    .button a{
+        padding: 0.5rem 1rem;
+
+        font-size: 0.8rem;
+    }
+
+
+    /* Hero */
+
+    .setembro-hero{
+        height: 620px;
+    }
+
+    .setembro-hero-content{
+        padding-left: 6%;
+        margin-top: 50px;
+    }
+
+    .hero-label p{
+        font-size: 0.8rem;
+    }
+
+    .setembro-hero-content h1{
+        font-size: 3.2rem;
+    }
+
+    .hero-subtitle{
+        font-size: 1.05rem;
+    }
+
+    .hero-campanha{
+        right: 6%;
+        bottom: 50px;
+    }
+
+
+    /* Conscientização */
+
+    .conscientizacao{
+        padding: 90px 6%;
+    }
+
+    .conscientizacao-container{
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 50px;
+    }
+
+    .conscientizacao-text{
+        width: 100%;
+    }
+
+    .conscientizacao-text h2{
+        font-size: 2.8rem;
+    }
+
+    .conscientizacao-cards{
+        width: 100%;
+    }
+}
+
+
+.footer {
+    width: 100%;
+    background: #000;
+    padding: 60px 5% 30px;
+    border-top: 1px solid #222;
+    margin-top: 50px;
+}
+
+.container-box {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-ark img { width: 180px; }
+hr { width: 100%; border-top: 1px solid #222; margin: 30px 0; }
+.contato h3 { margin-bottom: 20px; font-size: 1.5rem; text-align: center; }
+.contato a { margin: 0 12px; display: inline-block; }
+.contato i { font-size: 25px; outline: none; color: #ccc;}
+.políticas a { color: #fff; font-size: 0.9rem; }
+.políticas a:hover { color: #ffc300; }
+.final { text-align: center; font-size: 0.9rem; color: #777; }
+
+
+/* =========================================
+   CELULAR
+   ========================================= */
+
+@media (max-width: 576px){
+
+    .nav-bar{
+        padding: 0.7rem 3%;
+
+        gap: 8px;
+    }
+
+    .logo{
+        width: 95px;
+    }
+
+    .nav-list{
+        gap: 0.35rem;
+    }
+
+    .nav a{
+        font-size: 0.48rem;
+    }
+
+    .dropdown > a{
+        gap: 1px;
+    }
+
+    .dropdown > a i{
+        font-size: 0.65rem;
+    }
+
+    .button a{
+        padding: 0.35rem 0.55rem;
+
+        font-size: 0.5rem;
+
+        border-radius: 6px;
+    }
+
+
+    /* =====================================
+       HERO - CELULAR
+       ===================================== */
+
+    .setembro-hero{
+        height: 580px;
+    }
+
+    .setembro-hero-content{
+        padding: 0 7%;
+
+        margin-top: 40px;
+    }
+
+    .hero-label{
+        margin-bottom: 14px;
+    }
+
+    .hero-label p{
+        font-size: 0.65rem;
+
+        letter-spacing: 2px;
+
+        border-left-width: 2px;
+
+        padding-left: 8px;
+    }
+
+    .setembro-hero-content h1{
+        font-size: 2.5rem;
+
+        line-height: 1.08;
+
+        letter-spacing: -1px;
+
+        margin-bottom: 15px;
+    }
+
+    .hero-subtitle{
+        font-size: 0.9rem;
+
+        max-width: 280px;
+    }
+
+
+    /* =====================================
+       CAMPANHA - CELULAR
+       ===================================== */
+
+    .hero-campanha{
+        right: 7%;
+        bottom: 35px;
+
+        gap: 10px;
+    }
+
+    .hero-campanha p{
+        font-size: 0.8rem;
+    }
+
+    .hero-campanha p strong{
+        font-size: 0.95rem;
+    }
+
+    .laco-amarelo{
+        width: 30px;
+        height: 50px;
+    }
+
+    .laco-amarelo::before,
+    .laco-amarelo::after{
+        width: 12px;
+        height: 34px;
+
+        border-width: 5px;
+    }
+
+    .laco-amarelo::before{
+        left: 2px;
+    }
+
+    .laco-amarelo::after{
+        right: 2px;
+    }
+
+    .laco-amarelo span{
+        width: 6px;
+        height: 40px;
+
+        left: 12px;
+        top: 5px;
+    }
+
+
+    /* =====================================
+       CONSCIENTIZAÇÃO - CELULAR
+       ===================================== */
+
+    .conscientizacao{
+        padding: 75px 7%;
+    }
+
+    .conscientizacao-container{
+        gap: 40px;
+    }
+
+    .section-label{
+        gap: 8px;
+
+        margin-bottom: 18px;
+    }
+
+    .section-label span{
+        width: 25px;
+        height: 2px;
+    }
+
+    .section-label p{
+        font-size: 0.65rem;
+
+        letter-spacing: 1.5px;
+    }
+
+    .conscientizacao-text h2{
+        font-size: 2.2rem;
+
+        line-height: 1.15;
+
+        margin-bottom: 18px;
+    }
+
+    .conscientizacao-text > p{
+        font-size: 0.9rem;
+
+        line-height: 1.7;
+    }
+
+
+    /* =====================================
+       CARDS - CELULAR
+       ===================================== */
+
+    .conscientizacao-cards{
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .conscientizacao-card{
+        min-height: 150px;
+
+        padding: 25px;
+    }
+
+    .conscientizacao-card i{
+        font-size: 1.8rem;
+
+        margin-bottom: 10px;
+    }
+
+    .conscientizacao-card h3{
+        font-size: 1.1rem;
+    }
+
+    .conscientizacao-card p{
+        font-size: 0.85rem;
+    }
+
+    .conscientizacao-card span{
+        left: 25px;
+        bottom: 18px;
+
+        width: 25px;
+    }
+}
+
+
+/* =========================================
+   CELULARES MUITO PEQUENOS
+   ========================================= */
+
+@media (max-width: 380px){
+
+    .logo{
+        width: 85px;
+    }
+
+    .nav-list{
+        gap: 0.25rem;
+    }
+
+    .nav a{
+        font-size: 0.42rem;
+    }
+
+    .button a{
+        padding: 0.3rem 0.45rem;
+        font-size: 0.45rem;
+    }
+
+    .setembro-hero{
+        height: 540px;
+    }
+
+    .setembro-hero-content h1{
+        font-size: 2.1rem;
+    }
+
+    .hero-subtitle{
+        font-size: 0.8rem;
+    }
+
+    .conscientizacao-text h2{
+        font-size: 1.9rem;
+    }
+}
+
+
+/* =========================================
+   TELAS MUITO GRANDES
+   ========================================= */
+
+@media (min-width: 2200px){
+
+    .nav-bar{
+        max-width: 2400px;
+    }
+
+    .logo{
+        width: 260px;
+    }
+
+    .nav-list{
+        gap: 3rem;
+    }
+
+    .nav a{
+        font-size: 1.8rem;
+    }
+
+    .button a{
+        font-size: 1.6rem;
+
+        padding: 1rem 2.5rem;
+    }
+
+    .setembro-hero{
+        height: 900px;
+    }
+
+    .setembro-hero-content h1{
+        font-size: 5.5rem;
+    }
+
+    .hero-subtitle{
+        font-size: 1.5rem;
+    }
+
+    .conscientizacao{
+        padding: 160px 8%;
+    }
+
+    .conscientizacao-text h2{
+        font-size: 4rem;
+    }
+
+    .conscientizacao-text > p{
+        font-size: 1.2rem;
+    }
+
+    .conscientizacao-card{
+        min-height: 230px;
+    }
+}
