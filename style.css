@@ -107,8 +107,8 @@ body{
 }
 
 .button a:hover{
-    transform: scale(1.05);
-    color: #000;
+    transform: scale(1.1);
+    color: #ffc300
 }
 
 .dropdown{
