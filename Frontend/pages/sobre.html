@@ -23,7 +23,7 @@
                     <li><a href="/index.html">INÍCIO</a></li>
 
                     <li class="dropdown">
-                        <a  class="dropdown-toggle">TREINO <i class='bx bx-chevron-down'></i></a>
+                        <a class="dropdown-toggle">TREINO <i class='bx bx-chevron-down'></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="../pages/peito.html">Peito</a></li>
                             <li><a href="../pages/costa.html">Costas</a></li>
@@ -58,7 +58,8 @@
                 </p>
 
                 <p class="para">
-                    A Ark Treinner nasceu com o propósito de transformar vidas através do treino, disciplina e superação diária.
+                    A Ark Treinner nasceu com o propósito de transformar vidas através do treino, disciplina e superação
+                    diária.
                 </p>
             </div>
 
@@ -130,7 +131,7 @@
             <div class="logo-ark">
                 <img src="../Assets/IMG/logo ARK.png" alt="Logo Ark">
             </div>
-            
+
             <hr>
             <div class="contato">
                 <h3>Contato</h3>
@@ -159,25 +160,58 @@
         </div>
     </footer>
 
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const menuIcon = document.querySelector("#menu-icon");
-        const navbar = document.querySelector(".nav");
+   <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuIcon = document.querySelector("#menu-icon");
+            const navbar = document.querySelector(".nav");
+            const dropdownToggle = document.querySelector(".dropdown-toggle");
+            const dropdown = document.querySelector(".dropdown");
 
-        if (menuIcon && navbar) {
-            menuIcon.addEventListener("click", () => {
-                navbar.classList.toggle("active");
-                menuIcon.classList.toggle("bx-x");
-            });
-
-            document.querySelectorAll(".nav a").forEach(link => {
-                link.addEventListener("click", () => {
-                    navbar.classList.remove("active");
-                    menuIcon.classList.remove("bx-x");
+            if (menuIcon && navbar) {
+                // 1. Abre e fecha o menu principal e alterna o ícone para o 'X'
+                menuIcon.addEventListener("click", () => {
+                    navbar.classList.toggle("active");
+                    
+                    if (navbar.classList.contains("active")) {
+                        menuIcon.classList.remove("bx-menu");
+                        menuIcon.classList.add("bx-x");
+                    } else {
+                        menuIcon.classList.remove("bx-x");
+                        menuIcon.classList.add("bx-menu");
+                    }
                 });
-            });
-        }
-    });
-</script>
+
+                // 2. Controla o clique no botão TREINO para abrir o submenu sem fechar a nav
+                if (dropdownToggle && dropdown) {
+                    dropdownToggle.addEventListener("click", (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        dropdown.classList.toggle("active");
+                        dropdown.classList.toggle("open");
+                    });
+                }
+
+                // 3. Fecha o menu lateral apenas se clicar em um link final de navegação
+                document.querySelectorAll(".nav a").forEach(link => {
+                    link.addEventListener("click", (e) => {
+                        // Se o link for o próprio botão do submenu (TREINO), não faz nada aqui
+                        if (link.classList.contains("dropdown-toggle") || link.closest(".dropdown-toggle")) {
+                            return;
+                        }
+
+                        // Fecha a gaveta lateral e restaura o ícone hambúrguer para links comuns
+                        navbar.classList.remove("active");
+                        if (dropdown) {
+                            dropdown.classList.remove("active", "open");
+                        }
+                        menuIcon.classList.remove("bx-x");
+                        menuIcon.classList.add("bx-menu");
+                    });
+                });
+            }
+        });
+    </script>
+
 </body>
+
 </html>
