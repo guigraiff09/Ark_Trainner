@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 // ROTAS
 // =========================
 
-app.use(routes);git
+app.use(routes);
 
 
 // =========================
