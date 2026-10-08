@@ -1,18 +1,23 @@
-const mysql = require('mysql2');
+require('dotenv').config();
 
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '', 
-  database: 'ark_trainner_tcc'
+const { Pool } = require('pg');
+
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: process.env.DATABASE_URL.includes('neon.tech')
+    ? { rejectUnauthorized: false }
+    : false
 });
 
-connection.connect((err) => {
+pool.connect((err, client, release) => {
   if (err) {
-    console.error(' Erro ao conectar ao MySQL:', err.message);
+    console.error(' Erro ao conectar ao PostgreSQL:', err.message);
     return;
   }
-  console.log(' Conectado ao MySQL com sucesso!');
+
+  console.log('✅ Conectado ao PostgreSQL com sucesso!');
+
+  release();
 });
 
-module.exports = connection;
+module.exports = pool;
