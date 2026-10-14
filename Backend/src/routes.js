@@ -8,30 +8,26 @@ const db = require('./database');
 // LOGIN
 // =========================
 
-router.post('/login', (req, res) => {
+router.post('/login', async (req, res) => {
 
   const { email, senha } = req.body;
 
   const sql = `
     SELECT * FROM usuarios
-    WHERE email = ? AND senha = ?
+    WHERE email = $1 AND senha = $2
   `;
 
-  db.query(sql, [email, senha], (err, result) => {
+  try {
 
-    if(err){
-      return res.status(500).json({
-        erro: 'Erro interno'
-      });
-    }
+    const result = await db.query(sql, [email, senha]);
 
-    if(result.length === 0){
+    if (result.rows.length === 0) {
       return res.status(401).json({
         sucesso: false
       });
     }
 
-    const usuario = result[0];
+    const usuario = result.rows[0];
 
     res.json({
       sucesso: true,
@@ -39,7 +35,15 @@ router.post('/login', (req, res) => {
       tipo: usuario.tipo
     });
 
-  });
+  } catch (err) {
+
+    console.error('Erro no login:', err);
+
+    res.status(500).json({
+      erro: 'Erro interno'
+    });
+
+  }
 
 });
 
@@ -48,29 +52,38 @@ router.post('/login', (req, res) => {
 // ENVIAR CONTATO
 // =========================
 
-router.post('/contato', (req, res) => {
+router.post('/contato', async (req, res) => {
 
   const { nome, email, assunto, mensagem } = req.body;
 
   const sql = `
     INSERT INTO contato
     (nome, email, assunto, mensagem)
-    VALUES (?, ?, ?, ?)
+    VALUES ($1, $2, $3, $4)
   `;
 
-  db.query(sql, [nome, email, assunto, mensagem], (err, result) => {
+  try {
 
-    if(err){
-      return res.status(500).json({
-        erro: 'Erro ao salvar'
-      });
-    }
+    await db.query(sql, [
+      nome,
+      email,
+      assunto,
+      mensagem
+    ]);
 
     res.json({
       mensagem: 'Salvo com sucesso!'
     });
 
-  });
+  } catch (err) {
+
+    console.error('Erro ao salvar contato:', err);
+
+    res.status(500).json({
+      erro: 'Erro ao salvar'
+    });
+
+  }
 
 });
 
@@ -79,77 +92,92 @@ router.post('/contato', (req, res) => {
 // LISTAR CONTATOS
 // =========================
 
-router.get('/contatos', (req, res) => {
+router.get('/contatos', async (req, res) => {
 
   const sql = `
     SELECT * FROM contato
     ORDER BY data_envio DESC
   `;
 
-  db.query(sql, (err, result) => {
+  try {
 
-    if(err){
-      return res.status(500).json({
-        erro: 'Erro ao buscar'
-      });
-    }
+    const result = await db.query(sql);
 
-    res.json(result);
+    res.json(result.rows);
 
-  });
+  } catch (err) {
+
+    console.error('Erro ao buscar contatos:', err);
+
+    res.status(500).json({
+      erro: 'Erro ao buscar'
+    });
+
+  }
 
 });
 
 
+// =========================
+// DELETAR CONTATO
+// =========================
 
-// DELETAR CONTATO//
-
-
-router.delete('/contato/:id', (req, res) => {
+router.delete('/contato/:id', async (req, res) => {
 
   const { id } = req.params;
 
   const sql = `
     DELETE FROM contato
-    WHERE id = ?
+    WHERE id = $1
   `;
 
-  db.query(sql, [id], (err, result) => {
+  try {
 
-    if(err){
-      return res.status(500).json({
-        erro: 'Erro ao deletar'
-      });
-    }
+    await db.query(sql, [id]);
 
     res.json({
       mensagem: 'Mensagem apagada'
     });
 
-  });
+  } catch (err) {
+
+    console.error('Erro ao deletar contato:', err);
+
+    res.status(500).json({
+      erro: 'Erro ao deletar'
+    });
+
+  }
 
 });
 
-// mensagens//
 
-router.get('/dashboard/mensagens', (req, res) => {
+// =========================
+// MENSAGENS DO DASHBOARD
+// =========================
+
+router.get('/dashboard/mensagens', async (req, res) => {
 
   const sql = `
     SELECT COUNT(*) AS total
     FROM contato
   `;
 
-  db.query(sql, (err, result) => {
+  try {
 
-    if(err){
-      return res.status(500).json({
-        erro: 'Erro ao buscar mensagens'
-      });
-    }
+    const result = await db.query(sql);
 
-    res.json(result[0]);
+    res.json(result.rows[0]);
 
-  });
+  } catch (err) {
+
+    console.error('Erro ao buscar mensagens:', err);
+
+    res.status(500).json({
+      erro: 'Erro ao buscar mensagens'
+    });
+
+  }
 
 });
 
